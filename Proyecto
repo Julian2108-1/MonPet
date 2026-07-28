@@ -13,3 +13,21 @@ Tener en cuenta que en algunas partes que vena del codigo que necesita php se de
 
 y por ultimo, suerte con esas interfaces jajaja espero que queden bien profesionales sin  nada de IA
 
+Tipografia de la Paginas
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+Paleta de colores
+Colores
+     Hex	      Uso aproximado
+
+	#7B42B6	Botones principales, logo, elementos destacados.
+
+	#8E52D3	Hover, iconos y acentos.
+
+	#A472D5	Degradados y detalles secundarios.
+
+	#B996E5	Fondos suaves y elementos decorativos.
+
+	#D1C3F7	Fondos claros, tarjetas y formas.
+
+	#F9F6FC	Fondo con tinte morado muy claro.
