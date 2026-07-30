@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Registro - MonPet</title>
+    <link rel="stylesheet" href="../css/estilo_registro.css">
+</head>
+<body>
+<header class="menu">
+      <div class="contenedor-logo">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+      <nav class="links-navegacion">
+        <ul>
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Adopción</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Refugios</a></li>
+            <li><a href="#">Jornadas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="accion-navegacion">
+        <a href="#" class="boton-secundario">Volver al Inicio</a>
+      </div>
+    </header>
+    <main class="contenido-registro">
+
+        <section class="panel-bienvenida">
+            <span class="etiqueta-comunidad">💜 Únete a nuestra comunidad
+            </span>
+            <h2 class="titulo-bienvenida">Crea tu cuenta y<br>se parte <span>del cambio</span></h2>
+            <p class="descripcion-bienvenida">Regístrate para comenzar a ayudar,adoptar y transformar vidas.</p>
+
+            <div class="ilustracion-mascotas">
+                <img src="img/perro-gato.png" alt="Mascotas">
+            </div>
+
+            <article class="tarjeta-estadisticas">
+                <h3>Juntos hacemos la diferencia</h3>
+
+                <div class="estadisticas-comunidad">
+
+                    <div class="estadistica-adopcion">
+                        <span class="icono-estadistica"></span>
+                        <strong>+1,200</strong>
+                        <p>Mascotas en adopción</p>
+                    </div>
+
+                    <div class="estadistica-adopcion">
+                        <span class="icono-estadistica"></span>
+                        <strong>980</strong>
+                        <p>Adopciones exitosas</p>
+                    </div>
+
+                    <div class="estadistica-adopcion">
+                        <span class="icono-estadistica"></span>
+                        <strong>45</strong>
+                        <p>Refugios aliados</p>
+                    </div>
+
+                    <div class="estadistica-adopcion">
+                        <span class="icono-estadistica"></span>
+                        <strong>320</strong>
+                        <p>Voluntarios activos</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel-formulario-registro">
+            <header class="encabezado-formulario">
+                <div class="icono-formulario">
+                    <img src="img/icono-registro.png" alt="Registro">
+                </div>
+                <div class="informacion-formulario">
+                    <h2>Crear cuenta</h2>
+                    <p>Completa tus datos para registrarte en MonPet.</p>
+                </div>
+            </header>
+
+            <div class="pasos-registro">
+                <div class="paso-activo">
+                    <span class="numero-paso">1</span>
+                    <p>Información personal</p>
+                </div>
+
+                <div class="paso-registro">
+                    <span class="numero-paso">2</span>
+                    <p>Información de contacto</p>
+                </div>
+
+                <div class="paso-registro">
+                    <span class="numero-paso">3</span>
+                    <p>Seguridad</p>
+                </div>
+            </div>
+
+            <form class="formulario-registro">
+
+                <div class="fila-campos">
+                    <div class="campo-formulario">
+                        <label>Nombre(s)</label>
+                        <input type="text" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="campo-formulario">
+                        <label>Apellidos</label>
+                        <input type="text" placeholder="Ingresa tus apellidos">
+                    </div>
+                </div>
+
+                <div class="fila-campos">
+                    <div class="campo-formulario">
+                        <label>Tipo de documento</label>
+                        <select>
+                            <option>Seleccionar tipo</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Número de documento</label>
+                        <input type="text" placeholder="Ingresa tu número de documento">
+                    </div>
+                </div>
+
+                <div class="fila-campos">
+                    <div class="campo-formulario">
+                        <label>Fecha de nacimiento</label>
+                        <input type="date">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Género</label>
+                        <select>
+                            <option>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+
+                <article class="aviso-privacidad">
+                    <div class="icono-seguridad">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="contenido-aviso">
+                        <h3>Tu información está protegida</h3>
+                        <p>En MonPet cuidamos tus datos y nunca los compartimos <br>con terceros. 
+                            Consulta nuestra <a href="#">Política de Privacidad.</a>
+                        </p>
+                    </div>
+                    <div class="icono-candado">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </article>
+
+                <div class="acciones-formulario">
+                    <button type="button"class="boton-cancelar">Cancelar</button>
+                    <button type="submit"class="boton-siguiente">Siguiente</button>
+                </div>
+            </form>
+
+            <footer class="pie-formulario">
+                <p>¿Ya tienes una cuenta?
+                    <a href="#">Iniciar sesión</a>
+                </p>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
