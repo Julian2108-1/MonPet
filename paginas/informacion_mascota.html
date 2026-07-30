@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>informacion mascota</title>
+<link rel="stylesheet" href="../css/estilo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header>
+      <div class="contenedor-logo">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+    </header>
+    <main class="contenedor">
+    <div class="boton-volver">
+        <a href="#" class="boton-borde">← Volver</a>
+    </div>
+
+    <!-- columna izquierda y derecha del perro -->
+    <div class="seccion-principal">
+        
+        <!-- columna izquierda: fotos e info adicional -->
+        <div class="columna-izq">
+            
+            <div class="galeria">
+                <div class="foto-principal">
+                    <span class="etiqueta-estado">Disponible</span>
+                    <button class="boton-favorito">♡</button>
+                    <!-- php: foto principal -->
+                    <img src="../img/principal.jpg" alt="Coffe">
+                </div>
+                
+                <div class="miniaturas">
+                    <!-- php:  galeria -->
+                    <img src="../img/2.png" class="activa">
+                    <img src="../img/3.jpg" alt="thumb">
+                    <img src="../img/5.jpg" alt="thumb">
+                    <div class="thumb-mas">+3</div>
+                </div>
+            </div>
+
+            <div class="caja-blanca info-salud">
+                <h3>Información adicional</h3>
+                
+                <!-- php: evaluar si/no desde bd -->
+                <div class="rejilla-salud">
+                    <div class="item-salud">
+                        <span>Esterilizado(a)</span>
+                        <strong>Sí</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Vacunas al día?</span>
+                        <strong>Sí</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Desparacitado(a)</span>
+                        <strong>Sí</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Convive con niños?</span>
+                        <strong>Sí</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Convive con perros?</span>
+                        <strong>Sí</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Convive con gatos?</span>
+                        <strong>No</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Nivel de actividad</span>
+                        <strong>Moderado</strong>
+                    </div>
+                    <div class="item-salud">
+                        <span>Carácter</span>
+                        <strong>Cariñoso y tranquilo</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- columna derecha: detalles y adopcion -->
+        <div class="columna-der">
+            <div class="caja-blanca detalles-perro">
+                
+                <div class="encabezado-perro">
+                    <div>
+                        <!-- php: nombre, genero, edad -->
+                        <h1>Coffe <span class="check-verificado">✓</span></h1>
+                        <p class="subtitulo">Macho • 3 meses • Pequeño</p>
+                    </div>
+                    <button class="btn-compartir">Compartir</button>
+                </div>
+
+                <!-- datos rapidos -->
+                <div class="rejilla-datos">
+                    <div class="caja-dato">
+                        <small>Raza</small>
+                        <!-- php: raza -->
+                        <strong>Salchicha</strong>
+                    </div>
+                    <div class="caja-dato">
+                        <small>Tamaño</small>
+                        <!-- php: tamano / peso -->
+                        <strong>Pequeño (15-20kg)</strong>
+                    </div>
+                    <div class="caja-dato">
+                        <small>Edad</small>
+                        <!-- php: edad -->
+                        <strong>3 meses (10/04/26)</strong>
+                    </div>
+                    <div class="caja-dato">
+                        <small>Ubicación</small>
+                        <!-- php: ciudad -->
+                        <strong>Bogotá, Cundinamarca</strong>
+                    </div>
+                </div>
+
+                <!-- descripcion y porque adoptar -->
+                <div class="seccion-descripcion">
+                    <div class="texto-desc">
+                        <h3>Descripción</h3>
+                        <!-- php: descripcion de la bd -->
+                        <p>Coffe es un buscador de mimos cariñoso, un dormilón profesional que ama las siestas largas y un compañero alegre que menea la colita al verte. Es curioso pero tranquilo, disfruta los paseos cortos y busca un hogar amoroso...</p>
+                        <button class="btn-ver-mas">Ver más ⌃</button>
+                    </div>
+
+                    <div class="caja-morada-clara">
+                        <h4>¿Por qué adoptar a coffe?</h4>
+                        <ul>
+                            <li>Es muy cariñoso y obediente</li>
+                            <li>Convive bien con niños y perros</li>
+                            <li>Está esterilizado y vacunado</li>
+                            <li>Mrece una segunda oportunidad</li>
+                            <li>Dará amor incondicional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- caja solicitar adopcion -->
+                <div class="caja-adopcion">
+                    <h2>¿Listo para cambiar su vida?</h2>
+                    <p>Coffe esta esperando a su familia ideal. Completa el formulario de adopción y nuestro equipo se pondra en contacto contigo</p>
+                    
+                    <div class="botones-adopcion">
+                        <!-- php: id por url id=<?php echo $id ?> -->
+                        <a href="#" class="boton-morado">Solicitar adopción</a>
+                        <a href="#" class="boton-borde">Tengo dudas</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- seccion recomendaciones abajo -->
+    <section class="recomendados">
+        <div class="huella">
+            <div class="icono"><i class="fa-solid fa-paw"></i></div>
+            <h2>Otras mascotas que te pueden interesar</h2>
+        </div>
+        
+        
+        <div class="rejilla-tarjetas">
+            
+            <!-- php: foreach otras mascotas -->
+            <div class="tarjeta">
+                <div class="foto-tarjeta">
+                    <span class="tipo-mascota">Gato</span>
+                    <button class="boton-favorito-sm">♡</button>
+                    <img src="../img/gato1.jpg" alt="Nube">
+                </div>
+                <div class="cuerpo-tarjeta">
+                    <h3>Nube</h3>
+                    <p class="ubicacion">Medellin, Colombia</p>
+                    <div class="tags-tarjeta">
+                        <span>2 meses</span>
+                        <span>Pequeño</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="foto-tarjeta">
+                    <span class="tipo-mascota">Perro</span>
+                    <button class="boton-favorito-sm">♡</button>
+                    <img src="../img/perrito1.jpg" alt="Brisa">
+                </div>
+                <div class="cuerpo-tarjeta">
+                    <h3>Brisa</h3>
+                    <p class="ubicacion">Cali, Colombia</p>
+                    <div class="tags-tarjeta">
+                        <span>2 años</span>
+                        <span>Grande</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="foto-tarjeta">
+                    <span class="tipo-mascota">Gato</span>
+                    <button class="boton-favorito-sm">♡</button>
+                    <img src="../img/gato3.jpg" alt="Oreo">
+                </div>
+                <div class="cuerpo-tarjeta">
+                    <h3>Oreo</h3>
+                    <p class="ubicacion">Barranquilla, Colombia</p>
+                    <div class="tags-tarjeta">
+                        <span>2 años</span>
+                        <span>Mediano</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <div class="foto-tarjeta">
+                    <span class="tipo-mascota">Perro</span>
+                    <button class="boton-favorito-sm">♡</button>
+                    <img src="../img/canela.jpg" alt="Canela">
+                </div>
+                <div class="cuerpo-tarjeta">
+                    <h3>Canela</h3>
+                    <p class="ubicacion">Bogotá, Colombia</p>
+                    <div class="tags-tarjeta">
+                        <span>1 año</span>
+                        <span>Mediano</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+</body>
+</html>
