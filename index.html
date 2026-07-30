@@ -146,14 +146,17 @@
 
         <section class="seccion-adopciones">
             <div class="encabezado-adopciones">
-                <h2>Mascotas en adopción</h2>
+                <h2><i class="fa-solid fa-heart"></i>Mascotas en adopción</h2>
                 <a href="#">
-                    Ver todas
+                    Ver todas<i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
 
 
             <div class="galeria-mascotas">
+                <div class="boton-anterior">
+                <button onclick="anterior()"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
 
                 <article class="ficha-mascota">
                     <div class="foto-mascota">
@@ -165,10 +168,10 @@
                     <div class="datos-mascota">
                         <span class="categoria-mascota">Perro</span>
                         <h3>Buddy</h3>
-                        <p>Bogotá, Colombia</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Bogotá, Colombia</p>
                         <div class="detalle-mascota">
-                            <span>2 años</span>
-                            <span>Mediano</span>
+                            <span><i class="fa-regular fa-calendar"></i>2 años</span>
+                            <span><i class="fa-solid fa-paw"></i>Mediano</span>
                         </div>
                     </div>
                 </article>
@@ -183,10 +186,10 @@
                     <div class="datos-mascota">
                         <span class="categoria-mascota">Gato</span>
                         <h3>Michi</h3>
-                        <p>Medellín, Colombia</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Medellín, Colombia</p>
                         <div class="detalle-mascota">
-                            <span>1 año</span>
-                            <span>Pequeño</span>
+                            <span><i class="fa-regular fa-calendar"></i>1 año</span>
+                            <span><i class="fa-solid fa-paw"></i>Pequeño</span>
                         </div>
                     </div>
                 </article>
@@ -203,10 +206,10 @@
                     <div class="datos-mascota">
                         <span class="categoria-mascota">Perro</span>
                         <h3>Luna</h3>
-                        <p>Cali, Colombia</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Cali, Colombia</p>
                         <div class="detalle-mascota">
-                            <span>6 meses</span>
-                            <span>Pequeño</span>
+                            <span><i class="fa-regular fa-calendar"></i>6 meses</span>
+                            <span><i class="fa-solid fa-paw"></i>Pequeño</span>
                         </div>
                     </div>
                 </article>
@@ -222,15 +225,131 @@
                     <div class="datos-mascota">
                         <span class="categoria-mascota">Gato</span>
                         <h3>Simba</h3>
-                        <p>Barranquilla, Colombia</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Barranquilla, Colombia</p>
                         <div class="detalle-mascota">
-                            <span>2 años</span>
-                            <span>Mediano</span>
+                            <span><i class="fa-regular fa-calendar"></i>2 años</span>
+                            <span><i class="fa-solid fa-paw"></i>Mediano</span>
                         </div>
                     </div>
                 </article>
+
+                <article class="ficha-mascota">
+                    <div class="foto-mascota">
+                        <img src="img/mathias.jpg" alt="Simba">
+                        <button class="favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="datos-mascota">
+                        <span class="categoria-mascota">Gato</span>
+                        <h3>Mathias</h3>
+                        <p><i class="fa-solid fa-location-dot"></i>Barranquilla, Colombia</p>
+                        <div class="detalle-mascota">
+                            <span><i class="fa-regular fa-calendar"></i>2 años</span>
+                            <span><i class="fa-solid fa-paw"></i> Mediano</span>
+                        </div>
+                    </div>
+                </article>
+            <div class="boton-siguiente">
+                <button onclick="siguiente()"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
             </div>
         </section>
     </main>
+<footer class="footer">
+
+    <div class="footer-onda">
+        <img src="/img/fondo_onda_2.png" alt="">
+    </div>
+
+    <div class="footer-contenedor">
+
+        <div class="footer-logo">
+        <div class="icono-logo2">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="footer-informacion">
+            <h2>MonPet</h2>
+            <p>
+                Conectamos corazones para que cada <br>mascota
+                encuentre un hogar lleno<br>de amor y cuidado.
+            </p>
+
+            <div class="footer-redes">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            </div>
+        </div>
+
+        <div class="footer-enlaces">
+            <h3>Enlaces rápidos</h3>
+
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Adopción</a></li>
+                <li><a href="#">Reportes</a></li>
+                <li><a href="#">Refugios</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-ayuda">
+            <h3>Ayuda</h3>
+
+            <ul>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Cómo adoptar</a></li>
+                <li><a href="#">Consejos de cuidado</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-legal">
+            <h3>Información legal</h3>
+
+            <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Aviso legal</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contacto">
+            <h3>Contacto</h3>
+
+            <ul>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Bogotá, Colombia
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    contacto@monpet.com
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    +57 300 123 4567
+                </li>
+
+                <li>
+                    <i class="fa-regular fa-clock"></i>
+                    Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-inferior">
+        <p>© 2026 MonPet. Todos los derechos reservados.</p>
+    </div>
+
+</footer>
 </body>
 </html>
