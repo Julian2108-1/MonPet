@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-family: "Rancho", cursiva;
+}
+body {
+    background: #F9F6FC;
+    height: 100vh;
+    
+}
+/*-------------
+MENU NAVEGACION
+-------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+.contenedor-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 90%;
+    margin-left: 60px;
+}
+.contenedor-logo .icono-logo {
+    font-size: 2.8rem;
+    color: #fff;
+    height: 80%;
+    width: 65px;
+    border-radius: 20px;
+    background: #7B42B6;
+}
+.contenedor-logo .icono-logo i {
+    padding-top: 10px;
+    padding-left: 9px;
+}
+.contenedor-logo .texto-logo {
+    margin-left: 20px;
+}
+.contenedor-logo .texto-logo h1 {
+    font-size: 3rem;
+    padding: 0;
+}
+.contenedor-logo .texto-logo .texto-titulo-1 {
+    color: #000000;
+}
+.contenedor-logo .texto-logo .texto-titulo-2 {
+    color: #8645cc;
+}
+.contenedor-logo .texto-logo .slogan-banner {
+    font-size: 1.3rem;
+}
+.contenedor-logo .texto-logo .slogan-banner i{
+    font-size: 0.89rem;
+    color: #cea0ff;
+}
+
+.links-navegacion ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.links-navegacion a {
+    text-decoration: none;
+    color: #333;
+    height: 100%;
+    font-size: 2rem;
+}
+.links-navegacion li:hover{
+    border-bottom: 2px solid #8E52D3;
+    
+}
+.links-navegacion a:hover {
+    color: #8E52D3;
+ }
+.accion-navegacion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 15%;
+    margin-right: 60px;
+ }
+ .accion-navegacion .boton-secundario {
+    border: 2px solid #cea0ff;
+    border-radius: 15px;
+    text-align: center;
+    width: 130px;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3rem;
+ }
+.accion-navegacion .boton-secundario:hover {
+    background: #6d24ba;
+    color: #fff;
+    border: none;
+}
+.acciones-usuario {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 30px;
+}
+.acciones-usuario .boton-notificaciones {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #F9F6FC;
+    box-shadow: 0 0px 4px -1px rgba(0, 0, 0, 0.2);
+    margin-right: 25px;
+    font-size: 1.5rem;
+    padding-top: 5px;
+}
+.acciones-usuario .boton-mensajes {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #F9F6FC;
+    box-shadow: 0 0px 4px -1px rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
+    font-size: 1.5rem;
+    padding-top: 5px;
+}
+.boton-mensajes .contador-alertas {
+    position: absolute;
+    top: 20px;
+    width: 25px;
+    height: 27px;
+    background: #f75a5a;
+    right: 335px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.3rem;
+}
+.acciones-usuario .perfil-usuario {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0px;
+    width: 300px;
+}
+.acciones-usuario .perfil-usuario span {
+    font-size: 2rem;
+}
+.acciones-usuario .perfil-usuario img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0px 6px 1px rgba(0, 0, 0, 0.3);
+}
+.acciones-usuario .perfil-usuario button {
+    border: none;
+    background: #fff;
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+.pagina-solicitud-adopcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+    padding: 0px 130px;
+    margin-bottom: 200px;
+}
+.pagina-solicitud-adopcion .migas-navegacion {
+    display: inline-block;
+    padding: 15px 15px 15px 0px;
+}
+.pagina-solicitud-adopcion .migas-navegacion a {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #8E52D3;
+}
+.pagina-solicitud-adopcion .migas-navegacion a i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+.migas-navegacion strong {
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+.encabezado-solicitud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.encabezado-solicitud .informacion-solicitud h2{
+    font-size: 5rem;
+}
+.encabezado-solicitud .informacion-solicitud i {
+    color: #8E52D3;
+    font-size: 3rem;
+    margin-left: 20px;
+}
+.encabezado-solicitud .informacion-solicitud p {
+    font-size: 2rem;
+}
+.encabezado-solicitud .mensaje-seguridad-proceso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 430px;
+    height: 120px;
+    padding: 20px;
+    background: #eae2f1;
+}
+.mensaje-seguridad-proceso .icono-seguridad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #e2d1f0;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+}
+.mensaje-seguridad-proceso .icono-seguridad i {
+    font-size: 2rem;
+    width: 50px;
+    height: 50%;
+    color: #8E52D3;
+}
+.mensaje-seguridad-proceso .informacion-seguridad {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+.contenido-solicitud {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+.panel-informacion-mascota {
+    background: #fff;
+    border-radius: 20px;
+    width: 32%;
+    height: 61vw;
+    padding: 25px;
+}
+.panel-informacion-mascota .tarjeta-mascota {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.tarjeta-mascota .imagen-principal-mascota {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.imagen-principal-mascota img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+.imagen-principal-mascota .estado-adopcion-disponible {
+    width: 130px;
+    padding: 3px 10px;
+    text-align: center;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 1.8rem;
+    position: absolute;
+    background: #6d24ba;
+    top: 430px;
+    left: 180px;
+    color: #fff;
+}
+.imagen-principal-mascota .boton-favorito {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    padding-top: 6px; 
+    background: #fff;
+    color: #8E52D3;
+    border: none;
+    position: absolute;
+    top: 430px;
+    left: 665px;
+}
+.datos-generales-mascota h3{
+    font-size: 3.5rem;
+    margin-top: 10px;
+}
+
+.lista-caracteristicas-mascota li{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-bottom: 0px;
+}
+.lista-caracteristicas-mascota li i {
+    position: relative;
+    right: 65px;
+    top: 45px;
+    font-size: 2.5rem;
+    color: #6d24ba;
+}
+.lista-caracteristicas-mascota li strong {
+    font-size: 2rem;
+    color: #6d24ba;
+    list-style: none;
+}
+.lista-caracteristicas-mascota li span {
+    font-size: 1.5rem;
+    line-height: 0.7;
+}
+.boton-ver-informacion-mascota {
+    height: 50px;
+    border: 2px solid #8645cc;
+    background: #fff;
+    font-size: 2rem;
+    border-radius: 15px;
+    color: #8645cc;
+    text-align: center;
+    padding-top: 5px;
+    transition: trasform 0.5s ease;
+}
+.boton-ver-informacion-mascota span {
+    margin-left: 100px;
+    font-size: 1.5rem;
+    height: 100px;
+}
+.boton-ver-informacion-mascota span i {
+    margin-top: 5px;
+}
+.boton-ver-informacion-mascota:hover {
+    color: #fff;
+    background: #6d24ba;
+    transform: scale(1.01);
+}
+.beneficios-adopcion {
+    width: 100%;
+    height: 240px;
+    margin-top: 40px;
+    background: #F8F4FE;
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+.beneficios-adopcion h3 {
+    font-size: 2.5rem;
+    color: #8645cc;
+}
+.beneficios-adopcion h3 i {
+    font-size: 2rem;
+    margin-right: 20px;
+    background: #8645cc;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 10px;
+}
+.lista-beneficios-adopcion {
+    padding: 10px;
+}
+.lista-beneficios-adopcion li {
+    list-style: none;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    color: #6d24ba;
+}
+.lista-beneficios-adopcion li i {
+    margin-right: 15px;
+    color: #8E52D3;
+}
+.ayuda-adopcion {
+    display: flex;
+    width: 100%;
+    height: 160px;
+    margin-top: 20px;
+    background: #F8F4FE;
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+.ayuda-adopcion .icono-ayuda {
+    width: 90px;
+    height: 90px;
+    background: #F1ECFD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 3rem;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+.ayuda-adopcion h3 {
+    font-size: 2rem;
+    color: #281241;
+}
+.ayuda-adopcion .ayuda-contacto p{
+    font-size: 1.5rem;
+}
+.ayuda-adopcion .ayuda-contacto a {
+    display: inline-block;
+    color: #8E52D3;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transform: scale(1);
+    transition: trasform 0.5s ease-in;
+}
+.ayuda-adopcion .ayuda-contacto a:hover {
+    color: #481c79;
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------
+FOOTER
+------------------------*/
+.footer{
+    display: flex;
+    flex-direction: column;
+    background: #401E8E;
+    color: white;
+    margin-top: 0px;
+    gap: 10px;
+}
+.footer-onda{
+    width: 100%;
+    height: 100px;
+}
+.footer-onda img {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    top: -230px;
+}
+.footer-contenedor{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+}
+.footer-logo .icono-logo2 {
+    color: #7B42B6;
+    height: 90%;
+    width: 75px;
+    border-radius: 20px;
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.footer-logo .icono-logo2 i {
+    font-size: 3rem;
+}
+.footer-logo h2{
+    font-size: 4rem;
+    margin-bottom: 12px;
+}
+.footer-logo p{
+    font-size: 2rem;
+    line-height: 1;
+    color: #E5DFFF;
+    margin-bottom: 25px;
+}
+
+.footer-redes{
+    display: flex;
+    gap: 15px;
+}
+.footer-redes a{
+    width: 65px;
+    height: 65px;
+    background: rgba(255,255,255,.12);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    transition: .3s;
+    text-decoration: none;
+}
+.footer-redes a:hover{
+    background: white;
+    color: #5B2ECF;
+    transform: translateY(-5px);
+}
+.footer h3{
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+.footer ul{
+    list-style: none;
+}
+.footer ul li{
+    margin-bottom: 15px;
+}
+.footer ul li a{
+    color: #E5DFFF;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 1.8rem;
+}
+.footer ul li a:hover{
+    color: white;
+    padding-left: 8px;
+}
+.footer-contacto li{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #E5DFFF;
+    font-size: 1.8rem;
+}
+.footer-contacto i{
+    width: 20px;
+    color: white;
+    margin-right: 15px;
+}
+.footer-inferior{
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+}
+.footer-inferior p{
+    color: #E5DFFF;
+    font-size: 2rem;
+}
