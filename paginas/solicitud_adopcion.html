@@ -177,66 +177,90 @@
                 <form class="formulario-solicitud-adopcion">
 
                     <fieldset class="grupo-datos-personales">
-                        <legend>Información personal</legend>
+                        <legend><i class="fa-regular fa-user"></i>Información personal</legend>
 
                         <div class="fila-campos-personales">
                             <div class="campo-nombre-completo">
-                                <label>Nombre completo</label>
-                                <input type="text">
+                                <label>Nombre completo <span>*</span></label>
+                                <div class="contenedor-input">
+                                    <input type="text" placeholder="Ingresa Tu nombre Completo">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </div>
                             </div>
 
                             <div class="campo-correo-electronico">
-                                <label>Correo electrónico</label>
-                                <input type="email">
+                                <label>Correo electrónico <span>*</span></label>
+                                <div class="contenedor-input">
+                                    <input type="email" placeholder="ejemplo@correo.com">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
                             </div>
                         </div>
 
                         <div class="fila-campos-personales">
                             <div class="campo-telefono-contacto">
-                                <label>Teléfono</label>
-                                <input type="tel">
+                                <label>Teléfono <span>*</span></label>
+                                <div class="contenedor-input">
+                                    <input type="tel" placeholder="300 123 4567">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
                             </div>
 
                             <div class="campo-tipo-documento">
-                                <label>Tipo de documento</label>
-                                <select></select>
+                                <label>Tipo de documento <span>*</span></label>
+                                <div class="contenedor-input">
+                                    <select></select>
+                                </div>
                             </div>
                         </div>
 
                         <div class="campo-numero-documento">
-                            <label>Número de documento</label>
-                            <input type="text">
+                            <label>Número de documento <span>*</span></label>
+                            <div class="contenedor-input">
+                                <input type="text" placeholder="Ingresa tu número de documento">
+                                <i class="fa-regular fa-address-card"></i>
+                            </div>
                         </div>
                     </fieldset>
                     <!-- DIRECCION -->
                     <fieldset class="grupo-direccion-residencia">
-                        <legend>Dirección actual</legend>
+                        <legend><i class="fa-solid fa-house"></i>Dirección actual</legend>
 
                         <div class="fila-direccion">
                             <div class="campo-ciudad-residencia">
-                                <label>Ciudad</label>
-                                <select></select>
+                                <label>Ciudad <span>*</span></label>
+                                <div class="contenedor-input">
+                                    <select></select>
+                                </div>
                             </div>
 
                             <div class="campo-localidad-residencia">
                                 <label>Localidad</label>
-                                <input type="text">
+                                <div class="contenedor-input">
+                                    <input type="text" placeholder="Ingresa tu localidad">
+                                    <i class="fa-solid fa-location-arrow"></i>
+                                </div>
                             </div>
 
                         </div>
                         <div class="campo-direccion-completa">
-                            <label>Dirección exacta</label>
-                            <input type="text">
+                            <label>Dirección exacta <span>*</span></label>
+                            <div class="contenedor-input">
+                                <input type="text" placeholder="Calle, carrera, número, apartamento, etc.">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
                         </div>
                     </fieldset>
                     <!-- MOTIVACION -->
                     <fieldset class="grupo-motivacion-adopcion">
-                        <legend>Cuéntanos por qué quieres adoptar a Luna</legend>
-                        <textarea></textarea>
+                        <legend> <i class="fa-regular fa-star"></i>Cuéntanos por qué quieres adoptar a Luna <span>*</span></legend>
+                        <textarea placeholder="Escribe aquí tus razones..."></textarea>
+                        <p>Minimo 30 caracteres</p>
                     </fieldset>
                     <!-- DOCUMENTOS -->
                     <fieldset class="grupo-documentos-adicionales">
-                        <legend>Documentos (Opcional)</legend>
+                        <legend><i class="fa-solid fa-paperclip"></i>Documentos (Opcional)</legend>
+                        <p>Puedes adjuntar documentos que consideres importantes.</p>
                         <div class="zona-arrastrar-documentos">
                             <p>Arrastra y suelta archivos aquí</p>
                             <button type="button">Seleccionar archivos</button>
@@ -244,14 +268,17 @@
                     </fieldset>
                     <div class="acciones-formulario">
                         <button type="reset" class="boton-cancelar-solicitud">Cancelar</button>
-                        <button type="submit" class="boton-continuar-siguiente-paso">Siguiente: Tu hogar</button>
+                        <button type="submit" class="boton-continuar-siguiente-paso">Siguiente: Tu hogar →</button>
                     </div>
                 </form>
                 <div class="mensaje-confidencialidad-datos">
+                    <i class="fa-solid fa-lock icono-1"></i>
                     <p>
                         Toda la información brindada será tratada con absoluta
-                        confidencialidad y utilizada únicamente para el proceso de adopción.
+                        confidencialidad y <br> utilizada únicamente para el proceso de adopción.
                     </p>
+                    <i class="fa-solid fa-shield icono-2"></i>
+                    <i class="fa-solid fa-check icono-3"></i>
                 </div>
             </section>
         </section>
