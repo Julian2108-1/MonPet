@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonPet - Reportar Mascota</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reporte.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-logo">
+            <div class="icono-logo">
+                <i class="fa-solid fa-paw"></i>
+            </div>
+            <div class="texto-logo">
+                <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+                <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="accion-navegacion">
+            <a href="#" class="boton-secundario"><-Volver</a>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <div class="encabezado-pagina">
+            <div class="titulo-principal">
+                <div class="icono-escudo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h1>Reportar una mascota</h1>
+                    <p>Ayúdanos a encontrar a esta mascota o a su familia</p>
+                </div>
+            </div>
+            
+            <div class="alerta-info">
+                <i class="fa-solid fa-circle-info icono-info"></i>
+                <div>
+                    <strong>Tu reporte será revisado por nuestro equipo.</strong>
+                    <p>Mientras más información brindes, mayores serán las posibilidades de encontrarla.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-reporte">
+            
+            <!-- PHP: Procesamiento de formulario (POST) e impresión de mensajes de error/éxito si existen -->
+            
+            <form class="columna-formulario" action="procesar_reporte.php" method="POST" enctype="multipart/form-data">
+                
+              <!-- PASO 1 -->
+                <div class="seccion-paso">
+                    <div class="numero-paso">1</div>
+                    <div class="contenido-paso">
+                        <h3>Tipo de reporte</h3>
+                        <div class="opciones-reporte">
+                            <label class="opcion-caja activa">
+                                <input type="radio" name="tipo_reporte" value="perdida" checked>
+                                <i class="fa-solid fa-magnifying-glass icono-opcion"></i>
+                                <div>
+                                    <strong>Mascota perdida</strong>
+                                    <small>No encuentro a mi mascota</small>
+                                </div>
+                            </label>
+                            <label class="opcion-caja">
+                                <input type="radio" name="tipo_reporte" value="encontrada">
+                                <i class="fa-solid fa-flag icono-opcion verde"></i>
+                                <div>
+                                    <strong>Mascota encontrada</strong>
+                                    <small>He encontrado una mascota</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div class="seccion-paso">
+                    <div class="numero-paso">2</div>
+                    <div class="contenido-paso">
+                        <h3>Información de la mascota</h3>
+                        
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>Nombre de la mascota <small>(opcional)</small></label>
+                                <input type="text" name="nombre_mascota" placeholder="Ej: Max">
+                            </div>
+                        </div>
+
+                        <div class="fila-formulario dos-columnas">
+                            <div class="grupo-input">
+                                <label>Especie</label>
+                                <select name="especie_id">
+                                    <option value="">Selecciona una opción</option>
+                                    <!-- PHP: Iterar especies desde la base de datos (SELECT * FROM especies) -->
+                                    <option value="1">Perro</option>
+                                    <option value="2">Gato</option>
+                                </select>
+                            </div>
+                            <div class="grupo-input">
+                                <label>Raza</label>
+                                <input type="text" name="raza" placeholder="Ej: Golden Retriever">
+                            </div>
+                        </div>
+
+                        <div class="fila-formulario tres-columnas">
+                            <div class="grupo-input">
+                                <label>Sexo</label>
+                                <select name="sexo">
+                                    <option value="">Selecciona</option>
+                                    <option value="macho">Macho</option>
+                                    <option value="hembra">Hembra</option>
+                                    <option value="desconocido">No lo sé</option>
+                                </select>
+                            </div>
+                            <div class="grupo-input">
+                                <label>Edad aproximada</label>
+                                <select name="edad">
+                                    <option value="">Selecciona</option>
+                                    <option value="cachorro">Cachorro / Bebé</option>
+                                    <option value="joven">Joven</option>
+                                    <option value="adulto">Adulto</option>
+                                    <option value="senior">Sénior / Anciano</option>
+                                </select>
+                            </div>
+                            <div class="grupo-input">
+                                <label>Tamaño</label>
+                                <select name="tamano">
+                                    <option value="">Selecciona</option>
+                                    <option value="pequeno">Pequeño</option>
+                                    <option value="mediano">Mediano</option>
+                                    <option value="grande">Grande</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label>Descripción y características</label>
+                            <textarea name="descripcion" rows="3" placeholder="Describe su color, manchas, signos particulares, comportamiento, etc."></textarea>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label>Fotos de la mascota</label>
+                            <label for="input-fotos" class="caja-subir-fotos">
+                                <i class="fa-solid fa-cloud-arrow-up icono-subir"></i>
+                                <div>
+                                    <strong>Sube fotos claras de la mascota</strong>
+                                    <p>Arrastra y suelta aquí o <span class="texto-subir">haz clic para seleccionar</span></p>
+                                    <small>Formatos: JPG, PNG. Máx. 5MB por imagen</small>
+                                </div>
+                                <input type="file" id="input-fotos" name="fotos[]" multiple accept="image/*" style="display:none;">
+                            </label>
+                            <small class="nota-fotos">Puedes subir hasta 5 imágenes</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="seccion-paso">
+                    <div class="numero-paso">3</div>
+                    <div class="contenido-paso">
+                        <h3>Información del lugar</h3>
+                        
+                        <div class="fila-formulario dos-columnas">
+                            <div class="grupo-input">
+                                <label>Departamento</label>
+                                <select name="departamento_id">
+                                    <!-- PHP: Iterar departamentos de la BD -->
+                                    <option value="1">Cundinamarca</option>
+                                </select>
+                            </div>
+                            <div class="grupo-input">
+                                <label>Ciudad</label>
+                                <select name="ciudad_id">
+                                    <!-- PHP: Iterar ciudades pertenecientes al departamento seleccionado -->
+                                    <option value="1">Bogotá</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="fila-formulario dos-columnas">
+                            <div class="grupo-input">
+                                <label>Barrio / Localidad</label>
+                                <input type="text" name="barrio" placeholder="Ej: Chapinero">
+                            </div>
+                            <div class="grupo-input">
+                                <label>Dirección exacta o referencia</label>
+                                <input type="text" name="direccion" placeholder="Ej: Calle 72 con Carrera 13...">
+                            </div>
+                        </div>
+
+                        <div class="fila-formulario mitad">
+                            <div class="grupo-input">
+                                <label>Fecha y hora</label>
+                                <input type="datetime-local" name="fecha_evento">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 4 -->
+                <div class="seccion-paso">
+                    <div class="numero-paso">4</div>
+                    <div class="contenido-paso">
+                        <h3>Información de contacto</h3>
+                        
+                        <div class="fila-formulario tres-columnas">
+                            <div class="grupo-input">
+                                <label>Nombre completo</label>
+                                <!-- PHP: Pre-llenar value="<?php echo $usuario['nombre']; ?>" si el usuario tiene sesión activa -->
+                                <input type="text" name="contacto_nombre" value="Laura García">
+                            </div>
+                            <div class="grupo-input">
+                                <label>Teléfono</label>
+                                <!-- PHP: Pre-llenar con el teléfono registrado del usuario si aplica -->
+                                <input type="tel" name="contacto_telefono" value="300 123 4567">
+                            </div>
+                            <div class="grupo-input">
+                                <label>Correo electrónico</label>
+                                <!-- PHP: Pre-llenar con el correo del usuario -->
+                                <input type="email" name="contacto_email" value="laura.garcia@email.com">
+                            </div>
+                        </div>
+
+                        <div class="caja-terminos">
+                            <input type="checkbox" name="terminos" id="terminos" required checked>
+                            <label for="terminos">Acepto los <a href="#">términos</a> y autorizo el tratamiento de mis datos personales.</label>
+                        </div>
+
+                        <div class="botones-formulario">
+                            <button type="button" class="btn-cancelar">Cancelar</button>
+                            <button type="submit" class="btn-enviar"><i class="fa-solid fa-paper-plane"></i> Enviar reporte</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="columna-consejos">
+                
+                <div class="tarjeta-consejos">
+                    <div class="titulo-consejos">
+                        <i class="fa-regular fa-lightbulb icono-bombillo"></i>
+                        <h3>Consejos para un buen reporte</h3>
+                    </div>
+                    
+                    <ul class="lista-consejos">
+                        <li>
+                            <div class="icono-lista">
+                                <i class="fa-regular fa-id-card"></i>
+                            </div>
+                            <div>
+                                <strong>Información precisa</strong>
+                                <p>Brinda la mayor cantidad de detalles posible sobre la mascota y el lugar.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icono-lista">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <div>
+                                <strong>Fotos claras</strong>
+                                <p>Las fotos ayudan mucho. Asegúrate de que se vea bien su rostro y cuerpo.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icono-lista">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <strong>Revisa tu información</strong>
+                                <p>Verifica que tu número de contacto esté correcto para poder comunicarnos.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icono-lista">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <div>
+                                <strong>Comparte el reporte</strong>
+                                <p>Puedes compartir el reporte en redes sociales para llegar a más personas.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tarjeta-ayuda">
+                    <i class="fa-regular fa-heart icono-corazon"></i>
+                    <div>
+                        <h3>Tu ayuda hace la diferencia</h3>
+                        <p>Miles de mascotas logran volver a casa gracias a personas como tú.</p>
+                        <strong>¡Gracias por ser su voz!</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- PHP: Incluir footer dinámico con include('footer.php'); -->
+
+</body>
+</html>

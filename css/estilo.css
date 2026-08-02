@@ -2,14 +2,21 @@
 
 * {
     font-family: 'Rancho', cursive;
-  box-sizing: border-box; 
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: #f3effe; 
+    background-color: #F9F6FC;
     color: #4a4a4a;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
 header {
@@ -17,116 +24,96 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 95px;
+    background-color: #ffffff;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 0 60px;
 }
+
 .contenedor-logo {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    height: 90%;
-    margin-left: 60px;
+    gap: 20px;
 }
+
 .contenedor-logo .icono-logo {
-    font-size: 2.8rem;
-    color: #fff;
-    height: 80%;
-    width: 65px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    height: 60px;
+    width: 60px;
     border-radius: 20px;
-    background: #7B42B6;
+    background-color: #7B42B6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.contenedor-logo .icono-logo i {
-    padding-top: 10px;
-    padding-left: 9px;
-}
-.contenedor-logo .texto-logo {
-    margin-left: 20px;
-}
+
 .contenedor-logo .texto-logo h1 {
     font-size: 3rem;
-    padding: 0;
+    line-height: 1;
 }
-.contenedor-logo .texto-logo .texto-titulo-1 {
-    color: #000000;
+
+.texto-titulo-1 { 
+    color: #000000; 
 }
-.contenedor-logo .texto-logo .texto-titulo-2 {
-    color: #8645cc;
+
+.texto-titulo-2 { 
+    color: #7B42B6; 
 }
-.contenedor-logo .texto-logo .slogan-banner {
+
+.slogan-banner {
     font-size: 1.3rem;
 }
-.contenedor-logo .texto-logo .slogan-banner i{
-    font-size: 0.89rem;
-    color: #cea0ff;
+
+.slogan-banner i {
+    font-size: 0.9rem;
+    color: #A472D5;
 }
 
-.links-navegacion ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    gap: 60px;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.links-navegacion a {
-    text-decoration: none;
-    color: #333;
-    height: 100%;
-    font-size: 2rem;
-}
-.links-navegacion li:hover{
-    border-bottom: 2px solid #8E52D3;
-    
-}
-.links-navegacion a:hover {
-    color: #8E52D3;
- }
 .accion-navegacion {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 15%;
-    margin-right: 60px;
- }
- .accion-navegacion .boton-secundario {
-    border: 2px solid #cea0ff;
+    gap: 15px;
+}
+
+.boton-secundario {
+    border: 2px solid #B996E5;
     border-radius: 15px;
     text-align: center;
-    width: 130px;
-    padding: 10px;
-    color: #8645cc;
+    padding: 8px 20px;
+    color: #7B42B6;
     text-decoration: none;
     font-size: 1.3rem;
- }
-.accion-navegacion .boton-secundario-reg {
+    transition: all 0.2s ease;
+}
+
+.boton-secundario-reg {
     border-radius: 15px;
     text-align: center;
-    width: 130px;
-    padding: 10px;
-    color: #fff;
+    padding: 8px 20px;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 10px; 
-    background: #8645cc;
-    border: 2px solid #8645cc;
+    font-size: 1.3rem;
+    background-color: #7B42B6;
+    border: 2px solid #7B42B6;
+    transition: all 0.2s ease;
 }
-.accion-navegacion .boton-secundario:hover {
-    background: #6d24ba;
-    color: #fff;
-    border: none;
+
+.boton-secundario:hover {
+    background-color: #8E52D3;
+    color: #ffffff;
+    border-color: #8E52D3;
 }
-.accion-navegacion .boton-secundario-reg:hover {
-    background: #6d24ba;
+
+.boton-secundario-reg:hover {
+    background-color: #8E52D3;
+    border-color: #8E52D3;
 }
 
 .contenedor {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 0 15px;
+    padding: 0 40px;
 }
 
 .boton-volver {
@@ -149,16 +136,17 @@ header {
 }
 
 .caja-blanca {
+    margin-top: 10px;
     background: #ffffff;
     border-radius: 12px;
     padding: 20px;
-    border: 1px solid #e2d9f3;
+    border: 1px solid #D1C3F7; 
 }
 
-/* Galeria */
 .foto-principal {
+    margin-top: 10px;
     position: relative;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
     height: 300px;
 }
@@ -167,14 +155,15 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 .etiqueta-estado {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #8c7ae6;
-    color: white;
+    background-color: #7B42B6;
+    color: #ffffff;
     padding: 4px 12px;
     border-radius: 12px;
     font-size: 16px;
@@ -184,13 +173,38 @@ header {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: white;
+    background: #ffffff;
     border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     cursor: pointer;
     font-size: 30px;
+}
+
+.boton-izquierda, .boton-derecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.boton-izquierda:hover, .boton-derecha:hover {
+    background: #B996E5;
+}
+
+.boton-izquierda {
+    left: 10px; 
+}
+
+.boton-derecha {
+    right: 10px; 
 }
 
 .miniaturas {
@@ -207,15 +221,20 @@ header {
 }
 
 .thumb-mas {
-    background: #c8b6ff;
-    color: white;
+    width: 23%;
+    height: 90px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    font-size: 22px;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }
 
-/* Salud / Info adicional */
 .info-salud h3 {
     font-size: 20px;
     margin-bottom: 15px;
@@ -229,35 +248,34 @@ header {
 
 .item-salud {
     width: 47%;
-    background-color: #f8f6fe;
-    padding: 8px 10px;
+    background-color: #D1C3F7; 
     border-radius: 8px;
     font-size: 18px;
+    padding: 10px;
 }
 
 .item-salud span {
     display: block;
-    color: #777;
+    color: #666666;
 }
 
 .item-salud strong {
-    color: #6c5ce7;
+    color: #7B42B6; 
 }
 
-/* Detalles columna derecha */
 .encabezado-perro {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.encabezado-perro p{
+.encabezado-perro p {
     font-size: 20px;
 }
 
 .check-verificado {
-    background: #6c5ce7;
-    color: white;
+    background: #8E52D3; 
+    color: #ffffff;
     border-radius: 50%;
     font-size: 18px;
     padding: 2px 5px;
@@ -270,16 +288,22 @@ header {
 }
 
 .caja-dato {
-    background: #f1ebfc;
+    background: #D1C3F7; 
     padding: 10px;
     border-radius: 8px;
     width: 25%;
 }
 
 .caja-dato small {
-    color: #888;
+    color: #666666;
     display: block;
     font-size: 18px;
+}
+
+.caja-dato i {
+    color: #8E52D3;
+    width: 20px;
+    height: 20px;
 }
 
 .seccion-descripcion {
@@ -295,9 +319,9 @@ header {
 }
 
 .btn-ver-mas {
-    background: #f1ebfc;
+    background: #D1C3F7;
     border: none;
-    color: #6c5ce7;
+    color: #7B42B6;
     padding: 4px 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -306,7 +330,7 @@ header {
 
 .caja-morada-clara {
     width: 45%;
-    background-color: #f1ebfc;
+    background-color: #D1C3F7;
     padding: 15px;
     border-radius: 10px;
     font-size: 18px;
@@ -314,7 +338,7 @@ header {
 }
 
 .caja-morada-clara h4 {
-    color: #6c5ce7;
+    color: #7B42B6;
     margin-bottom: 8px;
 }
 
@@ -326,9 +350,8 @@ header {
     margin-bottom: 4px;
 }
 
-/* Caja de adopcion */
 .caja-adopcion {
-    background-color: #f1ebfc;
+    background-color: #D1C3F7; 
     text-align: center;
     padding: 20px;
     border-radius: 10px;
@@ -341,7 +364,7 @@ header {
 
 .caja-adopcion p {
     font-size: 18px;
-    color: #666;
+    color: #666666;
     margin-bottom: 15px;
 }
 
@@ -351,23 +374,36 @@ header {
     gap: 8px;
 }
 
-.boton-morado{
-    background-color: #6c5ce7;
-    height: 30px;
+.boton-morado {
+    background-color: #7B42B6; 
+    height: 35px;
     border-radius: 10px;
-    color:white;
+    color: #ffffff;
     font-size: 20px;
+    border: none;
+    cursor: pointer;
 }
 
-.boton-borde{
-    background-color: #ffffff ;
-    border: 2px solid #6c5ce7;
+.boton-borde {
+    background-color: #ffffff;
+    border: 2px solid #7B42B6;
     border-radius: 10px;
-    color: #6c5ce7;
-    height: 30px;
+    color: #7B42B6;
+    height: 35px;
     font-size: 20px;
+    cursor: pointer;
 }
-/* Cards recomendadas */
+
+.boton-morado:hover {
+    background-color: #8E52D3; 
+}
+
+.boton-borde:hover {
+    background-color: #8E52D3; 
+    color: #ffffff;
+    border-color: #8E52D3;
+}
+
 .recomendados {
     margin-top: 30px;
 }
@@ -377,74 +413,7 @@ header {
     margin-bottom: 15px;
 }
 
-.rejilla-tarjetas {
-    display: flex;
-    gap: 15px;
-}
-
-.tarjeta {
-    width: 25%;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e2d9f3;
-}
-
-.foto-tarjeta {
-    position: relative;
-    height: 120px;
-}
-
-.foto-tarjeta img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.tipo-mascota {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    background: #6c5ce7;
-    color: white;
-    font-size: 18px;
-    padding: 2px 8px;
-    border-radius: 8px;
-}
-
-.boton-favorito-sm {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-}
-
-.cuerpo-tarjeta {
-    padding: 10px;
-}
-
-.cuerpo-tarjeta h3 {
-    font-size: 20px;
-}
-
-.ubicacion {
-    font-size: 18px;
-    color: #777;
-    margin: 4px 0;
-}
-
-.tags-tarjeta {
-    display: flex;
-    gap: 10px;
-    font-size: 18px;
-    color: #888;
-}
-.huella{
+.huella {
     border-radius: 20px;
     width: 300px;
     height: 30px;
@@ -452,18 +421,18 @@ header {
     margin-bottom: 15px;
 }
 
-.huella i{
+.huella i {
     margin: auto;
-    color:white;
+    color: #ffffff;
     margin-left: 5px;
     margin-top: 5px;
 }
 
-.icono{
-    background-color: #6c5ce7;
+.icono {
+    background-color: #8E52D3; 
     width: 30px;
     height: 30px;
     border-radius: 20px;
-    margin-right:6px;
+    margin-right: 6px;
     margin-bottom: 6px;
 }

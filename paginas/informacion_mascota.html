@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>informacion mascota</title>
-<link rel="stylesheet" href="../css/estilo.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonPet - Reportar Mascota</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-<header>
-      <div class="contenedor-logo">
-        <div class="icono-logo">
-          <i class="fa-solid fa-paw"></i>
+    <header>
+        <div class="contenedor-logo">
+            <div class="icono-logo">
+                <i class="fa-solid fa-paw"></i>
+            </div>
+            <div class="texto-logo">
+                <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+                <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+            </div>
         </div>
-        <div class="texto-logo">
-         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+        <div class="accion-navegacion">
+            <a href="#" class="boton-secundario"><-Volver</a>
         </div>
-      </div>
     </header>
-    <main class="contenedor">
-    <div class="boton-volver">
-        <a href="#" class="boton-borde">← Volver</a>
-    </div>
 
-    <!-- columna izquierda y derecha del perro -->
+    <div class="contenedor">
     <div class="seccion-principal">
         
         <!-- columna izquierda: fotos e info adicional -->
@@ -34,6 +35,8 @@
                     <button class="boton-favorito">♡</button>
                     <!-- php: foto principal -->
                     <img src="../img/principal.jpg" alt="Coffe">
+                    <button class="boton-izquierda"><</button>
+                    <button class="boton-derecha">></button>
                 </div>
                 
                 <div class="miniaturas">
@@ -41,7 +44,8 @@
                     <img src="../img/2.png" class="activa">
                     <img src="../img/3.jpg" alt="thumb">
                     <img src="../img/5.jpg" alt="thumb">
-                    <div class="thumb-mas">+3</div>
+                    <div class="thumb-mas" style="background-image: linear-gradient(rgba(123, 66, 182, 0.65), rgba(123, 66, 182, 0.65)), url('../img/4.jpg');">+3
+                    </div>
                 </div>
             </div>
 
@@ -104,21 +108,25 @@
                 <div class="rejilla-datos">
                     <div class="caja-dato">
                         <small>Raza</small>
+                        <i class="fa-solid fa-paw"></i>
                         <!-- php: raza -->
                         <strong>Salchicha</strong>
                     </div>
                     <div class="caja-dato">
                         <small>Tamaño</small>
+                        <i class="fa-solid fa-ruler"></i>
                         <!-- php: tamano / peso -->
                         <strong>Pequeño (15-20kg)</strong>
                     </div>
                     <div class="caja-dato">
                         <small>Edad</small>
+                        <i class="fa-solid fa-calendar"></i>
                         <!-- php: edad -->
                         <strong>3 meses (10/04/26)</strong>
                     </div>
                     <div class="caja-dato">
                         <small>Ubicación</small>
+                        <i class="fa-solid fa-map-marker-alt"></i>
                         <!-- php: ciudad -->
                         <strong>Bogotá, Cundinamarca</strong>
                     </div>
@@ -130,7 +138,6 @@
                         <h3>Descripción</h3>
                         <!-- php: descripcion de la bd -->
                         <p>Coffe es un buscador de mimos cariñoso, un dormilón profesional que ama las siestas largas y un compañero alegre que menea la colita al verte. Es curioso pero tranquilo, disfruta los paseos cortos y busca un hogar amoroso...</p>
-                        <button class="btn-ver-mas">Ver más ⌃</button>
                     </div>
 
                     <div class="caja-morada-clara">
@@ -156,10 +163,8 @@
                         <a href="#" class="boton-borde">Tengo dudas</a>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 
     <!-- seccion recomendaciones abajo -->
@@ -168,76 +173,8 @@
             <div class="icono"><i class="fa-solid fa-paw"></i></div>
             <h2>Otras mascotas que te pueden interesar</h2>
         </div>
-        
-        
-        <div class="rejilla-tarjetas">
-            
-            <!-- php: foreach otras mascotas -->
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Gato</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/gato1.jpg" alt="Nube">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Nube</h3>
-                    <p class="ubicacion">Medellin, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>2 meses</span>
-                        <span>Pequeño</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Perro</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/perrito1.jpg" alt="Brisa">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Brisa</h3>
-                    <p class="ubicacion">Cali, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>2 años</span>
-                        <span>Grande</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Gato</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/gato3.jpg" alt="Oreo">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Oreo</h3>
-                    <p class="ubicacion">Barranquilla, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>2 años</span>
-                        <span>Mediano</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Perro</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/canela.jpg" alt="Canela">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Canela</h3>
-                    <p class="ubicacion">Bogotá, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>1 año</span>
-                        <span>Mediano</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
+    </div>
 
 </main>
 </body>
