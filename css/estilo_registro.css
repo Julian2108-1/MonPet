@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rancho', cursive;
+    overflow: hidden;
 }
 
 body{
@@ -110,12 +111,14 @@ body{
 CONTENIDO PRINCIPAL
 ---------------------*/
 .contenido-registro{
-    width: 95%;
-    margin: 35px auto;
+    width: 100%;
+    margin: 35px 0px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
+    height: auto;
+    border: 2px solid green;
 }
 /*----------------
 CONTENIDO IZQUIERDO
@@ -123,8 +126,9 @@ CONTENIDO IZQUIERDO
 .panel-bienvenida{
     width: 45%;
     position: relative;
-    min-height: 880px;
+    height: 100%;
     overflow: hidden;
+    border: 2px solid green;
 }
 .etiqueta-comunidad{
     display: inline-block;
@@ -178,17 +182,6 @@ ILUSTRACIÓN
     left:75px;
     bottom:230px;
     z-index:3;
-}
-/*---------------------
-HUELLAS DECORATIVAS
-----------------------*/
-.panel-bienvenida::before{
-    content:"🐾";
-    position:absolute;
-    top:35px;
-    right:90px;
-    font-size:38px;
-    opacity:.12;
 }
 /*-----------------------
 TARJETA ESTADÍSTICAS
