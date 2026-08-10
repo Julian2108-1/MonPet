@@ -510,13 +510,14 @@ FORMULARIO
     margin-bottom: 55px;
 }
 .formulario-solicitud-adopcion legend {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #7B42B6;
+    font-size: 2.7rem;
+    font-weight: 600;
+    color: #46147b;
     margin-bottom: 6px;
 }
 .formulario-solicitud-adopcion legend i {
     margin-right: 8px;
+    color: #7B42B6;
 }
 .formulario-solicitud-adopcion fieldset>p {
     color: #777;
@@ -550,7 +551,7 @@ label span {
     left: 30px;
     top: 50%;
     transform: translateY(-50%);
-    color: #a855f7;
+    color: #43196a;
     font-size: 2.2rem;
 }
 input,
@@ -649,7 +650,7 @@ textarea {
     border-radius: 12px;
     padding: 18px 25px;
     position: absolute;
-    top: 2470px;
+    top: 2520px;
 }
 .mensaje-confidencialidad-datos p {
     flex: 1;
