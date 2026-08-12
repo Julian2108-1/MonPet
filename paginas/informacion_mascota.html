@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información de mascota | MonPet</title>
+
     <link rel="stylesheet" href="../css/estilo_informacion_mascota.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
@@ -12,17 +13,43 @@
           referrerpolicy="no-referrer">
 </head>
 <body>
+    <header class="barra-superior">
+        <div class="contenedor-barra">
+            <a href="index.html" class="contenedor-logo">
+                <div class="icono-logo">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+
+                <div class="texto-logo">
+                    <h1>
+                        <span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span>
+                    </h1>
+
+                    <p class="slogan-banner">
+                        Amor que cambia vidas
+                        <i class="fa-solid fa-heart"></i>
+                    </p>
+                </div>
+            </a>
+
+    </header>
+
 
     <main class="contenedor">
         <section class="encabezado-pagina">
+
             <nav class="migas-pan" aria-label="Migas de pan">
                 <a href="index.html">
                     <i class="fa-solid fa-house"></i>
                     Inicio
                 </a>
+
                 <i class="fa-solid fa-chevron-right separador-miga"></i>
+
                 <a href="catalogo_mascotas.html">Adopción</a>
+
                 <i class="fa-solid fa-chevron-right separador-miga"></i>
+
                 <span>Información de mascota</span>
             </nav>
 
@@ -31,51 +58,8 @@
                     <i class="fa-solid fa-arrow-left"></i>
                     Volver a la lista
                 </a>
-    <title>MonPet - Reportar Mascota</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-<body>
-    <header>
-        <div class="contenedor-logo">
-            <div class="icono-logo">
-                <i class="fa-solid fa-paw"></i>
             </div>
-            <div class="texto-logo">
-                <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-                <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
-            </div>
-        </div>
-        <div class="accion-navegacion">
-            <a href="#" class="boton-secundario"><-Volver</a>
-        </div>
-    </header>
 
-    <div class="contenedor">
-    <div class="seccion-principal">
-        
-        <!-- columna izquierda: fotos e info adicional -->
-        <div class="columna-izq">
-            
-            <div class="galeria">
-                <div class="foto-principal">
-                    <span class="etiqueta-estado">Disponible</span>
-                    <button class="boton-favorito">♡</button>
-                    <!-- php: foto principal -->
-                    <img src="../img/principal.jpg" alt="Coffe">
-                    <button class="boton-izquierda"><</button>
-                    <button class="boton-derecha">></button>
-                </div>
-                
-                <div class="miniaturas">
-                    <!-- php:  galeria -->
-                    <img src="../img/2.png" class="activa">
-                    <img src="../img/3.jpg" alt="thumb">
-                    <img src="../img/5.jpg" alt="thumb">
-                    <div class="thumb-mas" style="background-image: linear-gradient(rgba(123, 66, 182, 0.65), rgba(123, 66, 182, 0.65)), url('../img/4.jpg');">+3
-                    </div>
-                </div>
-            </div>
         </section>
 
         <section class="seccion-principal">
@@ -140,48 +124,10 @@
                     </div>
                 </div>
 
-
-                <!-- =================================================
-                     INFORMACIÓN ADICIONAL / SALUD
-                ================================================== -->
                 <div class="caja-blanca info-salud">
 
                     <div class="titulo-seccion-caja">
                         <h3>Información adicional</h3>
-                <!-- datos rapidos -->
-                <div class="rejilla-datos">
-                    <div class="caja-dato">
-                        <small>Raza</small>
-                        <i class="fa-solid fa-paw"></i>
-                        <!-- php: raza -->
-                        <strong>Salchicha</strong>
-                    </div>
-                    <div class="caja-dato">
-                        <small>Tamaño</small>
-                        <i class="fa-solid fa-ruler"></i>
-                        <!-- php: tamano / peso -->
-                        <strong>Pequeño (15-20kg)</strong>
-                    </div>
-                    <div class="caja-dato">
-                        <small>Edad</small>
-                        <i class="fa-solid fa-calendar"></i>
-                        <!-- php: edad -->
-                        <strong>3 meses (10/04/26)</strong>
-                    </div>
-                    <div class="caja-dato">
-                        <small>Ubicación</small>
-                        <i class="fa-solid fa-map-marker-alt"></i>
-                        <!-- php: ciudad -->
-                        <strong>Bogotá, Cundinamarca</strong>
-                    </div>
-                </div>
-
-                <!-- descripcion y porque adoptar -->
-                <div class="seccion-descripcion">
-                    <div class="texto-desc">
-                        <h3>Descripción</h3>
-                        <!-- php: descripcion de la bd -->
-                        <p>Coffe es un buscador de mimos cariñoso, un dormilón profesional que ama las siestas largas y un compañero alegre que menea la colita al verte. Es curioso pero tranquilo, disfruta los paseos cortos y busca un hogar amoroso...</p>
                     </div>
 
                     <!-- PHP: evaluar Sí/No desde BD -->
@@ -269,12 +215,10 @@
 
                     </div>
                 </div>
+
             </div>
 
 
-            <!-- =================================================
-                 COLUMNA DERECHA
-            ================================================== -->
             <div class="columna-der">
 
                 <div class="caja-blanca detalles-perro">
@@ -320,9 +264,7 @@
                     </div>
 
 
-                    <!-- =================================================
-                         DATOS RÁPIDOS
-                    ================================================== -->
+                    
                     <div class="rejilla-datos">
 
                         <div class="caja-dato">
@@ -379,7 +321,9 @@
                          DESCRIPCIÓN + POR QUÉ ADOPTAR
                     ================================================== -->
                     <div class="seccion-descripcion">
+
                         <div class="texto-desc">
+
                             <div class="titulo-con-icono">
                                 <h3>Descripción</h3>
                             </div>
@@ -391,6 +335,7 @@
                                 colita al verte. Es curioso pero tranquilo, disfruta los paseos
                                 cortos y busca un hogar amoroso...
                             </p>
+
 
                         </div>
 
@@ -434,13 +379,7 @@
 
                     </div>
 
-
-                    <!-- =================================================
-                         CTA DE ADOPCIÓN
-                    ================================================== -->
                     <div class="caja-adopcion">
-
-                        <i class="fa-solid fa-paw huella-decorativa" aria-hidden="true"></i>
 
                         <h2>¿Listo para cambiar su vida?</h2>
 
@@ -476,10 +415,6 @@
 
         </section>
 
-
-        <!-- =====================================================
-             OTRAS MASCOTAS
-        ====================================================== -->
         <section class="recomendados">
 
             <div class="encabezado-recomendados">
@@ -683,17 +618,6 @@
         </section>
 
     </main>
-        </div>
-    </div>
-
-    <!-- seccion recomendaciones abajo -->
-    <section class="recomendados">
-        <div class="huella">
-            <div class="icono"><i class="fa-solid fa-paw"></i></div>
-            <h2>Otras mascotas que te pueden interesar</h2>
-        </div>
-    </section>
-    </div>
 
 </body>
 </html>
