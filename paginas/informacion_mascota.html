@@ -1,244 +1,611 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>informacion mascota</title>
-<link rel="stylesheet" href="../css/estilo.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de mascota | MonPet</title>
+    <link rel="stylesheet" href="../css/estilo_informacion_mascota.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+          integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
 </head>
 <body>
-<header>
-      <div class="contenedor-logo">
-        <div class="icono-logo">
-          <i class="fa-solid fa-paw"></i>
-        </div>
-        <div class="texto-logo">
-         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
-        </div>
-      </div>
-    </header>
+
     <main class="contenedor">
-    <div class="boton-volver">
-        <a href="#" class="boton-borde">← Volver</a>
-    </div>
+        <section class="encabezado-pagina">
+            <nav class="migas-pan" aria-label="Migas de pan">
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Inicio
+                </a>
+                <i class="fa-solid fa-chevron-right separador-miga"></i>
+                <a href="catalogo_mascotas.html">Adopción</a>
+                <i class="fa-solid fa-chevron-right separador-miga"></i>
+                <span>Información de mascota</span>
+            </nav>
 
-    <!-- columna izquierda y derecha del perro -->
-    <div class="seccion-principal">
-        
-        <!-- columna izquierda: fotos e info adicional -->
-        <div class="columna-izq">
-            
-            <div class="galeria">
-                <div class="foto-principal">
-                    <span class="etiqueta-estado">Disponible</span>
-                    <button class="boton-favorito">♡</button>
-                    <!-- php: foto principal -->
-                    <img src="../img/principal.jpg" alt="Coffe">
+            <div class="boton-volver">
+                <a href="catalogo_mascotas.html" class="boton-borde">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Volver a la lista
+                </a>
+            </div>
+        </section>
+
+        <section class="seccion-principal">
+            <div class="columna-izq">
+
+                <!-- GALERÍA -->
+                <div class="galeria">
+
+                    <div class="foto-principal">
+
+                        <span class="etiqueta-estado">
+                            <i class="fa-solid fa-circle"></i>
+                            Disponible
+                        </span>
+
+                        <button class="boton-favorito"
+                                type="button"
+                                aria-label="Agregar mascota a favoritos">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                        <!-- PHP: foto principal -->
+                        <img src="../img/principal.jpg" alt="Coffe">
+
+                        <!-- Controles de galería -->
+                        <button class="boton-galeria boton-galeria-anterior"
+                                type="button"
+                                aria-label="Foto anterior">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="boton-galeria boton-galeria-siguiente"
+                                type="button"
+                                aria-label="Foto siguiente">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="miniaturas">
+
+                        <!-- PHP: galería de imágenes -->
+                        <button class="miniatura activa" type="button">
+                            <img src="../img/2.png" alt="Coffe - foto 1">
+                        </button>
+
+                        <button class="miniatura" type="button">
+                            <img src="../img/3.jpg" alt="Coffe - foto 2">
+                        </button>
+
+                        <button class="miniatura" type="button">
+                            <img src="../img/5.jpg" alt="Coffe - foto 3">
+                        </button>
+
+                        <button class="miniatura" type="button">
+                            <img src="../img/principal.jpg" alt="Coffe - foto 4">
+                        </button>
+
+                        <button class="thumb-mas" type="button">
+                            <i class="fa-regular fa-images"></i>
+                            <span>+3</span>
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="miniaturas">
-                    <!-- php:  galeria -->
-                    <img src="../img/2.png" class="activa">
-                    <img src="../img/3.jpg" alt="thumb">
-                    <img src="../img/5.jpg" alt="thumb">
-                    <div class="thumb-mas">+3</div>
+
+
+                <!-- =================================================
+                     INFORMACIÓN ADICIONAL / SALUD
+                ================================================== -->
+                <div class="caja-blanca info-salud">
+
+                    <div class="titulo-seccion-caja">
+                        <h3>Información adicional</h3>
+                    </div>
+
+                    <!-- PHP: evaluar Sí/No desde BD -->
+                    <div class="rejilla-salud">
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-scissors"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Esterilizado(a)</span>
+                                <strong>Sí</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-syringe"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Vacunas al día</span>
+                                <strong>Sí</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Desparasitado(a)</span>
+                                <strong>Sí</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-child"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Convive con niños</span>
+                                <strong>Sí</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-dog"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Convive con perros</span>
+                                <strong>Sí</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-cat"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Convive con gatos</span>
+                                <strong>No</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-person-running"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Nivel de actividad</span>
+                                <strong>Moderado</strong>
+                            </div>
+                        </div>
+
+                        <div class="item-salud">
+                            <div class="icono-item-salud">
+                                <i class="fa-solid fa-face-smile"></i>
+                            </div>
+                            <div class="contenido-item-salud">
+                                <span>Carácter</span>
+                                <strong>Cariñoso y tranquilo</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 COLUMNA DERECHA
+            ================================================== -->
+            <div class="columna-der">
+
+                <div class="caja-blanca detalles-perro">
+
+                    <!-- Encabezado mascota -->
+                    <div class="encabezado-perro">
+
+                        <div class="identidad-mascota">
+
+                            <!-- PHP: nombre -->
+                            <h1>
+                                Coffe
+                                <span class="check-verificado" aria-label="Mascota verificada">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+                            </h1>
+
+                            <!-- PHP: género, edad, tamaño -->
+                            <div class="subtitulo">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Macho
+                                </span>
+                                <span class="separador-dato">•</span>
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    3 meses
+                                </span>
+                                <span class="separador-dato">•</span>
+                                <span>
+                                    <i class="fa-solid fa-ruler-vertical"></i>
+                                    Pequeño
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <button class="btn-compartir" type="button">
+                            <i class="fa-solid fa-share-nodes"></i>
+                            Compartir
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         DATOS RÁPIDOS
+                    ================================================== -->
+                    <div class="rejilla-datos">
+
+                        <div class="caja-dato">
+                            <div class="icono-dato">
+                                <i class="fa-solid fa-paw"></i>
+                            </div>
+                            <div class="contenido-dato">
+                                <small>Raza</small>
+                                <!-- PHP: raza -->
+                                <strong>Salchicha</strong>
+                            </div>
+                        </div>
+
+                        <div class="caja-dato">
+                            <div class="icono-dato">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                            </div>
+                            <div class="contenido-dato">
+                                <small>Tamaño</small>
+                                <!-- PHP: tamaño / peso -->
+                                <strong>Pequeño</strong>
+                                <span>15 - 20 kg</span>
+                            </div>
+                        </div>
+
+                        <div class="caja-dato">
+                            <div class="icono-dato">
+                                <i class="fa-regular fa-calendar"></i>
+                            </div>
+                            <div class="contenido-dato">
+                                <small>Edad</small>
+                                <!-- PHP: edad -->
+                                <strong>3 meses</strong>
+                                <span>(10/04/26)</span>
+                            </div>
+                        </div>
+
+                        <div class="caja-dato">
+                            <div class="icono-dato">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contenido-dato">
+                                <small>Ubicación</small>
+                                <!-- PHP: ciudad -->
+                                <strong>Bogotá,</strong>
+                                <span>Cundinamarca</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         DESCRIPCIÓN + POR QUÉ ADOPTAR
+                    ================================================== -->
+                    <div class="seccion-descripcion">
+                        <div class="texto-desc">
+                            <div class="titulo-con-icono">
+                                <h3>Descripción</h3>
+                            </div>
+
+                            <!-- PHP: descripción de la BD -->
+                            <p>
+                                Coffe es un buscador de mimos cariñoso, un dormilón profesional
+                                que ama las siestas largas y un compañero alegre que menea la
+                                colita al verte. Es curioso pero tranquilo, disfruta los paseos
+                                cortos y busca un hogar amoroso...
+                            </p>
+
+                        </div>
+
+
+                        <!-- Caja morada clara -->
+                        <aside class="caja-morada-clara">
+
+                            <h4>
+                                <i class="fa-regular fa-heart"></i>
+                                ¿Por qué adoptar a Coffe?
+                            </h4>
+
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Es muy cariñoso y obediente</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Convive bien con niños y perros</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Está esterilizado y vacunado</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Merece una segunda oportunidad</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Dará amor incondicional</span>
+                                </li>
+                            </ul>
+
+                        </aside>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         CTA DE ADOPCIÓN
+                    ================================================== -->
+                    <div class="caja-adopcion">
+
+                        <i class="fa-solid fa-paw huella-decorativa" aria-hidden="true"></i>
+
+                        <h2>¿Listo para cambiar su vida?</h2>
+
+                        <p>
+                            Coffe está esperando a su familia ideal. Completa el formulario
+                            de adopción y nuestro equipo se pondrá en contacto contigo.
+                        </p>
+
+                        <div class="botones-adopcion">
+
+                            <!-- PHP: id por URL -->
+                            <a href="#" class="boton-morado">
+                                <i class="fa-solid fa-user-plus"></i>
+                                Solicitar adopción
+                            </a>
+
+                            <a href="#" class="boton-borde">
+                                <i class="fa-regular fa-comment"></i>
+                                Tengo dudas
+                            </a>
+
+                        </div>
+
+                        <div class="mensaje-seguridad">
+                            <i class="fa-solid fa-shield-heart"></i>
+                            <span>Proceso 100% seguro y responsable</span>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
 
-            <div class="caja-blanca info-salud">
-                <h3>Información adicional</h3>
-                
-                <!-- php: evaluar si/no desde bd -->
-                <div class="rejilla-salud">
-                    <div class="item-salud">
-                        <span>Esterilizado(a)</span>
-                        <strong>Sí</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Vacunas al día?</span>
-                        <strong>Sí</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Desparacitado(a)</span>
-                        <strong>Sí</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Convive con niños?</span>
-                        <strong>Sí</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Convive con perros?</span>
-                        <strong>Sí</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Convive con gatos?</span>
-                        <strong>No</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Nivel de actividad</span>
-                        <strong>Moderado</strong>
-                    </div>
-                    <div class="item-salud">
-                        <span>Carácter</span>
-                        <strong>Cariñoso y tranquilo</strong>
-                    </div>
-                </div>
-            </div>
+        </section>
 
-        </div>
 
-        <!-- columna derecha: detalles y adopcion -->
-        <div class="columna-der">
-            <div class="caja-blanca detalles-perro">
-                
-                <div class="encabezado-perro">
-                    <div>
-                        <!-- php: nombre, genero, edad -->
-                        <h1>Coffe <span class="check-verificado">✓</span></h1>
-                        <p class="subtitulo">Macho • 3 meses • Pequeño</p>
+        <!-- =====================================================
+             OTRAS MASCOTAS
+        ====================================================== -->
+        <section class="recomendados">
+
+            <div class="encabezado-recomendados">
+
+                <div class="huella">
+                    <div class="icono">
+                        <i class="fa-regular fa-heart"></i>
                     </div>
-                    <button class="btn-compartir">Compartir</button>
+
+                    <h2>Otras mascotas que te pueden interesar</h2>
                 </div>
 
-                <!-- datos rapidos -->
-                <div class="rejilla-datos">
-                    <div class="caja-dato">
-                        <small>Raza</small>
-                        <!-- php: raza -->
-                        <strong>Salchicha</strong>
-                    </div>
-                    <div class="caja-dato">
-                        <small>Tamaño</small>
-                        <!-- php: tamano / peso -->
-                        <strong>Pequeño (15-20kg)</strong>
-                    </div>
-                    <div class="caja-dato">
-                        <small>Edad</small>
-                        <!-- php: edad -->
-                        <strong>3 meses (10/04/26)</strong>
-                    </div>
-                    <div class="caja-dato">
-                        <small>Ubicación</small>
-                        <!-- php: ciudad -->
-                        <strong>Bogotá, Cundinamarca</strong>
-                    </div>
-                </div>
-
-                <!-- descripcion y porque adoptar -->
-                <div class="seccion-descripcion">
-                    <div class="texto-desc">
-                        <h3>Descripción</h3>
-                        <!-- php: descripcion de la bd -->
-                        <p>Coffe es un buscador de mimos cariñoso, un dormilón profesional que ama las siestas largas y un compañero alegre que menea la colita al verte. Es curioso pero tranquilo, disfruta los paseos cortos y busca un hogar amoroso...</p>
-                        <button class="btn-ver-mas">Ver más ⌃</button>
-                    </div>
-
-                    <div class="caja-morada-clara">
-                        <h4>¿Por qué adoptar a coffe?</h4>
-                        <ul>
-                            <li>Es muy cariñoso y obediente</li>
-                            <li>Convive bien con niños y perros</li>
-                            <li>Está esterilizado y vacunado</li>
-                            <li>Mrece una segunda oportunidad</li>
-                            <li>Dará amor incondicional</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- caja solicitar adopcion -->
-                <div class="caja-adopcion">
-                    <h2>¿Listo para cambiar su vida?</h2>
-                    <p>Coffe esta esperando a su familia ideal. Completa el formulario de adopción y nuestro equipo se pondra en contacto contigo</p>
-                    
-                    <div class="botones-adopcion">
-                        <!-- php: id por url id=<?php echo $id ?> -->
-                        <a href="#" class="boton-morado">Solicitar adopción</a>
-                        <a href="#" class="boton-borde">Tengo dudas</a>
-                    </div>
-                </div>
+                <a href="catalogo_mascotas.html" class="ver-todas">
+                    Ver todas
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
 
             </div>
-        </div>
 
-    </div>
 
-    <!-- seccion recomendaciones abajo -->
-    <section class="recomendados">
-        <div class="huella">
-            <div class="icono"><i class="fa-solid fa-paw"></i></div>
-            <h2>Otras mascotas que te pueden interesar</h2>
-        </div>
-        
-        
-        <div class="rejilla-tarjetas">
-            
-            <!-- php: foreach otras mascotas -->
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Gato</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/gato1.jpg" alt="Nube">
+            <div class="contenedor-carrusel-recomendados">
+
+                <button class="flecha-recomendados flecha-izquierda"
+                        type="button"
+                        aria-label="Mascotas anteriores">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="rejilla-tarjetas">
+
+                    <!-- PHP: foreach otras mascotas -->
+
+                    <!-- TARJETA 1 -->
+                    <article class="tarjeta">
+
+                        <div class="foto-tarjeta">
+
+                            <button class="boton-favorito-sm"
+                                    type="button"
+                                    aria-label="Agregar Nube a favoritos">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+
+                            <img src="../img/gato1.jpg" alt="Nube">
+
+                        </div>
+
+                        <div class="cuerpo-tarjeta">
+
+                            <h3>Nube</h3>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-venus"></i>
+                                Hembra
+                                <span>•</span>
+                                1 año
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Medellín, Colombia
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-paw"></i>
+                                Pequeño
+                            </p>
+
+                        </div>
+                    </article>
+
+
+                    <!-- TARJETA 2 -->
+                    <article class="tarjeta">
+
+                        <div class="foto-tarjeta">
+
+                            <button class="boton-favorito-sm"
+                                    type="button"
+                                    aria-label="Agregar Brisa a favoritos">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+
+                            <img src="../img/perrito1.jpg" alt="Brisa">
+
+                        </div>
+
+                        <div class="cuerpo-tarjeta">
+
+                            <h3>Brisa</h3>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-venus"></i>
+                                Hembra
+                                <span>•</span>
+                                2 años
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Cali, Colombia
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-paw"></i>
+                                Grande
+                            </p>
+
+                        </div>
+                    </article>
+
+
+                    <!-- TARJETA 3 -->
+                    <article class="tarjeta">
+
+                        <div class="foto-tarjeta">
+
+                            <button class="boton-favorito-sm"
+                                    type="button"
+                                    aria-label="Agregar Oreo a favoritos">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+
+                            <img src="../img/gato3.jpg" alt="Oreo">
+
+                        </div>
+
+                        <div class="cuerpo-tarjeta">
+
+                            <h3>Oreo</h3>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-mars"></i>
+                                Macho
+                                <span>•</span>
+                                2 años
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Barranquilla, Colombia
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-paw"></i>
+                                Mediano
+                            </p>
+
+                        </div>
+                    </article>
+
+
+                    <!-- TARJETA 4 -->
+                    <article class="tarjeta">
+
+                        <div class="foto-tarjeta">
+
+                            <button class="boton-favorito-sm"
+                                    type="button"
+                                    aria-label="Agregar Canela a favoritos">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+
+                            <img src="../img/canela.jpg" alt="Canela">
+
+                        </div>
+
+                        <div class="cuerpo-tarjeta">
+
+                            <h3>Canela</h3>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-venus"></i>
+                                Hembra
+                                <span>•</span>
+                                1 año
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Bogotá, Colombia
+                            </p>
+
+                            <p class="dato-tarjeta">
+                                <i class="fa-solid fa-paw"></i>
+                                Mediano
+                            </p>
+
+                        </div>
+                    </article>
+
                 </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Nube</h3>
-                    <p class="ubicacion">Medellin, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>2 meses</span>
-                        <span>Pequeño</span>
-                    </div>
-                </div>
+
+                <button class="flecha-recomendados flecha-derecha"
+                        type="button"
+                        aria-label="Siguientes mascotas">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
             </div>
+        </section>
 
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Perro</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/perrito1.jpg" alt="Brisa">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Brisa</h3>
-                    <p class="ubicacion">Cali, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>2 años</span>
-                        <span>Grande</span>
-                    </div>
-                </div>
-            </div>
+    </main>
 
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Gato</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/gato3.jpg" alt="Oreo">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Oreo</h3>
-                    <p class="ubicacion">Barranquilla, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>2 años</span>
-                        <span>Mediano</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tarjeta">
-                <div class="foto-tarjeta">
-                    <span class="tipo-mascota">Perro</span>
-                    <button class="boton-favorito-sm">♡</button>
-                    <img src="../img/canela.jpg" alt="Canela">
-                </div>
-                <div class="cuerpo-tarjeta">
-                    <h3>Canela</h3>
-                    <p class="ubicacion">Bogotá, Colombia</p>
-                    <div class="tags-tarjeta">
-                        <span>1 año</span>
-                        <span>Mediano</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
 </body>
 </html>
