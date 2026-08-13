@@ -187,7 +187,7 @@ header {
    BARRA LATERAL
 ==================*/
 .barra-lateral-reportes {
-    width: 320px;
+    width: 450px;
     min-width: 320px;
     padding: 22px 0;
 }
@@ -195,25 +195,25 @@ header {
     background-color: #ffffff;
     border: 1px solid #eee9f8;
     border-radius: 18px;
-    padding: 13px 0;
     box-shadow: 0 8px 30px rgba(73, 43, 132, 0.06);
 }
 .elemento-navegacion-reportes {
     display: flex;
-    min-height: 64px;
-    padding: 0 26px;
+    min-height: 100px;
+    padding: 0 30px;
     align-items: center;
-    gap: 19px;
+    gap: 20px;
     color: #39334d;
     text-decoration: none;
-    font-size: 0.98rem;
+    font-size: 2.5rem;
     font-weight: 500;
     transition: background-color 0.2s ease,color 0.2s ease;
 }
 .elemento-navegacion-reportes i {
     width: 22px;
+    margin-right: 20px;
     text-align: center;
-    font-size: 1.05rem;
+    font-size: 1.8rem;
     color: #7040d3;
 }
 .elemento-navegacion-reportes:hover {
@@ -230,14 +230,14 @@ header {
 .contador-mensajes-reportes {
     display: flex;
     margin-left: auto;
-    min-width: 27px;
-    height: 27px;
+    min-width: 47px;
+    height: 47px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: #d9c5fb;
     color: #6430bf;
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 /* ===================
@@ -246,19 +246,20 @@ header {
 .tarjeta-ayuda-reportes {
     display: flex;
     margin-top: auto;
-    padding: 26px;
+    padding: 50px 30px 30px 30px;
     margin-top: 30px;
+    height: 250px;
     align-items: flex-start;
-    gap: 16px;
+    gap: 20px;
     background-color: #ffffff;
     border: 1px solid #eee9f8;
     border-radius: 18px;
     box-shadow: 0 8px 30px rgba(73, 43, 132, 0.05);
 }
 .icono-ayuda-reportes {
-    width: 40px;
-    height: 40px;
     display: flex;
+    width: 90px;
+    height: 90px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -267,25 +268,33 @@ header {
     flex-shrink: 0;
 }
 .icono-ayuda-reportes i {
-    font-size: 1.1rem;
+    font-size: 2.5rem;
 }
 .informacion-ayuda-reportes h3 {
-    margin-bottom: 6px;
+    margin-bottom: 18px;
     color: #30294a;
-    font-size: 0.95rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 .informacion-ayuda-reportes p {
-    margin-bottom: 13px;
+    margin-bottom: 18px;
     color: #77718c;
-    font-size: 0.76rem;
+    font-size: 1.9rem;
     line-height: 1.45rem;
 }
 .enlace-soporte-reportes {
     color: #6b35cc;
-    font-size: 0.77rem;
+    font-size: 1.8rem;
     font-weight: 600;
     text-decoration: none;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+.enlace-soporte-reportes i {
+    font-size: 1.5rem;
+}
+.enlace-soporte-reportes:hover {
+    color: #3c1585;
+    font-size: 2rem;
 }
 /* =========0=========
    CONTENIDO PRINCIPAL
@@ -298,12 +307,13 @@ header {
    MIGAS
 ===============*/
 .migas-pan-reportes {
+    margin-top: 30px;
     min-height: 32px;
     display: flex;
     align-items: center;
     gap: 13px;
-    margin-bottom: 22px;
-    font-size: 0.73rem;
+    margin-bottom: 45px;
+    font-size: 2rem;
 }
 .migas-pan-reportes a {
     display: flex;
@@ -319,7 +329,11 @@ header {
 }
 .separador-miga-reportes {
     color: #bcb7c8;
-    font-size: 0.55rem;
+    font-size: 1.3rem;
+}
+.migas-pan-reportes a:hover {
+    text-decoration: underline;
+    color: #5f31bd;
 }
 /* ==============
    ENCABEZADO
@@ -338,8 +352,8 @@ header {
 }
 .icono-titulo-reportes {
     display: flex;
-    width: 59px;
-    height: 59px;
+    width: 99px;
+    height: 99px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -348,27 +362,27 @@ header {
     box-shadow: 0 8px 16px rgba(107, 53, 204, 0.18);
 }
 .icono-titulo-reportes i {
-    font-size: 1.35rem;
+    font-size: 2.5rem;
 }
 .texto-titulo-reportes h1 {
     margin-bottom: 6px;
     color: #26213a;
-    font-size: 1.8rem;
-    line-height: 1.15rem;
+    font-size: 3rem;
+    line-height: 3rem;
     font-weight: 700;
 }
 .texto-titulo-reportes p {
     color: #77728b;
-    font-size: 0.78rem;
+    font-size: 2rem;
 }
 /* ===================
    MENSAJE INFORMATIVO
 ======================= */
 .mensaje-informativo-reportes {
     display: flex;
-    min-width: 528px;
-    min-height: 88px;
-    padding: 16px 21px;
+    min-width: 828px;
+    min-height: 108px;
+    padding: 16px 60px;
     align-items: center;
     position: relative;
     overflow: hidden;
@@ -381,9 +395,9 @@ header {
     height: 38px;
     align-items: center;
     justify-content: center;
-    margin-right: 16px;
+    margin-right: 40px;
     color: #6b36cb;
-    font-size: 1.4rem;
+    font-size: 4.5rem;
 }
 .contenido-mensaje-reportes {
     position: relative;
@@ -392,13 +406,13 @@ header {
 .contenido-mensaje-reportes h3 {
     margin-bottom: 5px;
     color: #6031ba;
-    font-size: 0.88rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 .contenido-mensaje-reportes p {
-    max-width: 496px;
+    max-width: 596px;
     color: #716b83;
-    font-size: 0.72rem;
+    font-size: 1.5rem;
     line-height: 1.35rem;
 }
 .decoracion-pata-reportes {
@@ -406,7 +420,7 @@ header {
     right: 18px;
     bottom: -7px;
     color: rgba(125, 75, 211, 0.10);
-    font-size: 3.6rem;
+    font-size: 5rem;
 }
 /* ===============
    PANEL GENERAL
@@ -423,7 +437,7 @@ header {
 ================*/
 .barra-filtros-reportes {
     display: flex;
-    min-height: 77px;
+    min-height: 107px;
     padding: 14px 19px;
     align-items: center;
     justify-content: space-between;
@@ -438,7 +452,7 @@ header {
 }
 .filtro-reporte {
     display: flex;
-    min-height: 38px;
+    min-height: 65px;
     padding: 0 14px;
     align-items: center;
     gap: 7px;
@@ -446,7 +460,7 @@ header {
     border-radius: 10px;
     background-color: transparent;
     color: #625d74;
-    font-size: 0.73rem;
+    font-size: 2.2rem;
     font-weight: 500;
     cursor: pointer;
 }
@@ -459,13 +473,13 @@ header {
 }
 .filtro-reporte span {
     display: inline-flex;
-    min-width: 22px;
-    height: 22px;
+    min-width: 42px;
+    height: 42px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: #ebe5f3;
-    font-size: 0.68rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 .filtro-reporte.activo span {
@@ -473,10 +487,10 @@ header {
     color: #6431be;
 }
 .filtro-reporte i {
-    font-size: 0.55rem;
+    font-size: 0.89rem;
 }
 .filtro-reporte.activo i {
-    font-size: 0.8rem;
+    font-size: 2rem;
 }
 .indicador-revision {
     color: #f59f18;
@@ -499,40 +513,48 @@ header {
     gap: 13px;
 }
 .campo-busqueda-reportes {
-    width: 288px;
-    height: 41px;
+    position: relative;
+}
+.campo-busqueda-reportes i {
+    color: #8f899f;
+    font-size: 1.7rem;
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.campo-busqueda-reportes input {
+    border: 0;
+    outline: 0;
+    color: #3c3650;
+    font-size: 2rem;
+    width: 488px;
+    height: 61px;
     display: flex;
     align-items: center;
-    padding: 0 14px;
+    padding: 0 54px;
     border: 1px solid #e6e1ee;
     border-radius: 9px;
     background-color: #ffffff;
 }
-.campo-busqueda-reportes i {
-    margin-right: 10px;
-    color: #8f899f;
-    font-size: 0.82rem;
-}
-.campo-busqueda-reportes input {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    color: #3c3650;
-    font-size: 0.72rem;
-}
 .campo-busqueda-reportes input::placeholder {
     color: #aaa4b5;
 }
+.campo-busqueda-reportes input:focus,
+select:focus {
+    border: 2px solid #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+}
 .selector-orden-reportes {
-    height: 41px;
-    min-width: 136px;
+    height: 61px;
+    min-width: 206px;
     padding: 0 12px;
     border: 1px solid #e6e1ee;
     border-radius: 9px;
     background-color: #ffffff;
     color: #433d54;
     outline: 0;
-    font-size: 0.72rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 /* ================
@@ -543,11 +565,11 @@ header {
 }
 .fila-reporte {
     display: grid;
-    min-height: 158px;
-    padding: 16px 18px;
+    min-height: 188px;
+    padding: 0px 38px;
     grid-template-columns: 140px 54px minmax(288px, 1.5fr) minmax(192px, 0.95fr)144px;
     align-items: center;
-    column-gap: 16px;
+    column-gap: 56px;
     border-bottom: 1px solid #f0edf5;
     transition: background-color 0.2s ease;
 }
@@ -561,8 +583,8 @@ header {
    IMÁGENES
 ==============*/
 .imagen-reporte {
-    width: 140px;
-    height: 112px;
+    width: 170px;
+    height: 142px;
     overflow: hidden;
     border-radius: 10px;
     background-color: #eee9f5;
@@ -577,13 +599,13 @@ header {
    ICONOS DE TIPO DE REPORTE
 ======================= */
 .icono-tipo-reporte {
-    width: 51px;
-    height: 51px;
+    width: 81px;
+    height: 81px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    font-size: 1.15rem;
+    font-size: 2.5rem;
 }
 .reporte-perdida {
     background-color: #f1eaff;
@@ -614,13 +636,13 @@ header {
 .informacion-principal-reporte h2 {
     margin-bottom: 6px;
     color: #29233d;
-    font-size: 0.9rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 .informacion-principal-reporte > p {
     margin-bottom: 13px;
     color: #777184;
-    font-size: 0.7rem;
+    font-size: 1.6rem;
     line-height: 1.35rem;
 }
 .datos-reporte {
@@ -631,14 +653,14 @@ header {
 .datos-reporte span {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 30px;
     color: #787285;
-    font-size: 0.65rem;
+    font-size: 1.3rem;
 }
 .datos-reporte i {
     width: 12px;
     color: #7660a2;
-    font-size: 0.62rem;
+    font-size: 1.5rem;
 }
 /* ===========
    ESTADOS
@@ -649,21 +671,21 @@ header {
 .etiqueta-estado-reporte {
     width: max-content;
     margin-bottom: 10px;
-    padding: 5px 9px;
+    padding: 10px 9px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     border-radius: 7px;
-    font-size: 0.65rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 500;
 }
 .etiqueta-estado-reporte i {
-    font-size: 0.6rem;
+    font-size: 1.3rem;
 }
 .estado-reporte p {
     max-width: 224px;
     color: #787285;
-    font-size: 0.63rem;
+    font-size: 1.4rem;
     line-height: 1.35rem;
 }
 .estado-en-revision .etiqueta-estado-reporte {
@@ -689,11 +711,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 16px;
+    gap: 80px;
 }
 .boton-ver-detalles {
-    min-width: 102px;
-    height: 36px;
+    min-width: 202px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -702,8 +724,7 @@ header {
     color: #6a36c5;
     background-color: #ffffff;
     text-decoration: none;
-    font-size: 0.65rem;
-    font-weight: 600;
+    font-size: 1.5rem;
     transition: background-color 0.2s ease,color 0.2s ease,border-color 0.2s ease;
 }
 .boton-ver-detalles:hover {
@@ -712,8 +733,8 @@ header {
     color: #ffffff;
 }
 .boton-mas-opciones {
-    width: 32px;
-    height: 32px;
+    width: 62px;
+    height: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -729,7 +750,7 @@ header {
     color: #6533c1;
 }
 .boton-mas-opciones i {
-    font-size: 0.9rem;
+    font-size: 2rem;
 }
 /*=============
   PIE DE PAGINA
