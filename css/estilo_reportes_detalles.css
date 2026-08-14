@@ -184,12 +184,13 @@ header {
    MIGAS
 ===============*/
 .migas-pan-reportes {
+    margin-top: 30px;
     min-height: 32px;
     display: flex;
     align-items: center;
     gap: 13px;
-    margin-bottom: 22px;
-    font-size: 0.73rem;
+    margin-bottom: 45px;
+    font-size: 2rem;
 }
 .migas-pan-reportes a {
     display: flex;
@@ -205,7 +206,11 @@ header {
 }
 .separador-miga-reportes {
     color: #bcb7c8;
-    font-size: 0.55rem;
+    font-size: 1.3rem;
+}
+.migas-pan-reportes a:hover {
+    text-decoration: underline;
+    color: #5f31bd;
 }
 /* ==================
    ENCABEZADO
@@ -222,25 +227,26 @@ header {
     gap: 16px;
 }
 .icono-titulo-reporte {
-    width: 55px;
-    height: 55px;
+    width: 89px;
+    height: 89px;
     border-radius: 50%;
     background: #6b38d6;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-size: 1.25rem;
+    font-size: 2.5rem;
+    padding-left: 5px;
 }
 .titulo-reporte-contenedor h1 {
     margin: 0 0 5px 0;
-    font-size: 1.65rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    color: #292632;
+    color: #27272A;
 }
 .titulo-reporte-contenedor p {
     margin: 0;
-    font-size: 0.86rem;
+    font-size: 1.5rem;
     color: #777284;
 }
 .titulo-reporte-contenedor strong {
@@ -250,19 +256,19 @@ header {
    BOTÓN VOLVER
 =================*/
 .boton-volver-reportes {
-    height: 45px;
+    display: flex;
+    height: 70px;
+    min-width: 302px;
     padding: 0 20px;
     border: 1px solid #9c74ef;
     border-radius: 7px;
-    display: flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
     text-decoration: none;
     color: #6937ce;
     background: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 1.8rem;
     transition: 0.2s ease;
 }
 .boton-volver-reportes:hover {
@@ -305,8 +311,8 @@ header {
    RESUMEN
 ============*/
 .tarjeta-resumen-reporte {
-    min-height: 155px;
-    padding: 25px 30px;
+    min-height: 255px;
+    padding: 30px 50px;
     display: flex;
     align-items: center;
     position: relative;
@@ -318,9 +324,9 @@ header {
 .titulo-pequeno-reporte {
     display: block;
     margin-bottom: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #575264;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #191840;
 }
 .estado-reporte-proceso {
     width: max-content;
@@ -328,28 +334,29 @@ header {
     border-radius: 7px;
     background: #f1f5ff;
     color: #4074d9;
-    font-size: 0.86rem;
-    font-weight: 700;
+    font-size: 2.3rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 9px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .estado-reporte-proceso i {
-    font-size: 0.85rem;
+    font-size: 1.8rem;
 }
 .bloque-estado-reporte p {
     margin: 0 0 4px 0;
-    font-size: 0.79rem;
-    color: #676373;
+    font-size: 1.8rem;
+    color: #818196;
 }
 .bloque-estado-reporte small {
-    font-size: 0.72rem;
-    color: #9793a0;
+    font-size: 1.8rem;
+    color: #818196;
+    line-height: 0.8;
 }
 .separador-resumen-reporte {
     width: 1px;
-    height: 88px;
+    height: 208px;
     background: #ece9f2;
     margin: 0 40px;
 }
@@ -357,34 +364,35 @@ header {
     width: 38%;
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    gap: 30px;
 }
 .dato-fecha-reporte {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
 }
 .icono-fecha-reporte {
-    width: 34px;
-    height: 34px;
+    width: 74px;
+    height: 74px;
     border-radius: 7px;
     background: #f5f1ff;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #6b38d6;
-    font-size: 0.9rem;
+    font-size: 2rem;
 }
 .dato-fecha-reporte span {
     display: block;
     margin-bottom: 4px;
-    font-size: 0.72rem;
-    color: #777381;
+    font-size: 2rem;
+    color: #27272A;
 }
 .dato-fecha-reporte strong {
     display: block;
-    font-size: 0.78rem;
-    color: #45414e;
+    font-size: 1.5rem;
+    color: #818196;
+    font-weight: 400;
 }
 .icono-escudo-reporte {
     width: 100px;
@@ -394,7 +402,7 @@ header {
     justify-content: center;
     align-items: center;
     color: #a7c3f4;
-    font-size: 4.5rem;
+    font-size: 8rem;
     opacity: 0.75;
 }
 /* ===================
@@ -411,12 +419,12 @@ header {
     padding: 23px;
 }
 .titulo-seccion-tarjeta {
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 }
 .titulo-seccion-tarjeta span {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #44404e;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2A254E;
 }
 /* ==========
    MASCOTA
@@ -427,8 +435,8 @@ header {
     align-items: center;
 }
 .contenedor-imagen-mascota-reporte {
-    width: 230px;
-    height: 175px;
+    width: 310px;
+    height: 255px;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 9px;
@@ -443,16 +451,16 @@ header {
 }
 .datos-mascota-reporte h2 {
     margin: 0 0 4px 0;
-    font-size: 1.2rem;
-    color: #312d39;
+    font-size: 3rem;
+    color: #2A254E;
 }
 .datos-mascota-reporte h2 i {
     color: #588ae4;
-    font-size: 0.78rem;
+    font-size: 2rem;
 }
 .datos-mascota-reporte > p {
     margin: 0 0 13px 0;
-    font-size: 0.76rem;
+    font-size: 2rem;
     color: #777281;
 }
 .datos-mascota-reporte ul {
@@ -465,12 +473,13 @@ header {
     align-items: center;
     gap: 8px;
     margin-bottom: 7px;
-    font-size: 0.74rem;
+    font-size: 1.8rem;
     color: #666170;
 }
 .datos-mascota-reporte li i {
     width: 16px;
     color: #8050dc;
+    margin-right: 20px;
 }
 .etiqueta-mascota-perdida {
     display: inline-block;
@@ -478,8 +487,8 @@ header {
     border-radius: 5px;
     background: #f0faef;
     color: #4f9b59;
-    font-size: 0.68rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 /* =========
    UBICACIÓN
@@ -493,7 +502,7 @@ header {
 .direccion-incidente > i {
     margin-top: 2px;
     color: #7140d5;
-    font-size: 0.75rem;
+    font-size: 2rem;
 }
 .direccion-incidente strong {
     display: block;
@@ -511,53 +520,12 @@ header {
 ================= */
 .mapa-reporte {
     width: 100%;
-    height: 175px;
+    height: 275px;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    background:
-        linear-gradient(28deg, transparent 0%, transparent 47%, #ffffff 48%, #ffffff 53%, transparent 54%),
-        linear-gradient(-30deg, transparent 0%, transparent 43%, #ffffff 44%, #ffffff 50%, transparent 51%),
-        #edf1ec;
+    background: #ccc;
     border: 1px solid #dfe3dd;
-}
-/* Texto mapa */
-.etiqueta-mapa {
-    position: absolute;
-    z-index: 4;
-    font-size: 0.57rem;
-    color: #858a81;
-    line-height: 1.4;
-}
-.etiqueta-parque {
-    left: 40px;
-    top: 94px;
-}
-.etiqueta-municipal {
-    right: 27px;
-    top: 58px;
-}
-/* Marcador */
-.marcador-ubicacion {
-    position: absolute;
-    width: 31px;
-    height: 31px;
-    background: #7040d7;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    top: 62px;
-    left: 57%;
-    z-index: 10;
-    box-shadow: 0 4px 8px rgba(91, 54, 171, 0.24);
-}
-.marcador-centro {
-    position: absolute;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: #ffffff;
-    top: 10px;
-    left: 10px;
 }
 .enlace-google-maps {
     display: flex;
@@ -567,11 +535,16 @@ header {
     width: max-content;
     color: #6d3dd4;
     text-decoration: none;
-    font-size: 0.65rem;
+    font-size: 2rem;
 }
 .enlace-google-maps i:last-child {
-    font-size: 0.55rem;
+    font-size: 1.5rem;
 }
+.enlace-google-maps:hover {
+    color: #401E8E;
+    border-bottom: 2px solid #401E8E;
+}
+
 /* ====================
    DESCRIPCIÓN Y DETALLES
 =======================*/
