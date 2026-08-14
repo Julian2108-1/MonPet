@@ -549,7 +549,7 @@ header {
    DESCRIPCIÓN Y DETALLES
 =======================*/
 .tarjeta-descripcion-detalles {
-    min-height: 215px;
+    min-height: 315px;
     padding: 25px;
     display: grid;
     grid-template-columns: 0.85fr 1px 1.15fr;
@@ -560,14 +560,17 @@ header {
 .tarjeta-imagenes-reporte h3,
 .tarjeta-historial-reporte h3 {
     margin: 0 0 16px 0;
-    font-size: 0.85rem;
-    color: #413d4b;
+    font-size: 2.5rem;
+    color: #2A254E;
+}
+.bloque-descripcion-reporte {
+    width: 100%;
 }
 .bloque-descripcion-reporte p {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 0 12px 0;
-    font-size: 0.76rem;
-    line-height: 1.65;
+    font-size: 1.5rem;
+    line-height: 1.85;
     color: #6f6a78;
 }
 .separador-descripcion-detalles {
@@ -585,21 +588,21 @@ header {
     display: grid;
     grid-template-columns: 18px 1fr;
     grid-template-rows: auto auto;
-    column-gap: 7px;
+    column-gap: 30px;
 }
 .dato-detalle > i {
     grid-row: span 2;
     color: #7141d6;
-    font-size: 0.67rem;
-    margin-top: 3px;
+    font-size: 2.3rem;
+    margin-top: 15px;
 }
 .dato-detalle span {
-    font-size: 0.64rem;
+    font-size: 2rem;
     color: #898490;
     margin-bottom: 3px;
 }
 .dato-detalle strong {
-    font-size: 0.67rem;
+    font-size: 1.6rem;
     color: #4d4857;
 }
 .texto-estado-detalle {
@@ -623,13 +626,14 @@ header {
 .galeria-imagenes-reporte {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 16px;
     flex: 1;
 }
 .imagen-adjunta-reporte {
-    height: 105px;
+    height: 185px;
     border-radius: 7px;
     overflow: hidden;
+    border: 2px solid green;
 }
 .imagen-adjunta-reporte img {
     width: 100%;
@@ -638,7 +642,7 @@ header {
     display: block;
 }
 .boton-ver-imagenes {
-    width: 150px;
+    width: 250px;
     border: 1px solid #9b76e9;
     border-radius: 7px;
     background: #ffffff;
@@ -651,23 +655,22 @@ header {
     cursor: pointer;
 }
 .boton-ver-imagenes i {
-    font-size: 1.2rem;
+    font-size: 3.5rem;
 }
 .boton-ver-imagenes span {
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 2rem;
 }
 .boton-ver-imagenes small {
     display: block;
     margin-top: 2px;
-    font-size: 0.64rem;
+    font-size: 1.8rem;
     font-weight: 500;
 }
 /* ===========
    HISTORIAL
 ============= */
 .tarjeta-historial-reporte {
-    padding: 23px 25px;
+    padding: 23px 55px;
     margin-bottom: 20px;
 }
 .linea-tiempo-reporte {
@@ -677,23 +680,23 @@ header {
 .linea-tiempo-reporte::before {
     content: "";
     position: absolute;
-    left: 14px;
-    top: 17px;
+    left: 34px;
+    top: 30px;
     bottom: 17px;
     width: 1px;
     background: #dcd4f3;
 }
 .evento-historial-reporte {
-    min-height: 54px;
+    min-height: 104px;
     display: grid;
     grid-template-columns: 31px 1fr 250px;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 55px;
     position: relative;
 }
 .icono-evento-historial {
-    width: 29px;
-    height: 29px;
+    width: 59px;
+    height: 59px;
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid #c9bbed;
@@ -701,18 +704,18 @@ header {
     align-items: center;
     justify-content: center;
     color: #7644d7;
-    font-size: 0.65rem;
+    font-size: 1.5rem;
     z-index: 2;
 }
 .contenido-evento-historial strong {
     display: block;
     margin-bottom: 3px;
-    font-size: 0.72rem;
+    font-size: 2rem;
     color: #504b59;
 }
 .contenido-evento-historial p {
     margin: 0;
-    font-size: 0.64rem;
+    font-size: 1.5rem;
     color: #898390;
 }
 .contenido-evento-historial span {
@@ -721,18 +724,19 @@ header {
     background: #eff4ff;
     color: #5e83d9;
     border-radius: 3px;
-    font-size: 0.58rem;
+    font-size: 1.6rem;
 }
 .evento-historial-reporte time {
-    text-align: right;
-    font-size: 0.62rem;
+    text-align: left;
+    font-size: 1.5rem;
     color: #888391;
+    width: 300px;
 }
 /*==================
    CANCELAR REPORTE
 =================== */
 .tarjeta-cancelar-reporte {
-    min-height: 95px;
+    min-height: 105px;
     padding: 20px 25px;
     border: 1px solid #f2dede;
     border-radius: 9px;
@@ -744,17 +748,17 @@ header {
 .tarjeta-cancelar-reporte h3 {
     margin: 0 0 7px 0;
     color: #574851;
-    font-size: 0.78rem;
+    font-size: 2.2rem;
 }
 .tarjeta-cancelar-reporte p {
     margin: 0;
     max-width: 850px;
-    font-size: 0.66rem;
+    font-size: 1.8rem;
     color: #93878e;
     line-height: 1.5;
 }
 .boton-cancelar-reporte {
-    height: 42px;
+    height: 62px;
     padding: 0 18px;
     border: 1px solid #ee6d6d;
     border-radius: 6px;
@@ -764,8 +768,8 @@ header {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    font-size: 0.69rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 600;
     transition: 0.2s ease;
 }
 .boton-cancelar-reporte:hover {
@@ -795,6 +799,7 @@ header {
     color: white;
     margin-top: 0px;
     gap: 10px;
+    margin-top: 100px;
 }
 .footer-onda{
     width: 100%;
