@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de la comunidad - MonPet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilo_reportes.css">
+</head>
+<body>
+<header>
+      <div class="contenedor-logo">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+      <nav class="links-navegacion">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="#">Adopción</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Refugios</a></li>
+            <li><a href="#">Jornadas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="acciones-usuario">
+            <button class="boton-notificaciones">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+            <button class="boton-mensajes">
+                <i class="fa-regular fa-bell"></i>
+                <span class="contador-alertas">2</span>
+            </button>
+
+            <div class="perfil-usuario">
+                <img src="../img/perfil.jpg" alt="Imagen_perfil">
+                <span>Hola, Laura</span>
+                <button>
+                <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+            <div class="migas-pan-reportes">
+                <a href="#"><i class="fa-solid fa-house"></i>Inicio</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <a href="#">Reportes</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <span>Reportes Comunidad</span>
+            </div>
+    <main class="contenedor-reportes">
+        <!-- Contenido lateral -->
+        <aside class="menu-reportes">
+            
+            <section class="bloque-comunidad">
+                <h2 class="titulo-comunidad">Comunidad</h2>
+
+                <a href="#" class="enlace-comunidad">
+                    <span class="icono-comunidad"><i class="fa-solid fa-shield-cat"></i></span>
+                    <span class="texto-enlace">
+                        <strong>Consejos de seguridad</strong>
+                        <small>Cuida a tu mascota y a tu comunidad</small>
+                    </span>
+                </a>
+
+                <a href="#" class="enlace-comunidad">
+                    <span class="icono-comunidad"><i class="fa-regular fa-file-lines"></i></span>
+                    <span class="texto-enlace">
+                        <strong>Cómo reportar</strong>
+                        <small>Guía paso a paso para hacer un reporte</small>
+                    </span>
+                </a>
+
+                <a href="#" class="enlace-comunidad">
+                    <span class="icono-comunidad"><i class="fa-brands fa-meetup"></i></span>
+                    <span class="texto-enlace">
+                        <strong>Eventos</strong>
+                        <small>Conoce los eventos y campañas</small>
+                    </span>
+                </a>
+
+                <a href="#" class="enlace-comunidad">
+                    <span class="icono-comunidad"><i class="fa-regular fa-newspaper"></i></span>
+                    <span class="texto-enlace">
+                        <strong>Noticias</strong>
+                        <small>Entérate de lo último</small>
+                    </span>
+                </a>
+
+                <a href="#" class="enlace-comunidad">
+                    <span class="icono-comunidad"><i class="fa-solid fa-blog"></i></span>
+                    <span class="texto-enlace">
+                        <strong>Blog</strong>
+                        <small>Artículos y tips útiles</small>
+                    </span>
+                </a>
+
+            </section>
+
+            <div class="tarjeta-ayuda-reportes">
+                <div class="icono-ayuda-reportes">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="informacion-ayuda-reportes">
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Estamos aquí para ayudarte.</p>
+                    <a href="#" class="enlace-soporte-reportes">Contactar soporte <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Reportes -->
+        <section class="contenido-reportes">
+            <div class="encabezado-reportes">
+                <div class="titulo-seccion">
+                    <div class="icono-seccion"><i class="fa-regular fa-heart"></i></div>
+                    <div>
+                        <h1>Reportes de la comunidad</h1>
+                        <p>Aquí puedes ver los reportes hechos por otros usuarios para ayudar a los animales.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="boton-crear-reporte" id="crearReporte">
+                    <span><i class="fa-solid fa-plus"></i></span>
+                     Crear reporte
+                </button>
+            </div>
+
+            <div class="panel-reportes">
+                <div class="barra-filtros-reportes">
+                    <div class="filtros-estado-reportes">
+                        <button class="filtro-reporte activo">
+                            <i class="fa-regular fa-file-lines"></i>
+                            Todos
+                            <span>6</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-revision"></i>
+                            En revisión
+                            <span>2</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-proceso"></i>
+                            En proceso
+                            <span>2</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-resuelto"></i>
+                            Resueltos
+                            <span>1</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-cerrado"></i>
+                            Cerrados
+                            <span>1</span>
+                        </button>
+                    </div>
+                <div class="barra-busqueda">
+                    <label class="campo-busqueda">
+                        <span class="icono-busqueda">⌕</span>
+                        <input type="search" id="buscarReportes" placeholder="Buscar por ubicación, descripción...">
+                    </label>
+
+                    <button type="button" class="ordenar-reportes" id="ordenarReportes">
+                        Más recientes
+                        <span>⌄</span>
+                    </button>
+                </div>
+
+                <div class="lista-reportes" id="listaReportes">
+                    <article class="tarjeta-reporte" data-estado="proceso" data-tipo="mascota-perdida" data-ubicacion="Soacha">
+                        <img class="imagen-reporte" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=500&q=80" alt="Perro perdido">
+                        <div class="informacion-reporte">
+                            <span class="etiqueta-reporte etiqueta-roja">MASCOTA PERDIDA</span>
+                            <h2>Perro perdido en Soacha</h2>
+                            <p>Se perdió cerca del Parque Principal de Soacha. Tiene collar azul.</p>
+                            <div class="datos-reporte">
+                                <span>⌖ Parque Principal, Soacha</span>
+                                <span>▣ 25 de julio de 2026 · 04:45 p. m.</span>
+                            </div>
+                        </div>
+                        <div class="acciones-reporte">
+                            <span class="estado-reporte estado-proceso">En proceso</span>
+                            <div class="interaccion-reporte">
+                                <span class="favoritos-reporte">♡ 12</span>
+                            </div>
+                            <button type="button" class="boton-detalles" data-reporte="1">Ver detalles</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-reporte" data-estado="revision" data-tipo="posible-maltrato" data-ubicacion="Soacha">
+                        <img class="imagen-reporte" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=500&q=80" alt="Gato en posible situación de maltrato">
+                        <div class="informacion-reporte">
+                            <span class="etiqueta-reporte etiqueta-naranja">POSIBLE MALTRATO</span>
+                            <h2>Gato en posible situación de maltrato</h2>
+                            <p>Se escucha llorar constantemente en una casa vecina. El gato se ve desaseado.</p>
+                            <div class="datos-reporte">
+                                <span>⌖ Ciudad Verde, Soacha</span>
+                                <span>▣ 25 de julio de 2026 · 03:15 p. m.</span>
+                            </div>
+                        </div>
+                        <div class="acciones-reporte">
+                            <span class="estado-reporte estado-revision">En revisión</span>
+                            <div class="interaccion-reporte">
+                                <span class="favoritos-reporte">♡ 7</span>
+                            </div>
+                            <button type="button" class="boton-detalles" data-reporte="2">Ver detalles</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-reporte" data-estado="proceso" data-tipo="mascota-abandonada" data-ubicacion="Soacha">
+                        <img class="imagen-reporte" src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=500&q=80" alt="Perro abandonado">
+                        <div class="informacion-reporte">
+                            <span class="etiqueta-reporte etiqueta-roja">MASCOTA ABANDONADA</span>
+                            <h2>Perrito abandonado en el barrio</h2>
+                            <p>Lo dejaron amarrado a un poste. No tiene collar, se ve asustado y sucio.</p>
+                            <div class="datos-reporte">
+                                <span>⌖ Barrio San Mateo, Soacha</span>
+                                <span>▣ 24 de julio de 2026 · 11:20 a. m.</span>
+                            </div>
+                        </div>
+                        <div class="acciones-reporte">
+                            <span class="estado-reporte estado-proceso">En proceso</span>
+                            <div class="interaccion-reporte">
+                                <span class="favoritos-reporte">♡ 9</span>
+                            </div>
+                            <button type="button" class="boton-detalles" data-reporte="3">Ver detalles</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-reporte" data-estado="resuelto" data-tipo="mascota-perdida" data-ubicacion="Soacha">
+                        <img class="imagen-reporte" src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=500&q=80" alt="Gato perdido">
+                        <div class="informacion-reporte">
+                            <span class="etiqueta-reporte etiqueta-roja">MASCOTA PERDIDA</span>
+                            <h2>Gatito perdido, responde al nombre “Loki”</h2>
+                            <p>Se perdió en el conjunto residencial. Es muy juguetón y tiene collar rojo.</p>
+                            <div class="datos-reporte">
+                                <span>⌖ Conjunto La Pradera, Soacha</span>
+                                <span>▣ 24 de julio de 2026 · 09:05 a. m.</span>
+                            </div>
+                        </div>
+                        <div class="acciones-reporte">
+                            <span class="estado-reporte estado-resuelto">Resuelto</span>
+                            <div class="interaccion-reporte">
+                                <span class="favoritos-reporte">♡ 15</span>
+                            </div>
+                            <button type="button" class="boton-detalles" data-reporte="4">Ver detalles</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-reporte" data-estado="cerrado" data-tipo="abandono" data-ubicacion="Soacha">
+                        <img class="imagen-reporte" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80" alt="Abandono de cachorros">
+                        <div class="informacion-reporte">
+                            <span class="etiqueta-reporte etiqueta-naranja">CASO DE ABANDONO</span>
+                            <h2>Abandono de cachorros en lote baldío</h2>
+                            <p>Dejaron 3 cachorros en un lote sin comida ni agua.</p>
+                            <div class="datos-reporte">
+                                <span>⌖ Urbanización Villa Clara, Soacha</span>
+                                <span>▣ 23 de julio de 2026 · 08:30 p. m.</span>
+                            </div>
+                        </div>
+                        <div class="acciones-reporte">
+                            <span class="estado-reporte estado-cerrado">Cerrado</span>
+                            <div class="interaccion-reporte">
+                                <span class="favoritos-reporte">♡ 5</span>
+                            </div>
+                            <button type="button" class="boton-detalles" data-reporte="5">Ver detalles</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-reporte" data-estado="revision" data-tipo="mascota-en-riesgo" data-ubicacion="Soacha">
+                        <img class="imagen-reporte" src="https://images.unsplash.com/photo-1558944351-cd5f06a0b9de?auto=format&fit=crop&w=500&q=80" alt="Perro en riesgo">
+                        <div class="informacion-reporte">
+                            <span class="etiqueta-reporte etiqueta-naranja">MASCOTA EN RIESGO</span>
+                            <h2>Perro en riesgo en la vía</h2>
+                            <p>Perro suelto en la vía principal, puede ser atropellado.</p>
+                            <div class="datos-reporte">
+                                <span>⌖ Vía Indumil, Soacha</span>
+                                <span>▣ 23 de julio de 2026 · 07:10 p. m.</span>
+                            </div>
+                        </div>
+                        <div class="acciones-reporte">
+                            <span class="estado-reporte estado-revision">En revisión</span>
+                            <div class="interaccion-reporte">
+                                <span class="favoritos-reporte">♡ 6</span>
+                            </div>
+                            <button type="button" class="boton-detalles" data-reporte="6">Ver detalles</button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="paginacion-reportes">
+                    <button type="button" class="boton-paginacion" id="paginaAnterior">‹&nbsp; Anterior</button>
+                    <div class="numeros-paginacion">
+                        <button type="button" class="pagina-activa">1</button>
+                        <button type="button">2</button>
+                        <button type="button">3</button>
+                    </div>
+                    <button type="button" class="boton-paginacion" id="paginaSiguiente">Siguiente&nbsp; ›</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <aside class="panel-filtros">
+
+            <section class="tarjeta-filtros">
+                <h2 class="titulo-filtros">▽ &nbsp;Filtros</h2>
+
+                <label class="campo-filtro">
+                    <span>Tipo de reporte</span>
+                    <select id="filtroTipo">
+                        <option>Todos los tipos</option>
+                        <option>Mascota perdida</option>
+                        <option>Posible maltrato</option>
+                        <option>Mascota abandonada</option>
+                        <option>Abandono</option>
+                        <option>Mascota en riesgo</option>
+                    </select>
+                </label>
+
+                <label class="campo-filtro">
+                    <span>Estado</span>
+                    <select id="filtroEstado">
+                        <option>Todos los estados</option>
+                        <option>En proceso</option>
+                        <option>En revisión</option>
+                        <option>Resuelto</option>
+                        <option>Cerrado</option>
+                    </select>
+                </label>
+
+                <label class="campo-filtro">
+                    <span>Ubicación</span>
+                    <select id="filtroUbicacion">
+                        <option>Todas las ubicaciones</option>
+                        <option>Soacha</option>
+                        <option>Ciudad Verde</option>
+                        <option>San Mateo</option>
+                    </select>
+                </label>
+
+                <label class="campo-filtro">
+                    <span>Fecha</span>
+                    <button type="button" class="selector-fecha" id="filtroFecha">
+                        Últimos 30 días
+                        <span>▣</span>
+                    </button>
+                </label>
+
+                <label class="opcion-mis-reportes">
+                    <input type="checkbox" id="soloMisReportes">
+                    <span>Solo mis reportes</span>
+                </label>
+
+                <button type="button" class="boton-aplicar-filtros" id="aplicarFiltros">
+                    Aplicar filtros
+                </button>
+
+                <button type="button" class="boton-limpiar-filtros" id="limpiarFiltros">
+                    Limpiar filtros
+                </button>
+            </section>
+
+            <section class="tarjeta-consejos">
+                <h2 class="titulo-consejos">♢ &nbsp;Consejos de seguridad</h2>
+                <p>✓ &nbsp; No te expongas al intentar rescatar un animal solo.</p>
+                <p>✓ &nbsp; Verifica la zona antes de acercarte.</p>
+                <p>✓ &nbsp; Contacta a las autoridades si es necesario.</p>
+                <a href="#" class="enlace-consejos">Ver más consejos&nbsp; →</a>
+            </section>
+
+            <section class="tarjeta-guia">
+                <h2 class="titulo-guia">¿Cómo hacer un reporte?</h2>
+
+                <div class="paso-guia">
+                    <span>1</span>
+                    <p>Observa y recopila información del caso.</p>
+                </div>
+
+                <div class="paso-guia">
+                    <span>2</span>
+                    <p>Haz clic en “Crear reporte” y completa los datos.</p>
+                </div>
+
+                <div class="paso-guia">
+                    <span>3</span>
+                    <p>Agrega fotos o videos si es posible.</p>
+                </div>
+
+                <div class="paso-guia">
+                    <span>4</span>
+                    <p>Nuestro equipo revisará tu reporte.</p>
+                </div>
+                <a href="#" class="enlace-guia">Ver guía completa&nbsp; →</a>
+            </section>
+        </aside>
+    </main>
+
+
+<footer class="footer">
+
+    <div class="footer-onda">
+        <img src="/img/fondo_onda_2.png" alt="">
+    </div>
+
+    <div class="footer-contenedor">
+
+        <div class="footer-logo">
+        <div class="icono-logo2">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="footer-informacion">
+            <h2>MonPet</h2>
+            <p>
+                Conectamos corazones para que cada <br>mascota
+                encuentre un hogar lleno<br>de amor y cuidado.
+            </p>
+
+            <div class="footer-redes">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            </div>
+        </div>
+
+        <div class="footer-enlaces">
+            <h3>Enlaces rápidos</h3>
+
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Adopción</a></li>
+                <li><a href="#">Reportes</a></li>
+                <li><a href="#">Refugios</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-ayuda">
+            <h3>Ayuda</h3>
+
+            <ul>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Cómo adoptar</a></li>
+                <li><a href="#">Consejos de cuidado</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-legal">
+            <h3>Información legal</h3>
+
+            <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Aviso legal</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contacto">
+            <h3>Contacto</h3>
+
+            <ul>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Bogotá, Colombia
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    contacto@monpet.com
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    +57 300 123 4567
+                </li>
+
+                <li>
+                    <i class="fa-regular fa-clock"></i>
+                    Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-inferior">
+        <p>© 2026 MonPet. Todos los derechos reservados.</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
