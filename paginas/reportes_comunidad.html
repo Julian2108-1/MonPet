@@ -22,7 +22,7 @@
         <ul>
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="#">Adopción</a></li>
-            <li><a href="#">Reportes</a></li>
+            <li><a href="reportes_comunidad.html">Reportes</a></li>
             <li><a href="#">Refugios</a></li>
             <li><a href="#">Jornadas</a></li>
             <li><a href="#">Nosotros</a></li>
@@ -171,10 +171,12 @@
                         <input type="search" id="buscarReportes" placeholder="Buscar por ubicación, descripción...">
                     </label>
 
-                    <button type="button" class="ordenar-reportes" id="ordenarReportes">
-                        Más recientes
-                        <span>⌄</span>
-                    </button>
+                    <select class="ordenar-reportes" id="filtroTipo">
+                        <option>Mas Recientes</option>
+                        <option>Una Semana</option>
+                        <option>Un Mes</option>
+                        <option>Un Año</option>
+                    </select>
                 </div>
 
                 <div class="lista-reportes" id="listaReportes">
@@ -191,9 +193,6 @@
                         </div>
                         <div class="acciones-reporte">
                             <span class="estado-reporte estado-proceso">En proceso</span>
-                            <div class="interaccion-reporte">
-                                <span class="favoritos-reporte">♡ 12</span>
-                            </div>
                             <button type="button" class="boton-detalles" data-reporte="1">Ver detalles</button>
                         </div>
                     </article>
@@ -211,9 +210,6 @@
                         </div>
                         <div class="acciones-reporte">
                             <span class="estado-reporte estado-revision">En revisión</span>
-                            <div class="interaccion-reporte">
-                                <span class="favoritos-reporte">♡ 7</span>
-                            </div>
                             <button type="button" class="boton-detalles" data-reporte="2">Ver detalles</button>
                         </div>
                     </article>
@@ -231,9 +227,6 @@
                         </div>
                         <div class="acciones-reporte">
                             <span class="estado-reporte estado-proceso">En proceso</span>
-                            <div class="interaccion-reporte">
-                                <span class="favoritos-reporte">♡ 9</span>
-                            </div>
                             <button type="button" class="boton-detalles" data-reporte="3">Ver detalles</button>
                         </div>
                     </article>
@@ -251,9 +244,6 @@
                         </div>
                         <div class="acciones-reporte">
                             <span class="estado-reporte estado-resuelto">Resuelto</span>
-                            <div class="interaccion-reporte">
-                                <span class="favoritos-reporte">♡ 15</span>
-                            </div>
                             <button type="button" class="boton-detalles" data-reporte="4">Ver detalles</button>
                         </div>
                     </article>
@@ -271,9 +261,6 @@
                         </div>
                         <div class="acciones-reporte">
                             <span class="estado-reporte estado-cerrado">Cerrado</span>
-                            <div class="interaccion-reporte">
-                                <span class="favoritos-reporte">♡ 5</span>
-                            </div>
                             <button type="button" class="boton-detalles" data-reporte="5">Ver detalles</button>
                         </div>
                     </article>
@@ -291,9 +278,6 @@
                         </div>
                         <div class="acciones-reporte">
                             <span class="estado-reporte estado-revision">En revisión</span>
-                            <div class="interaccion-reporte">
-                                <span class="favoritos-reporte">♡ 6</span>
-                            </div>
                             <button type="button" class="boton-detalles" data-reporte="6">Ver detalles</button>
                         </div>
                     </article>
@@ -317,7 +301,7 @@
         <aside class="panel-filtros">
 
             <section class="tarjeta-filtros">
-                <h2 class="titulo-filtros">▽ &nbsp;Filtros</h2>
+                <h2 class="titulo-filtros"><i class="fa-solid fa-filter"></i>  Filtros</h2>
 
                 <label class="campo-filtro">
                     <span>Tipo de reporte</span>
@@ -356,7 +340,7 @@
                     <span>Fecha</span>
                     <button type="button" class="selector-fecha" id="filtroFecha">
                         Últimos 30 días
-                        <span>▣</span>
+                        <span><i class="fa-regular fa-calendar"></i></span>
                     </button>
                 </label>
 
@@ -375,7 +359,7 @@
             </section>
 
             <section class="tarjeta-consejos">
-                <h2 class="titulo-consejos">♢ &nbsp;Consejos de seguridad</h2>
+                <h2 class="titulo-consejos"><i class="fa-solid fa-user-shield"></i> Consejos de seguridad</h2>
                 <p>✓ &nbsp; No te expongas al intentar rescatar un animal solo.</p>
                 <p>✓ &nbsp; Verifica la zona antes de acercarte.</p>
                 <p>✓ &nbsp; Contacta a las autoridades si es necesario.</p>
@@ -444,7 +428,7 @@
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Adopción</a></li>
-                <li><a href="#">Reportes</a></li>
+                <li><a href="reportes_comunidad.html">Reportes</a></li>
                 <li><a href="#">Refugios</a></li>
                 <li><a href="#">Nosotros</a></li>
             </ul>
