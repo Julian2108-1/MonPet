@@ -1,0 +1,255 @@
+
+.bloque-estado-detalle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FEF9E7;
+    border: 1px solid #F1C40F;
+    padding: 20px 25px;
+}
+
+.badge-estado-amarillo {
+    background: #F1C40F;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 5px 0 8px 0;
+}
+
+.info-estado p {
+    font-size: 0.9rem;
+    color: #7D6608;
+}
+
+.fechas-estado p {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+.fechas-estado i {
+    color: #7B42B6;
+    margin-right: 5px;
+}
+
+/* Grid Dos Columnas */
+.grid-dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Tarjeta Mascota */
+.tarjeta-mascota-solicitud h3,
+.resumen-solicitud-caja h3 {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.flex-mascota {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.foto-perro-detalle {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.flex-mascota h4 {
+    font-size: 1.3rem;
+}
+
+.etiqueta-disponible {
+    background: #E8F8F5;
+    color: #2ECC71;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 6px;
+}
+
+/* Resumen de la Solicitud */
+.item-resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #F2ECFB;
+    font-size: 0.9rem;
+}
+
+.item-resumen:last-child {
+    border-bottom: none;
+}
+
+.item-resumen span {
+    color: #666666;
+}
+
+.item-resumen strong i {
+    color: #7B42B6;
+}
+
+/* Tabs e Información del Adoptante */
+.contenedor-tabs-info {
+    padding: 0;
+}
+
+.pestanas-detalle {
+    display: flex;
+    border-bottom: 1px solid #D1C3F7;
+    padding: 0 20px;
+    background: #FAF8FC;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.btn-tab {
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    color: #666666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.btn-tab.activo {
+    color: #7B42B6;
+    font-weight: bold;
+    border-bottom-color: #7B42B6;
+}
+
+.contenido-tab-panel {
+    padding: 25px;
+}
+
+.bloque-datos-usuario h4 {
+    font-size: 1rem;
+    color: #7B42B6;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bloque-datos-usuario p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #666666;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bloque-datos-usuario p strong {
+    color: #333333;
+}
+
+/* Motivación */
+.caja-motivacion {
+    background: #F9F6FC;
+    border-left: 4px solid #7B42B6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.caja-motivacion h4 {
+    font-size: 0.95rem;
+    color: #7B42B6;
+    margin-bottom: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.caja-motivacion p {
+    font-size: 0.9rem;
+    color: #555555;
+    font-style: italic;
+}
+
+/* Documentos Adjuntos */
+.seccion-adjuntos h4 {
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.grid-adjuntos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.caja-archivo {
+    border: 1px solid #D1C3F7;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+}
+
+.icono-pdf { color: #E74C3C; font-size: 1.4rem; }
+.icono-img { color: #3498DB; font-size: 1.4rem; }
+
+.caja-archivo strong {
+    display: block;
+    font-size: 0.85rem;
+}
+
+.caja-archivo small {
+    color: #888888;
+    font-size: 0.75rem;
+}
+
+.icono-descarga {
+    margin-left: auto;
+    color: #7B42B6;
+    cursor: pointer;
+}
+
+/* Retirar Solicitud */
+.caja-retirar-solicitud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FDEDEC;
+    border: 1px solid #F5B7B1;
+}
+
+.caja-retirar-solicitud strong {
+    color: #C0392B;
+    font-size: 1rem;
+}
+
+.caja-retirar-solicitud p {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+}
+
+.btn-eliminar {
+    background: #ffffff;
+    border: 1px solid #E74C3C;
+    color: #E74C3C;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-eliminar:hover {
+    background: #E74C3C;
+    color: #ffffff;
+}

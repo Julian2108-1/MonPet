@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonPet - Detalle de Solicitud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reporte.css">
+    <link rel="stylesheet" href="../css/solicitudes.css">
+    <link rel="stylesheet" href="../css/detalle_solicitud.css">
+</head>
+<body>
+
+    <!-- HEADER PRINCIPAL -->
+    <header>
+      <div class="contenedor-logo">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+      <nav class="links-navegacion">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Adopción</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Refugios</a></li>
+            <li><a href="#">Jornadas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+
+        <div class="perfil-header">
+            <div class="icono-notificacion">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge-notif">3</span>
+            </div>
+            <div class="usuario-perfil">
+                <img src="../img/perfil.jpg" alt="Laura García" class="foto-usuario">
+                <div class="info-usuario">
+                    <strong>Laura García <i class="fa-solid fa-chevron-down"></i></strong>
+                    <small>Ver perfil</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PANEL PRINCIPAL CON ASIDE Y CONTENIDO -->
+    <div class="contenedor-panel">
+        
+        <!-- MENÚ LATERAL IZQUIERDO -->
+        <aside class="menu-lateral">
+            <nav class="lista-menu">
+                <a href="#" class="item-menu"><i class="fa-solid fa-user"></i> Mi perfil</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-heart"></i> Mis mascotas guardadas</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-star"></i> Mis favoritos</a>
+                <a href="mis_solicitudes.html" class="item-menu activo"><i class="fa-solid fa-file-lines"></i> Mis solicitudes</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-flag"></i> Mis reportes</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-bell"></i> Notificaciones <span class="badge-menu">3</span></a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-comment"></i> Mensajes</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-calendar"></i> Mis donaciones</a>
+                <a href="configuracion.html" class="item-menu"><i class="fa-solid fa-gear"></i> Configuración</a>
+            </nav>
+
+            <div class="caja-ayuda">
+                <i class="fa-solid fa-headset icono-ayuda"></i>
+                <h4>¿Necesitas ayuda?</h4>
+                <p>Estamos aquí para ayudarte.</p>
+                <a href="#" class="enlace-soporte">Contactar soporte <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO DETALLE SOLICITUD -->
+        <main class="contenido-panel">
+            
+            <div class="encabezado-seccion">
+                <div class="titulo-pagina">
+                    <div class="circulo-icono"><i class="fa-solid fa-file-lines"></i></div>
+                    <div>
+                        <h2>Detalle de solicitud de adopción</h2>
+                        <p>ID de solicitud: <strong>#ADP-2026-0024</strong></p>
+                    </div>
+                </div>
+
+                <a href="mis_solicitudes.html" class="btn-ver-detalles"><i class="fa-solid fa-arrow-left"></i> Volver a mis solicitudes</a>
+            </div>
+
+            <!-- TARJETA ESTADO ACTUAL -->
+            <div class="caja-blanca bloque-estado-detalle">
+                <div class="info-estado">
+                    <small>Estado actual</small>
+                    <span class="badge-estado-amarillo"><i class="fa-solid fa-clock"></i> En revisión</span>
+                    <p>Tu solicitud está siendo revisada por el equipo del refugio. Te notificaremos por correo cuando haya novedades.</p>
+                </div>
+                <div class="fechas-estado">
+                    <p><i class="fa-solid fa-calendar"></i> <strong>Fecha enviada:</strong> 25 de julio de 2026 - 04:15 p. m.</p>
+                    <p><i class="fa-solid fa-rotate"></i> <strong>Última actualización:</strong> 27 de julio de 2026 - 09:30 a. m.</p>
+                </div>
+            </div>
+
+            <!-- FILA CON MASCOTA Y RESUMEN -->
+            <div class="grid-dos-columnas">
+                <div class="caja-blanca tarjeta-mascota-solicitud">
+                    <h3>Mascota</h3>
+                    <div class="flex-mascota">
+                        <img src="../img/labrador.jpg" alt="Buddy" class="foto-perro-detalle">
+                        <div class="datos">
+                            <h4>Buddy <i class="fa-solid fa-mars genero-macho"></i></h4>
+                            <p class="raza">Labrador Retriever</p>
+                            <p class="detalles-item"><i class="fa-solid fa-calendar"></i> 2 años &nbsp; <i class="fa-solid fa-paw"></i> Grande</p>
+                            <p class="detalles-item"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+                            <span class="etiqueta-disponible">Disponible para adopción</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caja-blanca resumen-solicitud-caja">
+                    <h3>Resumen de la solicitud</h3>
+                    <div class="item-resumen">
+                        <span>Refugio</span>
+                        <strong><i class="fa-solid fa-house-chimney-medical"></i> Huellitas Felices</strong>
+                    </div>
+                    <div class="item-resumen">
+                        <span>Tipo de adopción</span>
+                        <strong>Adopción definitiva</strong>
+                    </div>
+                    <div class="item-resumen">
+                        <span>Miembro del hogar responsable</span>
+                        <strong>Laura García</strong>
+                    </div>
+                    <div class="item-resumen">
+                        <span>Estado actual</span>
+                        <span class="badge-estado-amarillo">En revisión</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑAS Y DATOS COMPLETOS DE LA SOLICITUD -->
+            <div class="caja-blanca contenedor-tabs-info">
+                <div class="pestanas-detalle">
+                    <button class="btn-tab activo">Información de la solicitud</button>
+                    <button class="btn-tab">Respuestas del refugio <span class="contador">2</span></button>
+                    <button class="btn-tab">Historial de seguimiento</button>
+                </div>
+
+                <div class="contenido-tab-panel">
+                    <div class="grid-dos-columnas">
+                        <!-- Información personal -->
+                        <div class="bloque-datos-usuario">
+                            <h4>Información personal</h4>
+                            <p><span>Nombre completo:</span> <strong>Laura García</strong></p>
+                            <p><span>Tipo y número de documento:</span> <strong>Cédula de ciudadanía - 1234567890</strong></p>
+                            <p><span>Correo electrónico:</span> <strong>laura.garcia@email.com</strong></p>
+                            <p><span>Teléfono:</span> <strong>+57 300 123 4567</strong></p>
+                            <p><span>Dirección:</span> <strong>Cra 15 # 123-45, Bogotá, Cundinamarca</strong></p>
+                            <p><span>Ocupación:</span> <strong>Diseñadora gráfica</strong></p>
+                            <p><span>Estado civil:</span> <strong>Soltera</strong></p>
+                        </div>
+
+                        <!-- Composición del hogar -->
+                        <div class="bloque-datos-usuario">
+                            <h4>Composición del hogar</h4>
+                            <p><span>Adultos:</span> <strong>2</strong></p>
+                            <p><span>Niños:</span> <strong>1</strong></p>
+                            <p><span>Otras mascotas:</span> <strong>1 perro (vacunado y esterilizado)</strong></p>
+                            <p><span>Vive en:</span> <strong>Apartamento</strong></p>
+                            <p><span>Tiene jardín / patio:</span> <strong>No</strong></p>
+                            <p><span>Tiempo que pasará solo:</span> <strong>4 - 6 horas</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Motivación -->
+                    <div class="caja-motivacion">
+                        <h4>Motivación para adoptar</h4>
+                        <p><i class="fa-solid fa-quote-left"></i> Siempre he amado los perros y siento que estoy lista para darle a Buddy un hogar lleno de amor, cuidados y estabilidad. Tengo el tiempo, los recursos y la disposición para brindarle una vida feliz.</p>
+                    </div>
+
+                    <!-- Documentos adjuntos -->
+                    <div class="seccion-adjuntos">
+                        <h4>Documentos adjuntos</h4>
+                        <div class="grid-adjuntos">
+                            <div class="caja-archivo">
+                                <i class="fa-solid fa-file-pdf icono-pdf"></i>
+                                <div>
+                                    <strong>Documento de identidad</strong>
+                                    <small>laura_garcia_cc.pdf</small>
+                                </div>
+                                <i class="fa-solid fa-download icono-descarga"></i>
+                            </div>
+                            <div class="caja-archivo">
+                                <i class="fa-solid fa-file-pdf icono-pdf"></i>
+                                <div>
+                                    <strong>Comprobante de residencia</strong>
+                                    <small>recibo_agua_junio.pdf</small>
+                                </div>
+                                <i class="fa-solid fa-download icono-descarga"></i>
+                            </div>
+                            <div class="caja-archivo">
+                                <i class="fa-solid fa-image icono-img"></i>
+                                <div>
+                                    <strong>Foto del hogar</strong>
+                                    <small>hogar_laura.jpg</small>
+                                </div>
+                                <i class="fa-solid fa-download icono-descarga"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RETIRAR SOLICITUD -->
+            <div class="caja-blanca caja-retirar-solicitud">
+                <div>
+                    <strong>¿Deseas retirar tu solicitud?</strong>
+                    <p>Si ya no deseas continuar con el proceso de adopción de Buddy, puedes retirar tu solicitud.</p>
+                </div>
+                <button class="btn-eliminar">Retirar solicitud</button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer>
+        <div class="contenedor-footer">
+            <div class="columna-footer info-marca">
+                <div class="contenedor-logo-footer">
+                    <div class="icono-logo-footer"><i class="fa-solid fa-paw"></i></div>
+                    <h2>MonPet</h2>
+                </div>
+                <p class="slogan-footer">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+                <p class="desc-footer">Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado.</p>
+                <div class="redes-sociales">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Adopción</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Veterinarios</a></li>
+                    <li><a href="#">Jornadas</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Cómo adoptar</a></li>
+                    <li><a href="#">Consejos de cuidado</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Información legal</h3>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer contacto">
+                <h3>Contáctanos</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p>
+                <p><i class="fa-solid fa-envelope"></i> hola@monpet.com</p>
+                <p><i class="fa-solid fa-phone"></i> +57 300 123 4567</p>
+                <p><i class="fa-solid fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.</p>
+                <p class="horario-sabado">Sáb: 8:00 a.m. - 2:00 p.m.</p>
+            </div>
+        </div>
+
+        <div class="derechos-reservados">
+            <p>© 2026 MonPet. Todos los derechos reservados. <i class="fa-solid fa-paw"></i></p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonPet - Mis Solicitudes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/solicitudes.css">
+    <link rel="stylesheet" href="../css/reporte.css">
+</head>
+<body>
+
+    <!-- HEADER PRINCIPAL -->
+    <header>
+      <div class="contenedor-logo">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+      <nav class="links-navegacion">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Adopción</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Refugios</a></li>
+            <li><a href="#">Jornadas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+
+        <div class="perfil-header">
+            <div class="icono-notificacion">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge-notif">3</span>
+            </div>
+            <div class="usuario-perfil">
+                <img src="../img/perfil.jpg" alt="Laura García" class="foto-usuario">
+                <div class="info-usuario">
+                    <strong>Laura García <i class="fa-solid fa-chevron-down"></i></strong>
+                    <small>Ver perfil</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PANEL PRINCIPAL CON ASIDE Y CONTENIDO -->
+    <div class="contenedor-panel">
+        
+        <!-- MENÚ LATERAL IZQUIERDO -->
+        <aside class="menu-lateral">
+            <nav class="lista-menu">
+                <a href="#" class="item-menu"><i class="fa-solid fa-user"></i> Mi perfil</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-heart"></i> Mis mascotas guardadas</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-star"></i> Mis favoritos</a>
+                <a href="#" class="item-menu activo"><i class="fa-solid fa-file-lines"></i> Mis solicitudes</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-flag"></i> Mis reportes</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-bell"></i> Notificaciones <span class="badge-menu">3</span></a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-comment"></i> Mensajes</a>
+                <a href="#" class="item-menu"><i class="fa-solid fa-calendar"></i> Mis donaciones</a>
+                <a href="configuracion.html" class="item-menu"><i class="fa-solid fa-gear"></i> Configuración</a>
+            </nav>
+
+            <div class="caja-ayuda">
+                <i class="fa-solid fa-headset icono-ayuda"></i>
+                <h4>¿Necesitas ayuda?</h4>
+                <p>Estamos aquí para ayudarte.</p>
+                <a href="#" class="enlace-soporte">Contactar soporte <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL DE SOLICITUDES -->
+        <main class="contenido-panel">
+            
+            <div class="encabezado-seccion">
+                <div class="titulo-pagina">
+                    <div class="circulo-icono"><i class="fa-solid fa-file-lines"></i></div>
+                    <div>
+                        <h2>Mis solicitudes</h2>
+                        <p>Consulta el estado de tus solicitudes de adopción.</p>
+                    </div>
+                </div>
+
+                <div class="banner-agradecimiento">
+                    <i class="fa-solid fa-heart icono-corazon-banner"></i>
+                    <div>
+                        <strong>Gracias por querer cambiar una vida <i class="fa-solid fa-heart"></i></strong>
+                        <p>Nuestro equipo revisa cada solicitud con mucho cariño y responsabilidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILTROS Y BUSQUEDA -->
+            <div class="caja-blanca barra-filtros">
+                <div class="pestanas-filtro">
+                    <button class="btn-filtro activo">Todas <span class="contador">8</span></button>
+                    <button class="btn-filtro">En revisión <span class="contador">3</span></button>
+                    <button class="btn-filtro">Entrevista <span class="contador">2</span></button>
+                    <button class="btn-filtro">Aprobada <span class="contador">1</span></button>
+                    <button class="btn-filtro">Rechazada <span class="contador">2</span></button>
+                </div>
+                <select class="select-ordenar">
+                    <option>Más recientes</option>
+                </select>
+            </div>
+
+            <!-- TARJETAS DE SOLICITUDES -->
+            
+            <!-- 1. Buddy (En revisión) -->
+            <div class="caja-blanca tarjeta-solicitud">
+                <div class="col-foto">
+                    <img src="../img/labrador.jpg" alt="Buddy" class="foto-tarjeta">
+                </div>
+                <div class="col-detalles">
+                    <h3>Buddy <i class="fa-solid fa-mars genero-macho"></i></h3>
+                    <p class="raza">Labrador Retriever</p>
+                    <p class="datos-mascota"><i class="fa-solid fa-calendar"></i> 2 años &nbsp; <i class="fa-solid fa-paw"></i> Grande</p>
+                    <p class="ubicacion"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+                </div>
+                <div class="col-envio">
+                    <small>Solicitud enviada</small>
+                    <p class="fecha-envio">28 de julio de 2026 - 10:30 a. m.</p>
+                    <a href="detalle_solicitud.html" class="btn-ver-detalles">Ver detalles</a>
+                </div>
+                <div class="col-estado estado-revision">
+                    <div class="caja-icono-estado"><i class="fa-solid fa-clipboard-question"></i></div>
+                    <div>
+                        <strong>En revisión</strong>
+                        <p>Nuestro equipo está revisando tu solicitud. Te notificaremos pronto.</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical tres-puntos"></i>
+                </div>
+            </div>
+
+            <!-- 2. Luna (Entrevista) -->
+            <div class="caja-blanca tarjeta-solicitud">
+                <div class="col-foto">
+                    <img src="../img/gata1.jpg" alt="Luna" class="foto-tarjeta">
+                </div>
+                <div class="col-detalles">
+                    <h3>Luna <i class="fa-solid fa-venus genero-hembra"></i></h3>
+                    <p class="raza">Gata doméstica</p>
+                    <p class="datos-mascota"><i class="fa-solid fa-calendar"></i> 1 año &nbsp; <i class="fa-solid fa-paw"></i> Mediano</p>
+                    <p class="ubicacion"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+                </div>
+                <div class="col-envio">
+                    <small>Solicitud enviada</small>
+                    <p class="fecha-envio">25 de julio de 2026 - 04:15 p. m.</p>
+                    <a href="detalle_solicitud.html" class="btn-ver-detalles">Ver detalles</a>
+                </div>
+                <div class="col-estado estado-entrevista">
+                    <div class="caja-icono-estado"><i class="fa-solid fa-comments"></i></div>
+                    <div>
+                        <strong>Entrevista</strong>
+                        <p>Hemos agendado una entrevista contigo. Revisa tu correo para más información.</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical tres-puntos"></i>
+                </div>
+            </div>
+
+            <!-- 3. Mia (Aprobada) -->
+            <div class="caja-blanca tarjeta-solicitud">
+                <div class="col-foto">
+                    <img src="../img/gato1.jpg" alt="Mia" class="foto-tarjeta">
+                </div>
+                <div class="col-detalles">
+                    <h3>Mia <i class="fa-solid fa-venus genero-hembra"></i></h3>
+                    <p class="raza">Gata doméstica</p>
+                    <p class="datos-mascota"><i class="fa-solid fa-calendar"></i> 8 meses &nbsp; <i class="fa-solid fa-paw"></i> Pequeño</p>
+                    <p class="ubicacion"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+                </div>
+                <div class="col-envio">
+                    <small>Solicitud enviada</small>
+                    <p class="fecha-envio">18 de julio de 2026 - 11:20 a. m.</p>
+                    <a href="detalle_solicitud.html" class="btn-ver-detalles">Ver detalles</a>
+                </div>
+                <div class="col-estado estado-aprobada">
+                    <div class="caja-icono-estado"><i class="fa-solid fa-circle-check"></i></div>
+                    <div>
+                        <strong>Aprobada</strong>
+                        <p>¡Felicidades! Tu solicitud fue aprobada. Pronto un voluntario se contactará contigo.</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical tres-puntos"></i>
+                </div>
+            </div>
+
+            <!-- PAGINACIÓN -->
+            <div class="paginacion">
+                <button class="btn-pagina"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn-pagina activo">1</button>
+                <button class="btn-pagina">2</button>
+                <button class="btn-pagina"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer>
+        <div class="contenedor-footer">
+            <div class="columna-footer info-marca">
+                <div class="contenedor-logo-footer">
+                    <div class="icono-logo-footer"><i class="fa-solid fa-paw"></i></div>
+                    <h2>MonPet</h2>
+                </div>
+                <p class="slogan-footer">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+                <p class="desc-footer">Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado.</p>
+                <div class="redes-sociales">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Adopción</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Veterinarios</a></li>
+                    <li><a href="#">Jornadas</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Cómo adoptar</a></li>
+                    <li><a href="#">Consejos de cuidado</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Información legal</h3>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer contacto">
+                <h3>Contáctanos</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p>
+                <p><i class="fa-solid fa-envelope"></i> hola@monpet.com</p>
+                <p><i class="fa-solid fa-phone"></i> +57 300 123 4567</p>
+                <p><i class="fa-solid fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.</p>
+                <p class="horario-sabado">Sáb: 8:00 a.m. - 2:00 p.m.</p>
+            </div>
+        </div>
+
+        <div class="derechos-reservados">
+            <p>© 2026 MonPet. Todos los derechos reservados. <i class="fa-solid fa-paw"></i></p>
+        </div>
+    </footer>
+
+</body>
+</html>
