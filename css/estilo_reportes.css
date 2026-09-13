@@ -42,6 +42,9 @@ header {
     height: 90%;
     margin-left: 60px;
 }
+.contenedor-logo a {
+    text-decoration: none;
+}
 .contenedor-logo .icono-logo {
     font-size: 2.8rem;
     color: #fff;
@@ -68,7 +71,9 @@ header {
     color: #8645cc;
 }
 .contenedor-logo .texto-logo .slogan-banner {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    line-height: 0.9rem;
+    color: #000000;
 }
 .contenedor-logo .texto-logo .slogan-banner i{
     font-size: 0.89rem;

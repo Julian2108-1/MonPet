@@ -45,6 +45,10 @@ header {
     height: 90%;
     margin-left: 60px;
 }
+.contenedor-logo a {
+    text-decoration: none;
+    color: #fff;
+}
 .contenedor-logo .icono-logo {
     font-size: 2.8rem;
     color: #fff;
@@ -71,7 +75,9 @@ header {
     color: #8645cc;
 }
 .contenedor-logo .texto-logo .slogan-banner {
-    font-size: 1.3rem;
+    color: #000000;
+    font-size: 1.5rem;
+    line-height: 0.9rem;
 }
 .contenedor-logo .texto-logo .slogan-banner i{
     font-size: 0.89rem;
@@ -108,25 +114,26 @@ header {
     align-items: center;
     width: 15%;
     margin-right: 60px;
+    gap: 20px;
  }
  .accion-navegacion .boton-secundario {
     border: 2px solid #cea0ff;
     border-radius: 15px;
     text-align: center;
-    width: 130px;
+    width: 200px;
     padding: 10px;
     color: #000;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 2rem;
  }
 .accion-navegacion .boton-secundario-reg {
     border-radius: 15px;
     text-align: center;
-    width: 130px;
+    width: 200px;
     padding: 10px;
     color: #fff;
     text-decoration: none;
-    font-size: 1.3rem; 
+    font-size: 2rem; 
     background: #8645cc;
     border: 2px solid #8645cc;
 }
@@ -279,8 +286,8 @@ CONTENIDO DE LA PAGINA
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: -45px;
-    height: 100px;
+    margin-top: -50px;
+    height: 130px;
 }
 .buscador-general form {
     display: flex;
@@ -298,11 +305,13 @@ CONTENIDO DE LA PAGINA
     position: relative;
 }
 .buscador-general .caja-busqueda input {
-    padding-left: 35px;
-    height: 45px;
+    padding-left: 55px;
+    font-size: 2rem;
+    height: 60px;
+
 }
 .buscador-general form input {
-    width: 350px;
+    width: 480px;
     border: 1px solid #ccc;
     border-radius: 15px;
 }
@@ -312,28 +321,29 @@ CONTENIDO DE LA PAGINA
     top: 50%;
     transform: translateY(-50%);
     color: #7B42B6;
+    font-size: 1.8rem;
 }
 .buscador-general select {
-    width: 300px;
+    width: 360px;
     border: 1px solid #ccc;
     border-radius: 15px;
-    height: 45px;
+    height: 60px;
     padding-left: 35px;
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: #6f6f6f;
 }
 .buscador-general button {
-    width: 200px;
-    border: 1px solid #ccc;
+    width: 250px;
+    border: 1px solid #8645cc;
     border-radius: 15px;
     background: #8645cc;
-    height: 45px;
+    height: 60px;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 2.2rem;
     color: #ffffff;
 }
 .buscador-general button i {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
 }
 .buscador-general button:hover {
     background: #6d24ba;
@@ -344,7 +354,7 @@ CONTENIDO DE LA PAGINA
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin-left: 285px;
+    margin-left: 255px;
     margin-top: -20px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -414,6 +424,7 @@ CONTENIDO DE LA PAGINA
     align-items: center;
     flex-direction: column;
     height: 500px;
+    margin: 70px 0;
 }
 .seccion-adopciones .encabezado-adopciones {
     display: flex;
@@ -458,6 +469,9 @@ CONTENIDO DE LA PAGINA
     justify-content: space-between;
     align-items: center;
     width: 80%;
+    overflow: hidden;
+    gap: 0px;
+    padding: 20px;
 }
 .ficha-mascota {
     display: flex;
@@ -468,6 +482,8 @@ CONTENIDO DE LA PAGINA
     height: 250px;
     box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.2);
     background: #fff;
+    flex-shrink: 0;
+    cursor: pointer;
 }
 .ficha-mascota .foto-mascota {
     width: 100%;
@@ -482,10 +498,27 @@ CONTENIDO DE LA PAGINA
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-.ficha-mascota .favorito {
+.ficha-mascota .foto-mascota {
     position: relative;
-    top: 10px;
-    right: 100px;
+}
+
+.ficha-mascota .favorito {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #8645cc;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .ficha-mascota .datos-mascota {
     display: flex;
@@ -577,6 +610,17 @@ CONTENIDO DE LA PAGINA
     background: #f6f2ff;
     color: #56139d;
     transform: scale(1.05);
+}
+.ficha-mascota {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ficha-mascota:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px 3px rgba(0, 0, 0, 0.2);
+}
+.ficha-mascota .favorito {
+    cursor: pointer;
 }
 /*---------------
    FOOTER
