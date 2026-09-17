@@ -1,81 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
+* {
+    font-family: 'Rancho', cursive;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.caja-blanca {
+    border: none;
+}
+/* ========================
+   CONTENEDOR PRINCIPAL
+   ========================*/
+.contenedor-principal-reportes {
+    display: flex;
+    width: calc(100% - 112px);
+    max-width: 2400px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    gap: 40px;
+}
+/* ==================
+   BARRA LATERAL
+   ==================*/
+.barra-lateral-reportes {
+    width: 450px;
+    min-width: 320px;
+    padding: 22px 0;
+}
+/* ===================
+   NAVEGACIÓN LATERAL
+   =================== */
+.navegacion-lateral-reportes {
+    background-color: #ffffff;
+    border: 1px solid #eee9f8;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(73, 43, 132, 0.06);
+}
+/* =====================================
+   ELEMENTOS DE LA NAVEGACIÓN LATERAL
+   ===================================== */
+.elemento-navegacion-reportes {
+    display: flex;
+    min-height: 100px;
+    padding: 0 30px;
+    align-items: center;
+    gap: 20px;
+    color: #39334d;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.elemento-navegacion-reportes i {
+    width: 22px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #7040d3;
+}
+.elemento-navegacion-reportes:hover {
+    background-color: #f6f0ff;
+    color: #5f31bd;
+}
+.elemento-navegacion-reportes.activo {
+    background: #642bc0;
+    color: #ffffff;
+}
+.elemento-navegacion-reportes.activo i {
+    color: #ffffff;
+}
+/* ======================
+   CONTADOR DE MENSAJES
+   ======================*/
+.contador-mensajes-reportes {
+    display: flex;
+    margin-left: auto;
+    min-width: 47px;
+    height: 47px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #d9c5fb;
+    color: #6430bf;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+/* ==================
+   TARJETA DE AYUDA
+   ================== */
+.tarjeta-ayuda-reportes {
+    display: flex;
+    margin-top: 30px;
+    padding: 50px 30px 30px 30px;
+    height: 250px;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #ffffff;
+    border: 1px solid #eee9f8;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(73, 43, 132, 0.05);
+}
+.icono-ayuda-reportes {
+    display: flex;
+    width: 90px;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f2eaff;
+    color: #7138d0;
+    flex-shrink: 0;
+}
+.icono-ayuda-reportes i {
+    font-size: 2.5rem;
+}
+.informacion-ayuda-reportes h3 {
+    margin-bottom: 18px;
+    color: #30294a;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.informacion-ayuda-reportes p {
+    margin-bottom: 18px;
+    color: #77718c;
+    font-size: 1.9rem;
+    line-height: 1.45rem;
+}
+.enlace-soporte-reportes {
+    color: #6b35cc;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+.enlace-soporte-reportes i {
+    font-size: 1.5rem;
+}
+.enlace-soporte-reportes:hover {
+    color: #3c1585;
+    font-size: 2rem;
+}
+/* ======================
+   CONTENIDO PRINCIPAL
+   ====================== */
+.contenido-principal-reportes {
+    flex: 1;
+    min-width: 0;
+}
+/* ==============
+   MIGAS DE PAN
+   ==============*/
+.migas-pan-reportes {
+    margin-top: 30px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 45px;
+    font-size: 2rem;
+}
+.migas-pan-reportes a {
+    display: flex;
+    color: #6733c5;
+    font-weight: 500;
+    text-decoration: none;
+    align-items: center;
+    gap: 7px;
+}
+.migas-pan-reportes span {
+    color: #77718c;
+    font-weight: 500;
+}
+.separador-miga-reportes {
+    color: #bcb7c8;
+    font-size: 1.3rem;
+}
+.migas-pan-reportes a:hover {
+    text-decoration: underline;
+    color: #5f31bd;
+}
+/* ===============
+   CONFIGURACIÓN
+   ============== */
 .layout-configuracion {
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 25px;
 }
-
+/* =====================
+   COLUMNA PRINCIPAL
+   ===================== */
 .columna-config-principal {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
+/* ============================
+   SECCIONES DE CONFIGURACIÓN
+   ===========================*/
 .seccion-config {
     padding: 22px 25px;
 }
-
+.titulo-pagina h2{
+    font-size: 4rem;
+}
+.titulo-pagina p {
+    font-size: 2rem;
+}
+.titulo-pagina .circulo-icono {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+}
+/* ============================
+   ENCABEZADO DE LAS SECCIONES
+   =========================== */
 .encabezado-caja-config {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
-
+/* =================
+   TÍTULO CON ICONO
+   =================*/
 .titulo-con-icono {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+    font-size: 2rem;
+    color: #30294a;
 }
-
 .icono-seccion {
     background: #F2ECFB;
     color: #7B42B6;
-    width: 32px;
-    height: 32px;
+    width: 72px;
+    height: 62px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 3rem;
 }
-
 .icono-seccion.rojo {
     background: #FDEDEC;
     color: #E74C3C;
 }
-
+/*=========================
+   INFORMACIÓN DEL USUARIO
+   ======================== */
 .contenido-info-usuario {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .lista-datos p {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
-
 .lista-datos small {
     display: block;
     color: #888888;
-    font-size: 0.8rem;
+    font-size: 2.2rem;
+    line-height: 1.7rem;
 }
-
+/* ================
+   AVATAR DE PERFIL
+   ================ */
 .avatar-perfil-caja {
     position: relative;
-    width: 90px;
-    height: 90px;
+    width: 300px;
+    height: 300px;
+    right: 40px;
 }
-
 .avatar-perfil-caja img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
-
 .btn-camara {
     position: absolute;
     bottom: 2px;
@@ -83,55 +289,60 @@
     background: #7B42B6;
     color: #ffffff;
     border: none;
-    width: 28px;
-    height: 28px;
+    width: 78px;
+    height: 78px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 2.2rem;
 }
-
+/* ======================================
+   OPCIONES DE SEGURIDAD Y PREFERENCIAS
+   =====================================*/
 .fila-opcion-seguridad {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
     border-top: 1px solid #F9F6FC;
+    font-size: 2rem;
 }
-
 .fila-opcion-seguridad small {
     display: block;
     color: #888888;
-    font-size: 0.8rem;
+    font-size: 1.7rem;
 }
-
+/* ==========
+   BOTONES
+   ==========*/
 .btn-borde-sm {
     border: 1px solid #D1C3F7;
     background: #ffffff;
     color: #7B42B6;
     padding: 6px 14px;
     border-radius: 8px;
-    font-size: 0.85rem;
+    font-size: 2.5rem;
     font-weight: 500;
     cursor: pointer;
 }
-
+/* =============================
+   SELECTORES DE CONFIGURACIÓN
+   ============================ */
 .grupo-select-config {
     margin: 12px 0;
 }
-
 .grupo-select-config label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 5px;
     color: #4a4a4a;
 }
-
 .select-config {
     width: 100%;
+    height: 60px;
     padding: 8px 12px;
     border: 1px solid #D1C3F7;
     border-radius: 8px;
@@ -139,118 +350,269 @@
     background: #ffffff;
     color: #333333;
 }
-
-/* Switches (Toggle ON/OFF) */
+/* ==========
+   SWITCHES
+   ========== */
 .switch-toggle {
     position: relative;
     display: inline-block;
-    width: 44px;
-    height: 24px;
+    width: 84px;
+    height: 44px;
 }
-
-.switch-toggle input { display: none; }
-
+.switch-toggle input {
+    display: none;
+}
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #CCCCCC;
     transition: .3s;
     border-radius: 24px;
 }
-
 .slider:before {
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
+    height: 38px;
+    width: 42px;
     left: 3px;
     bottom: 3px;
     background-color: white;
     transition: .3s;
     border-radius: 50%;
 }
-
-input:checked + .slider { background-color: #7B42B6; }
-input:checked + .slider:before { transform: translateX(20px); }
-
-/* Columna Lateral Derecha */
+input:checked + .slider {
+    background-color: #7B42B6;
+}
+input:checked + .slider:before {
+    transform: translateX(34px);
+}
+.caja-eliminar p{
+    font-size: 2rem;
+}
+.btn-eliminar {
+    background: #ffffff;
+    border: 1px solid #E74C3C;
+    color: #E74C3C;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 2rem;
+}
+.btn-eliminar:hover {
+    background: #E74C3C;
+    color: #ffffff;
+}
+/* =======================
+   COLUMNA LATERAL DERECHA
+   =======================*/
 .columna-config-lateral {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
+/* =================
+   TARJETA MI PLAN
+   =================*/
 .tarjeta-plan {
     padding: 20px;
 }
-
 .encabezado-plan {
     display: flex;
     align-items: center;
     gap: 8px;
     color: #7B42B6;
     margin-bottom: 10px;
+    font-size: 2rem;
 }
-
 .badge-plan-gratis {
     background: #F2ECFB;
     color: #7B42B6;
     padding: 4px 10px;
     border-radius: 12px;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     font-weight: bold;
     display: inline-block;
     margin-bottom: 15px;
 }
-
+/* ======================
+   BENEFICIOS DEL PLAN
+   ====================== */
 .lista-beneficios {
     list-style: none;
     margin-bottom: 20px;
 }
-
 .lista-beneficios li {
-    font-size: 0.85rem;
+    font-size: 1.7rem;
     color: #555555;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
-.lista-beneficios i { color: #2ECC71; }
-
+.lista-beneficios i {
+    color: #2ECC71;
+}
 .btn-ver-planes {
     width: 100%;
-    border: 1px solid #7B42B6;
+    border: 1px solid #D1C3F7;
     background: #ffffff;
     color: #7B42B6;
     padding: 8px;
     border-radius: 8px;
-    font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 2rem;
     cursor: pointer;
 }
-
+/* ============================
+   TARJETA DE AGRADECIMIENTO
+   ============================*/
 .tarjeta-agradecimiento-lateral {
     text-align: center;
     background: #F9F6FC;
     border: 1px solid #D1C3F7;
 }
-
 .ilustracion-mascotas {
-    font-size: 2.2rem;
+    font-size: 5rem;
     color: #B996E5;
     margin-bottom: 10px;
 }
-
 .tarjeta-agradecimiento-lateral h4 {
-    font-size: 1rem;
+    font-size: 2rem;
     color: #333333;
     margin-bottom: 6px;
 }
-
+.tarjeta-agradecimiento-lateral i {
+    margin-left: 10px;
+}
 .tarjeta-agradecimiento-lateral p {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     color: #666666;
+}
+/* ===========
+   FOOTER
+============= */
+.footer{
+    display: flex;
+    flex-direction: column;
+    background: #401E8E;
+    color: white;
+    margin-top: 0px;
+    gap: 10px;
+}
+.footer-onda{
+    width: 100%;
+    height: 100px;
+}
+.footer-onda img {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    top: -230px;
+}
+.footer-contenedor{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+}
+.footer-logo .icono-logo2 {
+    color: #7B42B6;
+    height: 90%;
+    width: 75px;
+    border-radius: 20px;
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.footer-logo .icono-logo2 i {
+    font-size: 3rem;
+}
+.footer-logo h2{
+    font-size: 4rem;
+    margin-bottom: 12px;
+}
+.footer-logo p{
+    font-size: 2rem;
+    line-height: 1;
+    color: #E5DFFF;
+    margin-bottom: 25px;
+}
+
+.footer-redes{
+    display: flex;
+    gap: 15px;
+}
+.footer-redes a{
+    width: 65px;
+    height: 65px;
+    background: rgba(255,255,255,.12);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    transition: .3s;
+    text-decoration: none;
+}
+.footer-redes a:hover{
+    background: white;
+    color: #5B2ECF;
+    transform: translateY(-5px);
+}
+.footer h3{
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+.footer ul{
+    list-style: none;
+}
+.footer ul li{
+    margin-bottom: 15px;
+}
+.footer ul li a{
+    color: #E5DFFF;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 1.8rem;
+}
+.footer ul li a:hover{
+    color: white;
+    padding-left: 8px;
+}
+.footer-contacto li{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #E5DFFF;
+    font-size: 1.8rem;
+}
+.footer-contacto i{
+    width: 20px;
+    color: white;
+    margin-right: 15px;
+}
+.footer-inferior{
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+}
+.footer-inferior p{
+    color: #E5DFFF;
+    font-size: 2rem;
 }

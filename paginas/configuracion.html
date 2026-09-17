@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MonPet - Configuración</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="../css/reporte.css">
+    <link rel="stylesheet" href="../css/reporte.css">
     <link rel="stylesheet" href="../css/solicitudes.css">
     <link rel="stylesheet" href="../css/configuracion.css">
 </head>
+
 <body>
 
     <!-- HEADER PRINCIPAL -->
     <header>
-      <div class="contenedor-logo">
-        <div class="icono-logo">
-          <i class="fa-solid fa-paw"></i>
+        <div class="contenedor-logo">
+            <div class="icono-logo">
+                <i class="fa-solid fa-paw"></i>
+            </div>
+            <div class="texto-logo">
+                <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+                <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+            </div>
         </div>
-        <div class="texto-logo">
-         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
-        </div>
-      </div>
-      <nav class="links-navegacion">
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Adopción</a></li>
-            <li><a href="#">Reportes</a></li>
-            <li><a href="#">Refugios</a></li>
-            <li><a href="#">Jornadas</a></li>
-            <li><a href="#">Nosotros</a></li>
-        </ul>
-      </nav>
+        <nav class="links-navegacion">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Adopción</a></li>
+                <li><a href="#">Reportes</a></li>
+                <li><a href="#">Refugios</a></li>
+                <li><a href="#">Jornadas</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
 
         <div class="perfil-header">
             <div class="icono-notificacion">
@@ -49,33 +51,74 @@
     </header>
 
     <!-- PANEL PRINCIPAL CON ASIDE Y CONTENIDO -->
-    <div class="contenedor-panel">
-        
-        <!-- MENÚ LATERAL IZQUIERDO -->
-        <aside class="menu-lateral">
-            <nav class="lista-menu">
-                <a href="#" class="item-menu"><i class="fa-solid fa-user"></i> Mi perfil</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-heart"></i> Mis mascotas guardadas</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-star"></i> Mis favoritos</a>
-                <a href="mis_solicitudes.html" class="item-menu"><i class="fa-solid fa-file-lines"></i> Mis solicitudes</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-flag"></i> Mis reportes</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-bell"></i> Notificaciones <span class="badge-menu">3</span></a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-comment"></i> Mensajes</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-calendar"></i> Mis donaciones</a>
-                <a href="configuracion.html" class="item-menu activo"><i class="fa-solid fa-gear"></i> Configuración</a>
+    <div class="contenedor-principal-reportes">
+        <aside class="barra-lateral-reportes">
+            <nav class="navegacion-lateral-reportes">
+
+                <a href="../index.html" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Mi perfil</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-star"></i>
+                    <span>Mis favoritos</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Mis solicitudes</span>
+                </a>
+
+                <a href="perfil_usuario_reportes.html" class="elemento-navegacion-reportes activo">
+                    <i class="fa-regular fa-flag"></i>
+                    <span>Mis reportes</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span>Mensajes</span>
+
+                    <span class="contador-mensajes-reportes">3</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configuración</span>
+                </a>
+
             </nav>
 
-            <div class="caja-ayuda">
-                <i class="fa-solid fa-headset icono-ayuda"></i>
-                <h4>¿Necesitas ayuda?</h4>
-                <p>Estamos aquí para ayudarte.</p>
-                <a href="#" class="enlace-soporte">Contactar soporte <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <!-- Ayuda -->
+            <div class="tarjeta-ayuda-reportes">
+                <div class="icono-ayuda-reportes">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="informacion-ayuda-reportes">
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Estamos aquí para ayudarte.</p>
+                    <a href="#" class="enlace-soporte-reportes">Contactar soporte <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
         </aside>
 
         <!-- CONTENIDO CONFIGURACIÓN -->
         <main class="contenido-panel">
-            
+            <div class="migas-pan-reportes">
+                <a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <a href="#">Mi cuenta</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <span>Mis reportes</span>
+            </div>
+
             <div class="titulo-pagina">
                 <div class="circulo-icono"><i class="fa-solid fa-gear"></i></div>
                 <div>
@@ -85,10 +128,10 @@
             </div>
 
             <div class="layout-configuracion">
-                
+
                 <!-- COLUMNA PRINCIPAL DE OPCIONES -->
                 <div class="columna-config-principal">
-                    
+
                     <!-- 1. Información de la cuenta -->
                     <div class="caja-blanca seccion-config">
                         <div class="encabezado-caja-config">
@@ -98,7 +141,7 @@
                             </div>
                             <button class="btn-borde-sm">Editar información</button>
                         </div>
-                        
+
                         <div class="contenido-info-usuario">
                             <div class="lista-datos">
                                 <p><small>Nombre completo</small> <strong>Laura García</strong></p>
@@ -245,23 +288,23 @@
 
                 <!-- COLUMNA DERECHA (PLAN Y MENSAJE) -->
                 <div class="columna-config-lateral">
-                    
+
                     <!-- Tarjeta Mi Plan -->
                     <div class="caja-blanca tarjeta-plan">
                         <div class="encabezado-plan">
                             <i class="fa-solid fa-crown icono-corona"></i>
-                            <h4>Mi plan</h4>
+                            <h4>Mis Beneficios</h4>
                         </div>
-                        <div class="badge-plan-gratis">Plan actual: Gratuito</div>
-                        
+                        <div class="badge-plan-gratis">Beneficios de mi cuenta MonPet</div>
+
                         <ul class="lista-beneficios">
-                            <li><i class="fa-solid fa-circle-check"></i> Publicar mascotas</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Reportar casos</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Solicitar adopciones</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Mensajería básica</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Novedades Jornadas</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Reportar Casos</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Solicitar Adopciones</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Mensajería Básica</li>
                         </ul>
 
-                        <button class="btn-ver-planes">Ver planes y beneficios</button>
+                        <button class="btn-ver-planes">Usuario MonPet</button>
                     </div>
 
                     <!-- Banner Agradecimiento -->
@@ -282,38 +325,49 @@
     </div>
 
     <!-- FOOTER PRINCIPAL -->
-    <footer>
-        <div class="contenedor-footer">
-            <div class="columna-footer info-marca">
-                <div class="contenedor-logo-footer">
-                    <div class="icono-logo-footer"><i class="fa-solid fa-paw"></i></div>
-                    <h2>MonPet</h2>
+    <footer class="footer">
+
+        <div class="footer-onda">
+            <img src="../img/fondo_onda_2.png" alt="fondo_footer">
+        </div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-logo">
+                <div class="icono-logo2">
+                    <i class="fa-solid fa-paw"></i>
                 </div>
-                <p class="slogan-footer">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
-                <p class="desc-footer">Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado.</p>
-                <div class="redes-sociales">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <div class="footer-informacion">
+                    <h2>MonPet</h2>
+                    <p>
+                        Conectamos corazones para que cada <br>mascota
+                        encuentre un hogar lleno<br>de amor y cuidado.
+                    </p>
+
+                    <div class="footer-redes">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="columna-footer">
+            <div class="footer-enlaces">
                 <h3>Enlaces rápidos</h3>
+
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
                     <li><a href="#">Adopción</a></li>
-                    <li><a href="#">Reportes</a></li>
+                    <li><a href="reportes_comunidad.html">Reportes</a></li>
                     <li><a href="#">Refugios</a></li>
-                    <li><a href="#">Veterinarios</a></li>
-                    <li><a href="#">Jornadas</a></li>
                     <li><a href="#">Nosotros</a></li>
                 </ul>
             </div>
 
-            <div class="columna-footer">
+            <div class="footer-ayuda">
                 <h3>Ayuda</h3>
+
                 <ul>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Cómo adoptar</a></li>
@@ -322,8 +376,9 @@
                 </ul>
             </div>
 
-            <div class="columna-footer">
+            <div class="footer-legal">
                 <h3>Información legal</h3>
+
                 <ul>
                     <li><a href="#">Términos y condiciones</a></li>
                     <li><a href="#">Política de privacidad</a></li>
@@ -331,20 +386,41 @@
                 </ul>
             </div>
 
-            <div class="columna-footer contacto">
-                <h3>Contáctanos</h3>
-                <p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p>
-                <p><i class="fa-solid fa-envelope"></i> hola@monpet.com</p>
-                <p><i class="fa-solid fa-phone"></i> +57 300 123 4567</p>
-                <p><i class="fa-solid fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.</p>
-                <p class="horario-sabado">Sáb: 8:00 a.m. - 2:00 p.m.</p>
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bogotá, Colombia
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        contacto@monpet.com
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +57 300 123 4567
+                    </li>
+
+                    <li>
+                        <i class="fa-regular fa-clock"></i>
+                        Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                    </li>
+                </ul>
             </div>
+
         </div>
 
-        <div class="derechos-reservados">
-            <p>© 2026 MonPet. Todos los derechos reservados. <i class="fa-solid fa-paw"></i></p>
+        <div class="footer-inferior">
+            <p>© 2026 MonPet. Todos los derechos reservados.</p>
         </div>
+
     </footer>
 
+
 </body>
+
 </html>
