@@ -134,24 +134,31 @@ header {
 .perfil-header {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
+    margin-right: 50px;
 }
 .icono-notificacion {
     position: relative;
-    font-size: 1.2rem;
+    font-size: 2.3rem;
     color: #7B42B6;
     cursor: pointer;
+    padding-top: 5px;
 }
 .badge-notif {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: -6px;
     right: -8px;
     background: #E74C3C;
     color: #ffffff;
-    font-size: 0.7rem;
+    font-size: 1.2rem;
     border-radius: 50%;
     padding: 2px 5px;
     font-weight: bold;
+    width: 25px;
+    height: 25px;
 }
 .usuario-perfil {
     display: flex;
@@ -160,19 +167,22 @@ header {
     cursor: pointer;
 }
 .foto-usuario {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
 }
 .info-usuario strong {
     display: block;
-    font-size: 0.95rem;
+    font-size: 1.7rem;
     color: #333333;
+}
+.info-usuario strong i {
+    font-size: 1.2rem;
 }
 .info-usuario small {
     color: #888888;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 /* =====================================================
    CONTENEDOR PRINCIPAL
@@ -186,7 +196,6 @@ header {
     padding: 32px 0 42px;
     gap: 40px;
 }
-
 /* =====================================================
    CONTENIDO PRINCIPAL
 ===================================================== */
@@ -349,16 +358,14 @@ header {
     gap: 26px;
     margin-bottom: 28px;
 }
-
 .titulo-pagina {
     display: flex;
     align-items: center;
     gap: 16px;
 }
-
 .circulo-icono {
-    width: 58px;
-    height: 58px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,28 +375,23 @@ header {
     box-shadow: 0 8px 16px rgba(107, 53, 204, 0.18);
     flex-shrink: 0;
 }
-
 .circulo-icono i {
-    font-size: 24px;
+    font-size: 2.5rem;
 }
-
 .titulo-pagina h2 {
     margin-bottom: 4px;
     color: #26213A;
-    font-size: 29px;
+    font-size: 3.5rem;
     line-height: 1.05;
-    font-weight: 700;
 }
-
 .titulo-pagina p {
     color: #77728B;
-    font-size: 13px;
+    font-size: 2rem;
 }
-
 /* Mensaje de agradecimiento */
 .banner-agradecimiento {
-    min-width: 500px;
-    min-height: 68px;
+    min-width: 600px;
+    min-height: 88px;
     padding: 12px 22px;
     display: flex;
     align-items: center;
@@ -399,7 +401,6 @@ header {
     border-radius: 13px;
     background: linear-gradient(90deg, #F2EAFF, #F7F2FF);
 }
-
 .banner-agradecimiento::after {
     content: "\f1b0";
     position: absolute;
@@ -408,37 +409,31 @@ header {
     color: rgba(125, 75, 211, 0.10);
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    font-size: 67px;
+    font-size: 5.5rem;
 }
-
 .icono-corazon-banner {
     color: #6B36CB;
-    font-size: 34px;
+    font-size: 3rem;
     position: relative;
     z-index: 2;
 }
-
 .banner-agradecimiento > div {
     position: relative;
     z-index: 2;
 }
-
 .banner-agradecimiento strong {
     display: block;
     margin-bottom: 4px;
     color: #6031BA;
-    font-size: 14px;
+    font-size: 1.5rem;
 }
-
 .banner-agradecimiento strong i {
-    font-size: 12px;
+    font-size: 1rem;
 }
-
 .banner-agradecimiento p {
     color: #716B83;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
-
 /* =====================================================
    CAJAS GENERALES Y FILTROS
 ===================================================== */
@@ -447,8 +442,7 @@ header {
     border: 1px solid #EEE9F8;
     box-shadow: 0 10px 32px rgba(65, 39, 118, 0.04);
 }
-
-.barra-filtros {
+/* .barra-filtros {
     min-height: 66px;
     padding: 8px 18px;
     display: flex;
@@ -529,8 +523,7 @@ header {
 .btn-pagina:focus-visible {
     outline: 2px solid rgba(124, 58, 237, 0.28);
     outline-offset: 2px;
-}
-
+} */
 /* =====================================================
    LISTADO DE SOLICITUDES
 ===================================================== */
@@ -547,57 +540,50 @@ header {
     box-shadow: none;
     transition: background-color 0.2s ease;
 }
-
 .tarjeta-solicitud:last-of-type {
     border-bottom: 0;
     border-radius: 0 0 16px 16px;
 }
-
 .tarjeta-solicitud:hover {
     background: #FCFAFF;
 }
-
 .col-foto,
 .col-detalles,
 .col-envio,
 .col-estado {
     min-width: 0;
 }
-
 .foto-tarjeta {
-    width: 116px;
-    height: 90px;
+    width: 200px;
+    height: 120px;
     display: block;
     border-radius: 8px;
     object-fit: cover;
     background: #EEE9F5;
 }
-
+.col-detalles {
+    margin-left: 100px;
+}
 .col-detalles h3 {
     margin-bottom: 4px;
     color: #29233D;
-    font-size: 16px;
+    font-size: 2.2rem;
     line-height: 1.1;
 }
-
 .col-detalles h3 i {
-    font-size: 12px;
+    font-size: 1.5rem;
 }
-
 .genero-macho {
     color: #2D82EA;
 }
-
 .genero-hembra {
     color: #F06C9D;
 }
-
 .raza {
     margin-bottom: 8px;
     color: #777184;
-    font-size: 12px;
+    font-size: 1.5rem;
 }
-
 .datos-mascota,
 .ubicacion {
     display: flex;
@@ -605,38 +591,34 @@ header {
     gap: 5px;
     margin-top: 5px;
     color: #787285;
-    font-size: 11px;
+    font-size: 1.3rem;
 }
-
 .datos-mascota i,
 .ubicacion i {
     color: #7660A2;
-    font-size: 12px;
+    font-size: 1.3rem;
 }
-
 .col-envio {
-    padding-left: 14px;
+    padding-left: 50px;
     border-left: 1px solid #F0EDF5;
+    min-width: 260px;
 }
-
 .col-envio small {
     display: block;
     margin-bottom: 6px;
     color: #2F2748;
-    font-size: 11px;
+    font-size: 1.6rem;
     font-weight: 700;
 }
-
 .fecha-envio {
     margin-bottom: 9px;
     color: #77718C;
-    font-size: 11px;
+    font-size: 1.2rem;
     line-height: 1.35;
 }
-
 .btn-ver-detalles {
-    min-width: 84px;
-    height: 30px;
+    min-width: 160px;
+    height: 40px;
     padding: 0 12px;
     display: inline-flex;
     align-items: center;
@@ -646,49 +628,44 @@ header {
     color: #6A36C5;
     background: #ffffff;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 1.5rem;
     font-weight: 700;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-
 .btn-ver-detalles:hover {
     background: #6D35C9;
     border-color: #6D35C9;
     color: #ffffff;
 }
-
-/* =====================================================
+/* ==========
    ESTADOS
-===================================================== */
+============*/
 .col-estado {
     min-height: 76px;
+    width: 400px;
     padding: 11px 16px;
     display: flex;
     align-items: center;
     gap: 12px;
     position: relative;
     border-radius: 10px;
+    margin-left: 80px;
 }
-
 .estado-revision {
     background: #FFF5E6;
 }
-
 .estado-entrevista {
     background: #EEF5FF;
 }
-
 .estado-aprobada {
     background: #EAF9F1;
 }
-
 .estado-rechazada {
     background: #FFEEEE;
 }
-
 .caja-icono-estado {
-    width: 38px;
-    height: 38px;
+    width: 58px;
+    height: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -696,66 +673,56 @@ header {
     border-radius: 9px;
     background: rgba(255, 255, 255, 0.50);
 }
-
 .estado-revision .caja-icono-estado,
 .estado-revision strong {
     color: #DE8C0C;
 }
-
 .estado-entrevista .caja-icono-estado,
 .estado-entrevista strong {
     color: #2F79E6;
 }
-
 .estado-aprobada .caja-icono-estado,
 .estado-aprobada strong {
     color: #199967;
 }
-
 .estado-rechazada .caja-icono-estado,
 .estado-rechazada strong {
     color: #D94B4B;
 }
-
 .caja-icono-estado i {
-    font-size: 18px;
+    font-size: 2rem;
 }
-
 .col-estado strong {
     display: block;
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 1.5rem;
 }
-
 .col-estado p {
     max-width: 270px;
     color: #6F697D;
-    font-size: 10.5px;
+    font-size: 1.2rem;
     line-height: 1.45;
 }
-
 .tres-puntos {
-    margin-left: auto;
+    margin-right: 0;
     color: #5D5480;
-    font-size: 16px;
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
-
-/* =====================================================
+/* =============
    PAGINACIÓN
-===================================================== */
+=============== */
 .paginacion {
-    min-height: 60px;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
     padding: 12px 0 4px;
 }
-
 .btn-pagina {
-    width: 32px;
-    height: 32px;
+    width: 52px;
+    height: 52px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -763,25 +730,145 @@ header {
     border-radius: 7px;
     background: #ffffff;
     color: #514A62;
-    font-size: 12px;
+    font-size: 1.5rem;
     cursor: pointer;
 }
-
 .btn-pagina:hover {
     background: #F4EEFF;
     color: #6532BF;
 }
-
 .btn-pagina.activo {
     border-color: #6D35C9;
     background: #6D35C9;
     color: #ffffff;
 }
-
 /* =====================================================
    COMPATIBILIDAD VISUAL CON EL CSS DE REPORTES
 ===================================================== */
 .contenedor-principal-reportes .navegacion-lateral-reportes,
 .contenedor-principal-reportes .tarjeta-ayuda-reportes {
     font-family: inherit;
+}
+/* ===========
+   FOOTER
+============= */
+.footer{
+    display: flex;
+    flex-direction: column;
+    background: #401E8E;
+    color: white;
+    margin-top: 0px;
+    gap: 10px;
+}
+.footer-onda{
+    width: 100%;
+    height: 100px;
+}
+.footer-onda img {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    top: -230px;
+}
+.footer-contenedor{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+}
+.footer-logo .icono-logo2 {
+    color: #7B42B6;
+    height: 90%;
+    width: 75px;
+    border-radius: 20px;
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.footer-logo .icono-logo2 i {
+    font-size: 3rem;
+}
+.footer-logo h2{
+    font-size: 4rem;
+    margin-bottom: 12px;
+}
+.footer-logo p{
+    font-size: 2rem;
+    line-height: 1;
+    color: #E5DFFF;
+    margin-bottom: 25px;
+}
+
+.footer-redes{
+    display: flex;
+    gap: 15px;
+}
+.footer-redes a{
+    width: 65px;
+    height: 65px;
+    background: rgba(255,255,255,.12);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    transition: .3s;
+    text-decoration: none;
+}
+.footer-redes a:hover{
+    background: white;
+    color: #5B2ECF;
+    transform: translateY(-5px);
+}
+.footer h3{
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+.footer ul{
+    list-style: none;
+}
+.footer ul li{
+    margin-bottom: 15px;
+}
+.footer ul li a{
+    color: #E5DFFF;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 1.8rem;
+}
+.footer ul li a:hover{
+    color: white;
+    padding-left: 8px;
+}
+.footer-contacto li{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #E5DFFF;
+    font-size: 1.8rem;
+}
+.footer-contacto i{
+    width: 20px;
+    color: white;
+    margin-right: 15px;
+}
+.footer-inferior{
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+}
+.footer-inferior p{
+    color: #E5DFFF;
+    font-size: 2rem;
 }
