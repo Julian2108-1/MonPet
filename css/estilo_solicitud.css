@@ -11,6 +11,9 @@ body {
     height: 100vh;
     
 }
+a {
+    text-decoration: none;
+}
 /*-------------
 MENU NAVEGACION
 -------------*/
@@ -30,6 +33,10 @@ header {
     align-items: center;
     height: 90%;
     margin-left: 60px;
+}
+.contenedor-logo a {
+    text-decoration: none;
+    color: #fff;
 }
 .contenedor-logo .icono-logo {
     font-size: 2.8rem;
@@ -57,7 +64,9 @@ header {
     color: #8645cc;
 }
 .contenedor-logo .texto-logo .slogan-banner {
-    font-size: 1.3rem;
+    color: #000000;
+    font-size: 1.5rem;
+    line-height: 0.9rem;
 }
 .contenedor-logo .texto-logo .slogan-banner i{
     font-size: 0.89rem;
@@ -94,21 +103,36 @@ header {
     align-items: center;
     width: 15%;
     margin-right: 60px;
+    gap: 20px;
  }
  .accion-navegacion .boton-secundario {
     border: 2px solid #cea0ff;
     border-radius: 15px;
     text-align: center;
-    width: 130px;
+    width: 200px;
     padding: 10px;
     color: #000;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 2rem;
  }
+.accion-navegacion .boton-secundario-reg {
+    border-radius: 15px;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem; 
+    background: #8645cc;
+    border: 2px solid #8645cc;
+}
 .accion-navegacion .boton-secundario:hover {
     background: #6d24ba;
     color: #fff;
     border: none;
+}
+.accion-navegacion .boton-secundario-reg:hover {
+    background: #6d24ba;
 }
 .acciones-usuario {
     display: flex;
