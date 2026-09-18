@@ -203,24 +203,37 @@ header {
     padding: 0px 130px;
     margin-bottom: 300px;
 }
-.pagina-solicitud-adopcion .migas-navegacion {
-    display: inline-block;
-    padding: 15px 15px 15px 0px;
+/* ==============
+   MIGAS
+===============*/
+.migas-pan-reportes {
+    margin-top: 30px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 45px;
+    font-size: 2rem;
 }
-.pagina-solicitud-adopcion .migas-navegacion a {
-    margin-right: 20px;
-    margin-left: 20px;
-    font-size: 1.5rem;
+.migas-pan-reportes a {
+    display: flex;
+    color: #6733c5;
+    font-weight: 500;
     text-decoration: none;
-    color: #8E52D3;
+    align-items: center;
+    gap: 7px;
 }
-.pagina-solicitud-adopcion .migas-navegacion a i {
-    margin-right: 10px;
+.migas-pan-reportes span {
+    color: #77718c;
+    font-weight: 500;
+}
+.separador-miga-reportes {
+    color: #bcb7c8;
     font-size: 1.3rem;
 }
-.migas-navegacion strong {
-    font-size: 1.5rem;
-    margin-left: 20px;
+.migas-pan-reportes a:hover {
+    text-decoration: underline;
+    color: #5f31bd;
 }
 .encabezado-solicitud {
     display: flex;
