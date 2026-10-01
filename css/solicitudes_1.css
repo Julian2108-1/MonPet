@@ -317,6 +317,132 @@ header {
     font-size: 2rem;
 }
 /* ==============
+   BARRA DE FILTROS
+================*/
+.barra-filtros-reportes {
+    display: flex;
+    min-height: 107px;
+    padding: 14px 19px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #f0edf5;
+    background: #fff;
+}
+.filtros-estado-reportes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.filtro-reporte {
+    display: flex;
+    min-height: 65px;
+    padding: 0 14px;
+    align-items: center;
+    gap: 7px;
+    border: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #625d74;
+    font-size: 2.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.filtro-reporte:hover {
+    background-color: #f7f3fd;
+}
+.filtro-reporte.activo {
+    background-color: #f0e7ff;
+    color: #6532bf;
+}
+.filtro-reporte span {
+    display: inline-flex;
+    min-width: 42px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ebe5f3;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.filtro-reporte.activo span {
+    background-color: #dcc8fa;
+    color: #6431be;
+}
+.filtro-reporte i {
+    font-size: 0.89rem;
+}
+.filtro-reporte.activo i {
+    font-size: 2rem;
+}
+.indicador-revision {
+    color: #f59f18;
+}
+.indicador-proceso {
+    color: #3178ea;
+}
+.indicador-resuelto {
+    color: #1ba56e;
+}
+.indicador-cerrado {
+    color: #868492;
+}
+/* ===========
+   BÚSQUEDA
+===============*/
+.herramientas-busqueda-reportes {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+.campo-busqueda-reportes {
+    position: relative;
+}
+.campo-busqueda-reportes i {
+    color: #8f899f;
+    font-size: 1.7rem;
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.campo-busqueda-reportes input {
+    border: 0;
+    outline: 0;
+    color: #3c3650;
+    font-size: 2rem;
+    width: 488px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    padding: 0 54px;
+    border: 1px solid #e6e1ee;
+    border-radius: 9px;
+    background-color: #ffffff;
+}
+.campo-busqueda-reportes input::placeholder {
+    color: #aaa4b5;
+}
+.campo-busqueda-reportes input:focus,
+select:focus {
+    border: 2px solid #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+}
+.selector-orden-reportes {
+    height: 61px;
+    min-width: 206px;
+    padding: 0 12px;
+    border: 1px solid #e6e1ee;
+    border-radius: 9px;
+    background-color: #ffffff;
+    color: #433d54;
+    outline: 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+/* ==============
    MIGAS
 ===============*/
 .migas-pan-reportes {
@@ -439,94 +565,11 @@ header {
 ===================================================== */
 .caja-blanca {
     background: #ffffff;
-    border: 1px solid #EEE9F8;
     box-shadow: 0 10px 32px rgba(65, 39, 118, 0.04);
 }
-/* .barra-filtros {
-    min-height: 66px;
-    padding: 8px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 0;
-    border-radius: 16px 16px 0 0;
-    border-bottom: 1px solid #F0EDF5;
-}
-
-.pestanas-filtro {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 7px;
-}
-
-.btn-filtro {
-    min-height: 38px;
-    padding: 0 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    border: 1px solid #E9E3F3;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #625D74;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.btn-filtro:hover {
-    background: #F7F3FD;
-}
-
-.btn-filtro.activo {
-    background: #F0E7FF;
-    color: #6532BF;
-    border-color: #E4D4FC;
-}
-
-.btn-filtro .contador {
-    min-width: 21px;
-    height: 21px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #EBE5F3;
-    color: #5E586E;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.btn-filtro.activo .contador {
-    background: #DCC8FA;
-    color: #6431BE;
-}
-
-.select-ordenar {
-    width: 130px;
-    height: 38px;
-    padding: 0 11px;
-    border: 1px solid #E6E1EE;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #433D54;
-    outline: 0;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.select-ordenar:focus,
-.btn-ver-detalles:focus-visible,
-.btn-pagina:focus-visible {
-    outline: 2px solid rgba(124, 58, 237, 0.28);
-    outline-offset: 2px;
-} */
-/* =====================================================
+/*===========================
    LISTADO DE SOLICITUDES
-===================================================== */
+============================ */
 .tarjeta-solicitud {
     min-height: 118px;
     padding: 16px 20px;

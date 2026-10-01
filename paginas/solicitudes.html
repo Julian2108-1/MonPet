@@ -51,7 +51,6 @@
     </header>
 
     <!-- PANEL PRINCIPAL CON ASIDE Y CONTENIDO -->
-    <!-- CONTENEDOR GENERAL: usa la misma estructura del HTML 2 -->
     <div class="contenedor-principal-reportes">
 
         <!-- MENÚ LATERAL IZQUIERDO -->
@@ -141,22 +140,55 @@
             </div>
 
             <!-- FILTROS Y BUSQUEDA -->
-            <!-- <div class="caja-blanca barra-filtros">
-                <div class="pestanas-filtro">
-                    <button class="btn-filtro activo">Todas <span class="contador">8</span></button>
-                    <button class="btn-filtro">En revisión <span class="contador">3</span></button>
-                    <button class="btn-filtro">Entrevista <span class="contador">2</span></button>
-                    <button class="btn-filtro">Aprobada <span class="contador">1</span></button>
-                    <button class="btn-filtro">Rechazada <span class="contador">2</span></button>
+                <div class="barra-filtros-reportes">
+                    <div class="filtros-estado-reportes">
+                        <button class="filtro-reporte activo">
+                            <i class="fa-regular fa-file-lines"></i>
+                            Todos
+                            <span>6</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-revision"></i>
+                            En revisión
+                            <span>2</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-proceso"></i>
+                            En proceso
+                            <span>2</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-resuelto"></i>
+                            Resueltos
+                            <span>1</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-cerrado"></i>
+                            Cerrados
+                            <span>1</span>
+                        </button>
+                    </div>
+
+                    <div class="herramientas-busqueda-reportes">
+                        <div class="campo-busqueda-reportes">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Buscar en mis reportes...">
+                        </div>
+
+                        <select class="selector-orden-reportes">
+                            <option>Más recientes</option>
+                            <option>Más antiguos</option>
+                            <option>Estado</option>
+                        </select>
+                    </div>
                 </div>
-                <select class="select-ordenar">
-                    <option>Más recientes</option>
-                </select>
-            </div> -->
 
             <!-- TARJETAS DE SOLICITUDES -->
 
-            <!-- 1. Buddy (En revisión) -->
             <div class="caja-blanca tarjeta-solicitud">
                 <div class="col-foto">
                     <img src="../img/labrador.jpg" alt="Buddy" class="foto-tarjeta">
