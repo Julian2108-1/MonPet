@@ -1,0 +1,722 @@
+/* ========================================== */
+/* 1. VARIABLES GLOBALES Y REAJUSTE (RESET)   */
+/* ========================================== */
+
+/* Paleta de colores identificada de la interfaz MonPet */
+:root {
+    --primary-color: #6C5CE7;       /* Morado principal de marca */
+    --primary-light: #F0EDFF;     /* Morado suave para fondos/badges */
+    --primary-hover: #5A4AD1;     /* Morado oscuro para estados hover */
+    --accent-green: #2ECC71;      /* Verde para badge de 'Disponible' */
+    --accent-green-bg: #E8F8F0;   /* Fondo verde claro */
+    --text-dark: #2D3436;         /* Color para títulos y texto principal */
+    --text-muted: #636E72;        /* Color para subtítulos y detalles secundarios */
+    --bg-main: #F8F9FE;           /* Fondo gris/azulado ultra claro del sitio */
+    --bg-card: #FFFFFF;           /* Fondo blanco de tarjetas */
+    --border-color: #E2E8F0;      /* Color de bordes y divisores */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave para elevación */
+    --border-radius: 12px;        /* Bordes redondeados estándares */
+}
+
+/* Reinicio básico para asegurar consistencia en navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+}
+
+/* ========================================== */
+/* 2. HEADER Y NAVEGACIÓN                     */
+/* ========================================== */
+
+.main-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilo del Logo MonPet */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.logo-text h1, .logo-text h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.1;
+}
+
+.logo-text span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.logo-text span i {
+    color: var(--primary-color);
+}
+
+/* Menú horizontal */
+.main-nav ul {
+    display: flex;
+    gap: 24px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    padding: 8px 0;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-color);
+}
+
+.main-nav a.active {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Acciones del usuario (Notificación y Avatar) */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.notification-btn {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    padding: 8px;
+}
+
+.notification-btn .badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #E74C3C;
+    color: white;
+    font-size: 0.7rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ========================================== */
+/* 3. SECCIÓN PRINCIPAL Y CONTENIDO           */
+/* ========================================== */
+
+.main-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Migas de pan */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.breadcrumbs a {
+    color: var(--primary-color);
+}
+
+/* Encabezado con Banner Promocional */
+.page-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.page-title-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.page-title-container h2 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+}
+
+.page-title-container p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Estilo del Banner Púrpura Claro */
+.banner-card {
+    background: linear-gradient(135deg, #F0EDFF 0%, #E6E1FF 100%);
+    border-radius: var(--border-radius);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    min-width: 380px;
+}
+
+.banner-images {
+    display: flex;
+}
+
+.banner-images img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.banner-images img:nth-child(2) {
+    margin-left: -15px;
+}
+
+.banner-text h3 {
+    font-size: 1.05rem;
+    color: var(--primary-color);
+}
+
+.banner-text p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.banner-watermark {
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    font-size: 5rem;
+    color: rgba(108, 92, 231, 0.08);
+}
+
+/* Layout General de 2 columnas (Filtros + Catálogo) */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+}
+
+/* ========================================== */
+/* 4. BARRA LATERAL DE FILTROS                */
+/* ========================================== */
+
+.filters-sidebar {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    height: fit-content;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters-header h3 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.clear-btn {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Selectores de Tipo de Mascota (Botones Perro/Gato) */
+.pet-type-selector {
+    display: flex;
+    gap: 8px;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.type-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Checkboxes personalizados */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--primary-color);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Control de Rango (Slider de Edad) */
+.range-slider .slider {
+    width: 100%;
+    accent-color: var(--primary-color);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Input Select de Ubicación */
+.select-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    outline: none;
+}
+
+/* Botón Aplicar Filtros */
+.apply-filters-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.apply-filters-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ========================================== */
+/* 5. GRILLA DE MASCOTAS Y TARJETAS          */
+/* ========================================== */
+
+.catalog-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.results-count {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.sort-and-view {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+}
+
+.sort-select {
+    width: auto;
+}
+
+.view-toggle {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.view-btn {
+    padding: 6px 10px;
+    color: var(--text-muted);
+}
+
+.view-btn.active {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+/* Grilla con Flexbox o CSS Grid */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+/* Tarjeta individual de mascota */
+.pet-card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-image-container {
+    position: relative;
+    height: 150px;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.status-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: var(--accent-green-bg);
+    color: var(--accent-green);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.favorite-btn.active, .favorite-btn:hover {
+    color: #E74C3C;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.pet-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pet-title h3 {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.gender-icon.male { color: #3498DB; }
+.gender-icon.female { color: #E84393; }
+
+.pet-breed {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.pet-details {
+    display: flex;
+    gap: 12px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.pet-location {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+.page-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ========================================== */
+/* 6. PIE DE PÁGINA (FOOTER)                  */
+/* ========================================== */
+
+.main-footer {
+    background-color: #2D235B; /* Morado oscuro para contraste en footer */
+    color: white;
+    padding-top: 40px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 30px;
+}
+
+.brand-col p {
+    font-size: 0.85rem;
+    color: #B2BEC3;
+    margin: 15px 0;
+}
+
+.logo-container.white .logo-text h2 {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-col h4 {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    font-size: 0.85rem;
+    color: #B2BEC3;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+.contact-info li {
+    font-size: 0.85rem;
+    color: #B2BEC3;
+    display: flex;
+    gap: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #B2BEC3;
+}
+
+/* Adaptabilidad básica (Responsive Layout) */
+@media (max-width: 1024px) {
+    .pets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .catalog-layout {
+        grid-template-columns: 1fr;
+    }
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

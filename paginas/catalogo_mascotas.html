@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonPet - Catálogo de Mascotas</title>
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="estilo_catalogo_mascotas.css">
+  <!-- Carga de iconos SVG simples usando la librería FontAwesome (opcional para renderizar íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ========================================== -->
+  <!-- ENCABEZADO Y NAVEGACIÓN PRINCIPAL (HEADER) -->
+  <!-- ========================================== -->
+  <header class="main-header">
+    <div class="header-container">
+      <!-- Logotipo de la aplicación -->
+      <div class="logo-container">
+        <div class="logo-icon">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="logo-text">
+          <h1>MonPet</h1>
+          <span>Amor que cambia vidas <i class="fa-solid fa-heart"></i></span>
+        </div>
+      </div>
+
+      <!-- Menú de navegación principal -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#" class="active">Adopción <i class="fa-solid fa-chevron-down"></i></a></li>
+          <li><a href="#">Reportes</a></li>
+          <li><a href="#">Refugios</a></li>
+          <li><a href="#">Veterinarios</a></li>
+          <li><a href="#">Jornadas</a></li>
+          <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+
+      <!-- Acciones del usuario (Notificaciones y Perfil) -->
+      <div class="user-actions">
+        <button class="notification-btn" title="Notificaciones">
+          <i class="fa-regular fa-bell"></i>
+          <span class="badge">2</span>
+        </button>
+        <div class="user-profile">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
+            alt="Foto de perfil de Laura García">
+          <span class="user-name">Laura García</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- CONTENIDO PRINCIPAL (MAIN)                 -->
+  <!-- ========================================== -->
+  <main class="main-content">
+
+    <!-- Migas de pan (Breadcrumbs) para guiar la navegación del usuario -->
+    <nav class="breadcrumbs">
+      <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
+      <span>/</span>
+      <a href="#">Adopción</a>
+      <span>/</span>
+      <span class="current">Catálogo de mascotas</span>
+    </nav>
+
+    <!-- Sección del Encabezado de la página y Banner Promocional -->
+    <section class="page-header-section">
+      <div class="page-title-container">
+        <div class="title-icon">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div>
+          <h2>Catálogo de mascotas</h2>
+          <p>Encuentra a tu nuevo mejor amigo</p>
+        </div>
+      </div>
+
+      <!-- Banner promocional de adopción -->
+      <div class="banner-card">
+        <div class="banner-images">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=150&auto=format&fit=crop"
+            alt="Perro feliz">
+          <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&auto=format&fit=crop"
+            alt="Gato doméstico">
+        </div>
+        <div class="banner-text">
+          <h3>Adopta, no compres <i class="fa-solid fa-heart"></i></h3>
+          <p>Miles de mascotas esperan por un hogar lleno de amor.</p>
+        </div>
+        <div class="banner-watermark">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenedor general que divide Filtros (Izquierda) y Catálogo (Derecha) -->
+    <div class="catalog-layout">
+
+      <!-- ========================================== -->
+      <!-- PANEL LATERAL DE FILTROS                   -->
+      <!-- ========================================== -->
+      <aside class="filters-sidebar">
+        <div class="filters-header">
+          <h3><i class="fa-solid fa-sliders"></i> Filtros</h3>
+          <button id="clear-filters-btn" class="clear-btn">Limpiar todo</button>
+        </div>
+
+        <form id="filters-form" onsubmit="return false;">
+
+          <!-- Filtro: Tipo de mascota -->
+          <div class="filter-group">
+            <label class="filter-label">Tipo de mascota</label>
+            <div class="pet-type-selector">
+              <button type="button" class="type-btn active" data-type="perros">
+                <i class="fa-solid fa-dog"></i> Perros
+              </button>
+              <button type="button" class="type-btn" data-type="gatos">
+                <i class="fa-solid fa-cat"></i> Gatos
+              </button>
+            </div>
+          </div>
+
+          <!-- Filtro: Tamaño -->
+          <div class="filter-group">
+            <label class="filter-label">Tamaño</label>
+            <label class="checkbox-container">
+              <input type="checkbox" name="size" value="pequeno">
+              <span class="checkmark"></span>
+              Pequeño
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" name="size" value="mediano">
+              <span class="checkmark"></span>
+              Mediano
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" name="size" value="grande">
+              <span class="checkmark"></span>
+              Grande
+            </label>
+          </div>
+
+          <!-- Filtro: Sexo -->
+          <div class="filter-group">
+            <label class="filter-label">Sexo</label>
+            <label class="checkbox-container">
+              <input type="checkbox" name="gender" value="macho">
+              <span class="checkmark"></span>
+              Macho
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" name="gender" value="hembra">
+              <span class="checkmark"></span>
+              Hembra
+            </label>
+          </div>
+
+          <!-- Filtro: Rango de Edad -->
+          <div class="filter-group">
+            <label class="filter-label">Edad</label>
+            <div class="range-slider">
+              <input type="range" min="0" max="10" value="5" class="slider" id="ageRange">
+              <div class="range-labels">
+                <span>0 meses</span>
+                <span>10+ años</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtro: Ubicación -->
+          <div class="filter-group">
+            <label class="filter-label">Ubicación</label>
+            <select class="select-input">
+              <option value="" disabled selected>Selecciona una ciudad</option>
+              <option value="bogota">Bogotá, Cundinamarca</option>
+              <option value="soacha">Soacha, Cundinamarca</option>
+              <option value="chia">Chía, Cundinamarca</option>
+            </select>
+          </div>
+
+          <!-- Botón de aplicar filtros -->
+          <button type="submit" class="apply-filters-btn">
+            <i class="fa-solid fa-magnifying-glass"></i> Aplicar filtros
+          </button>
+        </form>
+      </aside>
+
+      <!-- ========================================== -->
+      <!-- SECCIÓN DEL CATÁLOGO DE TARJETAS          -->
+      <!-- ========================================== -->
+      <section class="pets-catalog">
+
+        <!-- Barra superior de resultados y ordenamiento -->
+        <div class="catalog-top-bar">
+          <span class="results-count"><strong>120</strong> mascotas disponibles</span>
+
+          <div class="sort-and-view">
+            <label for="sort">Ordenar por:</label>
+            <select id="sort" class="select-input sort-select">
+              <option value="recientes">Más recientes</option>
+              <option value="antiguos">Más antiguos</option>
+              <option value="nombre">Por nombre</option>
+            </select>
+
+            <!-- Toggle de vista (Grilla vs Lista) -->
+            <div class="view-toggle">
+              <button class="view-btn active" title="Vista en cuadrícula"><i
+                  class="fa-solid fa-border-all"></i></button>
+              <button class="view-btn" title="Vista en lista"><i class="fa-solid fa-list"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grilla que contiene las tarjetas de mascotas -->
+        <div class="pets-grid">
+
+          <!-- TARJETA 1: Buddy -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&auto=format&fit=crop"
+                alt="Buddy - Labrador Retriever">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Buddy</h3>
+                <span class="gender-icon male"><i class="fa-solid fa-mars"></i></span>
+              </div>
+              <p class="pet-breed">Labrador Retriever</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 2 años</span>
+                <span><i class="fa-solid fa-paw"></i> Grande</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 2: Luna -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&auto=format&fit=crop"
+                alt="Luna - Gato doméstico">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Luna</h3>
+                <span class="gender-icon female"><i class="fa-solid fa-venus"></i></span>
+              </div>
+              <p class="pet-breed">Gato doméstico</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 1 año</span>
+                <span><i class="fa-solid fa-paw"></i> Mediano</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 3: Max -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=400&auto=format&fit=crop"
+                alt="Max - Criollo">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Max</h3>
+                <span class="gender-icon male"><i class="fa-solid fa-mars"></i></span>
+              </div>
+              <p class="pet-breed">Criollo</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 3 años</span>
+                <span><i class="fa-solid fa-paw"></i> Grande</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Soacha, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 4: Mía -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&auto=format&fit=crop"
+                alt="Mía - Gata doméstica">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Mía</h3>
+                <span class="gender-icon female"><i class="fa-solid fa-venus"></i></span>
+              </div>
+              <p class="pet-breed">Gata doméstica</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 8 meses</span>
+                <span><i class="fa-solid fa-paw"></i> Pequeño</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 5: Rocky -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&auto=format&fit=crop"
+                alt="Rocky - Pastor Alemán">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Rocky</h3>
+                <span class="gender-icon male"><i class="fa-solid fa-mars"></i></span>
+              </div>
+              <p class="pet-breed">Pastor Alemán</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 4 meses</span>
+                <span><i class="fa-solid fa-paw"></i> Mediano</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 6: Nala -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&auto=format&fit=crop"
+                alt="Nala - Gato doméstico">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Nala</h3>
+                <span class="gender-icon female"><i class="fa-solid fa-venus"></i></span>
+              </div>
+              <p class="pet-breed">Gato doméstico</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 2 años</span>
+                <span><i class="fa-solid fa-paw"></i> Mediano</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Chía, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 7: Toby -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&auto=format&fit=crop"
+                alt="Toby - Criollo">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Toby</h3>
+                <span class="gender-icon male"><i class="fa-solid fa-mars"></i></span>
+              </div>
+              <p class="pet-breed">Criollo</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 1 año</span>
+                <span><i class="fa-solid fa-paw"></i> Mediano</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Soacha, Cundinamarca</p>
+            </div>
+          </article>
+
+          <!-- TARJETA 8: Simba -->
+          <article class="pet-card">
+            <div class="card-image-container">
+              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&auto=format&fit=crop"
+                alt="Simba - Gato doméstico">
+              <span class="status-badge">Disponible</span>
+              <button class="favorite-btn" aria-label="Guardar en favoritos"><i
+                  class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="card-content">
+              <div class="pet-title">
+                <h3>Simba</h3>
+                <span class="gender-icon male"><i class="fa-solid fa-mars"></i></span>
+              </div>
+              <p class="pet-breed">Gato doméstico</p>
+              <div class="pet-details">
+                <span><i class="fa-regular fa-calendar"></i> 3 meses</span>
+                <span><i class="fa-solid fa-paw"></i> Pequeño</span>
+              </div>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Paginación inferior -->
+        <div class="pagination">
+          <button class="page-btn nav-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">4</button>
+          <span class="pagination-ellipsis">..</span>
+          <span class="pagination-ellipsis">...</span>
+          <button class="page-btn">10</button>
+          <button class="page-btn nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- PIE DE PÁGINA (FOOTER)                    -->
+  <!-- ========================================== -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <!-- Columna 1: Información general y redes sociales -->
+      <div class="footer-col brand-col">
+        <div class="logo-container white">
+          <div class="logo-icon">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <div class="logo-text">
+            <h2>MonPet</h2>
+            <span>Amor que cambia vidas <i class="fa-solid fa-heart"></i></span>
+          </div>
+        </div>
+        <p>Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Enlaces Rápidos -->
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Adopción</a></li>
+          <li><a href="#">Reportes</a></li>
+          <li><a href="#">Refugios</a></li>
+          <li><a href="#">Veterinarios</a></li>
+          <li><a href="#">Jornadas</a></li>
+          <li><a href="#">Nosotros</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Ayuda -->
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Cómo adoptar</a></li>
+          <li><a href="#">Consejos de cuidado</a></li>
+          <li><a href="#">Contáctanos</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Información Legal -->
+      <div class="footer-col">
+        <h4>Información legal</h4>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Aviso legal</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 5: Datos de Contacto -->
+      <div class="footer-col">
+        <h4>Contáctanos</h4>
+        <ul class="contact-info">
+          <li><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</li>
+          <li><i class="fa-regular fa-envelope"></i> hola@monpet.com</li>
+          <li><i class="fa-solid fa-phone"></i> +57 300 123 4567</li>
+          <li><i class="fa-regular fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.<br>Sáb: 8:00 a.m. - 2:00 p.m.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright final -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 MonPet. Todos los derechos reservados. <i class="fa-solid fa-paw"></i></p>
+    </div>
+  </footer>
+
+  <!-- Script JS al final para no bloquear la carga visual -->
+  <script src="script.js"></script>
+</body>
+
+</html>
