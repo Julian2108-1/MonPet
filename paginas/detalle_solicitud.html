@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonPet - Detalle de Solicitud</title>
+    <title>MonPet - Detalle de solicitud de adopción</title>
+
+    <!-- Tipografía utilizada en la interfaz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/reporte.css">
-    <link rel="stylesheet" href="../css/solicitudes.css">
+
+    <!-- Hoja de estilos de esta interfaz -->
     <link rel="stylesheet" href="../css/detalle_solicitud.css">
 </head>
 
@@ -17,14 +23,14 @@
     <header>
         <div class="contenedor-logo">
             <a href="../index.html">
-                <div class="icono-logo">
-                    <i class="fa-solid fa-paw"></i>
-                </div>
-                <div class="texto-logo">
-                    <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-                    <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
-            </a>
-        </div>
+            <div class="icono-logo">
+                <i class="fa-solid fa-paw"></i>
+            </div>
+            <div class="texto-logo">
+                <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+                <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+                </a>
+            </div>
         </div>
         <nav class="links-navegacion">
             <ul>
@@ -52,225 +58,475 @@
         </div>
     </header>
 
-    <!-- PANEL PRINCIPAL CON ASIDE Y CONTENIDO -->
-    <div class="contenedor-panel">
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL DE LA CUENTA
+         ========================================================= -->
+    <div class="zona-principal-cuenta">
+        <aside class="barra-lateral-reportes">
+            <nav class="navegacion-lateral-reportes">
 
-        <!-- MENÚ LATERAL IZQUIERDO -->
-        <aside class="menu-lateral">
-            <nav class="lista-menu">
-                <a href="#" class="item-menu"><i class="fa-solid fa-user"></i> Mi perfil</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-heart"></i> Mis mascotas guardadas</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-star"></i> Mis favoritos</a>
-                <a href="mis_solicitudes.html" class="item-menu activo"><i class="fa-solid fa-file-lines"></i> Mis
-                    solicitudes</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-flag"></i> Mis reportes</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-bell"></i> Notificaciones <span
-                        class="badge-menu">3</span></a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-comment"></i> Mensajes</a>
-                <a href="#" class="item-menu"><i class="fa-solid fa-calendar"></i> Mis donaciones</a>
-                <a href="configuracion.html" class="item-menu"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="../index.html" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Mi perfil</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-star"></i>
+                    <span>Mis favoritos</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Mis solicitudes</span>
+                </a>
+
+                <a href="perfil_usuario_reportes.html" class="elemento-navegacion-reportes activo">
+                    <i class="fa-regular fa-flag"></i>
+                    <span>Mis reportes</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span>Mensajes</span>
+
+                    <span class="contador-mensajes-reportes">3</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configuración</span>
+                </a>
+
             </nav>
 
-            <div class="caja-ayuda">
-                <i class="fa-solid fa-headset icono-ayuda"></i>
-                <h4>¿Necesitas ayuda?</h4>
-                <p>Estamos aquí para ayudarte.</p>
-                <a href="#" class="enlace-soporte">Contactar soporte <i
-                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <!-- Ayuda -->
+            <div class="tarjeta-ayuda-reportes">
+                <div class="icono-ayuda-reportes">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="informacion-ayuda-reportes">
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Estamos aquí para ayudarte.</p>
+                    <a href="#" class="enlace-soporte-reportes">Contactar soporte <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
         </aside>
 
-        <!-- CONTENIDO DETALLE SOLICITUD -->
-        <main class="contenido-panel">
+        <!-- =====================================================
+             CONTENIDO DE LA PÁGINA
+             ===================================================== -->
+        <main class="contenido-detalle-solicitud">
 
-            <div class="encabezado-seccion">
-                <div class="titulo-pagina">
-                    <div class="circulo-icono"><i class="fa-solid fa-file-lines"></i></div>
-                    <div>
-                        <h2>Detalle de solicitud de adopción</h2>
+            <!-- Migas de pan -->
+            <nav class="migas-navegacion" aria-label="Ruta de navegación">
+                <a href="#" class="enlace-miga">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <i class="fa-solid fa-chevron-right separador-miga"></i>
+
+                <a href="#" class="enlace-miga">Mi cuenta</a>
+
+                <i class="fa-solid fa-chevron-right separador-miga"></i>
+
+                <a href="#" class="enlace-miga">Mis solicitudes</a>
+
+                <i class="fa-solid fa-chevron-right separador-miga"></i>
+
+                <span class="miga-actual">Detalle de solicitud</span>
+            </nav>
+
+            <!-- Encabezado de la página -->
+            <section class="encabezado-detalle">
+                <div class="titulo-detalle">
+                    <div class="icono-titulo">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div class="texto-encabezado">
+                        <h1>Detalle de solicitud de adopción</h1>
                         <p>ID de solicitud: <strong>#ADP-2026-0024</strong></p>
                     </div>
                 </div>
 
-                <a href="mis_solicitudes.html" class="btn-ver-detalles"><i class="fa-solid fa-arrow-left"></i> Volver a
-                    mis solicitudes</a>
-            </div>
+                <a href="#" class="boton-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Volver a mis solicitudes</span>
+                </a>
+            </section>
 
-            <!-- TARJETA ESTADO ACTUAL -->
-            <div class="caja-blanca bloque-estado-detalle">
-                <div class="info-estado">
-                    <small>Estado actual</small>
-                    <span class="badge-estado-amarillo"><i class="fa-solid fa-clock"></i> En revisión</span>
-                    <p>Tu solicitud está siendo revisada por el equipo del refugio. Te notificaremos por correo cuando
-                        haya novedades.</p>
-                </div>
-                <div class="fechas-estado">
-                    <p><i class="fa-solid fa-calendar"></i> <strong>Fecha enviada:</strong> 25 de julio de 2026 - 04:15
-                        p. m.</p>
-                    <p><i class="fa-solid fa-rotate"></i> <strong>Última actualización:</strong> 27 de julio de 2026 -
-                        09:30 a. m.</p>
-                </div>
-            </div>
+            <!-- =================================================
+                 TARJETA DEL ESTADO DE LA SOLICITUD
+                 ================================================= -->
+            <section class="tarjeta-estado-solicitud">
 
-            <!-- FILA CON MASCOTA Y RESUMEN -->
-            <div class="grid-dos-columnas">
-                <div class="caja-blanca tarjeta-mascota-solicitud">
-                    <h3>Mascota</h3>
-                    <div class="flex-mascota">
-                        <img src="../img/labrador.jpg" alt="Buddy" class="foto-perro-detalle">
-                        <div class="datos">
-                            <h4>Buddy <i class="fa-solid fa-mars genero-macho"></i></h4>
-                            <p class="raza">Labrador Retriever</p>
-                            <p class="detalles-item"><i class="fa-solid fa-calendar"></i> 2 años &nbsp; <i
-                                    class="fa-solid fa-paw"></i> Grande</p>
-                            <p class="detalles-item"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+                <!-- Estado -->
+                <div class="bloque-estado-actual">
+                    <h2>Estado actual</h2>
+
+                    <div class="estado-en-revision">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>En revisión</span>
+                    </div>
+
+                    <p>Tu solicitud está siendo revisada por el equipo del refugio.</p>
+                    <p>Te notificaremos por correo cuando haya novedades.</p>
+                </div>
+
+                <!-- Fechas -->
+                <div class="fechas-solicitud">
+
+                    <div class="dato-fecha">
+                        <div class="icono-fecha">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <div>
+                            <h3>Fecha enviada</h3>
+                            <p>25 de julio de 2026 - 04:15 p. m.</p>
+                        </div>
+                    </div>
+
+                    <div class="dato-fecha">
+                        <div class="icono-fecha">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+
+                        <div>
+                            <h3>Última actualización</h3>
+                            <p>27 de julio de 2026 - 09:30 a. m.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Ilustración del estado -->
+                <div class="ilustracion-estado" aria-hidden="true">
+                    <?xml version="1.0" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="186.000000pt" height="182.000000pt" viewBox="0 0 186.000000 182.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,182.000000) scale(0.100000,-0.100000)" fill="#ffc744" stroke="none"> <path d="M818 1635 c-16 -35 9 -63 41 -46 23 13 28 40 9 59 -19 19 -37 14 -50 -13z"/> <path d="M540 1620 c0 -11 7 -20 15 -20 8 0 15 9 15 20 0 11 -7 20 -15 20 -8 0 -15 -9 -15 -20z"/> <path d="M642 1615 c-12 -9 -25 -30 -30 -48 -8 -32 -9 -32 -75 -35 l-68 -3 3 -97 3 -97 218 -3 217 -2 11 24 c14 30 3 150 -15 165 -7 6 -33 11 -59 12 -39 2 -46 6 -52 26 -16 64 -99 95 -153 58z m86 -74 c-4 -31 -41 -37 -46 -8 -6 30 5 46 28 40 16 -4 20 -12 18 -32z"/> <path d="M209 1451 l-29 -29 1 -603 1 -602 24 -23 23 -24 469 0 c548 0 502 -10 502 113 0 67 -2 77 -17 76 -37 -2 -68 -15 -68 -29 0 -13 -60 -15 -418 -17 l-417 -3 2 538 3 537 75 5 74 5 4 36 c4 43 -13 49 -130 49 -63 0 -72 -3 -99 -29z m611 -1206 l0 -25 -115 0 -115 0 0 25 0 25 115 0 115 0 0 -25z"/> <path d="M993 1472 c-43 -3 -43 -3 -43 -42 l0 -39 78 -3 77 -3 3 -167 c2 -152 4 -168 20 -168 10 0 28 -7 40 -16 33 -23 33 -25 37 189 6 257 0 264 -212 249z"/> <path d="M408 1159 c-25 -14 -24 -65 1 -79 27 -14 47 -13 65 6 44 44 -12 105 -66 73z m50 -42 c2 -12 -3 -17 -17 -17 -12 0 -21 6 -21 13 0 31 32 34 38 4z"/> <path d="M524 1127 c-17 -44 36 -51 299 -40 125 5 137 7 137 24 0 17 -9 19 -108 19 -60 0 -157 3 -215 7 -93 5 -107 4 -113 -10z"/> <path d="M964 1019 c-259 -34 -365 -380 -173 -561 97 -90 271 -118 375 -59 l42 23 31 -23 c23 -17 31 -31 31 -53 0 -37 169 -216 203 -216 29 0 87 63 87 95 0 35 -172 215 -205 215 -12 0 -32 11 -45 25 l-23 25 34 62 c31 58 34 70 34 148 -1 211 -170 349 -391 319z m184 -129 c230 -156 65 -497 -202 -418 -126 37 -196 206 -135 323 68 131 222 174 337 95z"/> <path d="M406 971 c-20 -22 -18 -49 5 -64 43 -27 107 34 70 67 -24 21 -54 20 -75 -3z m49 -20 c7 -12 -12 -24 -25 -16 -11 7 -4 25 10 25 5 0 11 -4 15 -9z"/> <path d="M527 964 c-4 -4 -7 -18 -7 -31 0 -22 3 -23 63 -22 100 1 151 11 155 32 3 15 -6 17 -86 17 -50 0 -97 2 -104 5 -8 3 -17 2 -21 -1z"/> <path d="M425 808 c-44 -25 -52 -102 -12 -110 59 -11 96 46 63 97 -18 28 -23 29 -51 13z m35 -43 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z"/> <path d="M528 754 c-3 -3 -4 -14 -1 -25 11 -42 123 -23 123 22 0 10 -113 13 -122 3z"/> <path d="M430 603 c-23 -8 -40 -34 -40 -60 0 -46 89 -55 91 -10 4 65 -11 84 -51 70z m25 -44 c0 -7 -8 -15 -17 -17 -18 -3 -25 18 -11 32 10 10 28 1 28 -15z"/> <path d="M522 538 c3 -21 8 -23 68 -23 81 0 107 9 90 30 -9 11 -33 15 -87 15 -71 0 -74 -1 -71 -22z"/> </g> </svg>
+
+            </section>
+
+            <!-- =================================================
+                 RESUMEN DE LA MASCOTA Y DE LA SOLICITUD
+                 ================================================= -->
+            <section class="tarjeta-resumen-solicitud">
+
+                <!-- Información de la mascota -->
+                <div class="resumen-mascota">
+                    <h2>Mascota</h2>
+
+                    <div class="ficha-mascota">
+                        <img
+                            class="foto-mascota"
+                            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85"
+                            alt="Buddy, Labrador Retriever"
+                        >
+
+                        <div class="datos-mascota">
+                            <div class="nombre-mascota">
+                                <h3>Buddy</h3>
+                                <i class="fa-solid fa-mars"></i>
+                            </div>
+
+                            <p class="raza-mascota">Labrador Retriever</p>
+
+                            <div class="caracteristicas-mascota">
+                                <span>
+                                    <i class="fa-regular fa-clock"></i>
+                                    2 años
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-paw"></i>
+                                    Grande
+                                </span>
+                            </div>
+
+                            <p class="ubicacion-mascota">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Bogotá, Cundinamarca
+                            </p>
+
                             <span class="etiqueta-disponible">Disponible para adopción</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="caja-blanca resumen-solicitud-caja">
-                    <h3>Resumen de la solicitud</h3>
-                    <div class="item-resumen">
-                        <span>Refugio</span>
-                        <strong><i class="fa-solid fa-house-chimney-medical"></i> Huellitas Felices</strong>
-                    </div>
-                    <div class="item-resumen">
-                        <span>Tipo de adopción</span>
-                        <strong>Adopción definitiva</strong>
-                    </div>
-                    <div class="item-resumen">
-                        <span>Miembro del hogar responsable</span>
-                        <strong>Laura García</strong>
-                    </div>
-                    <div class="item-resumen">
-                        <span>Estado actual</span>
-                        <span class="badge-estado-amarillo">En revisión</span>
-                    </div>
-                </div>
-            </div>
+                <!-- Separador -->
+                <div class="separador-resumen"></div>
 
-            <!-- PESTAÑAS Y DATOS COMPLETOS DE LA SOLICITUD -->
-            <div class="caja-blanca contenedor-tabs-info">
-                <div class="pestanas-detalle">
-                    <button class="btn-tab activo">Información de la solicitud</button>
-                    <button class="btn-tab">Respuestas del refugio <span class="contador">2</span></button>
-                    <button class="btn-tab">Historial de seguimiento</button>
+                <!-- Resumen de la solicitud -->
+                <div class="resumen-datos-solicitud">
+                    <h2>Resumen de la solicitud</h2>
+
+                    <div class="dato-resumen">
+                        <h3>Refugio</h3>
+                        <p>
+                            <i class="fa-solid fa-house"></i>
+                            Huelitas Felices
+                        </p>
+                    </div>
+
+                    <div class="dato-resumen">
+                        <h3>Tipo de adopción</h3>
+                        <p>
+                            <i class="fa-regular fa-clock"></i>
+                            Adopción definitiva
+                        </p>
+                    </div>
+
+                    <div class="dato-resumen">
+                        <h3>Miembro del hogar responsable</h3>
+                        <p>
+                            <i class="fa-regular fa-user"></i>
+                            Laura García
+                        </p>
+                    </div>
+
                 </div>
 
-                <div class="contenido-tab-panel">
-                    <div class="grid-dos-columnas">
-                        <!-- Información personal -->
-                        <div class="bloque-datos-usuario">
-                            <h4>Información personal</h4>
-                            <p><span>Nombre completo:</span> <strong>Laura García</strong></p>
-                            <p><span>Tipo y número de documento:</span> <strong>Cédula de ciudadanía -
-                                    1234567890</strong></p>
-                            <p><span>Correo electrónico:</span> <strong>laura.garcia@email.com</strong></p>
-                            <p><span>Teléfono:</span> <strong>+57 300 123 4567</strong></p>
-                            <p><span>Dirección:</span> <strong>Cra 15 # 123-45, Bogotá, Cundinamarca</strong></p>
-                            <p><span>Ocupación:</span> <strong>Diseñadora gráfica</strong></p>
-                            <p><span>Estado civil:</span> <strong>Soltera</strong></p>
+            </section>
+
+            <!-- =================================================
+                 INFORMACIÓN DETALLADA DE LA SOLICITUD
+                 ================================================= -->
+            <section class="tarjeta-informacion-solicitud">
+
+                <!-- Pestañas visuales -->
+                <div class="pestanas-solicitud">
+                    <button class="pestana-activa" type="button">
+                        Información de la solicitud
+                    </button>
+
+                    <button type="button" class="pestana-secundaria">
+                        Respuestas del refugio
+                        <span class="contador-respuestas">2</span>
+                    </button>
+
+                    <button type="button" class="pestana-secundaria">
+                        Historial de seguimiento
+                    </button>
+                </div>
+
+                <!-- Información personal y hogar -->
+                <div class="fila-datos-solicitud">
+
+                    <!-- Información personal -->
+                    <article class="bloque-informacion">
+                        <h2>Información personal</h2>
+
+                        <div class="fila-dato-personal">
+                            <span>Nombre completo</span>
+                            <strong>Laura García</strong>
                         </div>
 
-                        <!-- Composición del hogar -->
-                        <div class="bloque-datos-usuario">
-                            <h4>Composición del hogar</h4>
-                            <p><span>Adultos:</span> <strong>2</strong></p>
-                            <p><span>Niños:</span> <strong>1</strong></p>
-                            <p><span>Otras mascotas:</span> <strong>1 perro (vacunado y esterilizado)</strong></p>
-                            <p><span>Vive en:</span> <strong>Apartamento</strong></p>
-                            <p><span>Tiene jardín / patio:</span> <strong>No</strong></p>
-                            <p><span>Tiempo que pasará solo:</span> <strong>4 - 6 horas</strong></p>
+                        <div class="fila-dato-personal">
+                            <span>Tipo y número de documento</span>
+                            <strong>Cédula de ciudadanía - 1234567890</strong>
                         </div>
-                    </div>
 
-                    <!-- Motivación -->
-                    <div class="caja-motivacion">
-                        <h4>Motivación para adoptar</h4>
-                        <p><i class="fa-solid fa-quote-left"></i> Siempre he amado los perros y siento que estoy lista
-                            para darle a Buddy un hogar lleno de amor, cuidados y estabilidad. Tengo el tiempo, los
-                            recursos y la disposición para brindarle una vida feliz.</p>
-                    </div>
-
-                    <!-- Documentos adjuntos -->
-                    <div class="seccion-adjuntos">
-                        <h4>Documentos adjuntos</h4>
-                        <div class="grid-adjuntos">
-                            <div class="caja-archivo">
-                                <i class="fa-solid fa-file-pdf icono-pdf"></i>
-                                <div>
-                                    <strong>Documento de identidad</strong>
-                                    <small>laura_garcia_cc.pdf</small>
-                                </div>
-                                <i class="fa-solid fa-download icono-descarga"></i>
-                            </div>
-                            <div class="caja-archivo">
-                                <i class="fa-solid fa-file-pdf icono-pdf"></i>
-                                <div>
-                                    <strong>Comprobante de residencia</strong>
-                                    <small>recibo_agua_junio.pdf</small>
-                                </div>
-                                <i class="fa-solid fa-download icono-descarga"></i>
-                            </div>
-                            <div class="caja-archivo">
-                                <i class="fa-solid fa-image icono-img"></i>
-                                <div>
-                                    <strong>Foto del hogar</strong>
-                                    <small>hogar_laura.jpg</small>
-                                </div>
-                                <i class="fa-solid fa-download icono-descarga"></i>
-                            </div>
+                        <div class="fila-dato-personal">
+                            <span>Correo electrónico</span>
+                            <strong>laura.garcia@email.com</strong>
                         </div>
-                    </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Teléfono</span>
+                            <strong>+57 300 123 4567</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Dirección</span>
+                            <strong>Carrera 15 # 123-45, Bogotá, Cundinamarca</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Ocupación</span>
+                            <strong>Diseñadora gráfica</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Estado civil</span>
+                            <strong>Soltera</strong>
+                        </div>
+                    </article>
+
+                    <!-- Composición del hogar -->
+                    <article class="bloque-informacion">
+                        <h2>Composición del hogar</h2>
+
+                        <div class="fila-dato-personal">
+                            <span>Adultos</span>
+                            <strong>2</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Niños</span>
+                            <strong>1</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Otras mascotas</span>
+                            <strong>1 perro (vacunado y esterilizado)</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Vive en</span>
+                            <strong>Apartamento</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Tiene jardín / patio</span>
+                            <strong>No</strong>
+                        </div>
+
+                        <div class="fila-dato-personal">
+                            <span>Tiempo que pasará solo</span>
+                            <strong>4 - 6 horas</strong>
+                        </div>
+                    </article>
+
                 </div>
-            </div>
 
-            <!-- RETIRAR SOLICITUD -->
-            <div class="caja-blanca caja-retirar-solicitud">
+                <!-- Información escrita por el adoptante -->
+                <article class="mensaje-adoptante">
+                    <h2>Información para adoptar</h2>
+
+                    <div class="texto-mensaje">
+                        <i class="fa-solid fa-quote-left"></i>
+
+                        <p>
+                            Siempre he amado los perros y siento que estoy lista para darle a Buddy un hogar lleno de amor,
+                            cuidados y estabilidad. Tengo el tiempo, los recursos y la disposición para brindarle una vida feliz.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Documentos adjuntos -->
+                <article class="documentos-adjuntos">
+                    <h2>Documentos adjuntos</h2>
+
+                    <div class="lista-documentos">
+
+                        <div class="documento-adjunto">
+                            <div class="icono-documento">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+
+                            <div class="datos-documento">
+                                <strong>Documento de identidad</strong>
+                                <span>laura_garcia_cc.pdf</span>
+                            </div>
+
+                            <a href="#" class="boton-descarga" aria-label="Descargar documento de identidad">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+
+                        <div class="documento-adjunto">
+                            <div class="icono-documento icono-residencia">
+                                <i class="fa-regular fa-file-lines"></i>
+                            </div>
+
+                            <div class="datos-documento">
+                                <strong>Comprobante de residencia</strong>
+                                <span>recibo_agua_junio.pdf</span>
+                            </div>
+
+                            <a href="#" class="boton-descarga" aria-label="Descargar comprobante de residencia">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+
+                        <div class="documento-adjunto">
+                            <div class="icono-documento icono-imagen">
+                                <i class="fa-regular fa-image"></i>
+                            </div>
+
+                            <div class="datos-documento">
+                                <strong>Foto del hogar</strong>
+                                <span>hogar_laura.jpg</span>
+                            </div>
+
+                            <a href="#" class="boton-descarga" aria-label="Descargar foto del hogar">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- =================================================
+                 OPCIÓN PARA RETIRAR LA SOLICITUD
+                 ================================================= -->
+            <section class="aviso-retiro-solicitud">
                 <div>
-                    <strong>¿Deseas retirar tu solicitud?</strong>
+                    <h2>¿Deseas retirar tu solicitud?</h2>
                     <p>Si ya no deseas continuar con el proceso de adopción de Buddy, puedes retirar tu solicitud.</p>
                 </div>
-                <button class="btn-eliminar">Retirar solicitud</button>
-            </div>
+
+                <button type="button" class="boton-retirar-solicitud">
+                    <i class="fa-regular fa-trash-can"></i>
+                    <span>Retirar solicitud</span>
+                </button>
+            </section>
 
         </main>
     </div>
 
-    <!-- FOOTER PRINCIPAL -->
-    <footer>
-        <div class="contenedor-footer">
-            <div class="columna-footer info-marca">
-                <div class="contenedor-logo-footer">
-                    <div class="icono-logo-footer"><i class="fa-solid fa-paw"></i></div>
-                    <h2>MonPet</h2>
+    <footer class="footer">
+
+        <div class="footer-onda">
+            <img src="../img/fondo_onda_2.png" alt="fondo_footer">
+        </div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-logo">
+                <div class="icono-logo2">
+                    <i class="fa-solid fa-paw"></i>
                 </div>
-                <p class="slogan-footer">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
-                <p class="desc-footer">Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y
-                    cuidado.</p>
-                <div class="redes-sociales">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <div class="footer-informacion">
+                    <h2>MonPet</h2>
+                    <p>
+                        Conectamos corazones para que cada <br>mascota
+                        encuentre un hogar lleno<br>de amor y cuidado.
+                    </p>
+
+                    <div class="footer-redes">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="columna-footer">
+            <div class="footer-enlaces">
                 <h3>Enlaces rápidos</h3>
+
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="#">Adopción</a></li>
                     <li><a href="reportes_comunidad.html">Reportes</a></li>
                     <li><a href="#">Refugios</a></li>
-                    <li><a href="#">Jornadas</a></li>
                     <li><a href="#">Nosotros</a></li>
                 </ul>
             </div>
 
-            <div class="columna-footer">
+            <div class="footer-ayuda">
                 <h3>Ayuda</h3>
+
                 <ul>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Cómo adoptar</a></li>
@@ -279,8 +535,9 @@
                 </ul>
             </div>
 
-            <div class="columna-footer">
+            <div class="footer-legal">
                 <h3>Información legal</h3>
+
                 <ul>
                     <li><a href="#">Términos y condiciones</a></li>
                     <li><a href="#">Política de privacidad</a></li>
@@ -288,21 +545,40 @@
                 </ul>
             </div>
 
-            <div class="columna-footer contacto">
-                <h3>Contáctanos</h3>
-                <p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p>
-                <p><i class="fa-solid fa-envelope"></i> hola@monpet.com</p>
-                <p><i class="fa-solid fa-phone"></i> +57 300 123 4567</p>
-                <p><i class="fa-solid fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.</p>
-                <p class="horario-sabado">Sáb: 8:00 a.m. - 2:00 p.m.</p>
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bogotá, Colombia
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        contacto@monpet.com
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +57 300 123 4567
+                    </li>
+
+                    <li>
+                        <i class="fa-regular fa-clock"></i>
+                        Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                    </li>
+                </ul>
             </div>
+
         </div>
 
-        <div class="derechos-reservados">
-            <p>© 2026 MonPet. Todos los derechos reservados. <i class="fa-solid fa-paw"></i></p>
+        <div class="footer-inferior">
+            <p>© 2026 MonPet. Todos los derechos reservados.</p>
         </div>
+
     </footer>
 
-</body>
 
+</body>
 </html>
