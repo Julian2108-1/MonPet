@@ -1,0 +1,664 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES CSS
+   ========================================================================== */
+
+/* Variables para reutilizar colores fácilmente en todo el documento */
+:root {
+    --primary-purple: #6c5ce7;
+    --primary-light: #f3f0ff;
+    --dark-purple: #2d1b69;
+    --text-dark: #2d3436;
+    --text-gray: #636e72;
+    --bg-gray: #f8f9fa;
+    --border-color: #e9ecef;
+    
+    /* Colores para cada estado */
+    --status-review-bg: #fffbf0;
+    --status-review-border: #fce8b2;
+    --status-interview-bg: #f0f4ff;
+    --status-interview-border: #d0e1fd;
+    --status-approved-bg: #f0fdf4;
+    --status-approved-border: #bbf7d0;
+    --status-rejected-bg: #fff5f5;
+    --status-rejected-border: #fed7d7;
+}
+
+/* Reinicio básico para eliminar márgenes por defecto de los navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN PRINCIPAL
+   ========================================================================== */
+
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Alineación del Logotipo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-purple);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.logo-icon.white {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--dark-purple);
+}
+
+.brand-name.white {
+    color: white;
+}
+
+.brand-tagline {
+    font-size: 0.75rem;
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+.brand-tagline.white {
+    color: #e0d7ff;
+}
+
+/* Lista de navegación superior */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-purple);
+}
+
+/* Usuario y Notificaciones */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.badge-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   3. BREADCRUMB (MIGAS DE PAN) Y ESTRUCTURA GENERAL
+   ========================================================================== */
+
+.breadcrumb-container {
+    max-width: 1300px;
+    margin: 1rem auto 0;
+    padding: 0 2rem;
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.breadcrumb a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    margin: 0 0.3rem;
+}
+
+.active-crumb {
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+/* Estructura con Grid de 2 columnas (Sidebar + Main) */
+.layout-container {
+    max-width: 1300px;
+    margin: 1.5rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+}
+
+/* ==========================================================================
+   4. BARRA LATERAL (SIDEBAR)
+   ========================================================================== */
+
+.sidebar-nav ul {
+    list-style: none;
+    background: white;
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.sidebar-nav li.active a,
+.sidebar-nav li a:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-purple);
+    border-left-color: var(--primary-purple);
+}
+
+.badge-msg {
+    background-color: var(--primary-light);
+    color: var(--primary-purple);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+.help-box {
+    margin-top: 2rem;
+    background: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.help-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.help-box h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.help-box p {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-bottom: 0.8rem;
+}
+
+.help-box a {
+    color: var(--primary-purple);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   5. CONTENIDO PRINCIPAL Y BANNER SUPERIOR
+   ========================================================================== */
+
+.section-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.page-title-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    background-color: var(--primary-purple);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.page-title-box h1 {
+    font-size: 1.5rem;
+    color: var(--dark-purple);
+}
+
+.page-title-box p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+/* Tarjeta morada clara de agradecimiento */
+.thank-you-banner {
+    background-color: var(--primary-light);
+    border: 1px solid #e2d9f3;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.thank-you-banner strong {
+    color: var(--dark-purple);
+    font-size: 0.9rem;
+}
+
+.thank-you-banner p {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE FILTROS Y TARJETAS DE SOLICITUD
+   ========================================================================== */
+
+.content-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.filters-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    border: 1px solid var(--border-color);
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-light);
+    color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+
+.tab-btn .count {
+    background: #f1f2f6;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+.sort-select select {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    outline: none;
+}
+
+/* Listado de Tarjetas */
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.request-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 120px 1.2fr 1fr 1.8fr auto;
+    gap: 1.2rem;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.request-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.pet-img {
+    width: 120px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.pet-info h3 {
+    font-size: 1.1rem;
+    color: var(--dark-purple);
+}
+
+.pet-info .breed {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.pet-info .details, .pet-info .location {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-top: 0.2rem;
+}
+
+/* Información de envío */
+.submission-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.sub-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.sub-date {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+}
+
+.btn-details {
+    margin-top: 0.5rem;
+    border: 1px solid var(--primary-purple);
+    background: white;
+    color: var(--primary-purple);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.2s;
+}
+
+.btn-details:hover {
+    background-color: var(--primary-purple);
+    color: white;
+}
+
+/* Cajas dinámicas según el estado */
+.status-box {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.status-box h4 {
+    font-size: 0.85rem;
+}
+
+.status-box p {
+    font-size: 0.78rem;
+    color: var(--text-gray);
+    max-width: 85%;
+}
+
+.status-graphic {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 1.8rem;
+    opacity: 0.5;
+}
+
+/* Estilos de caja por estado */
+.status-review { background-color: var(--status-review-bg); border: 1px solid var(--status-review-border); }
+.status-review h4 { color: #d97706; }
+
+.status-interview { background-color: var(--status-interview-bg); border: 1px solid var(--status-interview-border); }
+.status-interview h4 { color: #2563eb; }
+
+.status-approved { background-color: var(--status-approved-bg); border: 1px solid var(--status-approved-border); }
+.status-approved h4 { color: #16a34a; }
+
+.status-rejected { background-color: var(--status-rejected-bg); border: 1px solid var(--status-rejected-border); }
+.status-rejected h4 { color: #dc2626; }
+
+.btn-options {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    cursor: pointer;
+}
+
+/* Controles de paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.page-btn.active {
+    background-color: var(--primary-purple);
+    color: white;
+    border-color: var(--primary-purple);
+}
+
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA (FOOTER) Y MODAL
+   ========================================================================== */
+
+.main-footer {
+    background-color: var(--dark-purple);
+    color: white;
+    margin-top: 4rem;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col p {
+    font-size: 0.85rem;
+    color: #a29bfe;
+    margin-top: 0.8rem;
+}
+
+.footer-col h4 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+    color: #e0d7ff;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #a29bfe;
+}
+
+/* Estilos de la Ventana Emergente (Modal) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto; 
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
