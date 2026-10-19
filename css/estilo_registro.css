@@ -284,7 +284,6 @@ PANEL FORMULARIO (derecha)
     position: relative;
     right: 50px;
     padding: 40px 60px;
-    height: 93vh;
 }
 .encabezado-formulario {
     display: flex;
@@ -425,7 +424,48 @@ FORMULARIO
     border: 2px solid #7c3aed;
     box-shadow: 0 0 0 3px rgba(124,58,237,.15);
 }
-
+/* ==========================
+   PASOS DEL FORMULARIO
+========================== */
+.paso-formulario {
+    display: none;
+}
+.paso-formulario.activo {
+    display: block;
+}
+.formulario-registro {
+    position: relative;
+}
+.paso-formulario {
+    width: 100%;
+}
+/*-------------
+PASO SELECCIONADO
+-------------*/
+.pasos-registro .paso-seleccionado {
+    position: relative;
+}
+.pasos-registro .paso-seleccionado .numero-paso {
+    background: #5D45C6;
+    color: #fff;
+}
+.pasos-registro .paso-seleccionado p {
+    color: #7B42B6;
+    font-size: 2.5rem;
+}
+.pasos-registro .paso-seleccionado::after {
+    content: "";
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+    width: 370px;
+    height: 4px;
+    background: #5D45C6;
+    border-radius: 2px;
+}
+.pasos-registro .paso-seleccionado:last-child::after {
+    width: 100%;
+}
 /*-------------
 AVISO DE PRIVACIDAD
 -------------*/
@@ -436,6 +476,7 @@ AVISO DE PRIVACIDAD
     background: #f6f2ff;
     border-radius: 15px;
     padding: 20px;
+    margin-top: 50px;
     gap: 30px;
 }
 .aviso-privacidad .icono-seguridad {
