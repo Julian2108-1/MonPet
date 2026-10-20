@@ -65,11 +65,13 @@ CREATE TABLE usuarios (
 
     genero ENUM('Masculino', 'Femenino', 'Otro') NOT NULL,
 
-    -- direccion VARCHAR(150) NOT NULL,
-
-    -- telefono VARCHAR(20),
-
     correo VARCHAR(100) NOT NULL UNIQUE,
+
+    telefono VARCHAR(20),
+
+    direccion VARCHAR(150) NOT NULL,
+
+    ciudad VARCHAR(30) NOT NULL,
 
     contrasena VARCHAR(255) NOT NULL,
 

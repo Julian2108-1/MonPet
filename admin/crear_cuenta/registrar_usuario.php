@@ -8,9 +8,10 @@ $tipo_documento = $_POST["tipo_documento"] ?? "";
 $documento = $_POST["documento"] ?? "";
 $fecha_nacimiento = $_POST["fecha_nacimiento"] ?? "";
 $genero = $_POST["genero"] ?? "";
-// $direccion = $_POST["direccion"] ?? "";
-// $telefono = $_POST["telefono"] ?? "";
 $correo = $_POST["correo"] ?? "";
+$telefono = $_POST["telefono"] ?? "";
+$direccion = $_POST["direccion"] ?? "";
+$ciudad = $_POST["ciudad"] ?? "";
 $contrasena = $_POST["contrasena"] ?? "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
