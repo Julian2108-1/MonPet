@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear reporte - MonPet</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/crear_reporte.css">
+</head>
+
+<body>
+    <!-- HEADER PRINCIPAL -->
+    <header>
+        <div class="contenedor-logo">
+            <a href="../index.html">
+                <div class="icono-logo">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div class="texto-logo">
+                    <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+                    <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+            </a>
+        </div>
+        </div>
+        <nav class="links-navegacion">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Adopción</a></li>
+                <li><a href="reportes_comunidad.html">Reportes</a></li>
+                <li><a href="#">Refugios</a></li>
+                <li><a href="#">Jornadas</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
+
+        <div class="perfil-header">
+            <div class="icono-notificacion">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge-notif">3</span>
+            </div>
+            <div class="usuario-perfil">
+                <img src="../img/perfil.jpg" alt="Laura García" class="foto-usuario">
+                <div class="info-usuario">
+                    <strong>Laura García <i class="fa-solid fa-chevron-down"></i></strong>
+                    <small>Ver perfil</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenido-crear-reporte">
+
+        <!-- =====================================================
+             ENCABEZADO DE LA PÁGINA
+             ===================================================== -->
+
+        <div class="ruta-navegacion-reporte">
+
+            <a href="#" class="enlace-ruta-reporte">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+
+            <i class="fa-solid fa-chevron-right separador-ruta-reporte"></i>
+
+            <a href="#" class="enlace-ruta-reporte">
+                Reportes
+            </a>
+
+            <i class="fa-solid fa-chevron-right separador-ruta-reporte"></i>
+
+            <span class="ruta-actual-reporte">
+                Crear reporte
+            </span>
+
+        </div>
+
+
+        <section class="encabezado-crear-reporte">
+
+            <div class="icono-encabezado-reporte">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+
+            <div class="texto-encabezado-reporte">
+
+                <h1>Crear reporte</h1>
+
+                <p>
+                    Tu reporte puede ayudar a encontrar una mascota perdida,
+                    denunciar un caso de abandono <br>o alertar sobre una situación
+                    de riesgo. Todos juntos hacemos una comunidad más segura.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PASO 1 - TIPO DE REPORTE
+             ===================================================== -->
+
+        <section class="seccion-reporte seccion-tipo-reporte">
+
+            <div class="titulo-seccion-reporte">
+
+                <span class="numero-seccion-reporte">1</span>
+
+                <div>
+                    <h2>Tipo de reporte</h2>
+
+                    <p>
+                        Selecciona el tipo de reporte que deseas realizar.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="opciones-tipo-reporte">
+
+                <!-- Mascota perdida -->
+                <label class="opcion-tipo-reporte opcion-tipo-seleccionada">
+
+                    <input type="radio" name="tipo_reporte" value="perdida" checked>
+
+                    <span class="marca-seleccion-tipo">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <i class="fa-solid fa-paw icono-tipo-reporte"></i>
+
+                    <strong>Mascota perdida</strong>
+
+                    <span class="descripcion-tipo-reporte">
+                        Reporta una mascota que se ha extraviado.
+                    </span>
+
+                </label>
+
+
+                <!-- Mascota encontrada -->
+                <label class="opcion-tipo-reporte">
+
+                    <input type="radio" name="tipo_reporte" value="encontrada">
+
+                    <span class="marca-seleccion-tipo">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <i class="fa-solid fa-house-chimney icono-tipo-reporte"></i>
+
+                    <strong>Mascota encontrada</strong>
+
+                    <span class="descripcion-tipo-reporte">
+                        Informa sobre una mascota que encontraste.
+                    </span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PASO 2 - INFORMACIÓN DEL REPORTE
+             ===================================================== -->
+
+        <section class="seccion-reporte seccion-informacion-reporte">
+
+            <div class="titulo-seccion-reporte">
+
+                <span class="numero-seccion-reporte">2</span>
+
+                <div>
+                    <h2>Información del reporte</h2>
+
+                    <p>
+                        Completa los datos de la mascota o la situación.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="formulario-informacion-reporte">
+
+                <!-- Título -->
+                <div class="campo-reporte campo-titulo-reporte">
+
+                    <label for="titulo_reporte">
+                        Título del reporte
+                        <span>*</span>
+                    </label>
+
+                    <input type="text" id="titulo_reporte" name="titulo_reporte"
+                        placeholder="Ej. Perro encontrado en el parque">
+
+                </div>
+
+
+                <!-- Descripción -->
+                <div class="campo-reporte campo-descripcion-reporte">
+
+                    <label for="descripcion_reporte">
+                        Descripción
+                        <span>*</span>
+                    </label>
+
+                    <textarea id="descripcion_reporte" name="descripcion_reporte" maxlength="500"
+                        placeholder="Cuéntanos qué pasó, dónde lo viste, cómo es el animal, entre otros detalles..."></textarea>
+
+                    <small class="contador-descripcion-reporte">
+                        0/500
+                    </small>
+
+                </div>
+
+
+                <!-- Especie -->
+                <div class="campo-reporte campo-especie-reporte">
+
+                    <label for="especie_reporte">
+                        Especie
+                        <span>*</span>
+                    </label>
+
+                    <select id="especie_reporte" name="especie_reporte">
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+
+                        <option value="perro">
+                            Perro
+                        </option>
+
+                        <option value="gato">
+                            Gato
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <!-- Raza -->
+                <div class="campo-reporte campo-raza-reporte">
+
+                    <label for="raza_reporte">
+                        Raza
+                        <span class="campo-opcional-reporte">
+                            (opcional)
+                        </span>
+                    </label>
+
+                    <input type="text" id="raza_reporte" name="raza_reporte"
+                        placeholder="Ej. Criollo, Pastor Alemán...">
+
+                </div>
+
+
+                <!-- Color -->
+                <div class="campo-reporte campo-color-reporte">
+
+                    <label for="color_reporte">
+                        Color
+                        <span class="campo-opcional-reporte">
+                            (opcional)
+                        </span>
+                    </label>
+
+                    <input type="text" id="color_reporte" name="color_reporte" placeholder="Ej. Café, blanco, negro...">
+
+                </div>
+
+
+                <!-- Fecha -->
+                <div class="campo-reporte campo-fecha-reporte">
+
+                    <label for="fecha_reporte">
+                        Fecha del reporte
+                        <span>*</span>
+                    </label>
+
+                    <div class="entrada-icono-reporte">
+
+                        <!-- <i class="fa-regular fa-calendar"></i> -->
+
+                        <input type="date" id="fecha_reporte" name="fecha_reporte">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Estado -->
+                <div class="campo-reporte campo-estado-reporte">
+
+                    <label for="estado_animal">
+                        Estado del animal
+                        <span class="campo-opcional-reporte">
+                            (opcional)
+                        </span>
+                    </label>
+
+                    <select id="estado_animal" name="estado_animal">
+
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+
+                        <option value="saludable">
+                            Se encuentra saludable
+                        </option>
+
+                        <option value="herido">
+                            Se encuentra herido
+                        </option>
+
+                        <option value="enfermo">
+                            Parece estar enfermo
+                        </option>
+
+                        <option value="desconocido">
+                            No se conoce
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PASO 3 - UBICACIÓN
+             ===================================================== -->
+
+        <section class="seccion-reporte seccion-ubicacion-reporte">
+
+            <div class="titulo-seccion-reporte">
+
+                <span class="numero-seccion-reporte">3</span>
+
+                <div>
+                    <h2>Ubicación</h2>
+
+                    <p>
+                        Indica el lugar donde viste la mascota o la situación.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="aviso-ubicacion-reporte">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <span>
+                    Puedes permitir que tu ubicación se detecte automáticamente
+                    o marcarla en el mapa.
+                </span>
+
+            </div>
+
+
+            <label class="ubicacion-actual-reporte">
+
+                <input type="checkbox" id="usar_ubicacion_actual" name="usar_ubicacion_actual" checked>
+
+                <span class="cuadro-checkbox-reporte">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+                <span>
+                    Usar mi ubicación actual
+                </span>
+
+                <i class="fa-solid fa-location-dot icono-ubicacion-actual"></i>
+
+            </label>
+
+
+            <div class="campo-reporte campo-direccion-reporte">
+
+                <label for="direccion_reporte">
+                    Dirección o referencia
+                    <span>*</span>
+                </label>
+
+                <input type="text" id="direccion_reporte" name="direccion_reporte"
+                    placeholder="Ej. Parque principal de Soacha, carrera 7 #12-34">
+
+            </div>
+
+
+            <!-- Área destinada al mapa -->
+            <div class="mapa-ubicacion-reporte">
+
+                <div class="controles-mapa-reporte">
+
+                    <button type="button" aria-label="Acercar mapa">
+                        +
+                    </button>
+
+                    <button type="button" aria-label="Alejar mapa">
+                        −
+                    </button>
+
+                </div>
+
+
+                <div class="marcador-mapa-reporte">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+
+                <div class="nombre-lugar-mapa">
+                    Parque Principal
+                    <br>
+                    de Soacha
+                </div>
+
+
+                <button type="button" class="boton-seleccionar-mapa">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Seleccionar en el mapa
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PASO 4 - FOTOS Y EVIDENCIAS
+             ===================================================== -->
+
+        <section class="seccion-reporte seccion-evidencias-reporte">
+
+            <div class="titulo-seccion-reporte">
+
+                <span class="numero-seccion-reporte">4</span>
+
+                <div>
+                    <h2>Fotos y evidencias</h2>
+
+                    <p>
+                        Sube imágenes que ayuden a identificar o ubicar
+                        la mascota o la situación.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="zona-evidencias-reporte">
+
+                <!-- Botón para subir -->
+                <label for="fotos_reporte" class="zona-subir-evidencias">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <span>
+                        Arrastra tus archivos aquí o haz clic para seleccionar
+                    </span>
+
+                    <small>
+                        JPG, PNG (máx. 5 MB por imagen)
+                    </small>
+
+                    <input type="file" id="fotos_reporte" name="fotos_reporte[]" accept=".jpg,.jpeg,.png" multiple>
+
+                </label>
+
+
+                <!-- Imagen cargada -->
+                <div class="imagen-evidencia-reporte">
+
+                    <img src="../img/perro-reporte.jpg" alt="Evidencia de mascota">
+
+                    <button type="button" class="boton-eliminar-evidencia" aria-label="Eliminar imagen">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Segunda imagen -->
+                <div class="imagen-evidencia-reporte">
+
+                    <img src="../img/lugar-reporte.jpg" alt="Lugar de referencia">
+
+                    <button type="button" class="boton-eliminar-evidencia" aria-label="Eliminar imagen">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Agregar otra imagen -->
+                <label for="fotos_adicionales" class="boton-agregar-evidencia">
+
+                    <span class="circulo-agregar-evidencia">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+
+                    <span>
+                        Agregar más
+                    </span>
+
+                    <input type="file" id="fotos_adicionales" accept=".jpg,.jpeg,.png" multiple>
+
+                </label>
+
+            </div>
+
+
+            <div class="aviso-revision-reporte">
+
+                <i class="fa-solid fa-shield-dog"></i>
+
+                <span>
+                    Tu reporte será revisado por nuestro equipo y, si es
+                    necesario, se compartirá con las autoridades correspondientes
+                    o refugios cercanos.
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 BOTONES FINALES
+                 ================================================= -->
+
+            <div class="acciones-reporte">
+
+                <button type="button" class="boton-cancelar-reporte">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                    Cancelar
+
+                </button>
+
+
+                <button type="submit" class="boton-enviar-reporte">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Enviar reporte
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer class="footer">
+
+        <div class="footer-onda">
+            <img src="../img/fondo_onda_2.png" alt="fondo_footer">
+        </div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-logo">
+                <div class="icono-logo2">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div class="footer-informacion">
+                    <h2>MonPet</h2>
+                    <p>
+                        Conectamos corazones para que cada <br>mascota
+                        encuentre un hogar lleno<br>de amor y cuidado.
+                    </p>
+
+                    <div class="footer-redes">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-enlaces">
+                <h3>Enlaces rápidos</h3>
+
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="#">Adopción</a></li>
+                    <li><a href="reportes_comunidad.html">Reportes</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-ayuda">
+                <h3>Ayuda</h3>
+
+                <ul>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Cómo adoptar</a></li>
+                    <li><a href="#">Consejos de cuidado</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-legal">
+                <h3>Información legal</h3>
+
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bogotá, Colombia
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        contacto@monpet.com
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +57 300 123 4567
+                    </li>
+
+                    <li>
+                        <i class="fa-regular fa-clock"></i>
+                        Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+            <p>© 2026 MonPet. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

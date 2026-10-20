@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonPet - Configuración</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/reporte.css">
+    <link rel="stylesheet" href="../css/solicitudes.css">
+    <link rel="stylesheet" href="../css/configuracion.css">
+</head>
+
+<body>
+
+    <!-- HEADER PRINCIPAL -->
+    <header>
+        <div class="contenedor-logo">
+            <a href="../index.html">
+            <div class="icono-logo">
+                <i class="fa-solid fa-paw"></i>
+            </div>
+            <div class="texto-logo">
+                <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+                <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+                </a>
+            </div>
+        </div>
+        <nav class="links-navegacion">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Adopción</a></li>
+                <li><a href="reportes_comunidad.html">Reportes</a></li>
+                <li><a href="#">Refugios</a></li>
+                <li><a href="#">Jornadas</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </nav>
+
+        <div class="perfil-header">
+            <div class="icono-notificacion">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge-notif">3</span>
+            </div>
+            <div class="usuario-perfil">
+                <img src="../img/perfil.jpg" alt="Laura García" class="foto-usuario">
+                <div class="info-usuario">
+                    <strong>Laura García <i class="fa-solid fa-chevron-down"></i></strong>
+                    <small>Ver perfil</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PANEL PRINCIPAL CON ASIDE Y CONTENIDO -->
+    <div class="contenedor-principal-reportes">
+        <aside class="barra-lateral-reportes">
+            <nav class="navegacion-lateral-reportes">
+
+                <a href="../index.html" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Mi perfil</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-star"></i>
+                    <span>Mis favoritos</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Mis solicitudes</span>
+                </a>
+
+                <a href="perfil_usuario_reportes.html" class="elemento-navegacion-reportes activo">
+                    <i class="fa-regular fa-flag"></i>
+                    <span>Mis reportes</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span>Mensajes</span>
+
+                    <span class="contador-mensajes-reportes">3</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configuración</span>
+                </a>
+
+            </nav>
+
+            <!-- Ayuda -->
+            <div class="tarjeta-ayuda-reportes">
+                <div class="icono-ayuda-reportes">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="informacion-ayuda-reportes">
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Estamos aquí para ayudarte.</p>
+                    <a href="#" class="enlace-soporte-reportes">Contactar soporte <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO CONFIGURACIÓN -->
+        <main class="contenido-panel">
+            <div class="migas-pan-reportes">
+                <a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <a href="#">Mi cuenta</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <span>Mis reportes</span>
+            </div>
+
+            <div class="titulo-pagina">
+                <div class="circulo-icono"><i class="fa-solid fa-gear"></i></div>
+                <div>
+                    <h2>Configuración</h2>
+                    <p>Gestiona tu cuenta y preferencias.</p>
+                </div>
+            </div>
+
+            <div class="layout-configuracion">
+
+                <!-- COLUMNA PRINCIPAL DE OPCIONES -->
+                <div class="columna-config-principal">
+
+                    <!-- 1. Información de la cuenta -->
+                    <div class="caja-blanca seccion-config">
+                        <div class="encabezado-caja-config">
+                            <div class="titulo-con-icono">
+                                <i class="fa-solid fa-user icono-seccion"></i>
+                                <h3>Información de la cuenta</h3>
+                            </div>
+                            <button class="btn-borde-sm">Editar información</button>
+                        </div>
+
+                        <div class="contenido-info-usuario">
+                            <div class="lista-datos">
+                                <p><small>Nombre completo</small> <strong>Laura García</strong></p>
+                                <p><small>Correo electrónico</small> <strong>laura.garcia@email.com</strong></p>
+                                <p><small>Número de teléfono</small> <strong>+57 300 123 4567</strong></p>
+                                <p><small>Fecha de registro</small> <strong>12 de junio de 2024</strong></p>
+                            </div>
+                            <div class="avatar-perfil-caja">
+                                <img src="../img/perfil.jpg" alt="Laura García">
+                                <button class="btn-camara"><i class="fa-solid fa-camera"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Seguridad de la cuenta -->
+                    <div class="caja-blanca seccion-config">
+                        <div class="titulo-con-icono">
+                            <i class="fa-solid fa-lock icono-seccion"></i>
+                            <h3>Seguridad de la cuenta</h3>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Contraseña</strong>
+                                <p>••••••••••••</p>
+                            </div>
+                            <button class="btn-borde-sm">Cambiar contraseña</button>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Verificación en dos pasos</strong>
+                                <small>Agrega una capa extra de seguridad a tu cuenta.</small>
+                            </div>
+                            <label class="switch-toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Sesiones activas</strong>
+                                <small>Gestiona los dispositivos donde has iniciado sesión.</small>
+                            </div>
+                            <button class="btn-borde-sm">Ver sesiones</button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Preferencias de la cuenta -->
+                    <div class="caja-blanca seccion-config">
+                        <div class="titulo-con-icono">
+                            <i class="fa-solid fa-sliders icono-seccion"></i>
+                            <h3>Preferencias de la cuenta</h3>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Modo oscuro</strong>
+                                <small>Activa el modo oscuro en toda la aplicación.</small>
+                            </div>
+                            <label class="switch-toggle">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="grupo-select-config">
+                            <label>Idioma</label>
+                            <select class="select-config">
+                                <option>Español</option>
+                                <option>English</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-select-config">
+                            <label>Zona horaria</label>
+                            <select class="select-config">
+                                <option>(GMT-05:00) Bogotá</option>
+                            </select>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Correos y notificaciones</strong>
+                                <small>Elige cómo y cuándo quieres recibir notificaciones.</small>
+                            </div>
+                            <button class="btn-borde-sm">Administrar</button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Privacidad -->
+                    <div class="caja-blanca seccion-config">
+                        <div class="titulo-con-icono">
+                            <i class="fa-solid fa-shield-halved icono-seccion"></i>
+                            <h3>Privacidad</h3>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Perfil público</strong>
+                                <small>Permitir que otros usuarios vean mi perfil.</small>
+                            </div>
+                            <label class="switch-toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Mostrar mi ubicación aproximada</strong>
+                                <small>Permite mostrar la ubicación aproximada en mis publicaciones.</small>
+                            </div>
+                            <label class="switch-toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Permitir mensajes</strong>
+                                <small>Otros usuarios pueden enviarme mensajes.</small>
+                            </div>
+                            <label class="switch-toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 5. Eliminar cuenta -->
+                    <div class="caja-blanca seccion-config caja-eliminar">
+                        <div class="titulo-con-icono">
+                            <i class="fa-solid fa-triangle-exclamation icono-seccion rojo"></i>
+                            <h3>Eliminar cuenta</h3>
+                        </div>
+                        <p class="texto-alerta">Esta acción es permanente y no se puede deshacer.</p>
+                        <button class="btn-eliminar">Eliminar mi cuenta</button>
+                    </div>
+
+                </div>
+
+                <!-- COLUMNA DERECHA (PLAN Y MENSAJE) -->
+                <div class="columna-config-lateral">
+
+                    <!-- Tarjeta Mi Plan -->
+                    <div class="caja-blanca tarjeta-plan">
+                        <div class="encabezado-plan">
+                            <i class="fa-solid fa-crown icono-corona"></i>
+                            <h4>Mis Beneficios</h4>
+                        </div>
+                        <div class="badge-plan-gratis">Beneficios de mi cuenta MonPet</div>
+
+                        <ul class="lista-beneficios">
+                            <li><i class="fa-solid fa-circle-check"></i> Novedades Jornadas</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Reportar Casos</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Solicitar Adopciones</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Mensajería Básica</li>
+                        </ul>
+
+                        <button class="btn-ver-planes">Usuario MonPet</button>
+                    </div>
+
+                    <!-- Banner Agradecimiento -->
+                    <div class="caja-blanca tarjeta-agradecimiento-lateral">
+                        <div class="ilustracion-mascotas">
+                            <i class="fa-solid fa-dog"></i>
+                            <i class="fa-solid fa-cat"></i>
+                        </div>
+                        <h4>Gracias por ser parte de MonPet <i class="fa-solid fa-heart"></i></h4>
+                        <p>Tu ayuda hace la diferencia para miles de animales.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer class="footer">
+
+        <div class="footer-onda">
+            <img src="../img/fondo_onda_2.png" alt="fondo_footer">
+        </div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-logo">
+                <div class="icono-logo2">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div class="footer-informacion">
+                    <h2>MonPet</h2>
+                    <p>
+                        Conectamos corazones para que cada <br>mascota
+                        encuentre un hogar lleno<br>de amor y cuidado.
+                    </p>
+
+                    <div class="footer-redes">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-enlaces">
+                <h3>Enlaces rápidos</h3>
+
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="#">Adopción</a></li>
+                    <li><a href="reportes_comunidad.html">Reportes</a></li>
+                    <li><a href="#">Refugios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-ayuda">
+                <h3>Ayuda</h3>
+
+                <ul>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Cómo adoptar</a></li>
+                    <li><a href="#">Consejos de cuidado</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-legal">
+                <h3>Información legal</h3>
+
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacto">
+                <h3>Contacto</h3>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bogotá, Colombia
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        contacto@monpet.com
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        +57 300 123 4567
+                    </li>
+
+                    <li>
+                        <i class="fa-regular fa-clock"></i>
+                        Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+            <p>© 2026 MonPet. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
