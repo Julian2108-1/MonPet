@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MonPet - Iniciar Sesión</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/estilo_inicio_sesion.css" />
+</head>
+
+<body>
+  <header>
+    <div class="contenedor-logo">
+      <div class="icono-logo">
+        <i class="fa-solid fa-paw"></i>
+      </div>
+      <div class="texto-logo">
+        <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+        <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+      </div>
+    </div>
+    <div class="accion-navegacion">
+      <a href="#" class="boton-secundario"><i class="fa-solid fa-arrow-left"></i>Volver al inicio</a>
+    </div>
+  </header>
+  
+  <main class="contenedor-principal">
+
+      <section class="seccion-izq">
+
+        <div class="contenido-izq">
+          <h1 class="titulo-izq">Bienvenido<i class="fa-regular fa-heart"></i><br>a <span>Mon</span><span>Pet</span></h1>
+          <p class="subtitulo-izq">
+            Inicia sesión para continuar ayudando <br>a mas mascotas y ser parte del cambio.
+          </p>
+          <div class="imagen-bienvenida">
+            <img src="../img/fondo_2.png" alt="Mascotas">
+          </div>
+          <div class="informacion-izq">
+              <i class="fa-solid fa-paw icono-inicio"></i>
+            <p>Cada pequeño acto de amor <br>puede cambiar una vida. <i class="fa-solid fa-heart"></i></p>
+          </div>
+          <div class="onda-izq">
+            <img src="../img/fondo_onda_2.png" alt="Onda_imagen">
+          </div>
+          <div class="fondo-onda"></div>
+        </div>
+      </section>
+
+      <section class="seccion-formulario">
+
+        <div class="contenedor-formulario">
+
+          <div class="encabezado-formulario">
+              <i class="fa-solid fa-paw"></i>
+            <h2>Iniciar sesión</h2>
+            <p>Ingresa tus datos para continuar</p>
+          </div>
+          <form action="../admin/iniciar_sesion/iniciar_sesion.php" method="POST" id="form-crear" class="formulario-inicio">
+
+            <div class="insertar">
+              <label for="email">Correo electronico</label>
+
+              <div class="insertar-recuadro">
+                <i class="fa-regular fa-envelope insertar-icono"></i>
+                <input type="email" name="correo" id="email" placeholder="ejemplo@correo.com" required />
+              </div>
+            </div>
+
+            <div class="insertar">
+              <label for="password">Contraseña</label>
+
+              <div class="insertar-recuadro">
+                <i class="fa-solid fa-lock insertar-icono"></i>
+                <input type="password" name="contrasena" id="password" placeholder="Ingresa tu contraseña" required />
+                <i class="fa-regular fa-eye-slash toggle-password"></i>
+              </div>
+            </div>
+
+            <div class="opciones-formulario">
+              <label class="recordarme">
+                <input type="checkbox" id="recordar" />
+                <span class="custom-checkbox"></span>
+                Recordarme
+              </label>
+              <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit" name="botingresar" class="boton-primario">
+              Iniciar sesion <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+          <div class="divisor">
+            <span>o continua con</span>
+          </div>
+          <div class="red-social">
+            <a href="" class="boton-red"><i class="fa-brands fa-google"></i>Google</a>
+            <a href="" class="boton-red"><i class="fa-brands fa-facebook-f facebook-icono"></i>Facebook</a>
+          </div>
+          <div class="pie-formulario">
+            <span>¿No tienes una cuenta?</span>
+            <a href="#" class="register-link">Crear cuenta <span><i class="fa-solid fa-arrow-right"></i></span></a>
+          </div>
+        </div>
+      </section>
+  </main>
+</body>
+
+</html>

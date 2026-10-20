@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis reportes - MonPet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilo_perfil_reportes.css">
+</head>
+
+<body>
+<header>
+      <div class="contenedor-logo">
+        <a href="../index.html">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+         <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+          </a>
+        </div>
+      </div>
+      <nav class="links-navegacion">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="#">Adopción</a></li>
+            <li><a href="reportes_comunidad.html">Reportes</a></li>
+            <li><a href="#">Refugios</a></li>
+            <li><a href="#">Jornadas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+      <div class="acciones-usuario">
+            <button class="boton-notificaciones">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+            <button class="boton-mensajes">
+                <i class="fa-regular fa-bell"></i>
+                <span class="contador-alertas">2</span>
+            </button>
+
+            <div class="perfil-usuario">
+                <img src="../img/perfil.jpg" alt="Imagen_perfil">
+                <span>Hola, Laura</span>
+                <button>
+                <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedor-principal-reportes">
+        <aside class="barra-lateral-reportes">
+            <nav class="navegacion-lateral-reportes">
+
+                <a href="../index.html" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Mi perfil</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-star"></i>
+                    <span>Mis favoritos</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Mis solicitudes</span>
+                </a>
+
+                <a href="perfil_usuario_reportes.html" class="elemento-navegacion-reportes activo">
+                    <i class="fa-regular fa-flag"></i>
+                    <span>Mis reportes</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span>Mensajes</span>
+
+                    <span class="contador-mensajes-reportes">3</span>
+                </a>
+
+                <a href="#" class="elemento-navegacion-reportes">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configuración</span>
+                </a>
+
+            </nav>
+
+
+            <!-- Ayuda -->
+            <div class="tarjeta-ayuda-reportes">
+                <div class="icono-ayuda-reportes">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="informacion-ayuda-reportes">
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Estamos aquí para ayudarte.</p>
+                    <a href="#" class="enlace-soporte-reportes">Contactar soporte <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </aside>
+        <main class="contenido-principal-reportes">
+            <div class="migas-pan-reportes">
+                <a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <a href="#">Mi cuenta</a>
+                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
+                <span>Mis reportes</span>
+            </div>
+
+            <!-- Encabezado -->
+            <section class="encabezado-reportes">
+                <div class="titulo-seccion-reportes">
+                    <div class="icono-titulo-reportes">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </div>
+
+                    <div class="texto-titulo-reportes">
+                        <h1>Mis reportes</h1>
+                        <p>Consulta el estado de los reportes que has realizado.</p>
+                    </div>
+                </div>
+
+                <!-- Mensaje informativo -->
+                <div class="mensaje-informativo-reportes">
+                    <div class="icono-mensaje-reportes">
+                        <i class="fa-solid fa-shield-dog"></i>
+                    </div>
+
+                    <div class="contenido-mensaje-reportes">
+                        <h3>Tu reporte puede cambiar una vida</h3>
+                        <p>Gracias por ayudarnos a construir una comunidad más segura para todos.</p>
+                    </div>
+
+                    <div class="decoracion-pata-reportes">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel-reportes">
+                <!-- Filtros -->
+                <div class="barra-filtros-reportes">
+                    <div class="filtros-estado-reportes">
+                        <button class="filtro-reporte activo">
+                            <i class="fa-regular fa-file-lines"></i>
+                            Todos
+                            <span>6</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-revision"></i>
+                            En revisión
+                            <span>2</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-proceso"></i>
+                            En proceso
+                            <span>2</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-resuelto"></i>
+                            Resueltos
+                            <span>1</span>
+                        </button>
+
+                        <button class="filtro-reporte">
+                            <i class="fa-solid fa-circle indicador-cerrado"></i>
+                            Cerrados
+                            <span>1</span>
+                        </button>
+                    </div>
+
+                    <div class="herramientas-busqueda-reportes">
+                        <div class="campo-busqueda-reportes">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Buscar en mis reportes...">
+                        </div>
+
+                        <select class="selector-orden-reportes">
+                            <option>Más recientes</option>
+                            <option>Más antiguos</option>
+                            <option>Estado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="listado-reportes">
+                    <!-- REPORTE 1 -->
+                    <article class="fila-reporte">
+                        <div class="imagen-reporte">
+                            <img src="../img/buddy.jpg" alt="Mascota perdida">
+                        </div>
+
+                        <div class="icono-tipo-reporte reporte-perdida">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+
+                        <div class="informacion-principal-reporte">
+                            <h2>Mascota perdida</h2>
+                            <p>Se perdió en el parque principal de Soacha.</p>
+                            <div class="datos-reporte">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Soacha, Cundinamarca
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    28 de julio de 2026 · 10:30 a. m.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="estado-reporte estado-en-revision">
+                            <span class="etiqueta-estado-reporte">
+                                <i class="fa-regular fa-clock"></i>
+                                En revisión
+                            </span>
+                            <p>Hemos recibido tu reporte y está siendo revisado por nuestro equipo.</p>
+                        </div>
+
+                        <div class="acciones-reporte">
+                            <a href="reportes_detalles.html" class="boton-ver-detalles">Ver detalles</a>
+                            <button class="boton-mas-opciones" aria-label="Más opciones">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- REPORTE 2 -->
+                    <article class="fila-reporte">
+                        <div class="imagen-reporte">
+                            <img src="../img/perro-reporte-2.jpg" alt="Mascota abandonada">
+                        </div>
+
+                        <div class="icono-tipo-reporte reporte-abandono">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div class="informacion-principal-reporte">
+                            <h2>Mascota abandonada</h2>
+                            <p>Perro abandonado en la vía principal.</p>
+
+                            <div class="datos-reporte">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Madrid, Cundinamarca
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    20 de julio de 2026 · 08:40 a. m.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="estado-reporte estado-en-proceso">
+                            <span class="etiqueta-estado-reporte">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                                En proceso
+                            </span>
+                            <p>Nuestro equipo ya está investigando el caso.Gracias por tu reporte.</p>
+                        </div>
+
+                        <div class="acciones-reporte">
+                            <a href="detalle-reporte.html" class="boton-ver-detalles">Ver detalles</a>
+                            <button class="boton-mas-opciones" aria-label="Más opciones">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                    </article>
+
+
+                    <!-- REPORTE 3 -->
+                    <article class="fila-reporte">
+                        <div class="imagen-reporte">
+                            <img src="../img/perro-reporte-3.jpg" alt="Mascota encontrada">
+                        </div>
+
+                        <div class="icono-tipo-reporte reporte-resuelto">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+
+                        <div class="informacion-principal-reporte">
+                            <h2>Mascota encontrada</h2>
+                            <p>Encontré este perrito deambulando solo.</p>
+
+                            <div class="datos-reporte">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Mosquera, Cundinamarca
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    15 de julio de 2026 · 11:20 a. m.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="estado-reporte estado-resuelto">
+                            <span class="etiqueta-estado-reporte">
+                                <i class="fa-regular fa-circle-check"></i>
+                                Resuelto
+                            </span>
+                            <p>El caso fue resuelto. ¡Gracias por ayudarnos a reunirlo con su familia!</p>
+                        </div>
+
+                        <div class="acciones-reporte">
+                            <a href="detalle-reporte.html" class="boton-ver-detalles">Ver detalles</a>
+                            <button class="boton-mas-opciones" aria-label="Más opciones">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+<footer class="footer">
+
+    <div class="footer-onda">
+        <img src="/img/fondo_onda_2.png" alt="">
+    </div>
+
+    <div class="footer-contenedor">
+
+        <div class="footer-logo">
+        <div class="icono-logo2">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="footer-informacion">
+            <h2>MonPet</h2>
+            <p>
+                Conectamos corazones para que cada <br>mascota
+                encuentre un hogar lleno<br>de amor y cuidado.
+            </p>
+
+            <div class="footer-redes">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            </div>
+        </div>
+
+        <div class="footer-enlaces">
+            <h3>Enlaces rápidos</h3>
+
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Adopción</a></li>
+                <li><a href="reportes_comunidad.html">Reportes</a></li>
+                <li><a href="#">Refugios</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-ayuda">
+            <h3>Ayuda</h3>
+
+            <ul>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Cómo adoptar</a></li>
+                <li><a href="#">Consejos de cuidado</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-legal">
+            <h3>Información legal</h3>
+
+            <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Aviso legal</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contacto">
+            <h3>Contacto</h3>
+
+            <ul>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Bogotá, Colombia
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    contacto@monpet.com
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    +57 300 123 4567
+                </li>
+
+                <li>
+                    <i class="fa-regular fa-clock"></i>
+                    Lun - Vie: 8:00 a.m. - 6:00 p.m.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-inferior">
+        <p>© 2026 MonPet. Todos los derechos reservados.</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
