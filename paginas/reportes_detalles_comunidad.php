@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis  Detalle del reporte - MonPet</title>
+    <title>Detalle del reporte - MonPet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="../css/estilo_reportes_detalles.css">
 </head>
@@ -11,7 +11,7 @@
 <body>
 <header>
       <div class="contenedor-logo">
-        <a href="../index.html">
+        <a href="../index.php">
         <div class="icono-logo">
           <i class="fa-solid fa-paw"></i>
         </div>
@@ -23,12 +23,12 @@
       </div>
       <nav class="links-navegacion">
         <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="#">Adopción</a></li>
-            <li><a href="reportes_comunidad.html">Reportes</a></li>
-            <li><a href="#">Refugios</a></li>
-            <li><a href="#">Jornadas</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="../index.php">Inicio</a></li>
+            <li><a href="../paginas/adopcion.php">Adopción</a></li>
+            <li><a href="reportes_comunidad.php">Reportes</a></li>
+            <li><a href="../paginas/Refugios.php">Refugios</a></li>
+            <li><a href="../paginas/Jornadas.php">Jornadas</a></li>
+            <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
         </ul>
       </nav>
       <div class="acciones-usuario">
@@ -52,11 +52,9 @@
 
     <main class="contenido-detalle-reporte">
             <div class="migas-pan-reportes">
-                <a href="#"><i class="fa-solid fa-house"></i>Inicio</a>
+                <a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
                 <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
-                <a href="#">Mi cuenta</a>
-                <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
-                <a href="perfil_usuario_reportes.html">Mis Reportes</a>
+                <a href="reportes_comunidad.html">Reportes Comunidad</a>
                 <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
                 <span>Detalles del reporte</span>
             </div>
@@ -74,7 +72,7 @@
                 </div>
             </div>
 
-            <a href="perfil_usuario_reportes.html" class="boton-volver-reportes"><i class="fa-solid fa-arrow-left"></i> Volver a Reportes</a>
+            <a href="../paginas/perfil_usuario_reportes.php" class="boton-volver-reportes"><i class="fa-solid fa-arrow-left"></i> Volver a mis reportes</a>
         </section>
 
         <section class="tarjeta-resumen-reporte">
@@ -352,11 +350,11 @@
             <h3>Enlaces rápidos</h3>
 
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="#">Adopción</a></li>
-                <li><a href="reportes_comunidad.html">Reportes</a></li>
-                <li><a href="#">Refugios</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../paginas/adopcion.php">Adopción</a></li>
+                <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
+                <li><a href="../paginas/Refugios.php">Refugios</a></li>
+                <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
             </ul>
         </div>
 
@@ -364,10 +362,10 @@
             <h3>Ayuda</h3>
 
             <ul>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Cómo adoptar</a></li>
-                <li><a href="#">Consejos de cuidado</a></li>
-                <li><a href="#">Contáctanos</a></li>
+                <li><a href="../paginas/preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+                <li><a href="../paginas/como_adoptar.php">Cómo adoptar</a></li>
+                <li><a href="../paginas/consejos_cuidado.php">Consejos de cuidado</a></li>
+                <li><a href="../paginas/contáctanos.php">Contáctanos</a></li>
             </ul>
         </div>
 

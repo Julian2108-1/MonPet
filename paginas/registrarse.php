@@ -35,16 +35,16 @@ $tipos = mysqli_query(
         </div>
         <nav class="links-navegacion">
             <ul>
-                <li><a href="#" class="active">Inicio</a></li>
-                <li><a href="#">Adopción</a></li>
-                <li><a href="#">Reportes</a></li>
-                <li><a href="#">Refugios</a></li>
-                <li><a href="#">Jornadas</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="../index.php" class="active">Inicio</a></li>
+                <li><a href="../paginas/adopcion.php">Adopción</a></li>
+                <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
+                <li><a href="../paginas/Refugios.php">Refugios</a></li>
+                <li><a href="../paginas/Jornadas.php">Jornadas</a></li>
+                <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
             </ul>
         </nav>
         <div class="accion-navegacion">
-            <a href="#" class="boton-secundario">Volver al Inicio</a>
+            <a href="../index.php" class="boton-secundario">Volver al Inicio</a>
         </div>
     </header>
     <main class="contenido-registro">
@@ -402,7 +402,7 @@ $tipos = mysqli_query(
 
             <footer class="pie-formulario">
                 <p>¿Ya tienes una cuenta?
-                    <a href="#">Iniciar sesión</a>
+                    <a href="../paginas/iniciar_sesion.php">Iniciar sesión</a>
                 </p>
             </footer>
         </section>

@@ -15,7 +15,7 @@
 <body>
     <header class="barra-superior">
         <div class="contenedor-barra">
-            <a href="../index.html" class="contenedor-logo">
+            <a href="../index.php" class="contenedor-logo">
                 <div class="icono-logo">
                     <i class="fa-solid fa-paw"></i>
                 </div>
@@ -39,14 +39,14 @@
         <section class="encabezado-pagina">
 
             <nav class="migas-pan" aria-label="Migas de pan">
-                <a href="../index.html">
+                <a href="../index.php">
                     <i class="fa-solid fa-house"></i>
                     Inicio
                 </a>
 
                 <i class="fa-solid fa-chevron-right separador-miga"></i>
 
-                <a href="catalogo_mascotas.html">Adopción</a>
+                <a href="../paginas/catalogo_mascotas.php">Adopción</a>
 
                 <i class="fa-solid fa-chevron-right separador-miga"></i>
 
@@ -54,7 +54,7 @@
             </nav>
 
             <div class="boton-volver">
-                <a href="catalogo_mascotas.html" class="boton-borde">
+                <a href="../paginas/catalogo_mascotas.php" class="boton-borde">
                     <i class="fa-solid fa-arrow-left"></i>
                     Volver a la lista
                 </a>
@@ -421,7 +421,7 @@
                     <h2>Otras mascotas que te pueden interesar</h2>
                 </div>
 
-                <a href="catalogo_mascotas.html" class="ver-todas">
+                <a href="../paginas/catalogo_mascotas.php" class="ver-todas">
                     Ver todas
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -632,11 +632,11 @@
                 <h3>Enlaces rápidos</h3>
 
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="#">Adopción</a></li>
-                    <li><a href="reportes_comunidad.html">Reportes</a></li>
-                    <li><a href="#">Refugios</a></li>
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="../paginas/adopcion.php">Adopción</a></li>
+                    <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
+                    <li><a href="../paginas/Refugios.php">Refugios</a></li>
+                    <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
                 </ul>
             </div>
 
@@ -644,10 +644,10 @@
                 <h3>Ayuda</h3>
 
                 <ul>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Cómo adoptar</a></li>
-                    <li><a href="#">Consejos de cuidado</a></li>
-                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="../paginas/preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+                    <li><a href="../paginas/como_adoptar.php">Cómo adoptar</a></li>
+                    <li><a href="../paginas/consejos_cuidado.php">Consejos de cuidado</a></li>
+                    <li><a href="../paginas/contáctanos.php">Contáctanos</a></li>
                 </ul>
             </div>
 

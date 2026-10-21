@@ -16,7 +16,7 @@
     <!-- HEADER PRINCIPAL -->
     <header>
         <div class="contenedor-logo">
-            <a href="../index.html">
+            <a href="../index.php">
             <div class="icono-logo">
                 <i class="fa-solid fa-paw"></i>
             </div>
@@ -28,9 +28,9 @@
         </div>
         <nav class="links-navegacion">
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.php">Inicio</a></li>
                 <li><a href="#">Adopción</a></li>
-                <li><a href="reportes_comunidad.html">Reportes</a></li>
+                <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
                 <li><a href="#">Refugios</a></li>
                 <li><a href="#">Jornadas</a></li>
                 <li><a href="#">Nosotros</a></li>
@@ -57,7 +57,7 @@
         <aside class="barra-lateral-reportes">
             <nav class="navegacion-lateral-reportes">
 
-                <a href="../index.html" class="elemento-navegacion-reportes">
+                <a href="../index.php" class="elemento-navegacion-reportes">
                     <i class="fa-solid fa-house"></i>
                     <span>Inicio</span>
                 </a>
@@ -77,7 +77,7 @@
                     <span>Mis solicitudes</span>
                 </a>
 
-                <a href="perfil_usuario_reportes.html" class="elemento-navegacion-reportes activo">
+                <a href="../paginas/perfil_usuario_reportes.php" class="elemento-navegacion-reportes activo">
                     <i class="fa-regular fa-flag"></i>
                     <span>Mis reportes</span>
                 </a>
@@ -114,7 +114,7 @@
         <!-- CONTENIDO CONFIGURACIÓN -->
         <main class="contenido-panel">
             <div class="migas-pan-reportes">
-                <a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
+                <a href="../index.php"><i class="fa-solid fa-house"></i>Inicio</a>
                 <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
                 <a href="#">Mi cuenta</a>
                 <i class="fa-solid fa-chevron-right separador-miga-reportes"></i>
@@ -359,11 +359,11 @@
                 <h3>Enlaces rápidos</h3>
 
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="#">Adopción</a></li>
-                    <li><a href="reportes_comunidad.html">Reportes</a></li>
-                    <li><a href="#">Refugios</a></li>
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="../paginas/adopcion.php">Adopción</a></li>
+                    <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
+                    <li><a href="../paginas/Refugios.php">Refugios</a></li>
+                    <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
                 </ul>
             </div>
 
@@ -371,10 +371,10 @@
                 <h3>Ayuda</h3>
 
                 <ul>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Cómo adoptar</a></li>
-                    <li><a href="#">Consejos de cuidado</a></li>
-                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="../paginas/preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+                    <li><a href="../paginas/como_adoptar.php">Cómo adoptar</a></li>
+                    <li><a href="../paginas/consejos_cuidado.php">Consejos de cuidado</a></li>
+                    <li><a href="../paginas/contáctanos.php">Contáctanos</a></li>
                 </ul>
             </div>
 

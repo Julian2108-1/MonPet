@@ -22,7 +22,7 @@
     <!-- HEADER PRINCIPAL -->
     <header>
         <div class="contenedor-logo">
-            <a href="../index.html">
+            <a href="../index.php">
             <div class="icono-logo">
                 <i class="fa-solid fa-paw"></i>
             </div>
@@ -34,12 +34,12 @@
         </div>
         <nav class="links-navegacion">
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="#">Adopción</a></li>
-                <li><a href="reportes_comunidad.html">Reportes</a></li>
-                <li><a href="#">Refugios</a></li>
-                <li><a href="#">Jornadas</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../paginas/adopcion.php">Adopción</a></li>
+                <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
+                <li><a href="../paginas/Refugios.php">Refugios</a></li>
+                <li><a href="../paginas/Jornadas.php">Jornadas</a></li>
+                <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
             </ul>
         </nav>
 
@@ -65,7 +65,7 @@
         <aside class="barra-lateral-reportes">
             <nav class="navegacion-lateral-reportes">
 
-                <a href="../index.html" class="elemento-navegacion-reportes">
+                <a href="../index.php" class="elemento-navegacion-reportes">
                     <i class="fa-solid fa-house"></i>
                     <span>Inicio</span>
                 </a>
@@ -210,7 +210,7 @@
 
                 <!-- Ilustración del estado -->
                 <div class="ilustracion-estado" aria-hidden="true">
-                    <?xml version="1.0" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="186.000000pt" height="182.000000pt" viewBox="0 0 186.000000 182.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,182.000000) scale(0.100000,-0.100000)" fill="#ffc744" stroke="none"> <path d="M818 1635 c-16 -35 9 -63 41 -46 23 13 28 40 9 59 -19 19 -37 14 -50 -13z"/> <path d="M540 1620 c0 -11 7 -20 15 -20 8 0 15 9 15 20 0 11 -7 20 -15 20 -8 0 -15 -9 -15 -20z"/> <path d="M642 1615 c-12 -9 -25 -30 -30 -48 -8 -32 -9 -32 -75 -35 l-68 -3 3 -97 3 -97 218 -3 217 -2 11 24 c14 30 3 150 -15 165 -7 6 -33 11 -59 12 -39 2 -46 6 -52 26 -16 64 -99 95 -153 58z m86 -74 c-4 -31 -41 -37 -46 -8 -6 30 5 46 28 40 16 -4 20 -12 18 -32z"/> <path d="M209 1451 l-29 -29 1 -603 1 -602 24 -23 23 -24 469 0 c548 0 502 -10 502 113 0 67 -2 77 -17 76 -37 -2 -68 -15 -68 -29 0 -13 -60 -15 -418 -17 l-417 -3 2 538 3 537 75 5 74 5 4 36 c4 43 -13 49 -130 49 -63 0 -72 -3 -99 -29z m611 -1206 l0 -25 -115 0 -115 0 0 25 0 25 115 0 115 0 0 -25z"/> <path d="M993 1472 c-43 -3 -43 -3 -43 -42 l0 -39 78 -3 77 -3 3 -167 c2 -152 4 -168 20 -168 10 0 28 -7 40 -16 33 -23 33 -25 37 189 6 257 0 264 -212 249z"/> <path d="M408 1159 c-25 -14 -24 -65 1 -79 27 -14 47 -13 65 6 44 44 -12 105 -66 73z m50 -42 c2 -12 -3 -17 -17 -17 -12 0 -21 6 -21 13 0 31 32 34 38 4z"/> <path d="M524 1127 c-17 -44 36 -51 299 -40 125 5 137 7 137 24 0 17 -9 19 -108 19 -60 0 -157 3 -215 7 -93 5 -107 4 -113 -10z"/> <path d="M964 1019 c-259 -34 -365 -380 -173 -561 97 -90 271 -118 375 -59 l42 23 31 -23 c23 -17 31 -31 31 -53 0 -37 169 -216 203 -216 29 0 87 63 87 95 0 35 -172 215 -205 215 -12 0 -32 11 -45 25 l-23 25 34 62 c31 58 34 70 34 148 -1 211 -170 349 -391 319z m184 -129 c230 -156 65 -497 -202 -418 -126 37 -196 206 -135 323 68 131 222 174 337 95z"/> <path d="M406 971 c-20 -22 -18 -49 5 -64 43 -27 107 34 70 67 -24 21 -54 20 -75 -3z m49 -20 c7 -12 -12 -24 -25 -16 -11 7 -4 25 10 25 5 0 11 -4 15 -9z"/> <path d="M527 964 c-4 -4 -7 -18 -7 -31 0 -22 3 -23 63 -22 100 1 151 11 155 32 3 15 -6 17 -86 17 -50 0 -97 2 -104 5 -8 3 -17 2 -21 -1z"/> <path d="M425 808 c-44 -25 -52 -102 -12 -110 59 -11 96 46 63 97 -18 28 -23 29 -51 13z m35 -43 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z"/> <path d="M528 754 c-3 -3 -4 -14 -1 -25 11 -42 123 -23 123 22 0 10 -113 13 -122 3z"/> <path d="M430 603 c-23 -8 -40 -34 -40 -60 0 -46 89 -55 91 -10 4 65 -11 84 -51 70z m25 -44 c0 -7 -8 -15 -17 -17 -18 -3 -25 18 -11 32 10 10 28 1 28 -15z"/> <path d="M522 538 c3 -21 8 -23 68 -23 81 0 107 9 90 30 -9 11 -33 15 -87 15 -71 0 -74 -1 -71 -22z"/> </g> </svg>
+
 
             </section>
 
@@ -516,11 +516,11 @@
                 <h3>Enlaces rápidos</h3>
 
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="#">Adopción</a></li>
-                    <li><a href="reportes_comunidad.html">Reportes</a></li>
-                    <li><a href="#">Refugios</a></li>
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="../paginas/adopcion.php">Adopción</a></li>
+                    <li><a href="../paginas/reportes_comunidad.php">Reportes</a></li>
+                    <li><a href="../paginas/Refugios.php">Refugios</a></li>
+                    <li><a href="../paginas/Nosotros.php">Nosotros</a></li>
                 </ul>
             </div>
 
@@ -528,10 +528,10 @@
                 <h3>Ayuda</h3>
 
                 <ul>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Cómo adoptar</a></li>
-                    <li><a href="#">Consejos de cuidado</a></li>
-                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="../paginas/preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+                    <li><a href="../paginas/como_adoptar.php">Cómo adoptar</a></li>
+                    <li><a href="../paginas/consejos_cuidado.php">Consejos de cuidado</a></li>
+                    <li><a href="../paginas/contáctanos.php">Contáctanos</a></li>
                 </ul>
             </div>
 

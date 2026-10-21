@@ -10,7 +10,7 @@
 <body>
 <header>
       <div class="contenedor-logo">
-        <a href="index.html">
+        <a href="index.php">
         <div class="icono-logo">
           <i class="fa-solid fa-paw"></i>
         </div>
@@ -22,17 +22,17 @@
       </div>
       <nav class="links-navegacion">
         <ul>
-            <li><a href="#" class="active">Inicio</a></li>
-            <li><a href="#">Adopción</a></li>
-            <li><a href="paginas/reportes_comunidad.html">Reportes</a></li>
-            <li><a href="#">Refugios</a></li>
-            <li><a href="#">Jornadas</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="index.php" class="active">Inicio</a></li>
+            <li><a href="paginas/adopcion.php">Adopción</a></li>
+            <li><a href="paginas/reportes_comunidad.php">Reportes</a></li>
+            <li><a href="paginas/Refugios.php">Refugios</a></li>
+            <li><a href="paginas/Jornadas.php">Jornadas</a></li>
+            <li><a href="paginas/Nosotros.php">Nosotros</a></li>
         </ul>
       </nav>
       <div class="accion-navegacion">
-        <a href="#" class="boton-secundario">Iniciar Sesion</a>
-        <a href="#" class="boton-secundario-reg">Registrarse</a>
+        <a href="paginas/iniciar_sesion.php" class="boton-secundario">Iniciar Sesion</a>
+        <a href="paginas/registrarse.php" class="boton-secundario-reg">Registrarse</a>
       </div>
     </header>
 
@@ -291,11 +291,11 @@
             <h3>Enlaces rápidos</h3>
 
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Adopción</a></li>
-                <li><a href="paginas/reportes_comunidad.html">Reportes</a></li>
-                <li><a href="#">Refugios</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="paginas/adopcion.php">Adopción</a></li>
+                <li><a href="paginas/reportes_comunidad.php">Reportes</a></li>
+                <li><a href="paginas/Refugios.php">Refugios</a></li>
+                <li><a href="paginas/Nosotros.php">Nosotros</a></li>
             </ul>
         </div>
 
@@ -303,10 +303,10 @@
             <h3>Ayuda</h3>
 
             <ul>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Cómo adoptar</a></li>
-                <li><a href="#">Consejos de cuidado</a></li>
-                <li><a href="#">Contáctanos</a></li>
+                <li><a href="paginas/preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+                <li><a href="paginas/como_adoptar.php">Cómo adoptar</a></li>
+                <li><a href="paginas/consejos_cuidado.php">Consejos de cuidado</a></li>
+                <li><a href="paginas/contáctanos.php">Contáctanos</a></li>
             </ul>
         </div>
 
