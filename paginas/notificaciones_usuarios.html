@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonPet - Notificaciones</title>
+  <!-- Enlaza aquí tus hojas de estilo CSS -->
+  <link rel="stylesheet" href="../css/estilo_notificaciones_usuarios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ========================================== -->
+  <!-- 1. ENCABEZADO (HEADER) -->
+  <!-- ========================================== -->
+  <!-- PEGA AQUÍ EL CÓDIGO DE TU HEADER -->
+  <header>
+    <div class="contenedor-logo">
+      <a href="../index.html">
+        <div class="icono-logo">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="texto-logo">
+          <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
+          <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+      </a>
+    </div>
+    </div>
+    <nav class="links-navegacion">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="#">Adopción</a></li>
+        <li><a href="reportes_comunidad.html">Reportes</a></li>
+        <li><a href="#">Refugios</a></li>
+        <li><a href="#">Jornadas</a></li>
+        <li><a href="#">Nosotros</a></li>
+      </ul>
+    </nav>
+    <div class="perfil-header">
+      <div class="icono-notificacion">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge-notif">3</span>
+      </div>
+      <div class="usuario-perfil">
+        <img src="../img/perfil.jpg" alt="Laura García" class="foto-usuario">
+        <div class="info-usuario">
+          <strong>Laura<i class="fa-solid fa-chevron-down"></i></strong>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- ========================================== -->
+  <!-- 2. CONTENEDOR PRINCIPAL DE LA PÁGINA -->
+  <!-- ========================================== -->
+  <div class="contenedor-principal-pagina">
+
+    <!-- BARRA LATERAL IZQUIERDA (MENÚ DE USUARIO) -->
+    <!-- PEGA AQUÍ EL CÓDIGO DE TU BARRA LATERAL IZQUIERDA -->
+    <aside class="barra-lateral-notificaciones">
+      <nav class="navegacion-lateral-notificaciones">
+
+        <a href="../index.html" class="elemento-navegacion-notificaciones">
+          <i class="fa-solid fa-house"></i>
+          <span>Inicio</span>
+        </a>
+
+        <a href="#" class="elemento-navegacion-notificaciones">
+          <i class="fa-regular fa-user"></i>
+          <span>Mi perfil</span>
+        </a>
+
+        <a href="#" class="elemento-navegacion-notificaciones">
+          <i class="fa-regular fa-star"></i>
+          <span>Mis favoritos</span>
+        </a>
+
+        <a href="#" class="elemento-navegacion-notificaciones">
+          <i class="fa-regular fa-file-lines"></i>
+          <span>Mis solicitudes</span>
+        </a>
+
+        <a href="perfil_usuario_reportes.html" class="elemento-navegacion-notificaciones">
+          <i class="fa-regular fa-flag"></i>
+          <span>Mis reportes</span>
+        </a>
+
+        <a href="#" class="elemento-navegacion-notificaciones activo">
+          <i class="fa-regular fa-comment-dots"></i>
+          <span>Mensajes</span>
+
+          <span class="contador-mensajes-notificaciones">3</span>
+        </a>
+
+        <a href="#" class="elemento-navegacion-notificaciones">
+          <i class="fa-solid fa-gear"></i>
+          <span>Configuración</span>
+        </a>
+
+      </nav>
+
+
+      <!-- CONTENIDO CENTRAL Y COLUMNA DERECHA -->
+      <main class="contenido-principal">
+
+        <!-- Migas de pan (Breadcrumbs) -->
+        <div class="migas-pan-notificaciones">
+          <a href="../index.html"><i class="fa-solid fa-house"></i>Inicio</a>
+          <i class="fa-solid fa-chevron-right separador-miga-notificaciones"></i>
+          <a href="#">Mi cuenta</a>
+          <i class="fa-solid fa-chevron-right separador-miga-notificaciones"></i>
+          <span>Mis reportes</span>
+        </div>
+
+        <!-- Rejilla/Grid del contenido central y configuración -->
+        <div class="contenedor-notificaciones">
+
+          <!-- COLUMNA IZQUIERDA: LISTADO DE NOTIFICACIONES -->
+          <section class="seccion-notificaciones">
+
+            <header class="encabezado-notificaciones">
+              <div class="titulo-con-icono">
+                <div class="icono-campana-principal">
+                  <i class="fa-solid fa-bell icono-campana"></i>
+                </div>
+                <div class="texto-encabezado">
+                  <h1>Notificaciones</h1>
+                  <p>Mantente al día con todo lo que pasa en MonPet.</p>
+                </div>
+              </div>
+              <button type="button" class="boton-marcar-leidas">
+                <i class="fa-solid fa-list-check icono-verificado"></i>
+                Marcar todas como leídas
+              </button>
+            </header>
+
+            <div class="pestanas-filtros">
+              <button type="button" class="boton-pestana activa">
+                Todas <span class="contador-insignia">5</span>
+              </button>
+              <button type="button" class="boton-pestana">
+                Sin leer <span class="contador-insignia">5</span>
+              </button>
+              <button type="button" class="boton-pestana">
+                Leídas <span class="contador-insignia">0</span>
+              </button>
+            </div>
+
+            <div class="lista-notificaciones">
+              <!-- Notificación 1 -->
+              <article class="tarjeta-notificacion no-leida">
+                <div class="icono-notificacion morado">
+                  <i class="fa-solid fa-paw icono-huella"></i>
+                </div>
+                <div class="contenido-notificacion">
+                  <div class="linea-titulo">
+                    <span class="punto-estado"></span>
+                    <h2>¡Tu solicitud para adoptar a Luna ha sido aprobada!</h2>
+                    <time class="tiempo">Hace 30 min</time>
+                  </div>
+                  <p>Felicidades 🎉 Nuestro equipo se pondrá en contacto contigo para los siguientes pasos.</p>
+                </div>
+                <i class="fa-solid fa-chevron-right flecha-derecha"></i>
+              </article>
+
+              <!-- Notificación 2 -->
+              <article class="tarjeta-notificacion no-leida">
+                <div class="icono-notificacion verde">
+                  <i class="fa-solid fa-shield-dog icono-escudo-verificado"></i>
+                </div>
+                <div class="contenido-notificacion">
+                  <div class="linea-titulo">
+                    <span class="punto-estado"></span>
+                    <h2>Tu reporte #RPT-2026-015 está en proceso</h2>
+                    <time class="tiempo">Hace 2 horas</time>
+                  </div>
+                  <p>Hemos asignado tu reporte a nuestro equipo. Te mantendremos informado.</p>
+                </div>
+                <i class="fa-solid fa-chevron-right flecha-derecha"></i>
+              </article>
+
+              <!-- Notificación 3 -->
+              <article class="tarjeta-notificacion no-leida">
+                <div class="icono-notificacion amarillo">
+                  <i class="fa-solid fa-calendar icono-calendario"></i>
+                </div>
+                <div class="contenido-notificacion">
+                  <div class="linea-titulo">
+                    <span class="punto-estado"></span>
+                    <h2>Nueva jornada de adopción cerca de ti</h2>
+                    <time class="tiempo">Ayer, 10:15 a. m.</time>
+                  </div>
+                  <p>Este sábado 31 de mayo en el Parque La Floresta. ¡Habrá muchos peluditos esperando!</p>
+                </div>
+                <i class="fa-solid fa-chevron-right flecha-derecha"></i>
+              </article>
+
+              <!-- Notificación 4 -->
+              <article class="tarjeta-notificacion no-leida">
+                <div class="icono-notificacion rosa">
+                  <i class="fa-solid fa-heart icono-corazon"></i>
+                </div>
+                <div class="contenido-notificacion">
+                  <div class="linea-titulo">
+                    <span class="punto-estado"></span>
+                    <h2>Buddy fue guardado en tus favoritos</h2>
+                    <time class="tiempo">Ayer, 08:45 a. m.</time>
+                  </div>
+                  <p>No olvides que puedes enviar tu solicitud de adopción.</p>
+                </div>
+                <i class="fa-solid fa-chevron-right flecha-derecha"></i>
+              </article>
+
+              <!-- Notificación 5 -->
+              <article class="tarjeta-notificacion no-leida">
+                <div class="icono-notificacion azul">
+                  <i class="fa-solid fa-envelope icono-mensaje"></i>
+                </div>
+                <div class="contenido-notificacion">
+                  <div class="linea-titulo">
+                    <span class="punto-estado"></span>
+                    <h2>Mensaje nuevo de Refugio Huellitas</h2>
+                    <time class="tiempo">27 may, 06:20 p. m.</time>
+                  </div>
+                  <p>Gracias por tu interés en Max. ¿Podemos agendar una visita?</p>
+                </div>
+                <i class="fa-solid fa-chevron-right flecha-derecha"></i>
+              </article>
+            </div>
+
+            <footer class="pie-notificaciones">
+              <p>No hay más notificaciones <i class="fa-solid fa-heart icono-corazon-solido"></i></p>
+            </footer>
+
+          </section>
+
+
+          <!-- COLUMNA DERECHA: CONFIGURACIÓN Y PROMOCIÓN -->
+          <aside class="barra-lateral-derecha">
+
+            <section class="tarjeta-configuracion">
+              <header class="encabezado-tarjeta-config">
+                <i class="fa-solid fa-cog icono-engranaje"></i>
+                <div>
+                  <h2>Configuración de notificaciones</h2>
+                  <p>Elige sobre qué temas deseas recibir notificaciones.</p>
+                </div>
+              </header>
+
+              <ul class="lista-opciones-configuracion">
+                <li class="opcion-configuracion">
+                  <div class="etiqueta-opcion">
+                    <i class="fa-solid fa-heart icono-corazon-linea"></i>
+                    <span>Solicitudes de adopción</span>
+                  </div>
+                  <label class="interruptor">
+                    <input type="checkbox" checked>
+                    <span class="deslizador"></span>
+                  </label>
+                </li>
+
+                <li class="opcion-configuracion">
+                  <div class="etiqueta-opcion">
+                    <i class="fa-solid fa-shield-alt icono-escudo-linea"></i>
+                    <span>Mis reportes</span>
+                  </div>
+                  <label class="interruptor">
+                    <input type="checkbox" checked>
+                    <span class="deslizador"></span>
+                  </label>
+                </li>
+
+                <li class="opcion-configuracion">
+                  <div class="etiqueta-opcion">
+                    <i class="fa-solid fa-envelope icono-mensaje-linea"></i>
+                    <span>Mensajes</span>
+                  </div>
+                  <label class="interruptor">
+                    <input type="checkbox" checked>
+                    <span class="deslizador"></span>
+                  </label>
+                </li>
+
+                <li class="opcion-configuracion">
+                  <div class="etiqueta-opcion">
+                    <i class="fa-solid fa-calendar icono-calendario-linea"></i>
+                    <span>Jornadas y eventos</span>
+                  </div>
+                  <label class="interruptor">
+                    <input type="checkbox" checked>
+                    <span class="deslizador"></span>
+                  </label>
+                </li>
+
+                <li class="opcion-configuracion">
+                  <div class="etiqueta-opcion">
+                    <i class="fa-solid fa-bell icono-campana-linea"></i>
+                    <span>Recordatorios</span>
+                  </div>
+                  <label class="interruptor">
+                    <input type="checkbox" checked>
+                    <span class="deslizador"></span>
+                  </label>
+                </li>
+
+                <li class="opcion-configuracion">
+                  <div class="etiqueta-opcion">
+                    <i class="fa-solid fa-volume-up icono-megafono-linea"></i>
+                    <span>Novedades de MonPet</span>
+                  </div>
+                  <label class="interruptor">
+                    <input type="checkbox" checked>
+                    <span class="deslizador"></span>
+                  </label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="tarjeta-promocional">
+              <div class="contenedor-imagen-banner">
+                <img src="margarita-mascotas.png" alt="Mascotas felices" class="imagen-banner">
+              </div>
+              <div class="contenido-banner">
+                <h2>Activa las notificaciones</h2>
+                <p>Así no te perderás ninguna oportunidad para cambiar una vida.</p>
+              </div>
+            </section>
+
+          </aside>
+
+        </div>
+      </main>
+
+  </div> <!-- Fin del contenedor principal de la página -->
+
+
+  <!-- ========================================== -->
+  <!-- 3. PIE DE PÁGINA (FOOTER) -->
+  <!-- ========================================== -->
+  <footer class="footer">
+
+    <div class="footer-onda">
+      <img src="/img/fondo_onda_2.png" alt="">
+    </div>
+
+    <div class="footer-contenedor">
+
+      <div class="footer-logo">
+        <div class="icono-logo2">
+          <i class="fa-solid fa-paw"></i>
+        </div>
+        <div class="footer-informacion">
+          <h2>MonPet</h2>
+          <p>
+            Conectamos corazones para que cada <br>mascota
+            encuentre un hogar lleno<br>de amor y cuidado.
+          </p>
+
+          <div class="footer-redes">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-enlaces">
+        <h3>Enlaces rápidos</h3>
+
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#">Adopción</a></li>
+          <li><a href="reportes_comunidad.html">Reportes</a></li>
+          <li><a href="#">Refugios</a></li>
+          <li><a href="#">Nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-ayuda">
+        <h3>Ayuda</h3>
+
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Cómo adoptar</a></li>
+          <li><a href="#">Consejos de cuidado</a></li>
+          <li><a href="#">Contáctanos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <h3>Información legal</h3>
+
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Aviso legal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contacto">
+        <h3>Contacto</h3>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            Bogotá, Colombia
+          </li>
+
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            contacto@monpet.com
+          </li>
+
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            +57 300 123 4567
+          </li>
+
+          <li>
+            <i class="fa-regular fa-clock"></i>
+            Lun - Vie: 8:00 a.m. - 6:00 p.m.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-inferior">
+      <p>© 2026 MonPet. Todos los derechos reservados.</p>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
