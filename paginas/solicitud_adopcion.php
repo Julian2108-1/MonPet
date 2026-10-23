@@ -1,3 +1,15 @@
+<?php
+require_once("../db/conexion.php");
+$tipos = mysqli_query(
+    $conexion,
+    "SELECT * FROM tipos_documento"
+);
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -174,16 +186,17 @@
                         <p>Confirmación</p>
                     </div>
                 </div>
-                <form class="formulario-solicitud-adopcion">
+
+                <form class="formulario-solicitud-adopcion" id="form-crear">
 
                     <fieldset class="grupo-datos-personales">
-                        <legend><i class="fa-regular fa-user"></i>Información personal</legend>
+                        <legend id="paso-1"><i class="fa-regular fa-user"></i>Información personal</legend>
 
                         <div class="fila-campos-personales">
                             <div class="campo-nombre-completo">
                                 <label>Nombre completo <span>*</span></label>
                                 <div class="contenedor-input">
-                                    <input type="text" placeholder="Ingresa Tu nombre Completo">
+                                    <input type="text" placeholder="Ingresa Tu nombre Completo" required>
                                     <i class="fa-solid fa-circle-user"></i>
                                 </div>
                             </div>
@@ -191,7 +204,7 @@
                             <div class="campo-correo-electronico">
                                 <label>Correo electrónico <span>*</span></label>
                                 <div class="contenedor-input">
-                                    <input type="email" placeholder="ejemplo@correo.com">
+                                    <input type="email" placeholder="ejemplo@correo.com" required>
                                     <i class="fa-regular fa-envelope"></i>
                                 </div>
                             </div>
@@ -201,7 +214,7 @@
                             <div class="campo-telefono-contacto">
                                 <label>Teléfono <span>*</span></label>
                                 <div class="contenedor-input">
-                                    <input type="tel" placeholder="300 123 4567">
+                                    <input type="tel" placeholder="300 123 4567" required>
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                             </div>
@@ -209,7 +222,19 @@
                             <div class="campo-tipo-documento">
                                 <label>Tipo de documento <span>*</span></label>
                                 <div class="contenedor-input">
-                                    <select></select>
+                                    <select name="tipo_documento" id="tipo_documento" required>
+
+                                        <option value="">Seleccione...</option>
+
+                                        <?php while ($fila = mysqli_fetch_assoc($tipos)) { ?>
+
+                                        <option value="<?php echo $fila["id_tipo_documento"]; ?>">
+                                            <?php echo $fila["nombre"]; ?>
+                                        </option>
+
+                                        <?php } ?>
+
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +242,7 @@
                         <div class="campo-numero-documento">
                             <label>Número de documento <span>*</span></label>
                             <div class="contenedor-input">
-                                <input type="text" placeholder="Ingresa tu número de documento">
+                                <input type="text" id="numero-documento" placeholder="Ingresa tu número de documento" required>
                                 <i class="fa-regular fa-address-card"></i>
                             </div>
                         </div>
@@ -228,16 +253,28 @@
 
                         <div class="fila-direccion">
                             <div class="campo-ciudad-residencia">
-                                <label>Ciudad <span>*</span></label>
+                                <label>Comuna <span>*</span></label>
                                 <div class="contenedor-input">
-                                    <select></select>
+                                    <i class="fa-solid fa-street-view"></i>
+                                    <select id="comunas-select" name="comuna" style="width: 900px;" required>
+                                        <option value="">Busca una comuna...</option>
+                                        <option value="1">Comuna 1 - Compartir</option>
+                                        <option value="2">Comuna 2 - Soacha Central</option>
+                                        <option value="3">Comuna 3 - La Despensa</option>
+                                        <option value="4">Comuna 4 - Cazucá</option>
+                                        <option value="5">Comuna 5 - San Mateo</option>
+                                        <option value="6">Comuna 6 - San Humberto</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="campo-localidad-residencia">
-                                <label>Localidad</label>
+                                <label>Sector</label>
                                 <div class="contenedor-input">
-                                    <input type="text" placeholder="Ingresa tu localidad">
+                                    <input list="lista-barrios" id="barrio" placeholder="Ingresa tu Sector o Barrio" required disabled>
+                                    <datalist id="lista-barrios">
+
+                                    </datalist>
                                     <i class="fa-solid fa-location-arrow"></i>
                                 </div>
                             </div>
@@ -253,7 +290,9 @@
                     </fieldset>
                     <!-- MOTIVACION -->
                     <fieldset class="grupo-motivacion-adopcion">
-                        <legend> <i class="fa-regular fa-star"></i>Cuéntanos por qué quieres adoptar a Luna <span>*</span></legend>
+                        <legend> <i class="fa-regular fa-star"></i>Cuéntanos por qué quieres adoptar a Luna
+                            <span>*</span>
+                        </legend>
                         <textarea placeholder="Escribe aquí tus razones..."></textarea>
                         <p>Minimo 30 caracteres</p>
                     </fieldset>
@@ -377,5 +416,10 @@
     </div>
 
 </footer>
+    <script src="https://jquery.com"></script>
+    <script src="https://jsdelivr.net"></script>
+    <script src="../js/solicitud_adopciones.js"></script>
+    <script src="../js/solicitud_adopcion.js"></script>
+    <script src="../js/favoritos.js"></script>
 </body>
 </html>
