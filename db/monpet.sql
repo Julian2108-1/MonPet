@@ -98,6 +98,5 @@ CREATE TABLE usuarios (
 -- ==========================
 -- ADMINISTRADOR INICIAL
 -- Contraseña: Admin123*
--- (Luego la cambiaremos por una encriptada con PHP)
 -- ==========================
 
