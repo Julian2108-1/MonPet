@@ -152,26 +152,36 @@ header {
     padding-top: 5px;
 }
 .acciones-usuario .boton-mensajes {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    background: none;
     border: none;
-    background: #F9F6FC;
-    box-shadow: 0 0px 4px -1px rgba(0, 0, 0, 0.2);
     margin-right: 15px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     padding-top: 5px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.acciones-usuario .boton-mensajes:hover {
+    background: none;
+    box-shadow: 0 0px 4px -1px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
 }
 .boton-mensajes .contador-alertas {
     position: absolute;
-    top: 20px;
+    top: -5px;
+    right: -5px;
     width: 25px;
     height: 27px;
     background: #f75a5a;
-    right: 335px;
     border-radius: 50%;
     color: #fff;
     font-size: 1.3rem;
+}
+.boton-mensajes:hover .contador-alertas {
+    background: #f03737;
+
 }
 .acciones-usuario .perfil-usuario {
     display: flex;
@@ -181,11 +191,11 @@ header {
     width: 300px;
 }
 .acciones-usuario .perfil-usuario span {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .acciones-usuario .perfil-usuario img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     box-shadow: 0 0px 6px 1px rgba(0, 0, 0, 0.3);
 }
@@ -545,6 +555,87 @@ FORMULARIO
     border-bottom:6px solid#6d24ba;
     padding-bottom: 20px;
 }
+/*==================================
+ VENTANA DE CONFIRMACION CAMPOS COMPLETOS
+ ===================================*/
+.ventana-confirmacion-monpet {
+    width: 1200px !important;
+    max-width: 1000vw !important;
+    padding: 32px !important;
+    border-radius: 24px !important;
+    font-family: "Rancho", cursive;
+}
+.titulo-confirmacion-monpet {
+    color: #39205f !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+}
+.contenido-confirmacion-monpet {
+    text-align: left;
+    color: #514763;
+    font-size: 2rem;
+    line-height: 1.6;
+}
+.opcion-confirmacion-monpet {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 17px;
+    margin-top: 14px;
+    background: #f8f3ff;
+    border: 1px solid #e6d8fa;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.opcion-confirmacion-monpet:has(input:checked) {
+    border-color: #8054c7;
+    background: #f0e7ff;
+}
+.opcion-confirmacion-monpet input {
+    width: 19px;
+    height: 19px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: #8054c7;
+    cursor: pointer;
+}
+.opcion-confirmacion-monpet a {
+    color: #7040b4;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.boton-confirmar-monpet {
+    border-radius: 12px !important;
+    padding: 13px 22px !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+}
+.boton-cancelar-monpet {
+    border-radius: 12px !important;
+    padding: 13px 22px !important;
+    font-size: 2rem !important;
+}
+/*================================
+    MENSAJE DE CAMPOS INCOMPLETOS
+==================================*/
+.titulo-alerta {
+    font-size: 2.5rem !important;
+    font-weight: 700;
+}
+/* Tamaño del texto */
+.contenido-alerta {
+    font-size: 2rem !important;
+    line-height: 1.6;
+}
+.texto-alerta {
+    font-size: 1.8rem !important;
+    color: #000;
+}
+/* Tamaño del botón */
+.boton-alerta {
+    font-size: 2rem !important;
+    padding: 12px 30px !important;
+}
 .formulario-solicitud-adopcion {
     width: 100%;
 }
@@ -585,7 +676,10 @@ label {
     color: #444;
 }
 label span {
-    color: #e53935;
+    color: #000;
+}
+.informacion-confirmacion {
+    font-weight: none;
 }
 .contenedor-input {
     position: relative;

@@ -17,6 +17,7 @@ $tipos = mysqli_query(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/estilo_solicitud.css">
     <title>Solicitud de Adopción</title>
 </head>
@@ -45,9 +46,6 @@ $tipos = mysqli_query(
         </ul>
       </nav>
       <div class="acciones-usuario">
-            <button class="boton-notificaciones">
-                <i class="fa-solid fa-bell"></i>
-            </button>
             <button class="boton-mensajes">
                 <i class="fa-regular fa-bell"></i>
                 <span class="contador-alertas">2</span>
@@ -55,7 +53,7 @@ $tipos = mysqli_query(
 
             <div class="perfil-usuario">
                 <img src="../img/perfil.jpg" alt="Imagen_perfil">
-                <span>Hola, Laura</span>
+                <span>Laura</span>
                 <button>
                 <i class="fa-solid fa-chevron-down"></i>
                 </button>
@@ -283,7 +281,7 @@ $tipos = mysqli_query(
                         <div class="campo-direccion-completa">
                             <label>Dirección exacta <span>*</span></label>
                             <div class="contenedor-input">
-                                <input type="text" placeholder="Calle, carrera, número, apartamento, etc.">
+                                <input type="text" placeholder="Calle, carrera, número, apartamento, etc." required>
                                 <i class="fa-solid fa-map-location-dot"></i>
                             </div>
                         </div>
@@ -293,7 +291,7 @@ $tipos = mysqli_query(
                         <legend> <i class="fa-regular fa-star"></i>Cuéntanos por qué quieres adoptar a Luna
                             <span>*</span>
                         </legend>
-                        <textarea placeholder="Escribe aquí tus razones..."></textarea>
+                        <textarea placeholder="Escribe aquí tus razones..." required></textarea>
                         <p>Minimo 30 caracteres</p>
                     </fieldset>
                     <!-- DOCUMENTOS -->
@@ -307,7 +305,7 @@ $tipos = mysqli_query(
                     </fieldset>
                     <div class="acciones-formulario">
                         <button type="reset" class="boton-cancelar-solicitud">Cancelar</button>
-                        <button type="submit" class="boton-continuar-siguiente-paso">Siguiente: Tu hogar →</button>
+                        <button type="button" class="boton-continuar-siguiente-paso" id="btn-confirmacion">Siguiente</button>
                     </div>
                 </form>
                 <div class="mensaje-confidencialidad-datos">

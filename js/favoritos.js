@@ -1,29 +1,118 @@
+// =====================================================
+// CORAZÓN MARCADO COMO FAVORITO O NO MARCADO
+// =====================================================
 
-const botonesFavoritos = document.querySelectorAll(".boton-favorito");
+// Busca todas las tarjetas de mascotas
+const tarjetas = document.querySelectorAll(".tarjeta-mascota");
 
-botonesFavoritos.forEach((boton) => {
-    boton.addEventListener("click", () => {
-        const corazon = boton.querySelector("i");
-        const agregado = corazon.classList.contains("fa-solid");
+tarjetas.forEach(function (tarjeta) {
 
-        if (agregado) {
-            // Quitar de favoritos
-            corazon.classList.remove("fa-solid");
-            corazon.classList.add("fa-regular");
+    // =====================================================
+    // BUSCAR ELEMENTOS DE LA TARJETA
+    // =====================================================
 
-            boton.setAttribute("aria-pressed", "false");
-            boton.setAttribute("aria-label", "Agregar a favoritos");
+    // Busca el botón favorito dentro de la tarjeta
+    const botonFavorito =
+        tarjeta.querySelector(".boton-favorito");
 
-            alert("Mascota eliminada de favoritos 💔");
-        } else {
-            // Agregar a favoritos
-            corazon.classList.remove("fa-regular");
-            corazon.classList.add("fa-solid");
+    // Busca el icono del corazón dentro del botón
+    const iconoCorazon =
+        botonFavorito.querySelector("i");
 
-            boton.setAttribute("aria-pressed", "true");
-            boton.setAttribute("aria-label", "Quitar de favoritos");
+    // Busca la imagen de la mascota
+    const imagen =
+        tarjeta.querySelector(".imagen-principal-mascota img");
 
-            alert("¡Luna se agregó a tus favoritos! ❤️");
+    // Busca el nombre de la mascota
+    const nombreMascota =
+        tarjeta.querySelector(".datos-generales-mascota h3");
+
+
+    // =====================================================
+    // CREAR CLAVE ÚNICA PARA LA MASCOTA
+    // =====================================================
+
+    // Obtiene el nombre de la mascota
+    const nombre =
+        nombreMascota.textContent.trim();
+
+    // Crea una clave única para guardar el favorito
+    const claveFavorito =
+        "monpet-favorito-" + nombre.toLowerCase();
+
+
+    // =====================================================
+    // COMPROBAR SI YA ESTABA MARCADA COMO FAVORITA
+    // =====================================================
+
+    const favoritoGuardado =
+        localStorage.getItem(claveFavorito);
+
+
+    // Si estaba guardada como favorita
+    if (favoritoGuardado === "true") {
+
+        // Quita el corazón vacío
+        iconoCorazon.classList.remove("fa-regular");
+
+        // Coloca el corazón lleno
+        iconoCorazon.classList.add("fa-solid");
+    }
+
+
+    // =====================================================
+    // CUANDO SE HACE CLIC EN EL CORAZÓN
+    // =====================================================
+
+    botonFavorito.addEventListener(
+        "click",
+        function (evento) {
+
+            // Evita que el clic afecte otros elementos
+            evento.stopPropagation();
+
+            // Comprueba si actualmente está marcado
+            const estaMarcado =
+                iconoCorazon.classList.contains("fa-solid");
+
+
+            // =================================================
+            // QUITAR DE FAVORITOS
+            // =================================================
+
+            if (estaMarcado) {
+
+                // Quita el corazón lleno
+                iconoCorazon.classList.remove("fa-solid");
+
+                // Coloca el corazón vacío
+                iconoCorazon.classList.add("fa-regular");
+
+                // Elimina el favorito de localStorage
+                localStorage.removeItem(claveFavorito);
+            }
+
+
+            // =================================================
+            // AGREGAR A FAVORITOS
+            // =================================================
+
+            else {
+
+                // Quita el corazón vacío
+                iconoCorazon.classList.remove("fa-regular");
+
+                // Coloca el corazón lleno
+                iconoCorazon.classList.add("fa-solid");
+
+                // Guarda el favorito
+                localStorage.setItem(
+                    claveFavorito,
+                    "true"
+                );
+            }
+
         }
-    });
+    );
+
 });
