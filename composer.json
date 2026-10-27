@@ -1,0 +1,18 @@
+{
+    "name": "aplicacion/monpet",
+    "description": "Sistema de gestion monpet",
+    "autoload": {
+        "psr-4": {
+            "Aplicacion\\Monpet\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Julian2108-1",
+            "email": "julianaroca2108@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.8"
+    }
+}

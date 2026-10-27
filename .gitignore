@@ -1,0 +1,4 @@
+
+/vendor/
+.env
+conexion_user.php

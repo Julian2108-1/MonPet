@@ -2,7 +2,7 @@
 require_once("../db/conexion.php");
 $tipos = mysqli_query(
     $conexion,
-    "SELECT * FROM tipos_documento"
+    "SELECT * FROM tipo_documento"
 );
 
 ?>
@@ -226,7 +226,7 @@ $tipos = mysqli_query(
 
                                         <?php while ($fila = mysqli_fetch_assoc($tipos)) { ?>
 
-                                        <option value="<?php echo $fila["id_tipo_documento"]; ?>">
+                                        <option value="<?php echo $fila["tipo_documento_id"]; ?>">
                                             <?php echo $fila["nombre"]; ?>
                                         </option>
 
