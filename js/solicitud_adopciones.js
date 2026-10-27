@@ -121,7 +121,7 @@ botonConfirmacion.addEventListener("click", async () => {
         await Swal.fire({
             title: "¡Te Faltan Campos!",
             html: `
-            <img src="../img/perrito_vector.svg"alt="Mascota enojada" style="width: 500px; height: 500px;"/>
+            <img src="../img/perrito_enojado_animado.svg"alt="Mascota enojada" style="width: 500px; height: 500px;"/>
             <p class="texto-alerta">Debes completar los campos antes de enviar</p>
             `,
             confirmButtonText:"Aceptar",
