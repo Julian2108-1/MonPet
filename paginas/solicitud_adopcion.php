@@ -185,127 +185,211 @@ $tipos = mysqli_query(
                     </div>
                 </div>
 
-                <form class="formulario-solicitud-adopcion" id="form-crear">
+                <form class="formulario-solicitud-adopcion" id="form-crear" novalidate>
 
-                    <fieldset class="grupo-datos-personales">
-                        <legend id="paso-1"><i class="fa-regular fa-user"></i>Información personal</legend>
+                    <!-- ETAPA 1: INFORMACION PERSONAL -->
+                    <div class="contenido-etapa-formulario" data-etapa="1">
+                        <fieldset class="grupo-datos-personales">
+                            <legend id="paso-1"><i class="fa-regular fa-user"></i> Información personal</legend>
 
-                        <div class="fila-campos-personales">
-                            <div class="campo-nombre-completo">
-                                <label>Nombre completo <span>*</span></label>
-                                <div class="contenedor-input">
-                                    <input type="text" placeholder="Ingresa Tu nombre Completo" required>
-                                    <i class="fa-solid fa-circle-user"></i>
+                            <div class="fila-campos-personales">
+                                <div class="campo-nombre-completo">
+                                    <label for="nombre-completo">Nombre completo <span>*</span></label>
+                                    <div class="contenedor-input">
+                                        <input type="text" id="nombre-completo" name="nombre_completo"
+                                               placeholder="Ingresa tu nombre completo" autocomplete="name" required>
+                                        <i class="fa-solid fa-circle-user" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+
+                                <div class="campo-correo-electronico">
+                                    <label for="correo-electronico">Correo electrónico <span>*</span></label>
+                                    <div class="contenedor-input">
+                                        <input type="email" id="correo-electronico" name="correo_electronico"
+                                               placeholder="ejemplo@correo.com" autocomplete="email" required>
+                                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="campo-correo-electronico">
-                                <label>Correo electrónico <span>*</span></label>
-                                <div class="contenedor-input">
-                                    <input type="email" placeholder="ejemplo@correo.com" required>
-                                    <i class="fa-regular fa-envelope"></i>
+                            <div class="fila-campos-personales">
+                                <div class="campo-telefono-contacto">
+                                    <label for="telefono-contacto">Teléfono <span>*</span></label>
+                                    <div class="contenedor-input">
+                                        <input type="tel" id="telefono-contacto" name="telefono"
+                                               placeholder="300 123 4567" autocomplete="tel"
+                                               inputmode="tel" required>
+                                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="fila-campos-personales">
-                            <div class="campo-telefono-contacto">
-                                <label>Teléfono <span>*</span></label>
-                                <div class="contenedor-input">
-                                    <input type="tel" placeholder="300 123 4567" required>
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                            </div>
-
-                            <div class="campo-tipo-documento">
-                                <label>Tipo de documento <span>*</span></label>
-                                <div class="contenedor-input">
-                                    <select name="tipo_documento" id="tipo_documento" required>
-
-                                        <option value="">Seleccione...</option>
-
-                                        <?php while ($fila = mysqli_fetch_assoc($tipos)) { ?>
-
-                                        <option value="<?php echo $fila["tipo_documento_id"]; ?>">
-                                            <?php echo $fila["nombre"]; ?>
-                                        </option>
-
-                                        <?php } ?>
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="campo-numero-documento">
-                            <label>Número de documento <span>*</span></label>
-                            <div class="contenedor-input">
-                                <input type="text" id="numero-documento" placeholder="Ingresa tu número de documento" required>
-                                <i class="fa-regular fa-address-card"></i>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <!-- DIRECCION -->
-                    <fieldset class="grupo-direccion-residencia">
-                        <legend><i class="fa-solid fa-house"></i>Dirección actual</legend>
-
-                        <div class="fila-direccion">
-                            <div class="campo-ciudad-residencia">
-                                <label>Comuna <span>*</span></label>
-                                <div class="contenedor-input">
-                                    <i class="fa-solid fa-street-view"></i>
-                                    <select id="comunas-select" name="comuna" style="width: 900px;" required>
-                                        <option value="">Busca una comuna...</option>
-                                        <option value="1">Comuna 1 - Compartir</option>
-                                        <option value="2">Comuna 2 - Soacha Central</option>
-                                        <option value="3">Comuna 3 - La Despensa</option>
-                                        <option value="4">Comuna 4 - Cazucá</option>
-                                        <option value="5">Comuna 5 - San Mateo</option>
-                                        <option value="6">Comuna 6 - San Humberto</option>
-                                    </select>
+                                <div class="campo-tipo-documento">
+                                    <label for="tipo_documento">Tipo de documento <span>*</span></label>
+                                    <div class="contenedor-input">
+                                        <select name="tipo_documento" id="tipo_documento" required>
+                                            <option value="">Seleccione...</option>
+                                            <?php while ($fila = mysqli_fetch_assoc($tipos)) { ?>
+                                                <option value="<?php echo htmlspecialchars($fila["tipo_documento_id"], ENT_QUOTES, "UTF-8"); ?>">
+                                                    <?php echo htmlspecialchars($fila["nombre"], ENT_QUOTES, "UTF-8"); ?>
+                                                </option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="campo-localidad-residencia">
-                                <label>Sector</label>
+                            <div class="campo-numero-documento">
+                                <label for="numero-documento">Número de documento <span>*</span></label>
                                 <div class="contenedor-input">
-                                    <input list="lista-barrios" id="barrio" placeholder="Ingresa tu Sector o Barrio" required disabled>
-                                    <datalist id="lista-barrios">
+                                    <input type="text" id="numero-documento" name="numero_documento"
+                                           placeholder="Ingresa tu número de documento"
+                                           autocomplete="off" inputmode="numeric" required>
+                                    <i class="fa-regular fa-address-card" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
 
-                                    </datalist>
-                                    <i class="fa-solid fa-location-arrow"></i>
+                    <!-- ETAPA 2: INFORMACION DEL HOGAR -->
+                    <div class="contenido-etapa-formulario" data-etapa="2" hidden>
+                        <fieldset class="grupo-direccion-residencia">
+                            <legend><i class="fa-solid fa-house"></i> Dirección actual</legend>
+
+                            <div class="fila-direccion">
+                                <div class="campo-ciudad-residencia">
+                                    <label for="comunas-select">Comuna <span>*</span></label>
+                                    <div class="contenedor-input">
+                                        <i class="fa-solid fa-street-view" aria-hidden="true"></i>
+                                        <select id="comunas-select" name="comuna" required>
+                                            <option value="">Busca una comuna...</option>
+                                            <option value="1">Comuna 1 - Compartir</option>
+                                            <option value="2">Comuna 2 - Soacha Central</option>
+                                            <option value="3">Comuna 3 - La Despensa</option>
+                                            <option value="4">Comuna 4 - Cazucá</option>
+                                            <option value="5">Comuna 5 - San Mateo</option>
+                                            <option value="6">Comuna 6 - San Humberto</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="campo-localidad-residencia">
+                                    <label for="barrio">Sector o barrio <span>*</span></label>
+                                    <div class="contenedor-input">
+                                        <input list="lista-barrios" id="barrio" name="barrio"
+                                               placeholder="Primero elige una comuna..." required disabled>
+                                        <datalist id="lista-barrios"></datalist>
+                                        <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="campo-direccion-completa">
-                            <label>Dirección exacta <span>*</span></label>
-                            <div class="contenedor-input">
-                                <input type="text" placeholder="Calle, carrera, número, apartamento, etc." required>
-                                <i class="fa-solid fa-map-location-dot"></i>
+                            <div class="campo-direccion-completa">
+                                <label for="direccion-completa">Dirección exacta <span>*</span></label>
+                                <div class="contenedor-input">
+                                    <input type="text" id="direccion-completa" name="direccion"
+                                           placeholder="Calle, carrera, número, apartamento, etc."
+                                           autocomplete="street-address" required>
+                                    <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                                </div>
                             </div>
+                        </fieldset>
+                    </div>
+
+                    <!-- ETAPA 3: EXPERIENCIA Y DOCUMENTOS -->
+                    <div class="contenido-etapa-formulario" data-etapa="3" hidden>
+                        <fieldset class="grupo-motivacion-adopcion">
+                            <legend><i class="fa-regular fa-star"></i> Cuéntanos por qué quieres adoptar a Luna <span>*</span></legend>
+                            <textarea id="motivacion-adopcion" name="motivacion"
+                                      placeholder="Escribe aquí tus razones..."
+                                      minlength="30" maxlength="1000" required></textarea>
+                            <p>Mínimo 30 caracteres.</p>
+                        </fieldset>
+
+                        <fieldset class="grupo-documentos-adicionales">
+                            <legend><i class="fa-solid fa-paperclip"></i> Documentos (opcional)</legend>
+                            <p>Puedes adjuntar documentos que consideres importantes.</p>
+                            <div class="zona-arrastrar-documentos" id="zona-documentos" aria-label="Zona para adjuntar documentos">
+                                <i class="fa-solid fa-cloud-arrow-up icono-carga-documentos" aria-hidden="true"></i>
+                                <p>Arrastra y suelta tus archivos aquí</p>
+                                <span class="separador-documentos">o</span>
+                                <button type="button" id="btn-seleccionar-documentos">Seleccionar archivos</button>
+                                <input
+                                    type="file"
+                                    id="documentos-adopcion"
+                                    name="documentos[]"
+                                    accept=".pdf,.jpg,.jpeg,.png"
+                                    multiple
+                                    hidden
+                                >
+                                <p class="nota-documentos">Formatos permitidos: PDF, JPG y PNG. Máximo 3 archivos de 5 MB cada uno. Es opcional.</p>
+                            </div>
+                            <ul class="lista-documentos" id="lista-documentos" aria-live="polite"></ul>
+                        </fieldset>
+                    </div>
+
+                    <!-- ETAPA 4: RESUMEN Y CONFIRMACION -->
+                    <div class="contenido-etapa-formulario" data-etapa="4" hidden>
+                        <section class="resumen-solicitud" aria-labelledby="titulo-resumen">
+                            <div class="encabezado-resumen">
+                                <span class="icono-resumen"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="titulo-resumen">Revisa tu solicitud</h3>
+                                    <p>Verifica que tus datos estén correctos antes de continuar.</p>
+                                </div>
+                            </div>
+
+                            <div class="grupo-resumen">
+                                <h4><i class="fa-regular fa-user" aria-hidden="true"></i> Información personal</h4>
+                                <div class="lista-resumen">
+                                    <div class="dato-resumen"><span>Nombre completo</span><strong id="resumen-nombre">—</strong></div>
+                                    <div class="dato-resumen"><span>Correo electrónico</span><strong id="resumen-correo">—</strong></div>
+                                    <div class="dato-resumen"><span>Teléfono</span><strong id="resumen-telefono">—</strong></div>
+                                    <div class="dato-resumen"><span>Documento</span><strong id="resumen-documento">—</strong></div>
+                                </div>
+                            </div>
+
+                            <div class="grupo-resumen">
+                                <h4><i class="fa-solid fa-house" aria-hidden="true"></i> Tu hogar</h4>
+                                <div class="lista-resumen">
+                                    <div class="dato-resumen"><span>Comuna</span><strong id="resumen-comuna">—</strong></div>
+                                    <div class="dato-resumen"><span>Sector o barrio</span><strong id="resumen-barrio">—</strong></div>
+                                    <div class="dato-resumen"><span>Dirección</span><strong id="resumen-direccion">—</strong></div>
+                                </div>
+                            </div>
+
+                            <div class="grupo-resumen">
+                                <h4><i class="fa-regular fa-star" aria-hidden="true"></i> Motivación</h4>
+                                <p class="texto-resumen-motivacion" id="resumen-motivacion">—</p>
+                            </div>
+
+                            <div class="grupo-resumen">
+                                <h4><i class="fa-solid fa-paperclip" aria-hidden="true"></i> Documentos adjuntos</h4>
+                                <p id="resumen-documentos">No adjuntaste documentos</p>
+                            </div>
+                        </section>
+
+                        <div class="aviso-confirmacion-final">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            <p>Al continuar podrás revisar y aceptar los términos y la política de privacidad.</p>
                         </div>
-                    </fieldset>
-                    <!-- MOTIVACION -->
-                    <fieldset class="grupo-motivacion-adopcion">
-                        <legend> <i class="fa-regular fa-star"></i>Cuéntanos por qué quieres adoptar a Luna
-                            <span>*</span>
-                        </legend>
-                        <textarea placeholder="Escribe aquí tus razones..." required></textarea>
-                        <p>Minimo 30 caracteres</p>
-                    </fieldset>
-                    <!-- DOCUMENTOS -->
-                    <fieldset class="grupo-documentos-adicionales">
-                        <legend><i class="fa-solid fa-paperclip"></i>Documentos (Opcional)</legend>
-                        <p>Puedes adjuntar documentos que consideres importantes.</p>
-                        <div class="zona-arrastrar-documentos">
-                            <p>Arrastra y suelta archivos aquí</p>
-                            <button type="button">Seleccionar archivos</button>
-                        </div>
-                    </fieldset>
+                    </div>
+
+                    <!-- CONTROLES DE NAVEGACION -->
                     <div class="acciones-formulario">
-                        <button type="reset" class="boton-cancelar-solicitud">Cancelar</button>
-                        <button type="button" class="boton-continuar-siguiente-paso" id="btn-confirmacion">Siguiente</button>
+                        <button type="button" class="boton-cancelar-solicitud" id="btn-cancelar">
+                            Cancelar
+                        </button>
+
+                        <!-- Enlace de texto para regresar; no es un segundo boton -->
+                        <a href="#" class="enlace-anterior-paso" id="btn-anterior" hidden>
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                            Anterior
+                        </a>
+
+                        <!-- Unico boton principal para avanzar -->
+                        <button type="button" class="boton-continuar-siguiente-paso" id="btn-continuar">
+                            Siguiente
+                        </button>
                     </div>
                 </form>
                 <div class="mensaje-confidencialidad-datos">
@@ -414,10 +498,8 @@ $tipos = mysqli_query(
     </div>
 
 </footer>
-    <script src="https://jquery.com"></script>
-    <script src="https://jsdelivr.net"></script>
-    <script src="../js/solicitud_adopciones.js"></script>
-    <script src="../js/solicitud_adopcion.js"></script>
-    <script src="../js/favoritos.js"></script>
+    <script src="../js/solicitud-adopcion-js/ubicacion-adopcion.js" defer></script>
+    <script src="../js/solicitud-adopcion-js/formulario-adopcion.js" defer></script>
+    <script src="../js/solicitud-adopcion-js/favoritos-mascotas.js" defer></script>
 </body>
 </html>
