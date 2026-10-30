@@ -360,8 +360,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function actualizarResumen() {
+        const opcionDocumento = formulario.querySelector("#tipo_documento option:checked");
         const opcionComuna = formulario.querySelector("#comunas-select option:checked");
 
+        const tipoDocumento = opcionDocumento && opcionDocumento.value
+            ? opcionDocumento.textContent.trim()
+            : "";
         const comuna = opcionComuna && opcionComuna.value
             ? opcionComuna.textContent.trim()
             : "";

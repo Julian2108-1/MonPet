@@ -226,6 +226,7 @@ $tipos = mysqli_query(
                                 <div class="campo-tipo-documento">
                                     <label for="tipo_documento">Tipo de documento <span>*</span></label>
                                     <div class="contenedor-input">
+                                        <i class="fa-solid fa-id-card-clip"></i>
                                         <select name="tipo_documento" id="tipo_documento" required>
                                             <option value="">Seleccione...</option>
                                             <?php while ($fila = mysqli_fetch_assoc($tipos)) { ?>
