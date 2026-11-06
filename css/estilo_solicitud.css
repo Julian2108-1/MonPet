@@ -919,7 +919,7 @@ header {
     color: var(--morado-oscuro);
 }
 
-/* 11. AREA VISUAL DE DOCUMENTOS (la funcionalidad se agrega en otro paso) */
+/* 11. AREA VISUAL DE DOCUMENTOS */
 .zona-arrastrar-documentos {
     padding: 20px 14px;
     border: 1.5px dashed #C9B2E5;
@@ -1287,9 +1287,7 @@ header {
     font-size: 0.78rem;
 }
 
-
 /* FUNCIONAMIENTO VISUAL DE LAS ETAPAS */
-
 .contenido-etapa-formulario {
     width: 100%;
     min-width: 0;
@@ -1312,7 +1310,6 @@ header {
 }
 
 /* RESUMEN DE LA SOLICITUD */
-
 .resumen-solicitud {
     width: 100%;
     padding: 20px;
@@ -1434,7 +1431,8 @@ header {
     font-size: 0.8rem !important;
 }
 
-zona-arrastrar-documentos {
+/* Selector corregido: faltaba el punto para seleccionar la clase */
+.zona-arrastrar-documentos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1544,6 +1542,7 @@ zona-arrastrar-documentos {
     .lista-resumen {
         grid-template-columns: 1fr;
     }
+
     .archivo-seleccionado {
         padding: 9px;
     }
@@ -1572,6 +1571,37 @@ zona-arrastrar-documentos {
 
     .footer-contenedor {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* 16.1. TABLET HORIZONTAL: EVITA QUE LAS DOS COLUMNAS QUEDEN ESTRECHAS */
+@media screen and (max-width: 900px) and (min-width: 761px) {
+    .pagina-solicitud-adopcion {
+        width: calc(100% - 36px);
+    }
+
+    .contenido-solicitud {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .panel-informacion-mascota .tarjeta-mascota {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 18px;
+    }
+
+    .tarjeta-mascota .imagen-principal-mascota {
+        grid-row: span 2;
+    }
+
+    .datos-generales-mascota h3 {
+        margin-top: 0;
+    }
+
+    .panel-formulario-adopcion {
+        width: 100%;
     }
 }
 
@@ -1742,7 +1772,200 @@ zona-arrastrar-documentos {
     }
 }
 
-/* 19. ACCESIBILIDAD: REDUCIR ANIMACIONES */
+/* 19. PANTALLAS GRANDES: MONITORES DE 2000 PX O MAS (INCLUYE 2252 x 1440) */
+@media screen and (min-width: 2000px) {
+    /* ENCABEZADO */
+    header {
+        min-height: 96px;
+        padding: 16px clamp(35px, 4vw, 90px);
+        gap: 30px;
+    }
+
+    .contenedor-logo .icono-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .contenedor-logo .texto-logo h1 {
+        font-size: 2.6rem;
+    }
+
+    .links-navegacion ul {
+        gap: 12px 28px;
+    }
+
+    .links-navegacion a {
+        font-size: 1rem;
+    }
+
+    .acciones-usuario .perfil-usuario img {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    .pagina-solicitud-adopcion {
+        width: min(1720px, calc(100% - 120px));
+        max-width: 1720px;
+        margin: 40px auto 80px;
+    }
+
+    .migas-pan-reportes {
+        margin-bottom: 32px;
+        font-size: 0.95rem;
+    }
+
+    /* ENCABEZADO DE LA SOLICITUD */
+    .encabezado-solicitud {
+        margin-bottom: 34px;
+        gap: 28px;
+    }
+
+    .encabezado-solicitud .informacion-solicitud h2 {
+        font-size: 2.7rem;
+    }
+
+    .encabezado-solicitud .informacion-solicitud p {
+        font-size: 1.05rem;
+    }
+
+    .encabezado-solicitud .mensaje-seguridad-proceso {
+        min-height: 84px;
+        padding: 16px 22px;
+    }
+
+    /* DISTRIBUCION DE LAS DOS COLUMNAS */
+    .contenido-solicitud {
+        grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.7fr);
+        gap: 28px;
+    }
+
+    .panel-informacion-mascota,
+    .panel-formulario-adopcion {
+        padding: 28px;
+        border-radius: 20px;
+    }
+
+    /* INFORMACION DE LA MASCOTA */
+    .panel-informacion-mascota .tarjeta-mascota {
+        gap: 18px;
+    }
+
+    .tarjeta-mascota .imagen-principal-mascota {
+        border-radius: 18px;
+    }
+
+    .datos-generales-mascota h3 {
+        font-size: 2.3rem;
+        margin-bottom: 14px;
+    }
+
+    .lista-caracteristicas-mascota {
+        gap: 16px 12px;
+    }
+
+    .lista-caracteristicas-mascota li strong {
+        font-size: 0.88rem;
+    }
+
+    .lista-caracteristicas-mascota li span {
+        font-size: 0.86rem;
+    }
+
+    .beneficios-adopcion {
+        margin-top: 22px;
+        padding: 20px;
+    }
+
+    .ayuda-adopcion {
+        margin-top: 16px;
+        padding: 18px;
+    }
+
+    /* FORMULARIO */
+    .panel-formulario-adopcion {
+        padding: 30px;
+    }
+
+    .formulario-solicitud-adopcion legend {
+        font-size: 1.25rem;
+    }
+
+    .formulario-solicitud-adopcion label {
+        font-size: 0.92rem;
+    }
+
+    .fila-campos-personales,
+    .fila-direccion {
+        gap: 20px;
+        margin-bottom: 16px;
+    }
+
+    .formulario-solicitud-adopcion .contenedor-input input:not([type="checkbox"]):not([type="file"]),
+    .formulario-solicitud-adopcion .contenedor-input select {
+        min-height: 48px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* INDICADOR DE ETAPAS */
+    .indicador-etapas-adopcion {
+        margin-bottom: 34px;
+    }
+
+    .etapa-formulario .numero-etapa {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .etapa-formulario p {
+        font-size: 0.78rem;
+    }
+
+    /* BOTONES */
+    .boton-cancelar-solicitud,
+    .boton-continuar-siguiente-paso {
+        min-height: 48px;
+        font-size: 0.9rem;
+    }
+
+    /* AVISO DE CONFIDENCIALIDAD */
+    .mensaje-confidencialidad-datos {
+        margin-top: 20px;
+        padding: 12px 16px;
+    }
+
+    .mensaje-confidencialidad-datos p {
+        font-size: 0.75rem;
+    }
+
+    /* FOOTER */
+    .footer-contenedor {
+        max-width: 1900px;
+        width: 100%;
+        margin: 0 auto;
+        gap: 35px;
+        padding: 35px 60px;
+    }
+
+    .footer-logo h2 {
+        font-size: 2.5rem;
+    }
+
+    .footer h3 {
+        font-size: 1.05rem;
+    }
+
+    .footer ul li a,
+    .footer-contacto li {
+        font-size: 0.88rem;
+    }
+}
+
+/* 20. ACCESIBILIDAD: REDUCIR ANIMACIONES */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1751,5 +1974,434 @@ zona-arrastrar-documentos {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+}
+
+/* 21. ANCHO FLUIDO PARA ESCRITORIOS: CORRECCION DEFINITIVA DE ESPACIOS LATERALES
+   Este bloque se aplica desde 1200px de viewport CSS. No agrega contenido:
+   distribuye el contenido existente sobre casi todo el ancho disponible. */
+@media screen and (min-width: 1200px) {
+    .pagina-solicitud-adopcion {
+        width: min(2200px, calc(100vw - clamp(32px, 3vw, 72px))) !important;
+        max-width: 2200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .encabezado-solicitud,
+    .contenido-solicitud {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .contenido-solicitud {
+        grid-template-columns: minmax(320px, min(32vw, 520px)) minmax(0, 1fr) !important;
+        gap: clamp(24px, 2vw, 40px) !important;
+    }
+
+    .panel-informacion-mascota,
+    .panel-formulario-adopcion {
+        min-width: 0;
+    }
+
+    .footer-contenedor {
+        max-width: 2200px;
+    }
+}
+
+
+/* ETAPAS GENERALES DEL PROCESO DE ADOPCION */
+.pasos-siguientes-adopcion {
+    width: 100%;
+    min-width: 0;
+    margin-top: 26px;
+    padding: clamp(18px, 1.5vw, 28px);
+    border-radius: 16px;
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+.encabezado-pasos-adopcion {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.icono-encabezado-pasos {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    background: var(--lila);
+    color: var(--morado);
+    font-size: 1.15rem;
+}
+
+.encabezado-pasos-adopcion h3 {
+    margin: 0 0 3px;
+    color: var(--morado-oscuro);
+    font-size: 1.12rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.encabezado-pasos-adopcion p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.lista-pasos-adopcion {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.lista-pasos-adopcion li {
+    position: relative;
+    min-width: 0;
+    padding: 16px 13px 14px;
+    border: 1px solid #EAE2F2;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.icono-paso-adopcion {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 11px;
+    border-radius: 11px;
+    background: var(--lila);
+    color: var(--morado);
+    font-size: 1rem;
+}
+
+.numero-paso-adopcion {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--morado);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.contenido-paso-adopcion h4 {
+    margin: 0 0 6px;
+    color: var(--texto);
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.contenido-paso-adopcion p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+/* 23. TIPOGRAFIA ADAPTATIVA PARA ESCRITORIOS AMPLIOS */
+@media screen and (min-width: 1200px) {
+    /* Escala suavemente los elementos definidos en rem sin agrandar
+       de forma brusca la interfaz en monitores de mayor resolución. */
+    html {
+        font-size: clamp(16px, calc(15px + 0.15vw), 18.2px);
+    }
+    .pagina-solicitud-adopcion {
+        padding: 30px;
+    }
+    .encabezado-solicitud .informacion-solicitud h2 {
+        font-size: clamp(2.3rem, 1.9vw, 2.8rem);
+    }
+
+    .encabezado-solicitud .informacion-solicitud p {
+        font-size: clamp(0.95rem, 0.85vw, 1.05rem);
+    }
+
+    .formulario-solicitud-adopcion legend {
+        font-size: clamp(1.12rem, 0.95vw, 1.25rem);
+    }
+
+    .formulario-solicitud-adopcion label {
+        font-size: clamp(0.88rem, 0.75vw, 0.98rem);
+    }
+
+    .formulario-solicitud-adopcion .contenedor-input input:not([type="checkbox"]):not([type="file"]),
+    .formulario-solicitud-adopcion .contenedor-input select {
+        min-height: clamp(44px, 2.7vw, 52px);
+        font-size: clamp(0.9rem, 0.75vw, 1rem);
+    }
+
+    .etapa-formulario p {
+        font-size: clamp(0.72rem, 0.7vw, 0.86rem);
+    }
+
+    .boton-cancelar-solicitud,
+    .boton-continuar-siguiente-paso {
+        min-height: clamp(44px, 2.7vw, 52px);
+        font-size: clamp(0.88rem, 0.72vw, 0.98rem);
+    }
+
+    .datos-generales-mascota h3 {
+        font-size: clamp(2rem, 1.65vw, 2.35rem);
+    }
+
+    .lista-caracteristicas-mascota li strong,
+    .lista-caracteristicas-mascota li span {
+        font-size: clamp(0.8rem, 0.68vw, 0.94rem);
+    }
+
+    .beneficios-adopcion h3,
+    .ayuda-adopcion h3 {
+        font-size: clamp(0.95rem, 0.78vw, 1.08rem);
+    }
+
+    .lista-beneficios-adopcion li,
+    .ayuda-adopcion .ayuda-contacto p {
+        font-size: clamp(0.76rem, 0.65vw, 0.88rem);
+    }
+
+    .pasos-siguientes-adopcion {
+        margin-top: clamp(22px, 1.8vw, 34px);
+    }
+
+    .encabezado-pasos-adopcion h3 {
+        font-size: clamp(1.12rem, 1vw, 1.35rem);
+    }
+
+    .encabezado-pasos-adopcion p {
+        font-size: clamp(0.86rem, 0.72vw, 0.98rem);
+    }
+
+    .lista-pasos-adopcion li {
+        padding: clamp(14px, 1.15vw, 20px);
+    }
+
+    .contenido-paso-adopcion h4 {
+        font-size: clamp(0.88rem, 0.78vw, 1.02rem);
+    }
+
+    .contenido-paso-adopcion p {
+        font-size: clamp(0.78rem, 0.68vw, 0.9rem);
+    }
+}
+
+/* En tabletas se muestran dos pasos por fila; en móviles, uno por fila. */
+@media screen and (max-width: 900px) {
+    .lista-pasos-adopcion {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .pasos-siguientes-adopcion {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .encabezado-pasos-adopcion {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .icono-encabezado-pasos {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .lista-pasos-adopcion {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+    }
+
+    .lista-pasos-adopcion li {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr);
+        column-gap: 11px;
+        align-items: start;
+        padding: 12px;
+    }
+
+    .icono-paso-adopcion {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        margin: 0;
+    }
+
+    .numero-paso-adopcion,
+    .contenido-paso-adopcion h4,
+    .contenido-paso-adopcion p {
+        grid-column: 2;
+    }
+
+    .numero-paso-adopcion {
+        margin: 0 0 3px;
+    }
+}
+
+/* 24. AJUSTE FINAL: LINEA DE TIEMPO FUERA DEL PANEL DEL FORMULARIO
+   En escritorio, la tarjeta de mascota ocupa las dos filas de la columna
+   izquierda; el formulario y la linea de tiempo quedan apilados a la derecha. */
+@media screen and (min-width: 1051px) {
+    .contenido-solicitud {
+        grid-template-columns: minmax(360px, min(32vw, 520px)) minmax(0, 1fr) !important;
+        grid-template-rows: auto auto;
+        align-items: stretch;
+        column-gap: clamp(24px, 2vw, 40px) !important;
+        row-gap: clamp(22px, 1.7vw, 34px) !important;
+    }
+
+    .panel-informacion-mascota {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        align-self: stretch;
+    }
+
+    .panel-formulario-adopcion {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+    }
+
+    .pasos-siguientes-adopcion {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: start;
+        margin-top: 0 !important;
+        width: 100%;
+    }
+}
+
+/* En pantallas medianas y pequeñas, el contenido vuelve a una sola columna
+   para conservar una lectura natural y evitar estrechar el formulario. */
+@media screen and (max-width: 1050px) {
+    .contenido-solicitud {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .panel-informacion-mascota,
+    .panel-formulario-adopcion,
+    .pasos-siguientes-adopcion {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .pasos-siguientes-adopcion {
+        margin-top: 20px;
+    }
+}
+
+/* 25. TIPOGRAFIA MAS LEGIBLE EN MONITORES GRANDES */
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: clamp(18px, 1.05vw, 23px) !important;
+    }
+
+    .encabezado-solicitud .informacion-solicitud h2 {
+        font-size: clamp(2.5rem, 2.1vw, 3.1rem) !important;
+    }
+
+    .encabezado-solicitud .informacion-solicitud p {
+        font-size: clamp(1rem, 0.95vw, 1.2rem) !important;
+    }
+
+    .migas-pan-reportes {
+        font-size: 0.95rem;
+    }
+
+    .formulario-solicitud-adopcion legend {
+        font-size: clamp(1.2rem, 1.05vw, 1.45rem) !important;
+    }
+
+    .formulario-solicitud-adopcion label {
+        font-size: clamp(1rem, 0.9vw, 1.2rem) !important;
+    }
+
+    .formulario-solicitud-adopcion .contenedor-input input:not([type="checkbox"]):not([type="file"]),
+    .formulario-solicitud-adopcion .contenedor-input select,
+    .formulario-solicitud-adopcion textarea {
+        font-size: clamp(1rem, 0.9vw, 1.18rem) !important;
+        min-height: 52px;
+    }
+
+    .etapa-formulario .numero-etapa {
+        width: clamp(42px, 2.4vw, 54px) !important;
+        height: clamp(42px, 2.4vw, 54px) !important;
+        font-size: 1.1rem !important;
+    }
+
+    .etapa-formulario p {
+        font-size: clamp(0.9rem, 0.82vw, 1.05rem) !important;
+    }
+
+    .boton-cancelar-solicitud,
+    .boton-continuar-siguiente-paso {
+        min-height: 52px;
+        font-size: clamp(1rem, 0.9vw, 1.15rem) !important;
+    }
+
+    .mensaje-confidencialidad-datos p {
+        font-size: clamp(0.82rem, 0.75vw, 0.98rem) !important;
+    }
+
+    .datos-generales-mascota h3 {
+        font-size: clamp(2.2rem, 1.9vw, 2.7rem) !important;
+    }
+
+    .lista-caracteristicas-mascota li strong,
+    .lista-caracteristicas-mascota li span,
+    .lista-beneficios-adopcion li,
+    .ayuda-adopcion .ayuda-contacto p {
+        font-size: clamp(0.92rem, 0.82vw, 1.08rem) !important;
+    }
+
+    .pasos-siguientes-adopcion {
+        padding: clamp(22px, 1.8vw, 34px) !important;
+    }
+
+    .encabezado-pasos-adopcion h3 {
+        font-size: clamp(1.35rem, 1.2vw, 1.65rem) !important;
+    }
+
+    .encabezado-pasos-adopcion p {
+        font-size: clamp(1rem, 0.9vw, 1.18rem) !important;
+    }
+
+    .lista-pasos-adopcion {
+        gap: clamp(14px, 1.1vw, 22px) !important;
+    }
+
+    .lista-pasos-adopcion li {
+        padding: clamp(18px, 1.35vw, 26px) !important;
+    }
+
+    .icono-paso-adopcion {
+        width: clamp(42px, 2.5vw, 56px) !important;
+        height: clamp(42px, 2.5vw, 56px) !important;
+        font-size: 1.25rem !important;
+    }
+
+    .numero-paso-adopcion {
+        font-size: clamp(0.82rem, 0.78vw, 1rem) !important;
+    }
+
+    .contenido-paso-adopcion h4 {
+        font-size: clamp(1.05rem, 0.98vw, 1.28rem) !important;
+    }
+
+    .contenido-paso-adopcion p {
+        font-size: clamp(0.95rem, 0.86vw, 1.12rem) !important;
     }
 }
