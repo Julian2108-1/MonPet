@@ -2,8 +2,9 @@
 require_once("../db/conexion.php");
 $tipos = mysqli_query(
     $conexion,
-    "SELECT * FROM tipos_documento"
+    "SELECT * FROM tipo_documento"
 );
+
 
 ?>
 
@@ -122,7 +123,7 @@ $tipos = mysqli_query(
 
             </div>
 
-            <form action="../admin/crear_cuenta/registrar_usuario.php" method="POST" id="form-crear"
+            <form action="../admin/Crear_cuenta/registrar_usuario.php" method="POST" id="form-crear"
                 class="formulario-registro">
 
                 <!-- =========================
@@ -167,7 +168,7 @@ $tipos = mysqli_query(
 
                                     <?php while ($fila = mysqli_fetch_assoc($tipos)) { ?>
 
-                                        <option value="<?php echo $fila["id_tipo_documento"]; ?>">
+                                        <option value="<?php echo $fila["tipo_documento_id"]; ?>">
                                             <?php echo $fila["nombre"]; ?>
                                         </option>
 

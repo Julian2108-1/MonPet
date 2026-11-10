@@ -194,7 +194,6 @@ CREATE TABLE mascota (
     mascota_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT,
-    senas VARCHAR(255),
     altura DECIMAL(5,2),
     tamano VARCHAR(50),
     color VARCHAR(50),

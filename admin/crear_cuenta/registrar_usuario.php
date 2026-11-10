@@ -17,7 +17,7 @@ $contrasena = $_POST["contrasena"] ?? "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $consultaDocumento = mysqli_query($conexion,
-        "SELECT * FROM usuarios WHERE numero_documento='$documento'");
+        "SELECT * FROM usuario WHERE documento_usuario='$documento'");
 
     if (mysqli_num_rows($consultaDocumento) > 0) {
 
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $consultaCorreo = mysqli_query($conexion,
-        "SELECT * FROM usuarios WHERE correo='$correo'");
+        "SELECT * FROM usuario WHERE correo='$correo'");
 
     if (mysqli_num_rows($consultaCorreo) > 0) {
 
@@ -45,18 +45,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rol = 4;
     $estado = 1;
 
-    $sql = "INSERT INTO usuarios
+    $sql = "INSERT INTO usuario
     (
         nombres,
         apellidos,
-        id_tipo_documento,
-        numero_documento,
+        tipo_documento_id,
+        documento_usuario,
         fecha_nacimiento,
         genero,
         correo,
-        contrasena,
-        id_rol,
-        id_estado
+        telefono,
+        direccion,
+        ciudad,
+        contrasena_hash,
+        rol_id,
+        estado_id
     )
 
     VALUES
@@ -68,6 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         '$fecha_nacimiento',
         '$genero',
         '$correo',
+        '$telefono',
+        '$direccion',
+        '$ciudad',
         '$contrasenaEncriptada',
         '$rol',
         '$estado'

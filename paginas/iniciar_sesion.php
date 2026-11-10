@@ -57,7 +57,7 @@
             <h2>Iniciar sesión</h2>
             <p>Ingresa tus datos para continuar</p>
           </div>
-          <form action="../admin/iniciar_sesion/iniciar_sesion.php" method="POST" id="form-crear" class="formulario-inicio">
+          <form action="../admin/Iniciar_sesion/iniciar_sesion.php" method="POST" id="form-crear" class="formulario-inicio">
 
             <div class="insertar">
               <label for="email">Correo electronico</label>
