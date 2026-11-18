@@ -57,7 +57,7 @@ $rol = (int) $usuario["rol_id"];
 
 switch ($rol) {
     case 1:
-        $destino = "../../paginas/principal.php";
+        $destino = "../../admin/panel_admin.php";
         break;
 
     case 2:

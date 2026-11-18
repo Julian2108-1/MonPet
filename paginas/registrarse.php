@@ -127,8 +127,8 @@ $tipos = mysqli_query(
                 class="formulario-registro">
 
                 <!-- =========================
-         PASO 1 - INFORMACIÓN PERSONAL
-    ========================== -->
+                    PASO 1 - INFORMACIÓN PERSONAL
+                    ========================== -->
                 <div class="paso-formulario activo" id="paso-1">
 
                     <div class="fila-campos">

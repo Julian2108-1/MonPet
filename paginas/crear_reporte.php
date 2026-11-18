@@ -1,3 +1,254 @@
+<?php
+declare(strict_types=1);
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once __DIR__ . '/../db/conexion.php';
+
+if (!isset($conexion) || !($conexion instanceof mysqli)) {
+    http_response_code(500);
+    exit('No fue posible establecer la conexión con la base de datos.');
+}
+
+$conexion->set_charset('utf8mb4');
+
+function escapar_reporte($valor): string
+{
+    return htmlspecialchars((string)($valor ?? ''), ENT_QUOTES, 'UTF-8');
+}
+
+function valor_reporte(string $campo, string $predeterminado = ''): string
+{
+    return escapar_reporte($_POST[$campo] ?? $predeterminado);
+}
+
+function longitud_texto_reporte(string $texto): int
+{
+    return function_exists('mb_strlen') ? mb_strlen($texto, 'UTF-8') : strlen($texto);
+}
+
+$documentoUsuario = isset($_SESSION['documento_usuario'])
+    ? trim((string)$_SESSION['documento_usuario'])
+    : '';
+$usuarioAutenticado = false;
+$nombreUsuario = 'Usuario';
+
+if ($documentoUsuario !== '') {
+    try {
+        $consultaUsuario = $conexion->prepare(
+            'SELECT nombres, apellidos FROM usuario WHERE documento_usuario = ? LIMIT 1'
+        );
+        $consultaUsuario->bind_param('s', $documentoUsuario);
+        $consultaUsuario->execute();
+        $consultaUsuario->bind_result($nombresUsuario, $apellidosUsuario);
+        if ($consultaUsuario->fetch()) {
+            $usuarioAutenticado = true;
+            $nombreUsuario = trim($nombresUsuario . ' ' . $apellidosUsuario);
+        }
+        $consultaUsuario->close();
+    } catch (Throwable $error) {
+        error_log('Error consultando el usuario de Crear reporte: ' . $error->getMessage());
+    }
+}
+
+if (empty($_SESSION['csrf_token_reporte'])) {
+    $_SESSION['csrf_token_reporte'] = bin2hex(random_bytes(32));
+}
+$tokenCsrf = $_SESSION['csrf_token_reporte'];
+$erroresReporte = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!$usuarioAutenticado) {
+        $erroresReporte[] = 'Debes iniciar sesión con una cuenta válida para crear un reporte.';
+    }
+
+    $tokenRecibido = (string)($_POST['csrf_token'] ?? '');
+    if (!hash_equals($tokenCsrf, $tokenRecibido)) {
+        $erroresReporte[] = 'La sesión del formulario venció. Recarga la página e inténtalo nuevamente.';
+    }
+
+    $tipoReporte = trim((string)($_POST['tipo_reporte'] ?? ''));
+    $tituloReporte = trim((string)($_POST['titulo_reporte'] ?? ''));
+    $descripcionReporte = trim((string)($_POST['descripcion_reporte'] ?? ''));
+    $especieReporte = trim((string)($_POST['especie_reporte'] ?? ''));
+    $razaReporte = trim((string)($_POST['raza_reporte'] ?? ''));
+    $colorReporte = trim((string)($_POST['color_reporte'] ?? ''));
+    $fechaReporte = trim((string)($_POST['fecha_reporte'] ?? ''));
+    $estadoAnimal = trim((string)($_POST['estado_animal'] ?? ''));
+    $ubicacionReporte = trim((string)($_POST['direccion_reporte'] ?? ''));
+
+    if (!in_array($tipoReporte, ['perdida', 'encontrada'], true)) {
+        $erroresReporte[] = 'Selecciona si la mascota está perdida o fue encontrada.';
+    }
+    if ($tituloReporte === '' || longitud_texto_reporte($tituloReporte) > 150) {
+        $erroresReporte[] = 'El título es obligatorio y no debe superar los 150 caracteres.';
+    }
+    if ($descripcionReporte === '' || longitud_texto_reporte($descripcionReporte) > 500) {
+        $erroresReporte[] = 'La descripción es obligatoria y no debe superar los 500 caracteres.';
+    }
+    if (!in_array($especieReporte, ['perro', 'gato'], true)) {
+        $erroresReporte[] = 'Selecciona una especie válida.';
+    }
+    if (longitud_texto_reporte($razaReporte) > 100) {
+        $erroresReporte[] = 'La raza no debe superar los 100 caracteres.';
+    }
+    if (longitud_texto_reporte($colorReporte) > 50) {
+        $erroresReporte[] = 'El color no debe superar los 50 caracteres.';
+    }
+    $fechaValida = DateTime::createFromFormat('!Y-m-d', $fechaReporte);
+    if (!$fechaValida || $fechaValida->format('Y-m-d') !== $fechaReporte) {
+        $erroresReporte[] = 'Selecciona una fecha válida para el reporte.';
+    }
+    if (!in_array($estadoAnimal, ['', 'saludable', 'herido', 'enfermo', 'desconocido'], true)) {
+        $erroresReporte[] = 'Selecciona un estado del animal válido.';
+    }
+    if ($ubicacionReporte === '' || longitud_texto_reporte($ubicacionReporte) > 255) {
+        $erroresReporte[] = 'La dirección o referencia es obligatoria y no debe superar los 255 caracteres.';
+    }
+
+    // Validar todas las imágenes antes de moverlas al directorio definitivo.
+    $archivosValidos = [];
+    $mimePermitidos = [
+        'image/jpeg' => 'jpg',
+        'image/png' => 'png',
+    ];
+
+    if (isset($_FILES['fotos_reporte']) && is_array($_FILES['fotos_reporte']['name'] ?? null)) {
+        $cantidadArchivos = count($_FILES['fotos_reporte']['name']);
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+
+        for ($i = 0; $i < $cantidadArchivos; $i++) {
+            $errorArchivo = $_FILES['fotos_reporte']['error'][$i] ?? UPLOAD_ERR_NO_FILE;
+            if ($errorArchivo === UPLOAD_ERR_NO_FILE) {
+                continue;
+            }
+            if ($errorArchivo !== UPLOAD_ERR_OK) {
+                $erroresReporte[] = 'Una de las imágenes no se pudo cargar. Verifica el archivo e inténtalo de nuevo.';
+                continue;
+            }
+
+            $rutaTemporal = (string)($_FILES['fotos_reporte']['tmp_name'][$i] ?? '');
+            $tamanoArchivo = (int)($_FILES['fotos_reporte']['size'][$i] ?? 0);
+
+            if ($tamanoArchivo <= 0 || $tamanoArchivo > 5 * 1024 * 1024) {
+                $erroresReporte[] = 'Cada imagen debe pesar máximo 5 MB.';
+                continue;
+            }
+            if ($rutaTemporal === '' || !is_uploaded_file($rutaTemporal)) {
+                $erroresReporte[] = 'Se detectó un archivo de imagen no válido.';
+                continue;
+            }
+
+            $mime = $finfo->file($rutaTemporal);
+            if (!isset($mimePermitidos[$mime]) || @getimagesize($rutaTemporal) === false) {
+                $erroresReporte[] = 'Solo se permiten imágenes JPG, JPEG o PNG válidas.';
+                continue;
+            }
+
+            $archivosValidos[] = [
+                'tmp_name' => $rutaTemporal,
+                'extension' => $mimePermitidos[$mime],
+                'mime' => $mime,
+            ];
+        }
+    }
+
+    if (!$erroresReporte) {
+        $directorioFotos = __DIR__ . '/../uploads/reportes';
+        if (!is_dir($directorioFotos) && !mkdir($directorioFotos, 0755, true) && !is_dir($directorioFotos)) {
+            $erroresReporte[] = 'No se pudo preparar el directorio para guardar las imágenes.';
+        }
+    }
+
+    if (!$erroresReporte) {
+        $rutasGuardadas = [];
+        $conexionIniciada = false;
+
+        try {
+            $conexion->begin_transaction();
+            $conexionIniciada = true;
+
+            foreach ($archivosValidos as $archivo) {
+                $nombreSeguro = bin2hex(random_bytes(16)) . '.' . $archivo['extension'];
+                $destinoAbsoluto = $directorioFotos . DIRECTORY_SEPARATOR . $nombreSeguro;
+                if (!move_uploaded_file($archivo['tmp_name'], $destinoAbsoluto)) {
+                    throw new RuntimeException('No fue posible mover una de las imágenes cargadas.');
+                }
+                $rutasGuardadas[] = [
+                    'ruta' => 'uploads/reportes/' . $nombreSeguro,
+                    'mime' => $archivo['mime'],
+                    'absoluta' => $destinoAbsoluto,
+                ];
+            }
+
+            $fotoPrincipal = $rutasGuardadas[0]['ruta'] ?? null;
+            $estadoAnimalBD = $estadoAnimal !== '' ? $estadoAnimal : null;
+            $razaBD = $razaReporte !== '' ? $razaReporte : null;
+            $colorBD = $colorReporte !== '' ? $colorReporte : null;
+
+            $insertarReporte = $conexion->prepare(
+                'INSERT INTO reporte
+                (tipo_reporte, titulo, descripcion, especie, raza, color, fecha_reporte,
+                 estado_animal, foto, ubicacion, documento_usuario)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+            );
+            $insertarReporte->bind_param(
+                'sssssssssss',
+                $tipoReporte,
+                $tituloReporte,
+                $descripcionReporte,
+                $especieReporte,
+                $razaBD,
+                $colorBD,
+                $fechaReporte,
+                $estadoAnimalBD,
+                $fotoPrincipal,
+                $ubicacionReporte,
+                $documentoUsuario
+            );
+            $insertarReporte->execute();
+            $idReporte = (int)$conexion->insert_id;
+            $insertarReporte->close();
+
+            if ($rutasGuardadas) {
+                $insertarFoto = $conexion->prepare(
+                    'INSERT INTO reporte_foto (reporte_id, ruta_foto, tipo_archivo) VALUES (?, ?, ?)'
+                );
+                foreach ($rutasGuardadas as $foto) {
+                    $rutaFoto = $foto['ruta'];
+                    $tipoArchivo = $foto['mime'];
+                    $insertarFoto->bind_param('iss', $idReporte, $rutaFoto, $tipoArchivo);
+                    $insertarFoto->execute();
+                }
+                $insertarFoto->close();
+            }
+
+            $conexion->commit();
+            $_SESSION['mensaje_reporte_exito'] = 'Tu reporte se registró correctamente.';
+            header('Location: crear_reporte.php');
+            exit;
+        } catch (Throwable $error) {
+            if ($conexionIniciada) {
+                $conexion->rollback();
+            }
+            foreach ($rutasGuardadas ?? [] as $foto) {
+                if (is_file($foto['absoluta'])) {
+                    @unlink($foto['absoluta']);
+                }
+            }
+            error_log('Error guardando reporte en MonPet: ' . $error->getMessage());
+            $erroresReporte[] = 'No fue posible guardar el reporte. Verifica que la actualización de la base de datos esté instalada e inténtalo nuevamente.';
+        }
+    }
+}
+
+$mensajeExito = $_SESSION['mensaje_reporte_exito'] ?? '';
+unset($_SESSION['mensaje_reporte_exito']);
+$tipoSeleccionado = (string)($_POST['tipo_reporte'] ?? 'perdida');
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,25 +257,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear reporte - MonPet</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/crear_reporte.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/crear_reporte.css?v=20261117-ajuste2">
 </head>
 
 <body>
-    <!-- HEADER PRINCIPAL -->
+    <!-- HEADER PRINCIPAL: estilos compartidos de la interfaz MonPet -->
     <header>
         <div class="contenedor-logo">
-            <a href="../index.php">
-                <div class="icono-logo">
-                    <i class="fa-solid fa-paw"></i>
-                </div>
+            <a href="../index.php" aria-label="Ir al inicio de MonPet">
+                <div class="icono-logo"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
                 <div class="texto-logo">
                     <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-                    <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+                    <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                </div>
             </a>
         </div>
-        </div>
-        <nav class="links-navegacion">
+
+        <nav class="links-navegacion" aria-label="Navegación principal">
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="../paginas/adopcion.php">Adopción</a></li>
@@ -35,17 +285,17 @@
             </ul>
         </nav>
 
-        <div class="perfil-header">
-            <div class="icono-notificacion">
-                <i class="fa-solid fa-bell"></i>
-                <span class="badge-notif">3</span>
-            </div>
-            <div class="usuario-perfil">
-                <img src="../img/perfil.jpg" alt="Laura García" class="foto-usuario">
-                <div class="info-usuario">
-                    <strong>Laura García <i class="fa-solid fa-chevron-down"></i></strong>
-                    <small>Ver perfil</small>
-                </div>
+        <div class="acciones-usuario">
+            <button type="button" class="boton-mensajes" aria-label="Notificaciones">
+                <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                <span class="contador-alertas">3</span>
+            </button>
+            <div class="perfil-usuario">
+                <img src="../img/perfil.jpg" alt="Foto de perfil" class="foto-usuario">
+                <span><?= escapar_reporte($nombreUsuario) ?></span>
+                <button type="button" aria-label="Opciones del perfil">
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -58,14 +308,14 @@
 
         <div class="ruta-navegacion-reporte">
 
-            <a href="#" class="enlace-ruta-reporte">
+            <a href="../index.php" class="enlace-ruta-reporte">
                 <i class="fa-solid fa-house"></i>
                 <span>Inicio</span>
             </a>
 
             <i class="fa-solid fa-chevron-right separador-ruta-reporte"></i>
 
-            <a href="#" class="enlace-ruta-reporte">
+            <a href="../paginas/reportes_comunidad.php" class="enlace-ruta-reporte">
                 Reportes
             </a>
 
@@ -98,6 +348,37 @@
 
         </section>
 
+        <?php if ($mensajeExito !== ''): ?>
+            <div class="mensaje-formulario mensaje-exito" role="status">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <?= escapar_reporte($mensajeExito) ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($erroresReporte): ?>
+            <div class="mensaje-formulario mensaje-error" role="alert">
+                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <div>
+                    <strong>No se pudo enviar el reporte:</strong>
+                    <ul>
+                        <?php foreach ($erroresReporte as $errorReporte): ?>
+                            <li><?= escapar_reporte($errorReporte) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!$usuarioAutenticado): ?>
+            <div class="mensaje-formulario mensaje-error" role="status">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                Para registrar un reporte debes iniciar sesión con una cuenta de MonPet.
+            </div>
+        <?php endif; ?>
+
+        <form class="formulario-crear-reporte" id="formulario-reporte" method="POST"
+            action="crear_reporte.php" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="<?= escapar_reporte($tokenCsrf) ?>">
 
         <!-- =====================================================
              PASO 1 - TIPO DE REPORTE
@@ -123,9 +404,9 @@
             <div class="opciones-tipo-reporte">
 
                 <!-- Mascota perdida -->
-                <label class="opcion-tipo-reporte opcion-tipo-seleccionada">
+                <label class="opcion-tipo-reporte <?= $tipoSeleccionado === 'perdida' ? 'opcion-tipo-seleccionada' : '' ?>">
 
-                    <input type="radio" name="tipo_reporte" value="perdida" checked>
+                    <input type="radio" name="tipo_reporte" value="perdida" required <?= $tipoSeleccionado === 'perdida' ? 'checked' : '' ?>>
 
                     <span class="marca-seleccion-tipo">
                         <i class="fa-solid fa-check"></i>
@@ -143,9 +424,9 @@
 
 
                 <!-- Mascota encontrada -->
-                <label class="opcion-tipo-reporte">
+                <label class="opcion-tipo-reporte <?= $tipoSeleccionado === 'encontrada' ? 'opcion-tipo-seleccionada' : '' ?>">
 
-                    <input type="radio" name="tipo_reporte" value="encontrada">
+                    <input type="radio" name="tipo_reporte" value="encontrada" <?= $tipoSeleccionado === 'encontrada' ? 'checked' : '' ?>>
 
                     <span class="marca-seleccion-tipo">
                         <i class="fa-solid fa-check"></i>
@@ -197,7 +478,8 @@
                         <span>*</span>
                     </label>
 
-                    <input type="text" id="titulo_reporte" name="titulo_reporte"
+                    <input type="text" id="titulo_reporte" name="titulo_reporte" maxlength="150" required
+                        value="<?= valor_reporte('titulo_reporte') ?>"
                         placeholder="Ej. Perro encontrado en el parque">
 
                 </div>
@@ -211,8 +493,8 @@
                         <span>*</span>
                     </label>
 
-                    <textarea id="descripcion_reporte" name="descripcion_reporte" maxlength="500"
-                        placeholder="Cuéntanos qué pasó, dónde lo viste, cómo es el animal, entre otros detalles..."></textarea>
+                    <textarea id="descripcion_reporte" name="descripcion_reporte" maxlength="500" required
+                        placeholder="Cuéntanos qué pasó, dónde lo viste, cómo es el animal, entre otros detalles..."><?= valor_reporte('descripcion_reporte') ?></textarea>
 
                     <small class="contador-descripcion-reporte">
                         0/500
@@ -229,16 +511,16 @@
                         <span>*</span>
                     </label>
 
-                    <select id="especie_reporte" name="especie_reporte">
+                    <select id="especie_reporte" name="especie_reporte" required>
                         <option value="">
                             Selecciona una opción
                         </option>
 
-                        <option value="perro">
+                        <option value="perro" <?= (($_POST['especie_reporte'] ?? '') === 'perro') ? 'selected' : '' ?>>
                             Perro
                         </option>
 
-                        <option value="gato">
+                        <option value="gato" <?= (($_POST['especie_reporte'] ?? '') === 'gato') ? 'selected' : '' ?>>
                             Gato
                         </option>
                     </select>
@@ -256,7 +538,8 @@
                         </span>
                     </label>
 
-                    <input type="text" id="raza_reporte" name="raza_reporte"
+                    <input type="text" id="raza_reporte" name="raza_reporte" maxlength="100"
+                        value="<?= valor_reporte('raza_reporte') ?>"
                         placeholder="Ej. Criollo, Pastor Alemán...">
 
                 </div>
@@ -272,7 +555,8 @@
                         </span>
                     </label>
 
-                    <input type="text" id="color_reporte" name="color_reporte" placeholder="Ej. Café, blanco, negro...">
+                    <input type="text" id="color_reporte" name="color_reporte" maxlength="50"
+                        value="<?= valor_reporte('color_reporte') ?>" placeholder="Ej. Café, blanco, negro...">
 
                 </div>
 
@@ -289,7 +573,7 @@
 
                         <!-- <i class="fa-regular fa-calendar"></i> -->
 
-                        <input type="date" id="fecha_reporte" name="fecha_reporte">
+                        <input type="date" id="fecha_reporte" name="fecha_reporte" required value="<?= valor_reporte('fecha_reporte') ?>">
 
                     </div>
 
@@ -312,19 +596,19 @@
                             Selecciona una opción
                         </option>
 
-                        <option value="saludable">
+                        <option value="saludable" <?= (($_POST['estado_animal'] ?? '') === 'saludable') ? 'selected' : '' ?>>
                             Se encuentra saludable
                         </option>
 
-                        <option value="herido">
+                        <option value="herido" <?= (($_POST['estado_animal'] ?? '') === 'herido') ? 'selected' : '' ?>>
                             Se encuentra herido
                         </option>
 
-                        <option value="enfermo">
+                        <option value="enfermo" <?= (($_POST['estado_animal'] ?? '') === 'enfermo') ? 'selected' : '' ?>>
                             Parece estar enfermo
                         </option>
 
-                        <option value="desconocido">
+                        <option value="desconocido" <?= (($_POST['estado_animal'] ?? '') === 'desconocido') ? 'selected' : '' ?>>
                             No se conoce
                         </option>
 
@@ -394,7 +678,8 @@
                     <span>*</span>
                 </label>
 
-                <input type="text" id="direccion_reporte" name="direccion_reporte"
+                <input type="text" id="direccion_reporte" name="direccion_reporte" maxlength="255" required
+                    value="<?= valor_reporte('direccion_reporte') ?>"
                     placeholder="Ej. Parque principal de Soacha, carrera 7 #12-34">
 
             </div>
@@ -483,45 +768,19 @@
                 </label>
 
 
-                <!-- Imagen cargada -->
-                <div class="imagen-evidencia-reporte">
-
-                    <img src="../img/perro-reporte.jpg" alt="Evidencia de mascota">
-
-                    <button type="button" class="boton-eliminar-evidencia" aria-label="Eliminar imagen">
-                        <i class="fa-solid fa-x"></i>
-                    </button>
-
+                <!-- La vista previa de archivos se incorporará en la etapa de JavaScript. -->
+                <div class="estado-sin-evidencias" aria-live="polite">
+                    <i class="fa-regular fa-images" aria-hidden="true"></i>
+                    <span>Las imágenes seleccionadas aparecerán aquí.</span>
                 </div>
 
-
-                <!-- Segunda imagen -->
-                <div class="imagen-evidencia-reporte">
-
-                    <img src="../img/lugar-reporte.jpg" alt="Lugar de referencia">
-
-                    <button type="button" class="boton-eliminar-evidencia" aria-label="Eliminar imagen">
-                        <i class="fa-solid fa-x"></i>
-                    </button>
-
-                </div>
-
-
-                <!-- Agregar otra imagen -->
-                <label for="fotos_adicionales" class="boton-agregar-evidencia">
-
+                <!-- El mismo selector permite elegir varias imágenes en una sola selección. -->
+                <label for="fotos_reporte" class="boton-agregar-evidencia">
                     <span class="circulo-agregar-evidencia">
-                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
                     </span>
-
-                    <span>
-                        Agregar más
-                    </span>
-
-                    <input type="file" id="fotos_adicionales" accept=".jpg,.jpeg,.png" multiple>
-
+                    <span>Agregar imágenes</span>
                 </label>
-
             </div>
 
 
@@ -544,16 +803,13 @@
 
             <div class="acciones-reporte">
 
-                <button type="button" class="boton-cancelar-reporte">
-
-                    <i class="fa-solid fa-xmark"></i>
-
+                <a href="../paginas/reportes_comunidad.php" class="boton-cancelar-reporte">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                     Cancelar
+                </a>
 
-                </button>
 
-
-                <button type="submit" class="boton-enviar-reporte">
+                <button type="submit" class="boton-enviar-reporte" <?= !$usuarioAutenticado ? 'disabled' : '' ?>>
 
                     <i class="fa-solid fa-paper-plane"></i>
 
@@ -564,6 +820,7 @@
             </div>
 
         </section>
+        </form>
 
     </main>
 
@@ -587,11 +844,11 @@
                         encuentre un hogar lleno<br>de amor y cuidado.
                     </p>
 
-                    <div class="footer-redes">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <div class="footer-redes" aria-label="Redes sociales de MonPet">
+                        <span aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></span>
+                        <span aria-label="Instagram"><i class="fa-brands fa-instagram"></i></span>
+                        <span aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></span>
+                        <span aria-label="YouTube"><i class="fa-brands fa-youtube"></i></span>
                     </div>
                 </div>
             </div>
@@ -623,9 +880,9 @@
                 <h3>Información legal</h3>
 
                 <ul>
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Política de privacidad</a></li>
-                    <li><a href="#">Aviso legal</a></li>
+                    <li><span class="enlace-pendiente">Términos y condiciones</span></li>
+                    <li><span class="enlace-pendiente">Política de privacidad</span></li>
+                    <li><span class="enlace-pendiente">Aviso legal</span></li>
                 </ul>
             </div>
 
@@ -640,12 +897,12 @@
 
                     <li>
                         <i class="fa-solid fa-envelope"></i>
-                        contacto@monpet.com
+                        <a href="mailto:contacto@monpet.com">contacto@monpet.com</a>
                     </li>
 
                     <li>
                         <i class="fa-solid fa-phone"></i>
-                        +57 300 123 4567
+                        <a href="tel:+573001234567">+57 300 123 4567</a>
                     </li>
 
                     <li>

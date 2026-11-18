@@ -103,7 +103,7 @@ class AdopcionController
             }
 
             // Registrar solicitud
-            $idSolicitud = Adopcion::registrar(
+            $idSolicitud = Adopcion::registrar( 
                 $conexion,
                 $documentoUsuario,
                 $idMascota,
@@ -127,6 +127,112 @@ class AdopcionController
             ]);
         }
     }
+
+
+    // Consultar solicitudes del usuario autenticado
+    public static function misSolicitudes($conexion)
+    {
+        // Verificar que exista una sesion
+        if (empty($_SESSION["documento_usuario"])) {
+
+            responderJSON(401, [
+                "success" => false,
+                "mensaje" => "Debes iniciar sesion para consultar tus solicitudes."
+            ]);
+
+        }
+
+        try {
+
+            // Obtener el usuario de la sesion
+            $documentoUsuario = (string) $_SESSION["documento_usuario"];
+
+            // Consultar mediante el modelo
+            $solicitudes = Adopcion::obtenerPorUsuario(
+                $conexion,
+                $documentoUsuario
+            );
+
+            // Responder al cliente
+            responderJSON(200, [
+                "success" => true,
+                "mensaje" => count($solicitudes) > 0
+                    ? "Solicitudes consultadas correctamente."
+                    : "No tienes solicitudes registradas.",
+                "cantidad" => count($solicitudes),
+                "datos" => $solicitudes
+            ]);
+
+        } catch (Throwable $e) {
+
+            error_log($e->getMessage());
+
+            responderJSON(500, [
+                "success" => false,
+                "mensaje" => "Ocurrio un error al consultar tus solicitudes."
+            ]);
+
+        }
+    }
+
+
+
+    // Consultar todas las solicitudes (Administrador)
+    public static function listarTodas($conexion)
+    {
+        // 1. Verificar la sesion del usuario
+        if (empty($_SESSION["documento_usuario"])) {
+
+            responderJSON(401, [
+                "success" => false,
+                "mensaje" => "Debes iniciar sesion."
+            ]);
+
+        }
+
+        try {
+
+            // 2. Obtener documento del usuario autenticado
+            $documento_usuario = $_SESSION["documento_usuario"];
+
+            // 3. Verificar permisos en la base de datos
+            $esAdministrador = Adopcion::esAdministrador(
+                $conexion,
+                $documento_usuario
+            );
+
+            if (!$esAdministrador) {
+
+                responderJSON(403, [
+                    "success" => false,
+                    "mensaje" => "No tienes permisos para consultar todas las solicitudes."
+                ]);
+
+            }
+
+            // 4. Consultar solicitudes
+            $solicitudes = Adopcion::obtenerTodas($conexion);
+
+            // 5. Devolver respuesta JSON
+            responderJSON(200, [
+                "success" => true,
+                "mensaje" => "Solicitudes consultadas correctamente.",
+                "cantidad" => count($solicitudes),
+                "datos" => $solicitudes
+            ]);
+
+        } catch (Throwable $e) {
+
+            error_log($e->getMessage());
+
+            responderJSON(500, [
+                "success" => false,
+                "mensaje" => "Ocurrio un error al consultar las solicitudes."
+            ]);
+
+        }
+    }
+
 }
 
 ?>

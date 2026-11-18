@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Rancho&display=swap');
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Rancho", cursiva;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
 }
+
 body {
     background: #F9F6FC;
     min-height: 100vh;
