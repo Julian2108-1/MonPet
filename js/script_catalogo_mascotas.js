@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".main-nav");
   const header = document.querySelector(".header-container");
   const metadata = [
-    ["perros", "grande", "macho", 2, "bogota", "buddy", "2026-11-20"],
-    ["gatos", "mediano", "hembra", 1, "bogota", "luna", "2026-11-18"],
-    ["perros", "grande", "macho", 3, "soacha", "max", "2026-11-16"],
-    ["gatos", "pequeno", "hembra", 0.67, "bogota", "mia", "2026-11-14"],
-    ["perros", "mediano", "macho", 0.33, "bogota", "rocky", "2026-11-12"],
-    ["gatos", "mediano", "hembra", 2, "chia", "nala", "2026-11-10"],
-    ["perros", "mediano", "macho", 1, "soacha", "toby", "2026-11-08"],
-    ["gatos", "pequeno", "macho", 0.25, "bogota", "simba", "2026-11-06"]
+    ["perros", "grande", "macho", 2, "compartir", "buddy", "2026-11-20"],
+    ["gatos", "mediano", "hembra", 1, "ciudad-latina", "luna", "2026-11-18"],
+    ["perros", "grande", "macho", 3, "ciudadela-sucre", "max", "2026-11-16"],
+    ["gatos", "pequeno", "hembra", 0.67, "leon-xiii", "mia", "2026-11-14"],
+    ["perros", "mediano", "macho", 0.33, "ducales", "rocky", "2026-11-12"],
+    ["gatos", "mediano", "hembra", 2, "la-florida", "nala", "2026-11-10"],
+    ["perros", "mediano", "macho", 1, "san-nicolas", "toby", "2026-11-08"],
+    ["gatos", "pequeno", "macho", 0.25, "danubio", "simba", "2026-11-06"]
   ];
 
   cards.forEach((card, index) => {

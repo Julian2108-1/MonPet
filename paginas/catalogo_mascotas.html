@@ -24,7 +24,7 @@
           <i class="fa-solid fa-paw"></i>
         </div>
         <div class="logo-text">
-          <h1>MonPet</h1>
+          <h1><span class="brand-word-mon">Mon</span><span class="brand-word-pet">Pet</span></h1>
           <span>Amor que cambia vidas <i class="fa-solid fa-heart"></i></span>
         </div>
       </div>
@@ -32,13 +32,13 @@
       <!-- Menú de navegación principal -->
       <nav class="main-nav">
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#" class="active">Adopción <i class="fa-solid fa-chevron-down"></i></a></li>
-          <li><a href="#">Reportes</a></li>
-          <li><a href="#">Refugios</a></li>
-          <li><a href="#">Veterinarios</a></li>
-          <li><a href="#">Jornadas</a></li>
-          <li><a href="#">Nosotros</a></li>
+          <li><a href="catalogo_mascotas.html">Inicio</a></li>
+          <li><a href="catalogo_mascotas.html" class="active" aria-current="page">Adopción</a></li>
+          <li><a href="catalogo_mascotas.html">Reportes</a></li>
+          <li><a href="catalogo_mascotas.html">Refugios</a></li>
+          
+          <li><a href="catalogo_mascotas.html">Jornadas</a></li>
+          <li><a href="catalogo_mascotas.html">Nosotros</a></li>
         </ul>
       </nav>
 
@@ -65,9 +65,9 @@
 
     <!-- Migas de pan (Breadcrumbs) para guiar la navegación del usuario -->
     <nav class="breadcrumbs">
-      <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="catalogo_mascotas.html"><i class="fa-solid fa-house"></i> Inicio</a>
       <span>/</span>
-      <a href="#">Adopción</a>
+      <a href="catalogo_mascotas.html">Adopción</a>
       <span>/</span>
       <span class="current">Catálogo de mascotas</span>
     </nav>
@@ -173,7 +173,7 @@
               <input type="range" min="0" max="10" value="10" name="edad_max" class="slider age-max" id="ageRange" aria-label="Edad máxima">
               <div class="range-labels">
                 <span id="age-min-label">0 meses</span>
-                <span>10+ años</span>
+                <span id="age-max-label">10+ años</span>
               </div>
             </div>
           </div>
@@ -182,10 +182,19 @@
           <div class="filter-group">
             <label class="filter-label">Ubicación</label>
             <select class="select-input" id="city-filter" name="city">
-              <option value="" disabled selected>Selecciona una ciudad</option>
-              <option value="bogota">Bogotá, Cundinamarca</option>
-              <option value="soacha">Soacha, Cundinamarca</option>
-              <option value="chia">Chía, Cundinamarca</option>
+              <option value="" disabled selected>Selecciona un barrio de Soacha</option>
+              <option value="compartir">Compartir</option>
+              <option value="ciudad-latina">Ciudad Latina</option>
+              <option value="ducales">Ducales</option>
+              <option value="danubio">Danubio</option>
+              <option value="el-carmen">El Carmen</option>
+              <option value="leon-xiii">León XIII</option>
+              <option value="olivos">Olivos</option>
+              <option value="ciudadela-sucre">Ciudadela Sucre</option>
+              <option value="luis-carlos-galan">Luis Carlos Galán</option>
+              <option value="la-florida">La Florida</option>
+              <option value="la-pradera">La Pradera</option>
+              <option value="san-nicolas">San Nicolás</option>
             </select>
           </div>
 
@@ -245,7 +254,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 2 años</span>
                 <span><i class="fa-solid fa-paw"></i> Grande</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Compartir, Soacha</p>
             </div>
           </article>
 
@@ -268,7 +277,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 1 año</span>
                 <span><i class="fa-solid fa-paw"></i> Mediano</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Ciudad Latina, Soacha</p>
             </div>
           </article>
 
@@ -291,7 +300,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 3 años</span>
                 <span><i class="fa-solid fa-paw"></i> Grande</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Soacha, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Ciudadela Sucre, Soacha</p>
             </div>
           </article>
 
@@ -314,7 +323,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 8 meses</span>
                 <span><i class="fa-solid fa-paw"></i> Pequeño</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> León XIII, Soacha</p>
             </div>
           </article>
 
@@ -337,7 +346,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 4 meses</span>
                 <span><i class="fa-solid fa-paw"></i> Mediano</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Ducales, Soacha</p>
             </div>
           </article>
 
@@ -360,7 +369,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 2 años</span>
                 <span><i class="fa-solid fa-paw"></i> Mediano</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Chía, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> La Florida, Soacha</p>
             </div>
           </article>
 
@@ -383,7 +392,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 1 año</span>
                 <span><i class="fa-solid fa-paw"></i> Mediano</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Soacha, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> San Nicolás, Soacha</p>
             </div>
           </article>
 
@@ -406,7 +415,7 @@
                 <span><i class="fa-regular fa-calendar"></i> 3 meses</span>
                 <span><i class="fa-solid fa-paw"></i> Pequeño</span>
               </div>
-              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca</p>
+              <p class="pet-location"><i class="fa-solid fa-location-dot"></i> Danubio, Soacha</p>
             </div>
           </article>
 
@@ -444,10 +453,10 @@
         </div>
         <p>Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado.</p>
         <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
 
@@ -455,13 +464,13 @@
       <div class="footer-col">
         <h4>Enlaces rápidos</h4>
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Adopción</a></li>
-          <li><a href="#">Reportes</a></li>
-          <li><a href="#">Refugios</a></li>
-          <li><a href="#">Veterinarios</a></li>
-          <li><a href="#">Jornadas</a></li>
-          <li><a href="#">Nosotros</a></li>
+          <li><a href="catalogo_mascotas.html">Inicio</a></li>
+          <li><a href="catalogo_mascotas.html">Adopción</a></li>
+          <li><a href="catalogo_mascotas.html">Reportes</a></li>
+          <li><a href="catalogo_mascotas.html">Refugios</a></li>
+          <li><a href="catalogo_mascotas.html">Veterinarios</a></li>
+          <li><a href="catalogo_mascotas.html">Jornadas</a></li>
+          <li><a href="catalogo_mascotas.html">Nosotros</a></li>
         </ul>
       </div>
 
@@ -469,10 +478,10 @@
       <div class="footer-col">
         <h4>Ayuda</h4>
         <ul>
-          <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="#">Cómo adoptar</a></li>
-          <li><a href="#">Consejos de cuidado</a></li>
-          <li><a href="#">Contáctanos</a></li>
+          <li><a href="catalogo_mascotas.html">Preguntas frecuentes</a></li>
+          <li><a href="catalogo_mascotas.html">Cómo adoptar</a></li>
+          <li><a href="catalogo_mascotas.html">Consejos de cuidado</a></li>
+          <li><a href="catalogo_mascotas.html">Contáctanos</a></li>
         </ul>
       </div>
 
@@ -480,9 +489,9 @@
       <div class="footer-col">
         <h4>Información legal</h4>
         <ul>
-          <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Aviso legal</a></li>
+          <li><a href="catalogo_mascotas.html">Términos y condiciones</a></li>
+          <li><a href="catalogo_mascotas.html">Política de privacidad</a></li>
+          <li><a href="catalogo_mascotas.html">Aviso legal</a></li>
         </ul>
       </div>
 
@@ -490,7 +499,7 @@
       <div class="footer-col">
         <h4>Contáctanos</h4>
         <ul class="contact-info">
-          <li><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</li>
+          <li><i class="fa-solid fa-location-dot"></i> Soacha, Colombia</li>
           <li><i class="fa-regular fa-envelope"></i> hola@monpet.com</li>
           <li><i class="fa-solid fa-phone"></i> +57 300 123 4567</li>
           <li><i class="fa-regular fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.<br>Sáb: 8:00 a.m. - 2:00 p.m.</li>
