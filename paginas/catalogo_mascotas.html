@@ -114,7 +114,8 @@
           <button id="clear-filters-btn" class="clear-btn">Limpiar todo</button>
         </div>
 
-        <form id="filters-form" onsubmit="return false;">
+        <form id="filters-form" action="catalogo_mascotas.php" method="get">
+          <input type="hidden" id="pet-type-filter" name="tipo" value="">
 
           <!-- Filtro: Tipo de mascota -->
           <div class="filter-group">
@@ -133,17 +134,17 @@
           <div class="filter-group">
             <label class="filter-label">Tamaño</label>
             <label class="checkbox-container">
-              <input type="checkbox" name="size" value="pequeno">
+              <input type="checkbox" name="size[]" value="pequeno">
               <span class="checkmark"></span>
               Pequeño
             </label>
             <label class="checkbox-container">
-              <input type="checkbox" name="size" value="mediano">
+              <input type="checkbox" name="size[]" value="mediano">
               <span class="checkmark"></span>
               Mediano
             </label>
             <label class="checkbox-container">
-              <input type="checkbox" name="size" value="grande">
+              <input type="checkbox" name="size[]" value="grande">
               <span class="checkmark"></span>
               Grande
             </label>
@@ -153,12 +154,12 @@
           <div class="filter-group">
             <label class="filter-label">Sexo</label>
             <label class="checkbox-container">
-              <input type="checkbox" name="gender" value="macho">
+              <input type="checkbox" name="gender[]" value="macho">
               <span class="checkmark"></span>
               Macho
             </label>
             <label class="checkbox-container">
-              <input type="checkbox" name="gender" value="hembra">
+              <input type="checkbox" name="gender[]" value="hembra">
               <span class="checkmark"></span>
               Hembra
             </label>
@@ -168,9 +169,10 @@
           <div class="filter-group">
             <label class="filter-label">Edad</label>
             <div class="range-slider">
-              <input type="range" min="0" max="10" value="5" class="slider" id="ageRange">
+              <input type="range" min="0" max="10" value="0" name="edad_min" class="slider age-min" id="ageMin" aria-label="Edad mínima">
+              <input type="range" min="0" max="10" value="10" name="edad_max" class="slider age-max" id="ageRange" aria-label="Edad máxima">
               <div class="range-labels">
-                <span>0 meses</span>
+                <span id="age-min-label">0 meses</span>
                 <span>10+ años</span>
               </div>
             </div>
@@ -179,7 +181,7 @@
           <!-- Filtro: Ubicación -->
           <div class="filter-group">
             <label class="filter-label">Ubicación</label>
-            <select class="select-input">
+            <select class="select-input" id="city-filter" name="city">
               <option value="" disabled selected>Selecciona una ciudad</option>
               <option value="bogota">Bogotá, Cundinamarca</option>
               <option value="soacha">Soacha, Cundinamarca</option>
@@ -201,11 +203,11 @@
 
         <!-- Barra superior de resultados y ordenamiento -->
         <div class="catalog-top-bar">
-          <span class="results-count"><strong>120</strong> mascotas disponibles</span>
+          <span class="results-count" id="results-count"><strong>8</strong> mascotas disponibles</span>
 
           <div class="sort-and-view">
             <label for="sort">Ordenar por:</label>
-            <select id="sort" class="select-input sort-select">
+            <select id="sort" class="select-input sort-select" aria-label="Ordenar mascotas">
               <option value="recientes">Más recientes</option>
               <option value="antiguos">Más antiguos</option>
               <option value="nombre">Por nombre</option>
@@ -221,8 +223,9 @@
         </div>
 
         <!-- Grilla que contiene las tarjetas de mascotas -->
-        <div class="pets-grid">
+        <div class="pets-grid" id="pets-grid">
 
+          <!-- PHP_PET_CARDS_START -->
           <!-- TARJETA 1: Buddy -->
           <article class="pet-card">
             <div class="card-image-container">
@@ -407,19 +410,16 @@
             </div>
           </article>
 
+          <!-- PHP_PET_CARDS_END -->
         </div>
+
+        <p id="empty-state" class="empty-state" hidden>No encontramos mascotas con esos filtros. Prueba cambiando tu búsqueda.</p>
 
         <!-- Paginación inferior -->
         <div class="pagination">
-          <button class="page-btn nav-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="page-btn active">1</button>
-          <button class="page-btn">2</button>
-          <button class="page-btn">3</button>
-          <button class="page-btn">4</button>
-          <span class="pagination-ellipsis">..</span>
-          <span class="pagination-ellipsis">...</span>
-          <button class="page-btn">10</button>
-          <button class="page-btn nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="page-btn nav-btn" type="button" disabled aria-label="Página anterior"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="page-btn active" type="button" aria-current="page">1</button>
+          <button class="page-btn nav-btn" type="button" disabled aria-label="Página siguiente"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
       </section>
 
@@ -505,7 +505,7 @@
   </footer>
 
   <!-- Script JS al final para no bloquear la carga visual -->
-  <script src="script.js"></script>
+  <script src="../js/script_catalogo_mascotas.js" defer></script>
 </body>
 
 </html>
