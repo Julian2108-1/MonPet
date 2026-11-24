@@ -36,10 +36,21 @@ if (!isset($conexion) || !($conexion instanceof mysqli)) {
 
 $usuario = null;
 $errorConsulta = false;
+$erroresConfiguracion = [];
+$valoresPerfil = [];
+$accionConfiguracion = isset($_POST['accion']) && is_string($_POST['accion']) ? $_POST['accion'] : '';
+
+if (empty($_SESSION['csrf_token_configuracion'])) {
+    $_SESSION['csrf_token_configuracion'] = bin2hex(random_bytes(32));
+}
+
+$tokenConfiguracion = $_SESSION['csrf_token_configuracion'];
+$mensajeConfiguracion = (string) ($_SESSION['mensaje_configuracion'] ?? '');
+unset($_SESSION['mensaje_configuracion']);
 
 try {
     
-    $sql = 'SELECT nombres, apellidos, correo, ciudad, direccion, fecha_registro
+    $sql = 'SELECT nombres, apellidos, correo, telefono, ciudad, direccion, fecha_registro, contrasena_hash
             FROM usuario
             WHERE documento_usuario = ?
             LIMIT 1';
@@ -53,9 +64,11 @@ try {
         $nombresDB,
         $apellidosDB,
         $correoDB,
+        $telefonoDB,
         $ciudadDB,
         $direccionDB,
-        $fechaRegistroDB
+        $fechaRegistroDB,
+        $contrasenaHashDB
     );
 
     if ($consulta->fetch()) {
@@ -63,9 +76,11 @@ try {
             'nombres' => $nombresDB,
             'apellidos' => $apellidosDB,
             'correo' => $correoDB,
+            'telefono' => $telefonoDB,
             'ciudad' => $ciudadDB,
             'direccion' => $direccionDB,
             'fecha_registro' => $fechaRegistroDB,
+            'contrasena_hash' => $contrasenaHashDB,
         ];
     }
 
@@ -74,6 +89,165 @@ try {
     $errorConsulta = true;
     error_log('MonPet: error al consultar usuario: ' . $error->getMessage());
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $usuario !== null) {
+    $tokenRecibido = $_POST['csrf_token'] ?? '';
+
+    if (!is_string($tokenRecibido) || !hash_equals($tokenConfiguracion, $tokenRecibido)) {
+        $erroresConfiguracion[] = 'La sesión del formulario venció. Recarga la página e inténtalo de nuevo.';
+    } elseif ($accionConfiguracion === 'actualizar_perfil') {
+        foreach (['nombres', 'apellidos', 'correo', 'telefono', 'ciudad', 'direccion'] as $campo) {
+            $valoresPerfil[$campo] = isset($_POST[$campo]) && is_string($_POST[$campo])
+                ? trim($_POST[$campo])
+                : '';
+        }
+
+        $limites = [
+            'nombres' => 100,
+            'apellidos' => 100,
+            'correo' => 150,
+            'telefono' => 20,
+            'ciudad' => 100,
+            'direccion' => 150,
+        ];
+
+        if ($valoresPerfil['nombres'] === '' || $valoresPerfil['apellidos'] === '') {
+            $erroresConfiguracion[] = 'El nombre y los apellidos son obligatorios.';
+        }
+
+        if ($valoresPerfil['correo'] === '' || !filter_var($valoresPerfil['correo'], FILTER_VALIDATE_EMAIL)) {
+            $erroresConfiguracion[] = 'Ingresa un correo electrónico válido.';
+        }
+
+        foreach ($limites as $campo => $maximo) {
+            $longitud = function_exists('mb_strlen')
+                ? mb_strlen($valoresPerfil[$campo], 'UTF-8')
+                : strlen($valoresPerfil[$campo]);
+
+            if ($longitud > $maximo) {
+                $erroresConfiguracion[] = 'Uno o más campos superan el largo permitido.';
+                break;
+            }
+        }
+
+        if (!$erroresConfiguracion) {
+            try {
+                $correoDuplicado = $conexion->prepare(
+                    'SELECT documento_usuario
+                     FROM usuario
+                     WHERE correo = ? AND documento_usuario <> ?
+                     LIMIT 1'
+                );
+                $correoDuplicado->bind_param('ss', $valoresPerfil['correo'], $documentoUsuario);
+                $correoDuplicado->execute();
+                $correoDuplicado->store_result();
+                $existeCorreoDuplicado = $correoDuplicado->num_rows > 0;
+                $correoDuplicado->close();
+
+                if ($existeCorreoDuplicado) {
+                    $erroresConfiguracion[] = 'Ese correo ya está registrado en otra cuenta.';
+                } else {
+                    $actualizarPerfil = $conexion->prepare(
+                        'UPDATE usuario
+                         SET nombres = ?, apellidos = ?, correo = ?, telefono = ?, ciudad = ?, direccion = ?
+                         WHERE documento_usuario = ?'
+                    );
+                    $actualizarPerfil->bind_param(
+                        'sssssss',
+                        $valoresPerfil['nombres'],
+                        $valoresPerfil['apellidos'],
+                        $valoresPerfil['correo'],
+                        $valoresPerfil['telefono'],
+                        $valoresPerfil['ciudad'],
+                        $valoresPerfil['direccion'],
+                        $documentoUsuario
+                    );
+                    $actualizarPerfil->execute();
+                    $actualizarPerfil->close();
+
+                    $_SESSION['nombres'] = $valoresPerfil['nombres'];
+                    $_SESSION['apellidos'] = $valoresPerfil['apellidos'];
+                    $_SESSION['csrf_token_configuracion'] = bin2hex(random_bytes(32));
+                    $_SESSION['mensaje_configuracion'] = 'La información de tu cuenta se actualizó.';
+                    header('Location: configuracion.php#informacion-cuenta');
+                    exit;
+                }
+            } catch (Throwable $error) {
+                error_log('MonPet: no se pudo actualizar el perfil: ' . $error->getMessage());
+                $erroresConfiguracion[] = 'No se pudo actualizar la información. Inténtalo nuevamente.';
+            }
+        }
+    } elseif ($accionConfiguracion === 'cambiar_contrasena') {
+        $contrasenaActual = isset($_POST['contrasena_actual']) && is_string($_POST['contrasena_actual'])
+            ? $_POST['contrasena_actual']
+            : '';
+        $contrasenaNueva = isset($_POST['contrasena_nueva']) && is_string($_POST['contrasena_nueva'])
+            ? $_POST['contrasena_nueva']
+            : '';
+        $confirmarContrasenaNueva = isset($_POST['confirmar_contrasena_nueva'])
+            && is_string($_POST['confirmar_contrasena_nueva'])
+            ? $_POST['confirmar_contrasena_nueva']
+            : '';
+
+        if (!password_verify($contrasenaActual, (string) $usuario['contrasena_hash'])) {
+            $erroresConfiguracion[] = 'La contraseña actual no es correcta.';
+        }
+
+        if (strlen($contrasenaNueva) < 8 || strlen($contrasenaNueva) > 255) {
+            $erroresConfiguracion[] = 'La nueva contraseña debe tener entre 8 y 255 caracteres.';
+        }
+
+        if ($contrasenaNueva !== $confirmarContrasenaNueva) {
+            $erroresConfiguracion[] = 'La nueva contraseña y su confirmación no coinciden.';
+        }
+
+        if (!$erroresConfiguracion) {
+            try {
+                $nuevoHash = password_hash($contrasenaNueva, PASSWORD_DEFAULT);
+                $actualizarContrasena = $conexion->prepare(
+                    'UPDATE usuario SET contrasena_hash = ? WHERE documento_usuario = ?'
+                );
+                $actualizarContrasena->bind_param('ss', $nuevoHash, $documentoUsuario);
+                $actualizarContrasena->execute();
+                $actualizarContrasena->close();
+
+                session_regenerate_id(true);
+                $_SESSION['csrf_token_configuracion'] = bin2hex(random_bytes(32));
+                $_SESSION['mensaje_configuracion'] = 'La contraseña se cambió correctamente.';
+                header('Location: configuracion.php#seguridad-cuenta');
+                exit;
+            } catch (Throwable $error) {
+                error_log('MonPet: no se pudo cambiar la contraseña: ' . $error->getMessage());
+                $erroresConfiguracion[] = 'No se pudo cambiar la contraseña. Inténtalo nuevamente.';
+            }
+        }
+    } elseif ($accionConfiguracion === 'cerrar_sesion') {
+        $_SESSION = [];
+
+        if (ini_get('session.use_cookies')) {
+            $parametrosSesion = session_get_cookie_params();
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $parametrosSesion['path'],
+                $parametrosSesion['domain'],
+                $parametrosSesion['secure'],
+                $parametrosSesion['httponly']
+            );
+        }
+
+        session_destroy();
+        header('Location: ../index.php');
+        exit;
+    } else {
+        http_response_code(400);
+        $erroresConfiguracion[] = 'La acción solicitada no es válida.';
+    }
+}
+
+$formularioPerfilAbierto = $accionConfiguracion === 'actualizar_perfil' && count($erroresConfiguracion) > 0;
+$formularioContrasenaAbierto = $accionConfiguracion === 'cambiar_contrasena' && count($erroresConfiguracion) > 0;
 
 // Se informa en la propia página cuando no hay coincidencia entre la sesión y la tabla.
 $cuentaEncontrada = is_array($usuario);
@@ -91,6 +265,9 @@ $nombreCompleto = $cuentaEncontrada
     ? trim((string) $usuario['nombres'] . ' ' . (string) $usuario['apellidos'])
     : 'No disponible';
 $correoUsuario = $cuentaEncontrada ? (string) ($usuario['correo'] ?? '') : 'No disponible';
+$telefonoUsuario = $cuentaEncontrada && trim((string) ($usuario['telefono'] ?? '')) !== ''
+    ? (string) $usuario['telefono']
+    : 'No registrado';
 $ciudadUsuario = $cuentaEncontrada && trim((string) ($usuario['ciudad'] ?? '')) !== ''
     ? (string) $usuario['ciudad']
     : 'No registrada';
@@ -234,6 +411,20 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
 
         <!-- CONTENIDO DE CONFIGURACIÓN -->
         <main class="contenido-panel">
+            <?php if ($mensajeConfiguracion !== ''): ?>
+                <div class="aviso-configuracion exito" role="status">
+                    <?= monpetEscape($mensajeConfiguracion) ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($erroresConfiguracion): ?>
+                <div class="aviso-configuracion error" role="alert">
+                    <ul>
+                        <?php foreach ($erroresConfiguracion as $errorFormulario): ?>
+                            <li><?= monpetEscape($errorFormulario) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
             <?php if ($errorConsulta): ?>
                 <div class="aviso-cuenta aviso-cuenta-error" role="alert">
                     No fue posible consultar la tabla <strong>usuario</strong>. Verifica en el archivo .env que DB_NAME coincida con la base de datos importada y que exista la tabla usuario.
@@ -268,7 +459,9 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
                                 <i class="fa-solid fa-user icono-seccion" aria-hidden="true"></i>
                                 <h3>Información de la cuenta</h3>
                             </div>
-                            <button class="btn-borde-sm" type="button" disabled title="Funcionalidad pendiente de integrar">
+                            <button class="btn-borde-sm" type="button" id="btn-editar-perfil"
+                                aria-expanded="<?= $formularioPerfilAbierto ? 'true' : 'false' ?>"
+                                aria-controls="form-editar-perfil">
                                 Editar información
                             </button>
                         </div>
@@ -277,6 +470,7 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
                             <div class="lista-datos">
                                 <p><small>Nombre completo</small><strong><?= monpetEscape($nombreCompleto) ?></strong></p>
                                 <p><small>Correo electrónico</small><strong><?= monpetEscape($correoUsuario) ?></strong></p>
+                                <p><small>Teléfono</small><strong><?= monpetEscape($telefonoUsuario) ?></strong></p>
                                 <p><small>Ciudad</small><strong><?= monpetEscape($ciudadUsuario) ?></strong></p>
                                 <p><small>Dirección</small><strong><?= monpetEscape($direccionUsuario) ?></strong></p>
                                 <p><small>Fecha de registro</small><strong><?= monpetEscape($fechaRegistroMostrar) ?></strong></p>
@@ -288,10 +482,44 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
                                 </button>
                             </div>
                         </div>
+                        <form class="form-configuracion" id="form-editar-perfil" method="post"
+                            action="configuracion.php#informacion-cuenta" <?= $formularioPerfilAbierto ? '' : 'hidden' ?>>
+                            <input type="hidden" name="csrf_token" value="<?= monpetEscape($tokenConfiguracion) ?>">
+                            <label for="config-nombres">Nombre
+                                <input id="config-nombres" name="nombres" maxlength="100" required
+                                    value="<?= monpetEscape($valoresPerfil['nombres'] ?? $usuario['nombres'] ?? '') ?>">
+                            </label>
+                            <label for="config-apellidos">Apellidos
+                                <input id="config-apellidos" name="apellidos" maxlength="100" required
+                                    value="<?= monpetEscape($valoresPerfil['apellidos'] ?? $usuario['apellidos'] ?? '') ?>">
+                            </label>
+                            <label for="config-correo">Correo electrónico
+                                <input id="config-correo" type="email" name="correo" maxlength="150" required
+                                    value="<?= monpetEscape($valoresPerfil['correo'] ?? $usuario['correo'] ?? '') ?>">
+                            </label>
+                            <label for="config-telefono">Teléfono
+                                <input id="config-telefono" type="tel" name="telefono" maxlength="20"
+                                    value="<?= monpetEscape($valoresPerfil['telefono'] ?? $usuario['telefono'] ?? '') ?>">
+                            </label>
+                            <label for="config-ciudad">Ciudad
+                                <input id="config-ciudad" name="ciudad" maxlength="100"
+                                    value="<?= monpetEscape($valoresPerfil['ciudad'] ?? $usuario['ciudad'] ?? '') ?>">
+                            </label>
+                            <label for="config-direccion">Dirección
+                                <input id="config-direccion" name="direccion" maxlength="150"
+                                    value="<?= monpetEscape($valoresPerfil['direccion'] ?? $usuario['direccion'] ?? '') ?>">
+                            </label>
+                            <div class="acciones-form-config">
+                                <input type="hidden" name="accion" value="actualizar_perfil">
+                                <button class="btn-borde-sm" type="submit">Guardar cambios</button>
+                                <button class="btn-borde-sm secundario" type="button"
+                                    data-cerrar-form="form-editar-perfil">Cancelar</button>
+                            </div>
+                        </form>
                     </section>
 
                     <!-- 2. SEGURIDAD DE LA CUENTA -->
-                    <section class="caja-blanca seccion-config">
+                    <section class="caja-blanca seccion-config" id="seguridad-cuenta">
                         <div class="titulo-con-icono">
                             <i class="fa-solid fa-lock icono-seccion" aria-hidden="true"></i>
                             <h3>Seguridad de la cuenta</h3>
@@ -302,8 +530,34 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
                                 <strong>Contraseña</strong>
                                 <p class="texto-contrasena">••••••••••••</p>
                             </div>
-                            <button class="btn-borde-sm" type="button" disabled title="Funcionalidad pendiente de integrar">Cambiar contraseña</button>
+                            <button class="btn-borde-sm" type="button" id="btn-cambiar-contrasena"
+                                aria-expanded="<?= $formularioContrasenaAbierto ? 'true' : 'false' ?>"
+                                aria-controls="form-cambiar-contrasena">Cambiar contraseña</button>
                         </div>
+
+                        <form class="form-configuracion" id="form-cambiar-contrasena" method="post"
+                            action="configuracion.php#seguridad-cuenta" <?= $formularioContrasenaAbierto ? '' : 'hidden' ?>>
+                            <input type="hidden" name="csrf_token" value="<?= monpetEscape($tokenConfiguracion) ?>">
+                            <input type="hidden" name="accion" value="cambiar_contrasena">
+                            <label for="config-contrasena-actual">Contraseña actual
+                                <input id="config-contrasena-actual" type="password" name="contrasena_actual"
+                                    autocomplete="current-password" required>
+                            </label>
+                            <label for="config-contrasena-nueva">Nueva contraseña
+                                <input id="config-contrasena-nueva" type="password" name="contrasena_nueva"
+                                    minlength="8" maxlength="255" autocomplete="new-password" required>
+                            </label>
+                            <label for="config-confirmar-contrasena">Confirmar nueva contraseña
+                                <input id="config-confirmar-contrasena" type="password"
+                                    name="confirmar_contrasena_nueva" minlength="8" maxlength="255"
+                                    autocomplete="new-password" required>
+                            </label>
+                            <div class="acciones-form-config">
+                                <button class="btn-borde-sm" type="submit">Actualizar contraseña</button>
+                                <button class="btn-borde-sm secundario" type="button"
+                                    data-cerrar-form="form-cambiar-contrasena">Cancelar</button>
+                            </div>
+                        </form>
 
                         <div class="fila-opcion-seguridad">
                             <div>
@@ -322,6 +576,18 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
                                 <small>Gestiona los dispositivos donde has iniciado sesión.</small>
                             </div>
                             <button class="btn-borde-sm" type="button" disabled title="Funcionalidad pendiente de integrar">Ver sesiones</button>
+                        </div>
+
+                        <div class="fila-opcion-seguridad">
+                            <div>
+                                <strong>Cerrar sesión</strong>
+                                <small>Finaliza tu sesión actual en este dispositivo.</small>
+                            </div>
+                            <form method="post" action="configuracion.php">
+                                <input type="hidden" name="csrf_token" value="<?= monpetEscape($tokenConfiguracion) ?>">
+                                <input type="hidden" name="accion" value="cerrar_sesion">
+                                <button class="btn-borde-sm" type="submit">Cerrar sesión</button>
+                            </form>
                         </div>
                     </section>
 
@@ -517,5 +783,6 @@ $imagenAvatar = 'data:image/svg+xml;base64,' . base64_encode($svgAvatar);
             <p>© <?= date('Y') ?> MonPet. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="../js/configuracion.js"></script>
 </body>
 </html>

@@ -1207,3 +1207,90 @@ header {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Formularios de edición de la cuenta */
+.form-configuracion[hidden] {
+    display: none;
+}
+
+.form-configuracion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--borde);
+}
+
+.form-configuracion label {
+    display: grid;
+    gap: 6px;
+    color: var(--texto);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.form-configuracion input {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 11px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--blanco);
+    color: var(--texto);
+    font: inherit;
+}
+
+.form-configuracion input:focus {
+    outline: none;
+}
+.form-configuracion input:focus-visible,
+.form-configuracion button:focus-visible {
+    border-color: var(--morado);
+    box-shadow: 0 0 0 3px rgba(117, 66, 184, 0.12);
+    outline-offset: 2px;
+}
+
+.form-configuracion .acciones-form-config {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    grid-column: 1 / -1;
+}
+
+.form-configuracion .secundario {
+    color: var(--texto-secundario);
+}
+
+.aviso-configuracion {
+    margin-top: 14px;
+    padding: 12px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    font-size: 0.88rem;
+}
+
+.aviso-configuracion ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.aviso-configuracion.exito {
+    background: #F1FBF4;
+    color: #21633B;
+}
+
+.aviso-configuracion.error {
+    background: #FFF5F6;
+    color: #8A2636;
+}
+
+@media (max-width: 620px) {
+    .form-configuracion {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-configuracion .acciones-form-config {
+        flex-wrap: wrap;
+    }
+}

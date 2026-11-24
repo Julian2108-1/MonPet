@@ -818,8 +818,9 @@ header {
 .formulario-solicitud-adopcion .contenedor-input input:focus,
 .formulario-solicitud-adopcion .contenedor-input select:focus,
 .formulario-solicitud-adopcion textarea:focus {
-    border-color: var(--morado);
+    border-color: var(--morado) !important;
     box-shadow: 0 0 0 3px rgba(117, 66, 184, 0.12);
+    outline-offset: 2px;
 }
 
 .formulario-solicitud-adopcion .contenedor-input input:disabled {
