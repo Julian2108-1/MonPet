@@ -1,0 +1,106 @@
+/* Escala común de lectura para catálogo, perfil, notificaciones y solicitudes. */
+.main-nav a { font-size: 15px; }
+.breadcrumbs, .breadcrumbs a { font-size: 14px; }
+.breadcrumbs a { color: var(--morado); text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; }
+.breadcrumbs .current[aria-current="page"] { color: #4f4a60; font-weight: 700; }
+.user-profile .user-name { font-size: 14px; }
+.footer-col h3, .footer-col h4 { font-size: 14px; }
+.footer-col ul li, .footer-col ul li a, .footer-col p, .footer-bottom { font-size: 13px; }
+
+/* Catálogo */
+.page-title-container p { font-size: 15px; }
+.banner-text h3 { font-size: 18px; }
+.banner-text p { font-size: 14px; }
+.filters-header h3 { font-size: 17px; }
+.clear-btn, .filter-label, .type-btn, .checkbox-container, .select-input { font-size: 14px; }
+.range-labels, .sort-and-view { font-size: 13px; }
+.results-count { font-size: 15px; }
+.status-badge { font-size: 12px; }
+.pet-title h3 { font-size: 16px; }
+.pet-breed, .pet-details, .pet-location { font-size: 13px; }
+.page-btn { font-size: 14px; }
+
+/* Perfil */
+.profile-main .breadcrumbs { font-size: 14px; }
+.profile-heading p { font-size: 14px; }
+.edit-profile-button, .profile-menu-link { font-size: 14px; }
+.profile-help h2 { font-size: 15px; }
+.profile-help p, .profile-help a { font-size: 13px; }
+.profile-identity h2 { font-size: 23px; }
+.identity-email, .profile-bio, .identity-detail { font-size: 13px; }
+.verified-label { font-size: 12px; }
+.stat-card strong { font-size: 19px; }
+.stat-card small { font-size: 13px; }
+.panel-title h2 { font-size: 16px; }
+.personal-data > div { font-size: 13px; }
+.privacy-note strong { font-size: 12px; }
+.privacy-note p { font-size: 11px; }
+.activity-heading > a { font-size: 12px; }
+.activity-copy strong { font-size: 12px; }
+.activity-copy small, .activity-row time { font-size: 11px; }
+.status-review, .status-resolved { font-size: 10px; }
+.edit-fields label { font-size: 13px; }
+.edit-fields input, .edit-fields select { font-size: 14px; }
+.dialog-actions button { font-size: 13px; }
+
+/* Notificaciones */
+.account-menu a { font-size: 14px; }
+.notifications-help h2, .settings-heading h2, .notifications-promo h2 { font-size: 15px; }
+.notifications-help p, .notifications-help a, .settings-heading p, .notifications-promo p, .notifications-promo > a { font-size: 13px; }
+.notifications-title p { font-size: 14px; }
+.mark-all-read, .notification-tab { font-size: 13px; }
+.tab-count { font-size: 11px; }
+.notification-title-line h2 { font-size: 14px; }
+.notification-title-line time { font-size: 11px; }
+.notification-copy > p { font-size: 13px; }
+.notification-action { font-size: 12px; }
+.notification-empty { font-size: 14px; }
+.notifications-end { font-size: 12px; }
+.setting-row { font-size: 13px; }
+.settings-saved { font-size: 11px; }
+
+/* Solicitudes */
+.requests-menu a { font-size: 14px; }
+.requests-help h2 { font-size: 15px; }
+.requests-help p, .requests-help a { font-size: 13px; }
+.requests-title-box p { font-size: 14px; }
+.thanks-banner strong { font-size: 14px; }
+.thanks-banner p { font-size: 12px; }
+.request-filter { font-size: 13px; }
+.filter-count { font-size: 11px; }
+.request-sort-label, .request-sort { font-size: 12px; }
+.request-pet-info h2 { font-size: 16px; }
+.request-breed, .request-submission strong { font-size: 13px; }
+.request-facts, .request-location, .request-submission time { font-size: 12px; }
+.request-details-button { font-size: 12px; }
+.request-status strong { font-size: 13px; }
+.request-status p { font-size: 12px; }
+.request-options > div a, .request-options > div button { font-size: 12px; }
+.requests-empty { font-size: 14px; }
+.request-dialog p { font-size: 14px; }
+.dialog-ok { font-size: 13px; }
+
+@media (max-width: 700px) {
+  .main-nav a { font-size: 14px; }
+  .breadcrumbs, .breadcrumbs a { font-size: 13px; }
+  .profile-menu-link, .account-menu a, .requests-menu a { font-size: 13px; }
+  .profile-heading p, .profile-bio, .identity-email, .identity-detail { font-size: 12px; }
+  .personal-data > div { font-size: 12px; }
+  .activity-copy strong { font-size: 11px; }
+  .activity-copy small, .activity-row time { font-size: 10px; }
+  .notification-tab, .request-filter { font-size: 12px; }
+  .notification-copy > p, .request-status p { font-size: 12px; }
+  .request-facts, .request-location, .request-submission time { font-size: 11px; }
+  .footer-col ul li, .footer-col ul li a, .footer-col p, .footer-bottom { font-size: 12px; }
+}
+
+@media (max-width: 460px) {
+  .breadcrumbs, .breadcrumbs a { font-size: 12px; }
+  .profile-menu-link, .account-menu a, .requests-menu a { font-size: 12px; }
+  .profile-heading p, .profile-bio, .identity-email, .identity-detail { font-size: 12px; }
+  .notification-tab, .request-filter { font-size: 11px; }
+  .notification-title-line h2 { font-size: 13px; }
+  .notification-copy > p, .request-status p { font-size: 11px; }
+  .footer-col ul li, .footer-col ul li a, .footer-col p, .footer-bottom { font-size: 12px; }
+}

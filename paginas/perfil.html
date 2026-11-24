@@ -3,382 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MonPet - Mi Perfil</title>
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta name="theme-color" content="#7542b8">
+  <title>MonPet - Mi perfil</title>
+  <link rel="stylesheet" href="../css/estilo_catalogo_mascotas.css">
   <link rel="stylesheet" href="../css/estilo_perfil.css">
+  <link rel="stylesheet" href="../css/estilo_texto_interfaz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-  <header>
-    <div class="contenedor-logo">
-      <div class="icono-logo">
-        <i class="fa-solid fa-paw"></i>
-      </div>
-      <div class="texto-logo">
-        <h1><span class="texto-titulo-1">Mon</span><span class="texto-titulo-2">Pet</span></h1>
-        <p class="slogan-banner">Amor que cambia vidas <i class="fa-solid fa-heart"></i></p>
+<body class="profile-page" id="inicio">
+  <header class="main-header">
+    <div class="header-container">
+      <a class="logo-container" href="../index.html" aria-label="MonPet, página principal">
+        <span class="logo-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+        <span class="logo-text profile-logo-text">
+          <h1><span class="brand-word-mon">Mon</span><span class="brand-word-pet">Pet</span></h1>
+          <span>Amor que cambia vidas <i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="catalogo_mascotas.html">Adopción</a></li>
+          <li><a href="solicitudes_usuarios.html">Mis solicitudes</a></li>
+          <li><a class="active" aria-current="page" href="perfil.html">Mi perfil</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <a class="notification-btn" href="notificaciones_usuarios.html" aria-label="Ver notificaciones">
+          <i class="fa-regular fa-bell" aria-hidden="true"></i><span class="badge">2</span>
+        </a>
+        <a class="user-profile" href="perfil.html" aria-label="Abrir mi perfil">
+          <img class="header-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="Foto de perfil">
+          <span class="user-name profile-name">Laura García</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
-    <div class="navegacion-usuario">
-      <div class="notificacion">
-        <i class="fa-regular fa-bell"></i>
-        <span>2</span>
-    </div>
-    <img src="" alt="perfil">
-    <strong>Julian Aroca</strong>
-    <i class="fa-solid fa-chevron-down"></i>
   </header>
-  <main class="contenedor-principal">
-    <div class="barra-navegacion">
-      <i class="fa-solid fa-house"></i>
-      <span>Inicio</span>
-      <i class="fa-solid fa-chevron-right"></i>
-      <span>Mi cuenta</span>
-      <i class="fa-solid fa-chevron-right"></i>
-      <span>Perfil</span>
-    </div>
-    <div class="titulo-pagina">
-      <div class="icono-titulo">
-        <i class="fa-regular fa-user"></i>
+
+  <main class="main-content profile-main">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="../index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Inicio</a><span aria-hidden="true">/</span>
+      <span>Mi cuenta</span><span aria-hidden="true">/</span><span class="current" aria-current="page">Perfil</span>
+    </nav>
+
+    <div class="profile-heading">
+      <div class="profile-heading-title">
+        <span class="profile-heading-icon"><i class="fa-regular fa-user" aria-hidden="true"></i></span>
+        <div><h1>Mi perfil</h1><p>Gestiona tu información y revisa tu actividad en MonPet.</p></div>
       </div>
-      <div>
-        <h1>Mi perfil</h1>
-        <p>Gestiona tu informacion personal y revisa tu actividad en MonPet.</p>
-      </div>
-      <button class="boton-editar">
-        <i class="fa-solid fa-pen"></i>
-        Editar perfil
-      </button>
+      <button class="edit-profile-button" id="open-edit-profile" type="button"><i class="fa-solid fa-pen" aria-hidden="true"></i> Editar perfil</button>
     </div>
-    <div class="zona-principal">
-      <aside class="barra-lateral">
-        <a href="#" class="menu-item activo">
-          <i class="fa-solid fa-user"></i>
-          <span>Mi perfil</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fa-regular fa-heart"></i>
-          <span>Mis mascotas guardadas</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fa-regular fa-flag"></i>
-          <span>Mis reportes</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fa-regular fa-comment-dots"></i>
-          <span>Mensajes</span>
-          <span class="contador">3</span>
-        </a>
-        <a href="#" class="menu-item">
-          <i class="fa-solid fa-gear"></i>
-          <span>Configuracion</span>
-        </a>
-        <div class="ayuda">
-          <div class="icono-ayuda">
-            <i class="fa-solid fa-headset"></i>
-          </div>
-          <h3>¿Necesitas ayuda?</h3>
-          <p>Estamos aqui para ayudarte.</p>
-          <a href="#">
-            Contactar soporte
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+
+    <div class="profile-layout">
+      <aside class="profile-sidebar" aria-label="Menú de mi cuenta">
+        <nav class="profile-menu">
+          <a class="profile-menu-link active" href="#perfil-resumen" aria-current="page"><i class="fa-regular fa-user" aria-hidden="true"></i><span>Mi perfil</span></a>
+          <a class="profile-menu-link" href="catalogo_mascotas.html?favoritos=1"><i class="fa-regular fa-heart" aria-hidden="true"></i><span>Mis mascotas guardadas</span></a>
+          <a class="profile-menu-link" href="solicitudes_usuarios.html"><i class="fa-regular fa-file-lines" aria-hidden="true"></i><span>Mis solicitudes</span></a>
+          <a class="profile-menu-link" href="notificaciones_usuarios.html"><i class="fa-regular fa-flag" aria-hidden="true"></i><span>Mis reportes</span></a>
+          <a class="profile-menu-link" href="notificaciones_usuarios.html"><i class="fa-regular fa-comment-dots" aria-hidden="true"></i><span>Mensajes</span><span class="menu-counter">3</span></a>
+          <a class="profile-menu-link" href="notificaciones_usuarios.html"><i class="fa-regular fa-calendar" aria-hidden="true"></i><span>Mis donaciones</span></a>
+          <button class="profile-menu-link menu-button" type="button" id="open-edit-profile-menu"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>Configuración</span></button>
+        </nav>
+        <div class="profile-help">
+          <i class="fa-solid fa-headset" aria-hidden="true"></i>
+          <h2>¿Necesitas ayuda?</h2><p>Estamos aquí para ayudarte.</p>
+          <a href="mailto:hola@monpet.com">Contactar soporte <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
         </div>
       </aside>
-      <section class="contenido-derecha">
-        <div class="foto-contenido">
-          <img src="" alt="Jualian Aroca">
-          <button class="camara">
-            <i class="fa-solid fa-camera"></i>
-          </button>
-        </div>
-        <div class="datos-perfil">
-          <div class="nombre">
-            <h2>Julian Aroca</h2>
-            <span class="verificado">
-              <i class="fa-solid fa-check"></i>
-            </span>
+
+      <div class="profile-content" id="perfil-resumen">
+        <section class="profile-summary" aria-label="Resumen del perfil">
+          <div class="profile-photo-wrap">
+            <img id="profile-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=320&h=320&fit=crop&crop=faces" alt="Foto de Laura García">
+            <button class="photo-edit-button" id="choose-photo" type="button" aria-label="Cambiar foto de perfil"><i class="fa-solid fa-camera" aria-hidden="true"></i></button>
+            <input id="photo-file" type="file" accept="image/*" hidden>
           </div>
-          <div class="correo">
-            julian.aroca@gmail.com
-            <span>
-              Usuario verificado
-            </span>
+          <div class="profile-identity">
+            <h2><span class="profile-name">Laura García</span><i class="fa-solid fa-certificate verified-mark" title="Usuario verificado" aria-label="Usuario verificado"></i></h2>
+            <div class="identity-email"><span class="profile-email">laura.garcia@email.com</span><span class="verified-label">Usuario verificado</span></div>
+            <p class="profile-bio">Amante de los animales y comprometida con su bienestar. Quiero ayudar a brindar un hogar lleno de amor.</p>
+            <p class="identity-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="profile-location">Bogotá, Colombia</span></p>
+            <p class="identity-detail"><i class="fa-regular fa-calendar" aria-hidden="true"></i>Miembro desde Noviembre - 2026</p>
           </div>
-          <p class="descripcion">
-            Amante de los animales y comprometido con su bienestar. Quiero ayudar a brindar un hogar lleno de amor.
-          </p>
-          <p>
-            <i class="fa-solid fa-location-dot"></i>
-            Bogota, Colombia
-          </p>
-          <p>
-            <i class="fa-regular fa-calendar"></i>
-            Miembro desde mayo 2026
-          </p>
-        </div>
-        <div class="estadisticas">
-          <div class="estadistica">
-            <div class="stat-icon morado">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-            <div>
-              <strong>3</strong>
-              <span>Mascotas guardadas</span>
-            </div>
+          <div class="profile-stats" aria-label="Estadísticas de la cuenta">
+            <a class="stat-card" href="catalogo_mascotas.html?favoritos=1"><span class="stat-icon stat-purple"><i class="fa-solid fa-heart" aria-hidden="true"></i></span><span><strong id="favorite-count">3</strong><small>Mascotas guardadas</small></span></a>
+            <a class="stat-card" href="solicitudes_usuarios.html"><span class="stat-icon stat-purple"><i class="fa-regular fa-file-lines" aria-hidden="true"></i></span><span><strong>2</strong><small>Solicitudes activas</small></span></a>
+            <a class="stat-card" href="notificaciones_usuarios.html"><span class="stat-icon stat-orange"><i class="fa-regular fa-flag" aria-hidden="true"></i></span><span><strong>5</strong><small>Reportes realizados</small></span></a>
+            <a class="stat-card" href="notificaciones_usuarios.html"><span class="stat-icon stat-green"><i class="fa-solid fa-paw" aria-hidden="true"></i></span><span><strong>12</strong><small>Donaciones realizadas</small></span></a>
           </div>
-          <div class="estadistica">
-            <div class="stat-icon morado">
-              <i class="fa-regular fa-file-lines"></i>
-            </div>
-            <div>
-              <strong>2</strong>
-              <span>Solicitudes activas</span>
-            </div>
-          </div>
-          <div class="estadistica">
-            <div class="stat-icon naranja">
-              <i class="fa-regular fa-flag"></i>
-            </div>
-            <div>
-              <strong>5</strong>
-              <span>Reportes realizados</span>
-            </div>
-          </div>
-          <div class="estadistica">
-            <div class="stat-icon verde">
-              <i class="fa-solid fa-paw"></i>
-            </div>
-            <div>
-              <strong>12</strong>
-              <span>Donaciones realizadas</span>
-            </div>
-          </div>
+        </section>
+
+        <div class="profile-details-grid">
+          <section class="profile-panel personal-panel">
+            <div class="panel-title"><i class="fa-regular fa-user" aria-hidden="true"></i><h2>Información personal</h2></div>
+            <dl class="personal-data">
+              <div><dt>Nombre completo:</dt><dd data-profile-field="name">Laura García</dd></div>
+              <div><dt>Tipo de documento:</dt><dd data-profile-field="documentType">Cédula de ciudadanía</dd></div>
+              <div><dt>Número de documento:</dt><dd data-profile-field="documentNumber">1.234.567.890</dd></div>
+              <div><dt>Teléfono:</dt><dd data-profile-field="phone">300 123 4567</dd></div>
+              <div><dt>Correo electrónico:</dt><dd data-profile-field="email">laura.garcia@email.com</dd></div>
+              <div><dt>Fecha de nacimiento:</dt><dd data-profile-field="birthDate">15 de marzo de 1998</dd></div>
+              <div><dt>Dirección:</dt><dd><span data-profile-field="address">Cra 15 # 123 - 45</span><br><span data-profile-field="city">Bogotá, Cundinamarca</span></dd></div>
+            </dl>
+            <div class="privacy-note"><span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span><div><strong>Tu información está protegida</strong><p>MonPet cuida tus datos y nunca los compartimos con terceros. Consulta nuestra <a href="#informacion-legal">Política de Privacidad</a>.</p></div></div>
+          </section>
+
+          <section class="profile-panel activity-panel" id="actividad-reciente">
+            <div class="activity-heading"><div class="panel-title"><i class="fa-regular fa-clock" aria-hidden="true"></i><h2>Actividad reciente</h2></div><a href="notificaciones_usuarios.html">Ver toda mi actividad</a></div>
+            <a class="activity-row" href="catalogo_mascotas.html?favoritos=1"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=100&h=100&fit=crop" alt="Labrador"><span class="activity-type purple"><i class="fa-regular fa-heart" aria-hidden="true"></i></span><span class="activity-copy"><strong>Guardaste a “Luna” en tus favoritos</strong><small>Labrador · Hembra · 2 años</small></span><time>Hace 2 días</time></a>
+            <a class="activity-row" href="solicitudes_usuarios.html"><img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=100&h=100&fit=crop" alt="Max"><span class="activity-type purple"><i class="fa-regular fa-file-lines" aria-hidden="true"></i></span><span class="activity-copy"><strong>Solicitud de adopción enviada</strong><small>Para “Max”</small><em class="status-review">En revisión</em></span><time>Hace 5 días</time></a>
+            <a class="activity-row" href="notificaciones_usuarios.html"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=100&h=100&fit=crop" alt="Gato encontrado"><span class="activity-type green"><i class="fa-regular fa-flag" aria-hidden="true"></i></span><span class="activity-copy"><strong>Reporte realizado</strong><small>Mascota encontrada en la Calle 80</small><em class="status-resolved">Resuelto</em></span><time>Hace 1 semana</time></a>
+            <a class="activity-row" href="notificaciones_usuarios.html"><span class="activity-image-placeholder"><i class="fa-regular fa-calendar" aria-hidden="true"></i></span><span class="activity-type purple"><i class="fa-regular fa-calendar" aria-hidden="true"></i></span><span class="activity-copy"><strong>Donación realizada</strong><small>Gracias por ayudar a más peluditos</small></span><time class="activity-amount">$50.000 COP<br><small>Hace 2 semanas</small></time></a>
+          </section>
         </div>
       </div>
-      <div class="inferior-derecha">
-        <div class="carta-informacion">
-          <div class="titulo-carta">
-            <i class="fa-regular fa-user"></i>
-            <h3>Informacion personal</h3>
-          </div>
-          <div class="datos">
-            <div>
-              <strong>Nombre completo:</strong>
-              <span>Julian Aroca</span>
-            </div>
-            <div>
-              <strong>Tipo de documento:</strong>
-              <span>Cedula de ciudadania</span>
-            </div>
-            <div>
-              <strong>Numero de documento:</strong>
-              <span>1.234.567.890</span>
-            </div>
-            <div>
-              <strong>Telefono:</strong>
-              <span>300 123 4567</span>
-            </div>
-            <div>
-              <strong>Correo electronico:</strong>
-              <span>julian.aroca@gmail.com</span>
-            </div>
-            <div>
-              <strong>Fecha de nacimiento:</strong>
-              <span>15 de marzo de 1998</span>
-            </div>
-            <div>
-              <strong>Direccion:</strong>
-              <span>
-                Cra. 15 # 123 - 45<br>
-                Bogota, Cundinamarca
-              </span>
-            </div>
-          </div>
-          <div class="privacidad">
-            <div class="icono-privacidad">
-              <i class="fa-solid fa-shied-halved"></i>
-            </div>
-            <div>
-              <strong>
-                Tu informacion esta protegida
-              </strong>
-              <p>
-                MonPet cuida tus datos y nunca los compartimos con terceros. Consulte nuestra
-                <a href="#">Politica de Privacidad.</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="carta-actividad">
-          <div class="encabezado-actividad">
-            <div class="titulo-carta">
-              <i class="fa-regular fa-clock"></i>
-              <h3>Actividad reciente</h3>
-            </div>
-            <a href="#">
-              Ver toda mi actividad
-            </a>
-          </div>
-          <div class="actividad-item">
-            <img src="" alt="Luna">
-            <div class="icono-actividad">
-              <i class="fa-regular fa-heart"></i>
-            </div>
-            <div class="texto-actividad">
-              <strong>
-                Guardaste a "Luna" en tus favoritos
-              </strong>
-              <p>
-                Labrador • Hembra • 2 años
-              </p>
-            </div>
-            <small>
-              Hace 2 dias
-            </small>
-          </div>
-          <div class="actividad-item">
-            <img src="" alt="Max">
-            <div class="icono-actividad">
-              <i class="fa-regular fa-file-lines"></i>
-            </div>
-            <div class="texto-actividad">
-              <strong>
-                Solicitud de adopcion enviada
-              </strong>
-              <p>
-                Para "Max"
-              </p>
-              <span class="estado revision">
-                En revision
-              </span>
-            </div>
-            <small>
-              Hace 5 dias
-            </small>
-          </div>
-          <div class="actividad-item">
-            <img src="" alt="Mascota">
-            <div class="actividad-icono verde-icono">
-              <i class="fa-regular fa-flag"></i>
-            </div>
-            <div class="texto-actividad">
-              <strong>
-                Reporte realizado
-              </strong>
-              <p>
-                Mascota encontrada en la calle 80
-              </p>
-              <span class="estado resuelto">
-                Resulto
-              </span>
-            </div>
-            <small>
-              Hace 1 semana
-            </small>
-          </div>
-          <div class="actividad-item">
-            <div class="icono-donacion">
-              <i class="fa-regular fa-calendar"></i>
-            </div>
-            <div class="actividad-icono">
-              <i class="fa-solid fa-shield"></i>
-            </div>
-            <div class="actividad-texto">
-              <strong>
-                Donacion realizada
-              </strong>
-              <p>
-                Gracias por ayudar a mas peluditos
-              </p>
-            </div>
-            <span class="dinero">
-              $50.000 COP
-            </span>
-            <small>
-              Hace 2 semanas
-            </small>
-          </div>
-        </div>
+    </div>
+  </main>
+
+  <footer class="main-footer profile-footer" id="informacion-legal">
+    <div class="footer-container">
+      <div class="footer-col brand-col"><a class="logo-container white" href="../index.html"><span class="logo-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span><span class="logo-text"><h2>MonPet</h2><span>Amor que cambia vidas <i class="fa-solid fa-heart" aria-hidden="true"></i></span></span></a><p>Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado.</p><div class="social-links"><a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a><a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a></div></div>
+      <div class="footer-col"><h3>Enlaces rápidos</h3><ul><li><a href="../index.html">Inicio</a></li><li><a href="catalogo_mascotas.html">Adopción</a></li><li><a href="solicitudes_usuarios.html">Mis solicitudes</a></li><li><a href="perfil.html">Mi perfil</a></li></ul></div>
+      <div class="footer-col"><h3>Ayuda</h3><ul><li><a href="mailto:hola@monpet.com">Preguntas frecuentes</a></li><li><a href="catalogo_mascotas.html">Cómo adoptar</a></li><li><a href="mailto:hola@monpet.com">Consejos de cuidado</a></li><li><a href="mailto:hola@monpet.com">Contáctanos</a></li></ul></div>
+      <div class="footer-col"><h3>Información legal</h3><ul><li><a href="#informacion-legal">Términos y condiciones</a></li><li><a href="#informacion-legal">Política de privacidad</a></li><li><a href="#informacion-legal">Aviso legal</a></li></ul></div>
+      <div class="footer-col"><h3>Contáctanos</h3><ul class="contact-info"><li><i class="fa-solid fa-location-dot"></i> Bogotá, Cundinamarca, Colombia</li><li><i class="fa-regular fa-envelope"></i> <a href="mailto:hola@monpet.com">hola@monpet.com</a></li><li><i class="fa-solid fa-phone"></i> <a href="tel:+573001234567">+57 300 123 4567</a></li><li><i class="fa-regular fa-clock"></i> Lun - Vie: 8:00 a.m. - 6:00 p.m.<br>Sáb: 8:00 a.m. - 2:00 p.m.</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 MonPet. Todos los derechos reservados. <i class="fa-solid fa-paw" aria-hidden="true"></i></p></div>
+    <a class="back-to-top" href="#inicio" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+  </footer>
+
+  <dialog class="edit-profile-dialog" id="edit-profile-dialog" aria-labelledby="edit-profile-title">
+    <form id="edit-profile-form" method="dialog">
+      <div class="dialog-heading"><div><h2 id="edit-profile-title">Editar perfil</h2><p>Actualiza tus datos personales.</p></div><button class="dialog-close" type="button" id="close-edit-profile" aria-label="Cerrar">&times;</button></div>
+      <div class="edit-fields">
+        <label>Nombre completo<input name="name" autocomplete="name" required maxlength="80"></label>
+        <label>Correo electrónico<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+        <label>Teléfono<input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+        <label>Tipo de documento<select name="documentType"><option>Cédula de ciudadanía</option><option>Cédula de extranjería</option><option>Pasaporte</option></select></label>
+        <label>Número de documento<input name="documentNumber" inputmode="numeric" maxlength="30"></label>
+        <label>Fecha de nacimiento<input name="birthDate" type="date"></label>
+        <label>Dirección<input name="address" autocomplete="street-address" maxlength="120"></label>
+        <label>Ciudad y departamento<input name="city" autocomplete="address-level2" maxlength="100"></label>
       </div>
-    </section>
-  </div>
-</main>
-<footer>
-  <div class="pie"></div>
-  <div class="contenido-pie">
-    <div class="banner-pie">
-      <div class="logo-pie">
-        <div class="icono-logo">
-          <i class="fa-solid fa-paw"></i>
-        </div>
-        <div>
-          <h2>Mon<span>Pet</span></h2>
-          <p>Amor que cambia vidas 💜</p>
-        </div>
-      </div>
-      <p>
-        Conectamos corazones para que cada mascota encuentre un hogar lleno de amor y cuidado,
-      </p>
-      <div class="redes">
-        <a href="#">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="#">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="#">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
-        <a href="#">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-      </div>
-    </div>
-    <div class="columna-pie">
-      <h3>Enlaces rapidos</h3>
-      <a href="#">Inicio</a>
-      <a href="#">Adopcion</a>
-      <a href="#">Reportes</a>
-      <a href="#">Refugios</a>
-      <a href="#">Veterinarios</a>
-      <a href="#">Jornadas</a>
-      <a href="#">Nosotros</a>
-    </div>
-    <div class="columna-pie">
-      <h3>Ayuda</h3>
-      <a href="#">Preguntas frecuentes</a>
-      <a href="#">Como adoptar</a>
-      <a href="#">Consejos de cuidado</a>
-      <a href="#">Contactanos</a>
-    </div>
-    <div class="columna-pie">
-      <h3>Informacion legal</h3>
-      <a href="#">Terminos y condiciones</a>
-      <a href="#">Politica de privacidad</a>
-      <a href="#">Aviso-legal</a>
-    </div>
-    <div class="contacto-pie">
-      <h3>Contactanos</h3>
-      <p>
-        <i class="fa-solid fa-location-dot"></i>
-        Bogota, Cundinamarca, Colombia
-      </p>
-      <p>
-        <i class="fa-solid fa-phone"></i>
-        +57 300 123 4567
-      </p>
-      <p>
-        <i class="fa-regular fa-clock"></i>
-        Lun - Vie: 8:00 a.m. - 6:00 p.m.<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;Sab: 8:00 a.m. - 2:00 p.m.
-      </p>
-    </div>
-  </div>
-  <div class="copyright">
-    © 2026 MonPet. Todos los derechos reservados.
-    <i class="fa-solid fa-paw"></i>
-  </div>
-</footer>
+      <p class="profile-save-message" id="profile-save-message" role="status" aria-live="polite"></p>
+      <div class="dialog-actions"><button type="button" class="cancel-edit" id="cancel-edit-profile">Cancelar</button><button type="submit" class="save-profile">Guardar cambios</button></div>
+    </form>
+  </dialog>
+  <script src="../js/script_perfil.js" defer></script>
 </body>
 </html>

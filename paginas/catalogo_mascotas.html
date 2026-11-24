@@ -7,6 +7,7 @@
   <title>MonPet - Catálogo de Mascotas</title>
   <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="../css/estilo_catalogo_mascotas.css">
+  <link rel="stylesheet" href="../css/estilo_texto_interfaz.css">
   <!-- Carga de iconos SVG simples usando la librería FontAwesome (opcional para renderizar íconos) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -32,28 +33,25 @@
       <!-- Menú de navegación principal -->
       <nav class="main-nav">
         <ul>
-          <li><a href="catalogo_mascotas.html">Inicio</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="catalogo_mascotas.html" class="active" aria-current="page">Adopción</a></li>
-          <li><a href="catalogo_mascotas.html">Reportes</a></li>
-          <li><a href="catalogo_mascotas.html">Refugios</a></li>
-          
-          <li><a href="catalogo_mascotas.html">Jornadas</a></li>
-          <li><a href="catalogo_mascotas.html">Nosotros</a></li>
+          <li><a href="solicitudes_usuarios.html">Mis solicitudes</a></li>
+          <li><a href="perfil.html">Mi perfil</a></li>
         </ul>
       </nav>
 
       <!-- Acciones del usuario (Notificaciones y Perfil) -->
       <div class="user-actions">
-        <button class="notification-btn" title="Notificaciones">
+        <a class="notification-btn" href="notificaciones_usuarios.html" title="Notificaciones" aria-label="Ver notificaciones">
           <i class="fa-regular fa-bell"></i>
           <span class="badge">2</span>
-        </button>
-        <div class="user-profile">
+        </a>
+        <a class="user-profile" href="perfil.html" aria-label="Abrir mi perfil">
           <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
             alt="Foto de perfil de Laura García">
           <span class="user-name">Laura García</span>
           <i class="fa-solid fa-chevron-down"></i>
-        </div>
+        </a>
       </div>
     </div>
   </header>
@@ -64,12 +62,12 @@
   <main class="main-content">
 
     <!-- Migas de pan (Breadcrumbs) para guiar la navegación del usuario -->
-    <nav class="breadcrumbs">
-      <a href="catalogo_mascotas.html"><i class="fa-solid fa-house"></i> Inicio</a>
-      <span>/</span>
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+      <span aria-hidden="true">/</span>
       <a href="catalogo_mascotas.html">Adopción</a>
-      <span>/</span>
-      <span class="current">Catálogo de mascotas</span>
+      <span aria-hidden="true">/</span>
+      <span class="current" aria-current="page">Catálogo de mascotas</span>
     </nav>
 
     <!-- Sección del Encabezado de la página y Banner Promocional -->
@@ -114,7 +112,7 @@
           <button id="clear-filters-btn" class="clear-btn">Limpiar todo</button>
         </div>
 
-        <form id="filters-form" action="catalogo_mascotas.php" method="get">
+        <form id="filters-form" action="catalogo_mascotas.html" method="get">
           <input type="hidden" id="pet-type-filter" name="tipo" value="">
 
           <!-- Filtro: Tipo de mascota -->
@@ -464,13 +462,11 @@
       <div class="footer-col">
         <h4>Enlaces rápidos</h4>
         <ul>
-          <li><a href="catalogo_mascotas.html">Inicio</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="catalogo_mascotas.html">Adopción</a></li>
-          <li><a href="catalogo_mascotas.html">Reportes</a></li>
-          <li><a href="catalogo_mascotas.html">Refugios</a></li>
-          <li><a href="catalogo_mascotas.html">Veterinarios</a></li>
-          <li><a href="catalogo_mascotas.html">Jornadas</a></li>
-          <li><a href="catalogo_mascotas.html">Nosotros</a></li>
+          <li><a href="solicitudes_usuarios.html">Mis solicitudes</a></li>
+          <li><a href="perfil.html">Mi perfil</a></li>
+          <li><a href="notificaciones_usuarios.html">Notificaciones</a></li>
         </ul>
       </div>
 
@@ -478,10 +474,10 @@
       <div class="footer-col">
         <h4>Ayuda</h4>
         <ul>
-          <li><a href="catalogo_mascotas.html">Preguntas frecuentes</a></li>
           <li><a href="catalogo_mascotas.html">Cómo adoptar</a></li>
-          <li><a href="catalogo_mascotas.html">Consejos de cuidado</a></li>
-          <li><a href="catalogo_mascotas.html">Contáctanos</a></li>
+          <li><a href="solicitudes_usuarios.html">Mis solicitudes</a></li>
+          <li><a href="notificaciones_usuarios.html">Notificaciones</a></li>
+          <li><a href="mailto:hola@monpet.com">Contáctanos</a></li>
         </ul>
       </div>
 
@@ -489,9 +485,9 @@
       <div class="footer-col">
         <h4>Información legal</h4>
         <ul>
-          <li><a href="catalogo_mascotas.html">Términos y condiciones</a></li>
-          <li><a href="catalogo_mascotas.html">Política de privacidad</a></li>
-          <li><a href="catalogo_mascotas.html">Aviso legal</a></li>
+          <li>Términos y condiciones</li>
+          <li>Política de privacidad</li>
+          <li>Aviso legal</li>
         </ul>
       </div>
 

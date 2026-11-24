@@ -33,6 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const params = new URLSearchParams(window.location.search);
+  const favoritesOnly = params.get("favoritos") === "1";
+  let savedFavorites = [];
+  try {
+    const storedFavorites = JSON.parse(window.localStorage.getItem("monpet-favoritos") || "[]");
+    if (Array.isArray(storedFavorites)) savedFavorites = storedFavorites.filter((name) => typeof name === "string");
+  } catch (error) {
+    savedFavorites = [];
+  }
+
   const selectType = (type, updateInput = true) => {
     typeButtons.forEach((button) => {
       const active = button.dataset.type === type;
@@ -76,10 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let visible = 0;
 
     cards.forEach((card) => {
+      const cardName = (card.dataset.name || card.querySelector(".pet-title h3")?.textContent || "").trim().toLocaleLowerCase("es");
       const matches = (!type || card.dataset.type === type)
         && (!sizes.length || sizes.includes(card.dataset.size))
         && (!genders.length || genders.includes(card.dataset.gender))
         && (!city || card.dataset.city === city)
+        && (!favoritesOnly || savedFavorites.includes(cardName))
         && Number(card.dataset.age) >= minAge && Number(card.dataset.age) <= maxAge;
       card.hidden = !matches;
       if (matches) visible += 1;
@@ -144,13 +156,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelectorAll(".favorite-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const active = button.getAttribute("aria-pressed") !== "true";
+    const card = button.closest(".pet-card");
+    const name = (card?.dataset.name || card?.querySelector(".pet-title h3")?.textContent || "").trim().toLocaleLowerCase("es");
+    const icon = button.querySelector("i");
+    const setFavorite = (active) => {
       button.setAttribute("aria-pressed", String(active));
       button.classList.toggle("active", active);
-      const icon = button.querySelector("i");
       icon?.classList.toggle("fa-solid", active);
       icon?.classList.toggle("fa-regular", !active);
+      button.setAttribute("aria-label", active ? "Quitar de favoritos" : "Guardar en favoritos");
+    };
+    setFavorite(savedFavorites.includes(name));
+    button.addEventListener("click", () => {
+      const active = button.getAttribute("aria-pressed") !== "true";
+      savedFavorites = active
+        ? [...new Set([...savedFavorites, name])]
+        : savedFavorites.filter((favorite) => favorite !== name);
+      try {
+        window.localStorage.setItem("monpet-favoritos", JSON.stringify(savedFavorites));
+      } catch (error) {
+        // El favorito sigue activo durante esta visita aunque el navegador bloquee el almacenamiento.
+      }
+      setFavorite(active);
+      if (favoritesOnly) applyFilters();
     });
   });
 
@@ -189,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }));
   }
 
-  const params = new URLSearchParams(window.location.search);
   if (params.has("tipo") && typeInput) {
     typeInput.value = params.get("tipo") || "";
     if (typeInput.value) selectType(typeInput.value);
@@ -216,4 +243,5 @@ document.addEventListener("DOMContentLoaded", () => {
   if (pagination && cards.length === 0) pagination.hidden = true;
   if (count && cards.length === 0) count.innerHTML = "<strong>0</strong> mascotas disponibles";
   sortCards();
+  if (!window.location.pathname.endsWith(".php")) applyFilters();
 });
